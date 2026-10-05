@@ -39,6 +39,12 @@ def test_exports_preserve_observed_poses_without_enumeration(source_folder, tmp_
     assert [pose["id"] for pose in sheet["poses"]] == [0, 1, 2]
     assert [edge["from_pose"] for edge in sheet["transitions"]] == [edge["source"] for edge in document["edges"]]
     assert sheet["classification"]["basis"] == "observed_simulation"
+    assert sheet["classification"]["friction_policy"] == "not_evaluated"
+    for transition in sheet["transitions"]:
+        assert transition["geometry"]["passive_escape_barrier_mm"] is None
+        assert transition["geometry"]["passive_saddle_angle_deg"] is None
+        assert transition["experimental"] == {"status": "untested", "trials": None, "successes": None,
+                                              "empirical_success_rate": None, "difficulty_rating": None, "notes": ""}
     graph = nx.read_graphml(folder / "Test1_roadmap.graphml")
     assert set(graph.nodes) == {"0", "1", "2"}
     assert all("rocking_barrier_mm" not in attributes for _, attributes in graph.nodes(data=True))
@@ -170,6 +176,48 @@ def test_existing_reorientation_consumer_loads_both_formats(source_folder, tmp_p
         assert [pose.pose_id for pose in loaded.poses] == [0, 1, 2]
         assert loaded.mesh_path.is_file()
         assert all(pose.rocking_barrier_mm is None for pose in loaded.poses)
+
+
+@pytest.mark.parametrize("filename", ["poses.json", "pose_registry.json"])
+def test_pressure_consumer_loads_export_selects_transition_and_restores_profile(source_folder, tmp_path, monkeypatch, filename):
+    consumer_dir = Path(__file__).resolve().parents[2] / "BiBaZu_Big_Boi/CSVSaver"
+    consumer_path = consumer_dir / "roadmap_transition_dialog.py"
+    if not consumer_path.is_file():
+        pytest.skip("Optional workspace integration: pressure GUI consumer is not installed")
+    monkeypatch.syspath_prepend(str(consumer_dir))
+    spec = importlib.util.spec_from_file_location("_existing_pressure_roadmap_consumer", consumer_path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    from PyQt6.QtCore import Qt
+    from PyQt6.QtWidgets import QApplication
+    app = QApplication.instance() or QApplication([])
+    _, result = generate_one(source_folder / filename, GenerationConfig(str(tmp_path / "outputs"), outputs=("yaml", "json")))
+    path = Path(result["folder"]) / "Test1_roadmap.json"
+    exported = json.loads(path.read_text())
+    loaded = module.load_roadmap_document(path)
+    assert loaded.part_name == "Test1" and loaded.mesh_path.is_file()
+    assert [pose.pose_id for pose in loaded.poses] == [0, 1, 2]
+    assert all(pose.thumbnail_png and not module.pose_pixmap(pose, 180, 120).isNull() for pose in loaded.poses)
+    direct = [edge for edge in loaded.transitions if edge.transition_kind == "actuated"]
+    assert len(direct) == len(exported["edges"]) > 0
+    assert all(edge.capture_width_deg is None and edge.geometric_score is None for edge in direct)
+    edge = direct[0]
+    dialog = module.RoadmapTransitionDialog(loaded)
+    dialog._set_pose_selection(edge.source_pose_id, edge.target_pose_id)
+    row = next(row for row in range(dialog.transition_table.rowCount())
+               if dialog.transition_table.item(row, 0).data(Qt.ItemDataRole.UserRole) == edge.edge_id)
+    dialog.transition_table.selectRow(row)
+    assert dialog.use_button.isEnabled()
+    dialog._accept_selected_transition()
+    selected = dialog.selected_transition
+    assert selected.profile_name_stem == f"Test1_Transition_{edge.source_pose_id}-{edge.target_pose_id}_{edge.actuation}"
+    restored = module.selection_from_roadmap_transition_metadata(module.roadmap_transition_metadata(selected))
+    assert restored.transition.edge_id == edge.edge_id
+    assert restored.transition.signed_angle_deg == edge.signed_angle_deg
+    assert restored.source_pose.mesh_path == loaded.mesh_path
+    dialog.close()
+    app.processEvents()
 
 
 @pytest.mark.parametrize("cutoff", [-1, 101, float("nan")])

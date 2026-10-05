@@ -113,6 +113,7 @@ def build_roadmap(source: PoseSource, numbered: list[tuple[ObservedPose, int]], 
             "main_face_on_floor": on_floor, "main_face_on_wall": on_wall,
             "observed_count": pose.count, "observed_frequency_percent": pose.frequency_percent,
             "rocking_barrier_mm": None, "csa_stability_index": None, "csa_applicable": None,
+            "csa_feasible_fraction": None, "csa_feasible_solid_angle_sr": None, "csa_angular_clearance_deg": None,
             "classical_metrics": {},
         })
     nodes_by_id = {node["node_id"]: node for node in nodes}
@@ -164,6 +165,7 @@ def build_roadmap(source: PoseSource, numbered: list[tuple[ObservedPose, int]], 
         "contact_tolerance_mm": tolerance, "pose_ranking_method": "observed_frequency",
         "robustness_method": "observed_simulation", "robust_barrier_threshold_mm": None,
         "minimum_csa_score": None, "minimum_braking_g": None, "csa_load_model": None,
+        "csa_cap_half_angle_deg": None, "csa_direction_samples": None,
         "friction_policy": "not_evaluated", "csa_rocking_fallback_pose_ids": [],
         "unresolved_metastable_node_ids": [], "nodes": nodes, "edges": edges,
         "node_counts": {"total": len(nodes), "robust": len(nodes), "metastable": 0},
@@ -182,6 +184,8 @@ def handover_dict(document: dict) -> dict:
                       "orientation_quaternion_xyzw": node["representative_quaternion_xyzw"],
                       "observed_count": node["observed_count"], "observed_frequency_percent": node["observed_frequency_percent"],
                       "rocking_barrier_mm": None, "csa_stability_index": None, "cad_status": "provisional",
+                      "csa_feasible_fraction": None, "csa_feasible_solid_angle_sr": None,
+                      "csa_angular_clearance_deg": None, "csa_applicable": None,
                       "contacts": {"floor": node["floor_contact_topology"], "wall": node["wall_contact_topology"],
                                    "main_face_on_floor": node["main_face_on_floor"], "main_face_on_wall": node["main_face_on_wall"]}})
     transitions = []
@@ -198,8 +202,10 @@ def handover_dict(document: dict) -> dict:
                                 "surface_requirement": surface, "additional_requirement": extra},
                             "capture": {"interval_deg": None, "width_deg": None, "fraction": None},
                             "geometry": {"geometric_score": None, "target_barrier_score": None,
+                                         "passive_escape_barrier_mm": None, "passive_saddle_angle_deg": None,
                                          "axis_error_deg": edge["axis_error_deg"], "passive_settling_via_catalog_pose_ids": []},
-                            "experimental": {"status": "untested", "success_rate": None}})
+                            "experimental": {"status": "untested", "trials": None, "successes": None,
+                                             "empirical_success_rate": None, "difficulty_rating": None, "notes": ""}})
     return {"format": "bibazu_pose_roadmap_handover", "schema_version": 1,
             "part": {"name": document["part_name"], "mesh_source": document["source"], "cad_status": "provisional"},
             "chute": {"coordinate_system": "right_handed", "x": "downhill", "y": "away_from_wall", "z": "away_from_floor",
@@ -207,9 +213,13 @@ def handover_dict(document: dict) -> dict:
             "classification": {"basis": "observed_simulation", "analytical_stability_evaluated": False,
                                "note": document["classification_note"], "pose_ranking_method": document["pose_ranking_method"],
                                "robustness_method": "observed_simulation", "symmetry": document["symmetry_symbol"],
+                               "friction_policy": document["friction_policy"],
                                "robust_pose_ids": [n["node_id"] for n in document["nodes"]], "metastable_pose_ids": [],
                                "unresolved_metastable_pose_ids": [], "main_face_ids": document["main_face_ids"],
                                "main_face_min_span_mm": document["main_face_min_span_mm"],
                                "opposite_x_min_height_mm": document["opposite_x_min_height_mm"],
-                               "robust_barrier_threshold_mm": None, "classical_metadata": document.get("classical_metadata", {})},
+                               "robust_barrier_threshold_mm": None, "minimum_csa_score": None,
+                               "csa_cap_half_angle_deg": None, "csa_direction_samples": None,
+                               "csa_rocking_fallback_catalog_pose_ids": [],
+                               "classical_metadata": document.get("classical_metadata", {})},
             "poses": poses, "transitions": transitions, "generation": document.get("generation", {})}

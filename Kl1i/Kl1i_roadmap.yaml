@@ -19,6 +19,7 @@ classification:
   pose_ranking_method: observed_frequency
   robustness_method: observed_simulation
   symmetry: Cinf
+  friction_policy: not_evaluated
   robust_pose_ids:
   - 0
   - 1
@@ -29,6 +30,10 @@ classification:
   main_face_min_span_mm: 20.0
   opposite_x_min_height_mm: 25.0
   robust_barrier_threshold_mm: null
+  minimum_csa_score: null
+  csa_cap_half_angle_deg: null
+  csa_direction_samples: null
+  csa_rocking_fallback_catalog_pose_ids: []
   classical_metadata:
     observed_pose_generation: &id001
       minimum_frequency_percent: 5.0
@@ -37,7 +42,7 @@ classification:
       numbering_tie_break: original source ID
       source_file: poses.json
       source_sha256: bf3134108edf3bf1418596e488f9f84fe9064de999ceb784f094a2967c0098d7
-      generated_utc: '2026-10-05T09:28:08.641997+00:00'
+      generated_utc: '2026-10-05T09:49:05.078815+00:00'
       pose_id_mapping:
         Kl1i_0001: 0
         Kl1i_0002: 1
@@ -62,6 +67,10 @@ poses:
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
   contacts:
     floor: face
     wall: face
@@ -86,6 +95,10 @@ poses:
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
   contacts:
     floor: face
     wall: face
@@ -116,11 +129,17 @@ transitions:
   geometry:
     geometric_score: null
     target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
     axis_error_deg: 0.02191905157197994
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
-    success_rate: null
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
 - id: a1:0->1:free_z
   from_pose: 0
   to_pose: 1
@@ -145,11 +164,17 @@ transitions:
   geometry:
     geometric_score: null
     target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
     axis_error_deg: 0.008301684772483033
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
-    success_rate: null
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
 - id: a2:1->0:free_y
   from_pose: 1
   to_pose: 0
@@ -174,11 +199,17 @@ transitions:
   geometry:
     geometric_score: null
     target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
     axis_error_deg: 0.0219190515886077
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
-    success_rate: null
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
 - id: a3:1->0:free_z
   from_pose: 1
   to_pose: 0
@@ -203,9 +234,15 @@ transitions:
   geometry:
     geometric_score: null
     target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
     axis_error_deg: 0.008301684772483033
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
-    success_rate: null
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
 generation: *id001

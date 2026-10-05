@@ -75,7 +75,16 @@ Output paths are relative to the exported component folder, so moving a saved
 roadmap and its `source/` together preserves mesh access.
 
 JSON/YAML use the existing schema version 1 and action names accepted by the
-BiBaZu Reorientation Control GUI. Original IDs are in `source_pose_ids`; counts
+BiBaZu Reorientation Control GUI. The Pressure Control GUI uses the JSON export,
+including its directed edges, numeric roadmap IDs, signed angles, relative STL
+path and embedded pose previews. Use its updated `roadmap_transition_dialog.py`
+loader, which accepts null capture widths and geometric scores. Restart an
+already-running Pressure Control GUI after updating that loader; older versions
+try to convert these uncomputed metrics to floats and cannot load them.
+The YAML experimental block follows the existing handover fields (`trials`,
+`successes`, `empirical_success_rate`, `difficulty_rating`, `notes`).
+
+Original IDs are in `source_pose_ids`; counts
 and percentages are in `observed_count` and `observed_frequency_percent`.
 The `generation` section records filtering, numbering and excluded poses.
 `original_catalog_pose_id` / `pose_ids` refer to **input-list indices**, recorded

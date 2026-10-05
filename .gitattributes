@@ -2,3 +2,10 @@
 *.py text eol=lf
 *.cmd text eol=crlf
 *.ps1 text eol=crlf
+
+# Inventories record exact export/snapshot bytes across Git checkouts.
+*/*_roadmap.* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*/manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*/files.sha256.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*/README.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*/source/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
