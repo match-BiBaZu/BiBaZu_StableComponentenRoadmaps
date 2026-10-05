@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bibazu-stable-component-roadmaps"
+version = "0.1.0"
+description = "Frequency-filtered roadmaps built directly from observed BiBaZu poses"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "PyQt6>=6.7,<7", "matplotlib>=3.8,<4", "networkx>=3.2,<4",
+    "numpy>=1.26,<3", "scipy>=1.11,<2", "trimesh>=4,<6", "pyyaml>=6,<7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pillow>=10"]
+
+[project.scripts]
+bibazu-stable-roadmaps = "bibazu_stable_roadmaps.gui:main"
+bibazu-stable-roadmaps-generate = "bibazu_stable_roadmaps.generate:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bibazu_stable_roadmaps"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
