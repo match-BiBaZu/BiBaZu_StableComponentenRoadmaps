@@ -122,6 +122,7 @@ images display observed frequencies rather than analytical ranks.
 | [Qk2i](Qk2i/README.md) | 13 | 63 | 1% | Frequency |
 | [Qk4a](Qk4a/README.md) | 24 | 157 | 1% | Frequency |
 | [Ql1i](Ql1i/README.md) | 5 | 21 | 1% | Frequency |
+| [Ql2a](Ql2a/README.md) | 8 | 39 | 1% | Frequency |
 | [Ql4i](Ql4i/README.md) | 12 | 68 | 1% | Frequency |
 | [Rf1a](Rf1a/README.md) | 7 | 16 | 5% | Frequency |
 | [Rk1a](Rk1a/README.md) | 4 | 2 | 5% | Frequency |
