@@ -39,8 +39,8 @@
       <data key="d10">face</data>
       <data key="d11">True</data>
       <data key="d12">True</data>
-      <data key="d13">459</data>
-      <data key="d14">45.9</data>
+      <data key="d13">4544</data>
+      <data key="d14">45.44</data>
       <data key="d15">{}</data>
     </node>
     <node id="1">
@@ -55,8 +55,8 @@
       <data key="d10">face</data>
       <data key="d11">True</data>
       <data key="d12">True</data>
-      <data key="d13">429</data>
-      <data key="d14">42.9</data>
+      <data key="d13">4376</data>
+      <data key="d14">43.76</data>
       <data key="d15">{}</data>
     </node>
     <node id="2">
@@ -71,8 +71,40 @@
       <data key="d10">face</data>
       <data key="d11">True</data>
       <data key="d12">False</data>
-      <data key="d13">54</data>
-      <data key="d14">5.4</data>
+      <data key="d13">532</data>
+      <data key="d14">5.32</data>
+      <data key="d15">{}</data>
+    </node>
+    <node id="3">
+      <data key="d2">[3]</data>
+      <data key="d3">3</data>
+      <data key="d4">["Ql1i_0005"]</data>
+      <data key="d5">robust</data>
+      <data key="d6">observed_simulation</data>
+      <data key="d7">provisional</data>
+      <data key="d8">[1.6698823824601305e-05, 4.8426674040477743e-05, 9.310480802054108e-05, -0.9999999943537508]</data>
+      <data key="d9">face</data>
+      <data key="d10">face</data>
+      <data key="d11">False</data>
+      <data key="d12">True</data>
+      <data key="d13">266</data>
+      <data key="d14">2.66</data>
+      <data key="d15">{}</data>
+    </node>
+    <node id="4">
+      <data key="d2">[4]</data>
+      <data key="d3">4</data>
+      <data key="d4">["Ql1i_0006"]</data>
+      <data key="d5">robust</data>
+      <data key="d6">observed_simulation</data>
+      <data key="d7">provisional</data>
+      <data key="d8">[0.7071110439591886, 0.0002745677413708654, -0.0004436908558822361, 0.7071023258778932]</data>
+      <data key="d9">face</data>
+      <data key="d10">face</data>
+      <data key="d11">True</data>
+      <data key="d12">False</data>
+      <data key="d13">228</data>
+      <data key="d14">2.28</data>
       <data key="d15">{}</data>
     </node>
     <edge source="0" target="1" id="a0:0-&gt;1:free_y">
@@ -111,8 +143,32 @@
       <data key="d24">1</data>
       <data key="d25">untested</data>
     </edge>
-    <edge source="1" target="0" id="a3:1-&gt;0:free_y">
-      <data key="d16">a3:1-&gt;0:free_y</data>
+    <edge source="0" target="3" id="a3:0-&gt;3:free_y">
+      <data key="d16">a3:0-&gt;3:free_y</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_y</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 1.0, 0.0]</data>
+      <data key="d21">89.99995593084425</data>
+      <data key="d22">0.01154279863029105</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="0" target="4" id="a4:0-&gt;4:free_z">
+      <data key="d16">a4:0-&gt;4:free_z</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_z</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 0.0, 1.0]</data>
+      <data key="d21">89.9803842732282</data>
+      <data key="d22">0.04387104510618245</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="1" target="0" id="a5:1-&gt;0:free_y">
+      <data key="d16">a5:1-&gt;0:free_y</data>
       <data key="d17">actuated</data>
       <data key="d18">free_y</data>
       <data key="d19">True</data>
@@ -123,8 +179,8 @@
       <data key="d24">1</data>
       <data key="d25">untested</data>
     </edge>
-    <edge source="1" target="0" id="a4:1-&gt;0:free_z">
-      <data key="d16">a4:1-&gt;0:free_z</data>
+    <edge source="1" target="0" id="a6:1-&gt;0:free_z">
+      <data key="d16">a6:1-&gt;0:free_z</data>
       <data key="d17">actuated</data>
       <data key="d18">free_z</data>
       <data key="d19">True</data>
@@ -135,8 +191,8 @@
       <data key="d24">1</data>
       <data key="d25">untested</data>
     </edge>
-    <edge source="1" target="2" id="a5:1-&gt;2:free_z">
-      <data key="d16">a5:1-&gt;2:free_z</data>
+    <edge source="1" target="2" id="a7:1-&gt;2:free_z">
+      <data key="d16">a7:1-&gt;2:free_z</data>
       <data key="d17">actuated</data>
       <data key="d18">free_z</data>
       <data key="d19">True</data>
@@ -147,8 +203,32 @@
       <data key="d24">1</data>
       <data key="d25">untested</data>
     </edge>
-    <edge source="2" target="0" id="a6:2-&gt;0:free_z">
-      <data key="d16">a6:2-&gt;0:free_z</data>
+    <edge source="1" target="3" id="a8:1-&gt;3:free_y">
+      <data key="d16">a8:1-&gt;3:free_y</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_y</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 1.0, 0.0]</data>
+      <data key="d21">-90.00646240361607</data>
+      <data key="d22">0.010918036440975692</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="1" target="4" id="a9:1-&gt;4:free_z">
+      <data key="d16">a9:1-&gt;4:free_z</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_z</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 0.0, 1.0]</data>
+      <data key="d21">-90.0107516561407</data>
+      <data key="d22">0.04396371815180566</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="2" target="0" id="a10:2-&gt;0:free_z">
+      <data key="d16">a10:2-&gt;0:free_z</data>
       <data key="d17">actuated</data>
       <data key="d18">free_z</data>
       <data key="d19">True</data>
@@ -159,8 +239,8 @@
       <data key="d24">1</data>
       <data key="d25">untested</data>
     </edge>
-    <edge source="2" target="1" id="a7:2-&gt;1:free_z">
-      <data key="d16">a7:2-&gt;1:free_z</data>
+    <edge source="2" target="1" id="a11:2-&gt;1:free_z">
+      <data key="d16">a11:2-&gt;1:free_z</data>
       <data key="d17">actuated</data>
       <data key="d18">free_z</data>
       <data key="d19">True</data>
@@ -171,7 +251,115 @@
       <data key="d24">1</data>
       <data key="d25">untested</data>
     </edge>
-    <data key="d0">{"minimum_frequency_percent": 5.0, "renumber_by_frequency": true, "frequency_denominator": "all completed drop trials, including unsettled outcomes", "numbering_tie_break": "original source ID", "source_file": "poses.json", "source_sha256": "ad1436fd3418883ab68cdc8d5d7e2883a41e9f1081f186cbc25f68a23e17e9cc", "generated_utc": "2026-10-05T09:49:08.954810+00:00", "pose_id_mapping": {"Ql1i_0002": 0, "Ql1i_0003": 1, "Ql1i_0004": 2}, "removed_poses": [{"source_pose_id": "Ql1i_0006", "frequency_percent": 2.8}, {"source_pose_id": "Ql1i_0005", "frequency_percent": 2.5}, {"source_pose_id": "Ql1i_0001", "frequency_percent": 0.5}]}</data>
+    <edge source="2" target="4" id="a12:2-&gt;4:free_z">
+      <data key="d16">a12:2-&gt;4:free_z</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_z</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 0.0, 1.0]</data>
+      <data key="d21">-179.99847093234047</data>
+      <data key="d22">0.01853663150801266</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="3" target="0" id="a13:3-&gt;0:free_y">
+      <data key="d16">a13:3-&gt;0:free_y</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_y</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 1.0, 0.0]</data>
+      <data key="d21">-89.99995593084425</data>
+      <data key="d22">0.01154279863029105</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="3" target="1" id="a14:3-&gt;1:free_y">
+      <data key="d16">a14:3-&gt;1:free_y</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_y</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 1.0, 0.0]</data>
+      <data key="d21">90.00646240361606</data>
+      <data key="d22">0.010918036440975692</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="3" target="4" id="a15:3-&gt;4:wall_main_pos_x">
+      <data key="d16">a15:3-&gt;4:wall_main_pos_x</data>
+      <data key="d17">actuated</data>
+      <data key="d18">wall_main_pos_x</data>
+      <data key="d19">True</data>
+      <data key="d20">[1.0, 0.0, 0.0]</data>
+      <data key="d21">90.00263164649779</data>
+      <data key="d22">0.034099247245483126</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="4" target="0" id="a16:4-&gt;0:free_z">
+      <data key="d16">a16:4-&gt;0:free_z</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_z</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 0.0, 1.0]</data>
+      <data key="d21">-89.9803842732282</data>
+      <data key="d22">0.04387104510618245</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="4" target="1" id="a17:4-&gt;1:free_z">
+      <data key="d16">a17:4-&gt;1:free_z</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_z</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 0.0, 1.0]</data>
+      <data key="d21">90.0107516561407</data>
+      <data key="d22">0.04396371815180566</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="4" target="2" id="a18:4-&gt;2:floor_main_neg_x">
+      <data key="d16">a18:4-&gt;2:floor_main_neg_x</data>
+      <data key="d17">actuated</data>
+      <data key="d18">floor_main_neg_x</data>
+      <data key="d19">True</data>
+      <data key="d20">[1.0, 0.0, 0.0]</data>
+      <data key="d21">-179.99768453081535</data>
+      <data key="d22">0.023441343356452354</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="4" target="2" id="a19:4-&gt;2:free_z">
+      <data key="d16">a19:4-&gt;2:free_z</data>
+      <data key="d17">actuated</data>
+      <data key="d18">free_z</data>
+      <data key="d19">True</data>
+      <data key="d20">[0.0, 0.0, 1.0]</data>
+      <data key="d21">179.99847093234047</data>
+      <data key="d22">0.01853663150801266</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <edge source="4" target="3" id="a20:4-&gt;3:floor_main_neg_x">
+      <data key="d16">a20:4-&gt;3:floor_main_neg_x</data>
+      <data key="d17">actuated</data>
+      <data key="d18">floor_main_neg_x</data>
+      <data key="d19">True</data>
+      <data key="d20">[1.0, 0.0, 0.0]</data>
+      <data key="d21">-90.00263164649779</data>
+      <data key="d22">0.034099247245483126</data>
+      <data key="d23">[]</data>
+      <data key="d24">1</data>
+      <data key="d25">untested</data>
+    </edge>
+    <data key="d0">{"minimum_frequency_percent": 1.0, "renumber_by_frequency": true, "frequency_denominator": "all completed drop trials, including unsettled outcomes", "numbering_tie_break": "original source ID", "source_file": "poses.json", "source_sha256": "0e2293be62662629fe45b023fbc932c86b1634a536c5e0d135e9df0f8390c074", "generated_utc": "2026-10-09T21:49:47.108381+00:00", "pose_id_mapping": {"Ql1i_0002": 0, "Ql1i_0003": 1, "Ql1i_0004": 2, "Ql1i_0005": 3, "Ql1i_0006": 4}, "removed_poses": [{"source_pose_id": "Ql1i_0001", "frequency_percent": 0.39}]}</data>
     <data key="d1">observed_simulation</data>
   </graph>
 </graphml>
