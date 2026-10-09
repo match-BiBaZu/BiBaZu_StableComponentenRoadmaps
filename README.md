@@ -125,6 +125,7 @@ images display observed frequencies rather than analytical ranks.
 | [Ql2a](Ql2a/README.md) | 8 | 39 | 1% | Frequency |
 | [Ql4i](Ql4i/README.md) | 12 | 68 | 1% | Frequency |
 | [Rf1a](Rf1a/README.md) | 16 | 68 | 1% | Frequency |
+| [Rf2i](Rf2i/README.md) | 8 | 45 | 1% | Frequency |
 | [Rk1a](Rk1a/README.md) | 4 | 2 | 5% | Frequency |
 | [Rl1a](Rl1a/README.md) | 4 | 8 | 5% | Frequency |
 <!-- GENERATED ROADMAP INDEX END -->
