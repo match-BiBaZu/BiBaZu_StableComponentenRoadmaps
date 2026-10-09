@@ -101,6 +101,7 @@ images display observed frequencies rather than analytical ranks.
 | Component | Poses | Connections | Minimum frequency | Numbering |
 | --- | ---: | ---: | ---: | --- |
 | [Df1a](Df1a/README.md) | 4 | 6 | 5% | Frequency |
+| [Df2i](Df2i/README.md) | 6 | 22 | 1% | Frequency |
 | [Dk1i](Dk1i/README.md) | 8 | 32 | 5% | Frequency |
 | [Dl1a](Dl1a/README.md) | 4 | 8 | 5% | Frequency |
 | [Kk1a](Kk1a/README.md) | 2 | 4 | 5% | Frequency |
