@@ -132,7 +132,7 @@ images display observed frequencies rather than analytical ranks.
 | [Rk2i](Rk2i/README.md) | 12 | 68 | 1% | Frequency |
 | [Rk3a](Rk3a/README.md) | 13 | 74 | 1% | Frequency |
 | [Rk4i](Rk4i/README.md) | 24 | 168 | 1% | Frequency |
-| [Rl1a](Rl1a/README.md) | 4 | 8 | 5% | Frequency |
+| [Rl1a](Rl1a/README.md) | 6 | 16 | 1% | Frequency |
 <!-- GENERATED ROADMAP INDEX END -->
 
 ## Batch worker and development
