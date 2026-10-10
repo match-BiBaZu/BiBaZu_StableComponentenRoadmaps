@@ -2,7 +2,7 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
-Minimum frequency: **5%**. Percentages retain the source denominator.
+Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
@@ -10,6 +10,9 @@ Minimum frequency: **5%**. Percentages retain the source denominator.
 | 1 | Dl1a_0006 | 25.7% | 257 |
 | 2 | Dl1a_0004 | 20.2% | 202 |
 | 3 | Dl1a_0005 | 17.2% | 172 |
+| 4 | Dl1a_0014 | 3.2% | 32 |
+| 5 | Dl1a_0008 | 1.5% | 15 |
+| 6 | Dl1a_0009 | 1.4% | 14 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

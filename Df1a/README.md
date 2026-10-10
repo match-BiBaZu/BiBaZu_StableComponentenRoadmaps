@@ -2,7 +2,7 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
-Minimum frequency: **5%**. Percentages retain the source denominator.
+Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |

@@ -100,17 +100,17 @@ images display observed frequencies rather than analytical ranks.
 <!-- GENERATED ROADMAP INDEX START -->
 | Component | Poses | Connections | Minimum frequency | Numbering |
 | --- | ---: | ---: | ---: | --- |
-| [Df1a](Df1a/README.md) | 4 | 6 | 5% | Frequency |
-| [Dk1i](Dk1i/README.md) | 8 | 32 | 5% | Frequency |
-| [Dl1a](Dl1a/README.md) | 4 | 8 | 5% | Frequency |
-| [Kk1a](Kk1a/README.md) | 2 | 4 | 5% | Frequency |
-| [Kl1i](Kl1i/README.md) | 2 | 4 | 5% | Frequency |
-| [Qf1i](Qf1i/README.md) | 4 | 13 | 5% | Frequency |
-| [Qk1a](Qk1a/README.md) | 6 | 8 | 5% | Frequency |
-| [Ql1i](Ql1i/README.md) | 3 | 8 | 5% | Frequency |
-| [Rf1a](Rf1a/README.md) | 7 | 16 | 5% | Frequency |
-| [Rk1a](Rk1a/README.md) | 4 | 2 | 5% | Frequency |
-| [Rl1a](Rl1a/README.md) | 4 | 8 | 5% | Frequency |
+| [Df1a](Df1a/README.md) | 4 | 6 | 1% | Frequency |
+| [Dk1i](Dk1i/README.md) | 8 | 32 | 1% | Frequency |
+| [Dl1a](Dl1a/README.md) | 7 | 22 | 1% | Frequency |
+| [Kk1a](Kk1a/README.md) | 2 | 4 | 1% | Frequency |
+| [Kl1i](Kl1i/README.md) | 2 | 4 | 1% | Frequency |
+| [Qf1i](Qf1i/README.md) | 4 | 13 | 1% | Frequency |
+| [Qk1a](Qk1a/README.md) | 10 | 30 | 1% | Frequency |
+| [Ql1i](Ql1i/README.md) | 5 | 21 | 1% | Frequency |
+| [Rf1a](Rf1a/README.md) | 17 | 80 | 1% | Frequency |
+| [Rk1a](Rk1a/README.md) | 29 | 175 | 1% | Frequency |
+| [Rl1a](Rl1a/README.md) | 6 | 16 | 1% | Frequency |
 <!-- GENERATED ROADMAP INDEX END -->
 
 ## Batch worker and development
