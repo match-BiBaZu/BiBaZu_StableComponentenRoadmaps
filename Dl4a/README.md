@@ -2,21 +2,23 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
-Minimum frequency: **1%**. Percentages retain the source denominator.
+Minimum frequency: **0%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Dl4a_0004 | 16.11% | 1611 |
-| 1 | Dl4a_0011 | 15.41% | 1541 |
-| 2 | Dl4a_0002 | 15.03% | 1503 |
-| 3 | Dl4a_0021 | 14.7% | 1470 |
-| 4 | Dl4a_0022 | 8.16% | 816 |
-| 5 | Dl4a_0009 | 7.97% | 797 |
-| 6 | Dl4a_0010 | 7.3% | 730 |
-| 7 | Dl4a_0024 | 7.17% | 717 |
+| 0 | Dl4a_0004 | 16.74% | 1674 |
+| 1 | Dl4a_0011 | 15.84% | 1584 |
+| 2 | Dl4a_0022 | 15.33% | 1533 |
+| 3 | Dl4a_0009 | 15.27% | 1527 |
+| 4 | Dl4a_0002 | 15.19% | 1519 |
+| 5 | Dl4a_0021 | 14.99% | 1499 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 
 Original inputs are in `source/`; generation settings and exclusions are in `manifest.json`.
 
 Files: [Dl4a_roadmap.graphml](Dl4a_roadmap.graphml), [Dl4a_roadmap.json](Dl4a_roadmap.json), [Dl4a_roadmap.png](Dl4a_roadmap.png), [Dl4a_roadmap.svg](Dl4a_roadmap.svg), [Dl4a_roadmap.yaml](Dl4a_roadmap.yaml)
+
+[Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
+
+Nodes use the chosen representative orientations. Direct connections remain geometric action candidates.
