@@ -121,7 +121,7 @@ the upstream roadmap implementation; its stability and ranking code is not
 bundled. Preserve [ENGINE_LICENSE](ENGINE_LICENSE) when redistributing them.
 
 <!-- GROUPED STUDY -->
-Completed and validated: **8/39** workpieces. Each completed workpiece has 10,000 drops; member disturbance tests are additional.
+Completed and validated: **9/39** workpieces. Each completed workpiece has 10,000 drops; member disturbance tests are additional.
 
 All workpieces use identical simulation settings, a 0.5 mm equivalent-lift grouping barrier, a 60° diameter guard, and a 1% cutoff after aggregation. Representatives are selected using complete member group-retention curves.
 
@@ -136,7 +136,7 @@ Qk1a, Dl1a, and Dk1i reuse the previously audited grouped runs. Full raw trial d
 | [Dk2a](Dk2a/README.md) | Complete | 9845 | 17 | 12 | 1241 | 56 |
 | [Dk4i](Dk4i/README.md) | Complete | 9999 | 24 | 18 | 1752 | 80 |
 | [Dl1a](Dl1a/README.md) | Complete | 9983 | 16 | 5 | 1168 | 2 |
-| Dl2i | running | — | — | — | — | — |
+| [Dl2i](Dl2i/README.md) | Complete | 9965 | 19 | 6 | 1387 | 21 |
 | Dl4a | running | — | — | — | — | — |
 | Kf1i | pending | — | — | — | — | — |
 | Kf2a | pending | — | — | — | — | — |
