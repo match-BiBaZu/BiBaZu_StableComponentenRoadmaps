@@ -6,13 +6,13 @@ Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Dl1a_0007 | 27.3% | 273 |
-| 1 | Dl1a_0006 | 25.7% | 257 |
-| 2 | Dl1a_0004 | 20.2% | 202 |
-| 3 | Dl1a_0005 | 17.2% | 172 |
-| 4 | Dl1a_0014 | 3.2% | 32 |
-| 5 | Dl1a_0008 | 1.5% | 15 |
-| 6 | Dl1a_0009 | 1.4% | 14 |
+| 0 | Dl1a_0007 | 29.65% | 2965 |
+| 1 | Dl1a_0006 | 25.69% | 2569 |
+| 2 | Dl1a_0004 | 19.24% | 1924 |
+| 3 | Dl1a_0005 | 16.67% | 1667 |
+| 4 | Dl1a_0014 | 2.85% | 285 |
+| 5 | Dl1a_0009 | 1.21% | 121 |
+| 6 | Dl1a_0008 | 1.17% | 117 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

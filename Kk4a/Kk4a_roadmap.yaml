@@ -1,0 +1,472 @@
+format: bibazu_pose_roadmap_handover
+schema_version: 1
+part:
+  name: Kk4a
+  mesh_source: source/Kk4a.stl
+  cad_status: provisional
+chute:
+  coordinate_system: right_handed
+  x: downhill
+  y: away_from_wall
+  z: away_from_floor
+  alpha_deg: 45
+  beta_deg: 0
+classification:
+  basis: observed_simulation
+  analytical_stability_evaluated: false
+  note: Legacy robust labels designate observed stable targets for consumer compatibility;
+    no analytical robustness is asserted.
+  pose_ranking_method: observed_frequency
+  robustness_method: observed_simulation
+  symmetry: C1
+  friction_policy: not_evaluated
+  robust_pose_ids:
+  - 0
+  - 1
+  - 2
+  - 3
+  metastable_pose_ids: []
+  unresolved_metastable_pose_ids: []
+  main_face_ids:
+  - 38
+  main_face_min_span_mm: 19.89043864607811
+  opposite_x_min_height_mm: 25.0
+  robust_barrier_threshold_mm: null
+  minimum_csa_score: null
+  csa_cap_half_angle_deg: null
+  csa_direction_samples: null
+  csa_rocking_fallback_catalog_pose_ids: []
+  classical_metadata:
+    observed_pose_generation: &id001
+      minimum_frequency_percent: 1.0
+      renumber_by_frequency: true
+      frequency_denominator: all completed drop trials, including unsettled outcomes
+      numbering_tie_break: original source ID
+      source_file: poses.json
+      source_sha256: a71cc215ea72aeb210bfd68dcf10cddb5f10f8213b99189409119122ad3db84f
+      generated_utc: '2026-10-09T17:37:28.561223+00:00'
+      pose_id_mapping:
+        Kk4a_0018: 0
+        Kk4a_0053: 1
+        Kk4a_0097: 2
+        Kk4a_0009: 3
+      removed_poses:
+      - source_pose_id: Kk4a_0089
+        frequency_percent: 0.99
+      - source_pose_id: Kk4a_0093
+        frequency_percent: 0.98
+      - source_pose_id: Kk4a_0050
+        frequency_percent: 0.94
+      - source_pose_id: Kk4a_0070
+        frequency_percent: 0.94
+      - source_pose_id: Kk4a_0109
+        frequency_percent: 0.94
+      - source_pose_id: Kk4a_0033
+        frequency_percent: 0.89
+      - source_pose_id: Kk4a_0038
+        frequency_percent: 0.89
+      - source_pose_id: Kk4a_0014
+        frequency_percent: 0.88
+      - source_pose_id: Kk4a_0066
+        frequency_percent: 0.88
+      - source_pose_id: Kk4a_0103
+        frequency_percent: 0.88
+      - source_pose_id: Kk4a_0057
+        frequency_percent: 0.87
+      - source_pose_id: Kk4a_0021
+        frequency_percent: 0.86
+      - source_pose_id: Kk4a_0113
+        frequency_percent: 0.86
+      - source_pose_id: Kk4a_0046
+        frequency_percent: 0.83
+      - source_pose_id: Kk4a_0105
+        frequency_percent: 0.83
+      - source_pose_id: Kk4a_0006
+        frequency_percent: 0.82
+      - source_pose_id: Kk4a_0061
+        frequency_percent: 0.81
+      - source_pose_id: Kk4a_0013
+        frequency_percent: 0.8
+      - source_pose_id: Kk4a_0025
+        frequency_percent: 0.79
+      - source_pose_id: Kk4a_0102
+        frequency_percent: 0.78
+      - source_pose_id: Kk4a_0002
+        frequency_percent: 0.76
+      - source_pose_id: Kk4a_0008
+        frequency_percent: 0.76
+      - source_pose_id: Kk4a_0010
+        frequency_percent: 0.76
+      - source_pose_id: Kk4a_0035
+        frequency_percent: 0.76
+      - source_pose_id: Kk4a_0074
+        frequency_percent: 0.76
+      - source_pose_id: Kk4a_0077
+        frequency_percent: 0.76
+      - source_pose_id: Kk4a_0078
+        frequency_percent: 0.76
+      - source_pose_id: Kk4a_0082
+        frequency_percent: 0.76
+      - source_pose_id: Kk4a_0118
+        frequency_percent: 0.76
+      - source_pose_id: Kk4a_0017
+        frequency_percent: 0.75
+      - source_pose_id: Kk4a_0030
+        frequency_percent: 0.74
+      - source_pose_id: Kk4a_0022
+        frequency_percent: 0.73
+      - source_pose_id: Kk4a_0086
+        frequency_percent: 0.72
+      - source_pose_id: Kk4a_0099
+        frequency_percent: 0.72
+      - source_pose_id: Kk4a_0012
+        frequency_percent: 0.71
+      - source_pose_id: Kk4a_0029
+        frequency_percent: 0.71
+      - source_pose_id: Kk4a_0031
+        frequency_percent: 0.71
+      - source_pose_id: Kk4a_0095
+        frequency_percent: 0.71
+      - source_pose_id: Kk4a_0020
+        frequency_percent: 0.7
+      - source_pose_id: Kk4a_0048
+        frequency_percent: 0.7
+      - source_pose_id: Kk4a_0085
+        frequency_percent: 0.7
+      - source_pose_id: Kk4a_0026
+        frequency_percent: 0.69
+      - source_pose_id: Kk4a_0041
+        frequency_percent: 0.69
+      - source_pose_id: Kk4a_0005
+        frequency_percent: 0.68
+      - source_pose_id: Kk4a_0037
+        frequency_percent: 0.66
+      - source_pose_id: Kk4a_0060
+        frequency_percent: 0.66
+      - source_pose_id: Kk4a_0117
+        frequency_percent: 0.66
+      - source_pose_id: Kk4a_0015
+        frequency_percent: 0.65
+      - source_pose_id: Kk4a_0019
+        frequency_percent: 0.65
+      - source_pose_id: Kk4a_0027
+        frequency_percent: 0.65
+      - source_pose_id: Kk4a_0039
+        frequency_percent: 0.65
+      - source_pose_id: Kk4a_0094
+        frequency_percent: 0.65
+      - source_pose_id: Kk4a_0107
+        frequency_percent: 0.64
+      - source_pose_id: Kk4a_0081
+        frequency_percent: 0.62
+      - source_pose_id: Kk4a_0090
+        frequency_percent: 0.62
+      - source_pose_id: Kk4a_0112
+        frequency_percent: 0.62
+      - source_pose_id: Kk4a_0054
+        frequency_percent: 0.61
+      - source_pose_id: Kk4a_0073
+        frequency_percent: 0.61
+      - source_pose_id: Kk4a_0016
+        frequency_percent: 0.6
+      - source_pose_id: Kk4a_0098
+        frequency_percent: 0.6
+      - source_pose_id: Kk4a_0114
+        frequency_percent: 0.6
+      - source_pose_id: Kk4a_0043
+        frequency_percent: 0.59
+      - source_pose_id: Kk4a_0072
+        frequency_percent: 0.59
+      - source_pose_id: Kk4a_0007
+        frequency_percent: 0.58
+      - source_pose_id: Kk4a_0024
+        frequency_percent: 0.58
+      - source_pose_id: Kk4a_0051
+        frequency_percent: 0.58
+      - source_pose_id: Kk4a_0119
+        frequency_percent: 0.58
+      - source_pose_id: Kk4a_0055
+        frequency_percent: 0.57
+      - source_pose_id: Kk4a_0106
+        frequency_percent: 0.57
+      - source_pose_id: Kk4a_0011
+        frequency_percent: 0.56
+      - source_pose_id: Kk4a_0049
+        frequency_percent: 0.56
+      - source_pose_id: Kk4a_0087
+        frequency_percent: 0.56
+      - source_pose_id: Kk4a_0004
+        frequency_percent: 0.55
+      - source_pose_id: Kk4a_0110
+        frequency_percent: 0.55
+      - source_pose_id: Kk4a_0003
+        frequency_percent: 0.54
+      - source_pose_id: Kk4a_0047
+        frequency_percent: 0.54
+      - source_pose_id: Kk4a_0120
+        frequency_percent: 0.54
+      - source_pose_id: Kk4a_0042
+        frequency_percent: 0.53
+      - source_pose_id: Kk4a_0084
+        frequency_percent: 0.53
+      - source_pose_id: Kk4a_0023
+        frequency_percent: 0.52
+      - source_pose_id: Kk4a_0028
+        frequency_percent: 0.52
+      - source_pose_id: Kk4a_0044
+        frequency_percent: 0.52
+      - source_pose_id: Kk4a_0065
+        frequency_percent: 0.52
+      - source_pose_id: Kk4a_0052
+        frequency_percent: 0.51
+      - source_pose_id: Kk4a_0064
+        frequency_percent: 0.51
+      - source_pose_id: Kk4a_0091
+        frequency_percent: 0.51
+      - source_pose_id: Kk4a_0101
+        frequency_percent: 0.51
+      - source_pose_id: Kk4a_0045
+        frequency_percent: 0.5
+      - source_pose_id: Kk4a_0076
+        frequency_percent: 0.5
+      - source_pose_id: Kk4a_0001
+        frequency_percent: 0.49
+      - source_pose_id: Kk4a_0056
+        frequency_percent: 0.48
+      - source_pose_id: Kk4a_0058
+        frequency_percent: 0.48
+      - source_pose_id: Kk4a_0071
+        frequency_percent: 0.48
+      - source_pose_id: Kk4a_0088
+        frequency_percent: 0.48
+      - source_pose_id: Kk4a_0096
+        frequency_percent: 0.48
+      - source_pose_id: Kk4a_0111
+        frequency_percent: 0.48
+      - source_pose_id: Kk4a_0069
+        frequency_percent: 0.47
+      - source_pose_id: Kk4a_0115
+        frequency_percent: 0.47
+      - source_pose_id: Kk4a_0080
+        frequency_percent: 0.46
+      - source_pose_id: Kk4a_0062
+        frequency_percent: 0.45
+      - source_pose_id: Kk4a_0034
+        frequency_percent: 0.44
+      - source_pose_id: Kk4a_0068
+        frequency_percent: 0.44
+      - source_pose_id: Kk4a_0079
+        frequency_percent: 0.44
+      - source_pose_id: Kk4a_0100
+        frequency_percent: 0.43
+      - source_pose_id: Kk4a_0059
+        frequency_percent: 0.42
+      - source_pose_id: Kk4a_0108
+        frequency_percent: 0.41
+      - source_pose_id: Kk4a_0040
+        frequency_percent: 0.4
+      - source_pose_id: Kk4a_0104
+        frequency_percent: 0.4
+      - source_pose_id: Kk4a_0116
+        frequency_percent: 0.4
+      - source_pose_id: Kk4a_0067
+        frequency_percent: 0.39
+      - source_pose_id: Kk4a_0036
+        frequency_percent: 0.35
+      - source_pose_id: Kk4a_0083
+        frequency_percent: 0.35
+      - source_pose_id: Kk4a_0092
+        frequency_percent: 0.34
+      - source_pose_id: Kk4a_0075
+        frequency_percent: 0.32
+      - source_pose_id: Kk4a_0032
+        frequency_percent: 0.29
+      - source_pose_id: Kk4a_0063
+        frequency_percent: 0.24
+      - source_pose_id: Kk4a_0121
+        frequency_percent: 0.01
+poses:
+- id: 0
+  original_catalog_pose_id: 0
+  equivalent_catalog_pose_ids:
+  - 0
+  source_pose_ids:
+  - Kk4a_0018
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_simulation
+  orientation_quaternion_xyzw:
+  - 0.6459525036002324
+  - -0.2875494464345496
+  - 0.6459922560871145
+  - -0.2876711386692378
+  observed_count: 173
+  observed_frequency_percent: 1.73
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: edge
+    wall: face
+    main_face_on_floor: false
+    main_face_on_wall: false
+- id: 1
+  original_catalog_pose_id: 1
+  equivalent_catalog_pose_ids:
+  - 1
+  source_pose_ids:
+  - Kk4a_0053
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_simulation
+  orientation_quaternion_xyzw:
+  - 0.14680243756648537
+  - 0.6917032331549189
+  - -0.14652153033917265
+  - -0.691756548732744
+  observed_count: 123
+  observed_frequency_percent: 1.23
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: edge
+    wall: face
+    main_face_on_floor: false
+    main_face_on_wall: false
+- id: 2
+  original_catalog_pose_id: 2
+  equivalent_catalog_pose_ids:
+  - 2
+  source_pose_ids:
+  - Kk4a_0097
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_simulation
+  orientation_quaternion_xyzw:
+  - -0.5720369252297298
+  - -0.4155907626926607
+  - -0.5720152144445185
+  - -0.4157603499400113
+  observed_count: 106
+  observed_frequency_percent: 1.06
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: edge
+    wall: face
+    main_face_on_floor: false
+    main_face_on_wall: false
+- id: 3
+  original_catalog_pose_id: 3
+  equivalent_catalog_pose_ids:
+  - 3
+  source_pose_ids:
+  - Kk4a_0009
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_simulation
+  orientation_quaternion_xyzw:
+  - -0.69118336865541
+  - 0.14806686178214354
+  - -0.6916031331162481
+  - 0.14841449255357972
+  observed_count: 102
+  observed_frequency_percent: 1.02
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: edge
+    wall: face
+    main_face_on_floor: false
+    main_face_on_wall: false
+transitions:
+- id: a0:1->3:free_z
+  from_pose: 1
+  to_pose: 3
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: negative
+    commanded_angle_deg: -179.95633786413327
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.13228618334108178
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a1:3->1:free_z
+  from_pose: 3
+  to_pose: 1
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: positive
+    commanded_angle_deg: 179.95633786413327
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.13228618334108178
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+generation: *id001

@@ -101,16 +101,41 @@ images display observed frequencies rather than analytical ranks.
 | Component | Poses | Connections | Minimum frequency | Numbering |
 | --- | ---: | ---: | ---: | --- |
 | [Df1a](Df1a/README.md) | 4 | 6 | 1% | Frequency |
+| [Df2i](Df2i/README.md) | 6 | 22 | 1% | Frequency |
+| [Df4a](Df4a/README.md) | 12 | 42 | 1% | Frequency |
 | [Dk1i](Dk1i/README.md) | 8 | 32 | 1% | Frequency |
+| [Dk2a](Dk2a/README.md) | 14 | 66 | 1% | Frequency |
+| [Dk4i](Dk4i/README.md) | 24 | 126 | 1% | Frequency |
 | [Dl1a](Dl1a/README.md) | 7 | 22 | 1% | Frequency |
+| [Dl2i](Dl2i/README.md) | 9 | 34 | 1% | Frequency |
+| [Dl4a](Dl4a/README.md) | 8 | 20 | 1% | Frequency |
 | [Kk1a](Kk1a/README.md) | 2 | 4 | 1% | Frequency |
+| [Kk2i](Kk2i/README.md) | 20 | 22 | 1% | Frequency |
+| [Kk4a](Kk4a/README.md) | 4 | 2 | 1% | Frequency |
 | [Kl1i](Kl1i/README.md) | 2 | 4 | 1% | Frequency |
+| [Kl2a](Kl2a/README.md) | 17 | 36 | 1% | Frequency |
+| [Kl4i](Kl4i/README.md) | 30 | 20 | 1% | Frequency |
 | [Qf1i](Qf1i/README.md) | 4 | 13 | 1% | Frequency |
+| [Qf2a](Qf2a/README.md) | 10 | 62 | 1% | Frequency |
+| [Qf4i](Qf4i/README.md) | 16 | 112 | 1% | Frequency |
 | [Qk1a](Qk1a/README.md) | 10 | 30 | 1% | Frequency |
+| [Qk2i](Qk2i/README.md) | 13 | 63 | 1% | Frequency |
+| [Qk4a](Qk4a/README.md) | 24 | 157 | 1% | Frequency |
 | [Ql1i](Ql1i/README.md) | 5 | 21 | 1% | Frequency |
-| [Rf1a](Rf1a/README.md) | 17 | 80 | 1% | Frequency |
-| [Rk1a](Rk1a/README.md) | 29 | 175 | 1% | Frequency |
+| [Ql2a](Ql2a/README.md) | 8 | 39 | 1% | Frequency |
+| [Ql4i](Ql4i/README.md) | 12 | 68 | 1% | Frequency |
+| [Rf1a](Rf1a/README.md) | 16 | 68 | 1% | Frequency |
+| [Rf2i](Rf2i/README.md) | 8 | 45 | 1% | Frequency |
+| [Rf3a](Rf3a/README.md) | 9 | 48 | 1% | Frequency |
+| [Rf4i](Rf4i/README.md) | 16 | 112 | 1% | Frequency |
+| [Rk1a](Rk1a/README.md) | 30 | 185 | 1% | Frequency |
+| [Rk2i](Rk2i/README.md) | 12 | 68 | 1% | Frequency |
+| [Rk3a](Rk3a/README.md) | 13 | 74 | 1% | Frequency |
+| [Rk4i](Rk4i/README.md) | 24 | 168 | 1% | Frequency |
 | [Rl1a](Rl1a/README.md) | 6 | 16 | 1% | Frequency |
+| [Rl2i](Rl2i/README.md) | 6 | 17 | 1% | Frequency |
+| [Rl3a](Rl3a/README.md) | 10 | 34 | 1% | Frequency |
+| [Rl4i](Rl4i/README.md) | 8 | 28 | 1% | Frequency |
 <!-- GENERATED ROADMAP INDEX END -->
 
 ## Batch worker and development
