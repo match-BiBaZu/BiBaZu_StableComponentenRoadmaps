@@ -8,15 +8,15 @@ Qk1a, Dl1a, and Dk1i reuse the previously audited grouped runs. Full raw trial d
 
 | Workpiece | Status | Settled | Source poses | Eligible groups | Disturbance tests | Roadmap connections |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| Df1a | pending | — | — | — | — | — |
-| Df2i | pending | — | — | — | — | — |
-| Df4a | pending | — | — | — | — | — |
+| Df1a | running | — | — | — | — | — |
+| Df2i | running | — | — | — | — | — |
+| Df4a | running | — | — | — | — | — |
 | [Dk1i](Dk1i/README.md) | Complete | 9998 | 8 | 6 | 584 | 16 |
-| Dk2a | pending | — | — | — | — | — |
-| Dk4i | pending | — | — | — | — | — |
+| Dk2a | running | — | — | — | — | — |
+| Dk4i | running | — | — | — | — | — |
 | [Dl1a](Dl1a/README.md) | Complete | 9983 | 16 | 5 | 1168 | 2 |
-| Dl2i | pending | — | — | — | — | — |
-| Dl4a | pending | — | — | — | — | — |
+| Dl2i | running | — | — | — | — | — |
+| Dl4a | running | — | — | — | — | — |
 | Kf1i | pending | — | — | — | — | — |
 | Kf2a | pending | — | — | — | — | — |
 | Kf4i | pending | — | — | — | — | — |
