@@ -27,6 +27,7 @@ classification:
   - 3
   - 4
   - 5
+  - 6
   metastable_pose_ids: []
   unresolved_metastable_pose_ids: []
   main_face_ids:
@@ -41,13 +42,13 @@ classification:
   csa_rocking_fallback_catalog_pose_ids: []
   classical_metadata:
     observed_pose_generation: &id001
-      minimum_frequency_percent: 1.0
+      minimum_frequency_percent: 0
       renumber_by_frequency: true
       frequency_denominator: all completed drop trials, including unsettled outcomes
       numbering_tie_break: original source ID
       source_file: poses.json
-      source_sha256: 076ba1fa96f4d1540ac6151e9b802ee0688a5933b34314aa1f4884a7a7d5bff1
-      generated_utc: '2026-10-10T01:13:08.315798+00:00'
+      source_sha256: d1acfeef1c0b58f007d5291c2aaa414463ea20b96078218ec4564a31f706aac1
+      generated_utc: '2026-10-13T14:57:24.014134+00:00'
       pose_id_mapping:
         Rl1a_0006: 0
         Rl1a_0012: 1
@@ -55,55 +56,9 @@ classification:
         Rl1a_0011: 3
         Rl1a_0005: 4
         Rl1a_0001: 5
-      removed_poses:
-      - source_pose_id: Rl1a_0014
-        frequency_percent: 0.87
-      - source_pose_id: Rl1a_0015
-        frequency_percent: 0.62
-      - source_pose_id: Rl1a_0010
-        frequency_percent: 0.48
-      - source_pose_id: Rl1a_0004
-        frequency_percent: 0.19
-      - source_pose_id: Rl1a_0002
-        frequency_percent: 0.18
-      - source_pose_id: Rl1a_0023
-        frequency_percent: 0.16
-      - source_pose_id: Rl1a_0024
-        frequency_percent: 0.16
-      - source_pose_id: Rl1a_0008
-        frequency_percent: 0.11
-      - source_pose_id: Rl1a_0018
-        frequency_percent: 0.09
-      - source_pose_id: Rl1a_0003
-        frequency_percent: 0.07
-      - source_pose_id: Rl1a_0016
-        frequency_percent: 0.06
-      - source_pose_id: Rl1a_0027
-        frequency_percent: 0.05
-      - source_pose_id: Rl1a_0009
-        frequency_percent: 0.04
-      - source_pose_id: Rl1a_0029
-        frequency_percent: 0.04
-      - source_pose_id: Rl1a_0020
-        frequency_percent: 0.03
-      - source_pose_id: Rl1a_0026
-        frequency_percent: 0.03
-      - source_pose_id: Rl1a_0028
-        frequency_percent: 0.03
-      - source_pose_id: Rl1a_0021
-        frequency_percent: 0.02
-      - source_pose_id: Rl1a_0022
-        frequency_percent: 0.02
-      - source_pose_id: Rl1a_0030
-        frequency_percent: 0.02
-      - source_pose_id: Rl1a_0013
-        frequency_percent: 0.01
-      - source_pose_id: Rl1a_0017
-        frequency_percent: 0.01
-      - source_pose_id: Rl1a_0019
-        frequency_percent: 0.01
-      - source_pose_id: Rl1a_0025
-        frequency_percent: 0.01
+        Rl1a_0013: 6
+      removed_poses: []
+  group_ranking_method: representative_group_retention_auc
 poses:
 - id: 0
   original_catalog_pose_id: 0
@@ -113,7 +68,7 @@ poses:
   - Rl1a_0006
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.4913569497357664
   - -0.53749505735378
@@ -133,6 +88,10 @@ poses:
     wall: edge+point
     main_face_on_floor: false
     main_face_on_wall: true
+  group_members:
+  - Rl1a_0006
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 1
 - id: 1
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
@@ -141,7 +100,7 @@ poses:
   - Rl1a_0012
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.021875458088305544
   - -0.7390094558536463
@@ -161,6 +120,10 @@ poses:
     wall: edge+point
     main_face_on_floor: true
     main_face_on_wall: false
+  group_members:
+  - Rl1a_0012
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 5
 - id: 2
   original_catalog_pose_id: 2
   equivalent_catalog_pose_ids:
@@ -169,7 +132,7 @@ poses:
   - Rl1a_0007
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.49173625858732795
   - 0.5371308863130215
@@ -189,6 +152,10 @@ poses:
     wall: edge+point
     main_face_on_floor: false
     main_face_on_wall: true
+  group_members:
+  - Rl1a_0007
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 2
 - id: 3
   original_catalog_pose_id: 3
   equivalent_catalog_pose_ids:
@@ -197,14 +164,14 @@ poses:
   - Rl1a_0011
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.022596282968521397
   - 0.739057311653729
   - -0.020317340856653404
   - -0.6729568364670084
   observed_count: 2156
-  observed_frequency_percent: 21.56
+  observed_frequency_percent: 21.560000000000002
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -217,6 +184,10 @@ poses:
     wall: edge+point
     main_face_on_floor: true
     main_face_on_wall: false
+  group_members:
+  - Rl1a_0011
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 4
 - id: 4
   original_catalog_pose_id: 4
   equivalent_catalog_pose_ids:
@@ -225,7 +196,7 @@ poses:
   - Rl1a_0005
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.5393991909632018
   - 0.5056600321068307
@@ -245,6 +216,10 @@ poses:
     wall: edge
     main_face_on_floor: true
     main_face_on_wall: false
+  group_members:
+  - Rl1a_0005
+  representative_group_retention_auc: 0.9843750000000001
+  group_stability_rank: 6
 - id: 5
   original_catalog_pose_id: 5
   equivalent_catalog_pose_ids:
@@ -253,7 +228,7 @@ poses:
   - Rl1a_0001
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.7281942535944389
   - -0.014462904133528137
@@ -273,6 +248,44 @@ poses:
     wall: edge
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rl1a_0001
+  representative_group_retention_auc: 0.9114583333333334
+  group_stability_rank: 9
+- id: 6
+  original_catalog_pose_id: 6
+  equivalent_catalog_pose_ids:
+  - 6
+  source_pose_ids:
+  - Rl1a_0013
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_group_retention
+  orientation_quaternion_xyzw:
+  - -0.6468463438144685
+  - -0.3172264116941787
+  - 0.3391019709333702
+  - -0.6049521175486484
+  observed_count: 150
+  observed_frequency_percent: 1.5
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: edge+point
+    wall: edge
+    main_face_on_floor: false
+    main_face_on_wall: false
+  group_members:
+  - Rl1a_0013
+  - Rl1a_0014
+  - Rl1a_0015
+  representative_group_retention_auc: 0.84375
+  group_stability_rank: 12
 transitions:
 - id: a0:0->2:free_y
   from_pose: 0

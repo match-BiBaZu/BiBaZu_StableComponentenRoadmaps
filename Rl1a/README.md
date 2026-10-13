@@ -2,7 +2,7 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
-Minimum frequency: **1%**. Percentages retain the source denominator.
+Minimum frequency: **0%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
@@ -12,9 +12,14 @@ Minimum frequency: **1%**. Percentages retain the source denominator.
 | 3 | Rl1a_0011 | 21.56% | 2156 |
 | 4 | Rl1a_0005 | 2.59% | 259 |
 | 5 | Rl1a_0001 | 1.67% | 167 |
+| 6 | Rl1a_0013 | 1.5% | 150 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 
 Original inputs are in `source/`; generation settings and exclusions are in `manifest.json`.
 
 Files: [Rl1a_roadmap.graphml](Rl1a_roadmap.graphml), [Rl1a_roadmap.json](Rl1a_roadmap.json), [Rl1a_roadmap.png](Rl1a_roadmap.png), [Rl1a_roadmap.svg](Rl1a_roadmap.svg), [Rl1a_roadmap.yaml](Rl1a_roadmap.yaml)
+
+[Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
+
+Nodes use the chosen representative orientations. Direct connections remain geometric action candidates.
