@@ -2,7 +2,7 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
-Minimum frequency: **1%**. Percentages retain the source denominator.
+Minimum frequency: **0%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
@@ -13,7 +13,7 @@ Minimum frequency: **1%**. Percentages retain the source denominator.
 | 4 | Qk4a_0010 | 5.71% | 571 |
 | 5 | Qk4a_0006 | 5.7% | 570 |
 | 6 | Qk4a_0024 | 5.68% | 568 |
-| 7 | Qk4a_0007 | 4.78% | 478 |
+| 7 | Qk4a_0007 | 5.25% | 525 |
 | 8 | Qk4a_0001 | 4.03% | 403 |
 | 9 | Qk4a_0017 | 3.82% | 382 |
 | 10 | Qk4a_0016 | 3.65% | 365 |
@@ -36,3 +36,7 @@ The legacy `robust` tag is used for stable-target compatibility. It does not ass
 Original inputs are in `source/`; generation settings and exclusions are in `manifest.json`.
 
 Files: [Qk4a_roadmap.graphml](Qk4a_roadmap.graphml), [Qk4a_roadmap.json](Qk4a_roadmap.json), [Qk4a_roadmap.png](Qk4a_roadmap.png), [Qk4a_roadmap.svg](Qk4a_roadmap.svg), [Qk4a_roadmap.yaml](Qk4a_roadmap.yaml)
+
+[Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
+
+Nodes use the chosen representative orientations. Direct connections remain geometric action candidates.
