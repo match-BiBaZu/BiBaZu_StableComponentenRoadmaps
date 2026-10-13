@@ -1,6 +1,6 @@
 # Grouped drop simulation: all 39 workpieces
 
-Completed and validated: **33/39** workpieces. Each completed workpiece has 10,000 drops; member disturbance tests are additional.
+Completed and validated: **34/39** workpieces. Each completed workpiece has 10,000 drops; member disturbance tests are additional.
 
 All workpieces use identical simulation settings, a 0.5 mm equivalent-lift grouping barrier, a 60° diameter guard, and a 1% cutoff after aggregation. Representatives are selected using complete member group-retention curves.
 
@@ -41,7 +41,7 @@ Qk1a, Dl1a, and Dk1i reuse the previously audited grouped runs. Full raw trial d
 | [Rf4i](Rf4i/README.md) | Complete | 9885 | 27 | 16 | 1971 | 112 |
 | [Rk1a](Rk1a/README.md) | Complete | 9976 | 45 | 24 | 3285 | 120 |
 | [Rk2i](Rk2i/README.md) | Complete | 9999 | 12 | 12 | 876 | 68 |
-| Rk3a | pending | — | — | — | — | — |
+| [Rk3a](Rk3a/README.md) | Complete | 9995 | 17 | 11 | 1241 | 58 |
 | Rk4i | pending | — | — | — | — | — |
 | Rl1a | pending | — | — | — | — | — |
 | Rl2i | pending | — | — | — | — | — |
