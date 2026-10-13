@@ -47,13 +47,13 @@ classification:
   csa_rocking_fallback_catalog_pose_ids: []
   classical_metadata:
     observed_pose_generation: &id001
-      minimum_frequency_percent: 1.0
+      minimum_frequency_percent: 0
       renumber_by_frequency: true
       frequency_denominator: all completed drop trials, including unsettled outcomes
       numbering_tie_break: original source ID
       source_file: poses.json
-      source_sha256: 3b727e4131ebb0f7a84fad697a35fa1767d86958a2aa9ea21f2f2cfa1a5f15e4
-      generated_utc: '2026-10-10T00:16:52.636312+00:00'
+      source_sha256: fdef08feb455b097a457f3e3406baa5f4e0ebd29ebb33c23c6eead84aedaa41d
+      generated_utc: '2026-10-13T13:16:20.263140+00:00'
       pose_id_mapping:
         Rk2i_0009: 0
         Rk2i_0010: 1
@@ -68,6 +68,7 @@ classification:
         Rk2i_0004: 10
         Rk2i_0011: 11
       removed_poses: []
+  group_ranking_method: representative_group_retention_auc
 poses:
 - id: 0
   original_catalog_pose_id: 0
@@ -77,14 +78,14 @@ poses:
   - Rk2i_0009
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.500017308008953
   - 0.49991882797260384
   - 0.4999490775954351
   - -0.5001147637707287
   observed_count: 1342
-  observed_frequency_percent: 13.42
+  observed_frequency_percent: 13.420000000000002
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -97,6 +98,10 @@ poses:
     wall: 2-face
     main_face_on_floor: false
     main_face_on_wall: true
+  group_members:
+  - Rk2i_0009
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 8
 - id: 1
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
@@ -105,7 +110,7 @@ poses:
   - Rk2i_0010
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.5002443725700165
   - -0.49985366108583984
@@ -125,6 +130,10 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  group_members:
+  - Rk2i_0010
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 9
 - id: 2
   original_catalog_pose_id: 2
   equivalent_catalog_pose_ids:
@@ -133,7 +142,7 @@ poses:
   - Rk2i_0003
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.7071906903485253
   - 6.788771302754237e-05
@@ -153,6 +162,10 @@ poses:
     wall: 2-face
     main_face_on_floor: true
     main_face_on_wall: false
+  group_members:
+  - Rk2i_0003
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 3
 - id: 3
   original_catalog_pose_id: 3
   equivalent_catalog_pose_ids:
@@ -161,7 +174,7 @@ poses:
   - Rk2i_0006
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 8.634606040558435e-06
   - 0.7069090512508195
@@ -181,6 +194,10 @@ poses:
     wall: 2-face
     main_face_on_floor: true
     main_face_on_wall: false
+  group_members:
+  - Rk2i_0006
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 5
 - id: 4
   original_catalog_pose_id: 4
   equivalent_catalog_pose_ids:
@@ -189,7 +206,7 @@ poses:
   - Rk2i_0002
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.00014912108975981278
   - 1.4329229429288494e-05
@@ -209,6 +226,10 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  group_members:
+  - Rk2i_0002
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 2
 - id: 5
   original_catalog_pose_id: 5
   equivalent_catalog_pose_ids:
@@ -217,7 +238,7 @@ poses:
   - Rk2i_0008
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.5000727939378438
   - -0.5000662851764127
@@ -237,6 +258,10 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  group_members:
+  - Rk2i_0008
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 7
 - id: 6
   original_catalog_pose_id: 6
   equivalent_catalog_pose_ids:
@@ -245,7 +270,7 @@ poses:
   - Rk2i_0005
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.00013151058916560654
   - 0.0001260080354875126
@@ -265,6 +290,10 @@ poses:
     wall: 2-face
     main_face_on_floor: false
     main_face_on_wall: true
+  group_members:
+  - Rk2i_0005
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 4
 - id: 7
   original_catalog_pose_id: 7
   equivalent_catalog_pose_ids:
@@ -273,7 +302,7 @@ poses:
   - Rk2i_0007
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.4997413385787232
   - -0.5002223668936316
@@ -293,6 +322,10 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  group_members:
+  - Rk2i_0007
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 6
 - id: 8
   original_catalog_pose_id: 8
   equivalent_catalog_pose_ids:
@@ -301,7 +334,7 @@ poses:
   - Rk2i_0001
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.0001864439536603535
   - -2.304161526182114e-05
@@ -321,6 +354,10 @@ poses:
     wall: 2-face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rk2i_0001
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 1
 - id: 9
   original_catalog_pose_id: 9
   equivalent_catalog_pose_ids:
@@ -329,7 +366,7 @@ poses:
   - Rk2i_0012
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.00022950871481434786
   - 3.0978808325810014e-05
@@ -349,6 +386,10 @@ poses:
     wall: 2-face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rk2i_0012
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 11
 - id: 10
   original_catalog_pose_id: 10
   equivalent_catalog_pose_ids:
@@ -357,7 +398,7 @@ poses:
   - Rk2i_0004
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.7069418559204963
   - -4.816019301139309e-05
@@ -377,6 +418,10 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rk2i_0004
+  representative_group_retention_auc: 0.9921874999999999
+  group_stability_rank: 12
 - id: 11
   original_catalog_pose_id: 11
   equivalent_catalog_pose_ids:
@@ -385,7 +430,7 @@ poses:
   - Rk2i_0011
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.0005145004799352061
   - -0.7071391857274686
@@ -405,6 +450,10 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rk2i_0011
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 10
 transitions:
 - id: a0:0->1:free_z
   from_pose: 0
