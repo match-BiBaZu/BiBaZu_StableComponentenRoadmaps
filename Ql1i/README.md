@@ -2,7 +2,7 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
-Minimum frequency: **1%**. Percentages retain the source denominator.
+Minimum frequency: **0%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
@@ -17,3 +17,7 @@ The legacy `robust` tag is used for stable-target compatibility. It does not ass
 Original inputs are in `source/`; generation settings and exclusions are in `manifest.json`.
 
 Files: [Ql1i_roadmap.graphml](Ql1i_roadmap.graphml), [Ql1i_roadmap.json](Ql1i_roadmap.json), [Ql1i_roadmap.png](Ql1i_roadmap.png), [Ql1i_roadmap.svg](Ql1i_roadmap.svg), [Ql1i_roadmap.yaml](Ql1i_roadmap.yaml)
+
+[Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
+
+Nodes use the chosen representative orientations. Direct connections remain geometric action candidates.
