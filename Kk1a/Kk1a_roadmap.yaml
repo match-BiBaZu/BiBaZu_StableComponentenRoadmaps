@@ -36,19 +36,18 @@ classification:
   csa_rocking_fallback_catalog_pose_ids: []
   classical_metadata:
     observed_pose_generation: &id001
-      minimum_frequency_percent: 1.0
+      minimum_frequency_percent: 0
       renumber_by_frequency: true
       frequency_denominator: all completed drop trials, including unsettled outcomes
       numbering_tie_break: original source ID
       source_file: poses.json
-      source_sha256: d8a4604e44b55659f1c8c8779bc29d30bc6b0773d1e95f25bafd865819871a92
-      generated_utc: '2026-10-09T17:08:11.887537+00:00'
+      source_sha256: 024340ab748438dca68e4fec118386993b87afeaf01154fc56f9dc8f163e0ece
+      generated_utc: '2026-10-13T00:57:03.397554+00:00'
       pose_id_mapping:
         Kk1a_0001: 0
         Kk1a_0002: 1
-      removed_poses:
-      - source_pose_id: Kk1a_0003
-        frequency_percent: 0.08
+      removed_poses: []
+  group_ranking_method: representative_group_retention_auc
 poses:
 - id: 0
   original_catalog_pose_id: 0
@@ -58,7 +57,7 @@ poses:
   - Kk1a_0001
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.006438031234197948
   - 0.6783056925780336
@@ -78,6 +77,10 @@ poses:
     wall: edge+point
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Kk1a_0001
+  representative_group_retention_auc: 0.546875
+  group_stability_rank: 1
 - id: 1
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
@@ -86,7 +89,7 @@ poses:
   - Kk1a_0002
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.3659513521988385
   - -0.5711107078804173
@@ -106,6 +109,10 @@ poses:
     wall: 2-edge
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Kk1a_0002
+  representative_group_retention_auc: 0.4427083333333334
+  group_stability_rank: 2
 transitions:
 - id: a0:0->1:free_y
   from_pose: 0
