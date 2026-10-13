@@ -36,17 +36,18 @@ classification:
   csa_rocking_fallback_catalog_pose_ids: []
   classical_metadata:
     observed_pose_generation: &id001
-      minimum_frequency_percent: 1.0
+      minimum_frequency_percent: 0
       renumber_by_frequency: true
       frequency_denominator: all completed drop trials, including unsettled outcomes
       numbering_tie_break: original source ID
       source_file: poses.json
-      source_sha256: 36950f53a0cbd312f4f54da4bbcbfcf06f631ad8f454e54479851867a6528b86
-      generated_utc: '2026-10-09T17:52:50.773178+00:00'
+      source_sha256: bc85c551b821969b8cc5f5c53e59a39cc111402481547fe24c14d3cf9f655c43
+      generated_utc: '2026-10-13T03:29:33.246140+00:00'
       pose_id_mapping:
         Kl1i_0001: 0
         Kl1i_0002: 1
       removed_poses: []
+  group_ranking_method: representative_group_retention_auc
 poses:
 - id: 0
   original_catalog_pose_id: 0
@@ -56,7 +57,7 @@ poses:
   - Kl1i_0001
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.03131142498037288
   - 0.7064592900766744
@@ -76,6 +77,10 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Kl1i_0001
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 1
 - id: 1
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
@@ -84,7 +89,7 @@ poses:
   - Kl1i_0002
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.43047487919749683
   - 0.5609670811961933
@@ -104,6 +109,10 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Kl1i_0002
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 2
 transitions:
 - id: a0:0->1:free_y
   from_pose: 0
