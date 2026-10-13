@@ -1,140 +1,7 @@
 {
-  "format": "bibazu_observed_roadmap_generation",
-  "schema_version": 1,
-  "workpiece": "Rk1a",
-  "generated_utc": "2026-10-09T23:55:32.117002+00:00",
-  "pose_count": 30,
-  "transition_count": 185,
-  "minimum_frequency_percent": 1.0,
-  "renumber_by_frequency": true,
-  "settings": {
-    "output_root": ".",
-    "minimum_frequency_percent": 1.0,
-    "renumber_by_frequency": true,
-    "outputs": [
-      "yaml",
-      "json",
-      "graphml",
-      "roadmap_svg",
-      "roadmap_png"
-    ]
-  },
-  "input": {
-    "minimum_frequency_percent": 1.0,
-    "renumber_by_frequency": true,
-    "frequency_denominator": "all completed drop trials, including unsettled outcomes",
-    "numbering_tie_break": "original source ID",
-    "source_file": "poses.json",
-    "source_sha256": "3a717f50f50f61e5dc14663af962ff73801f8554c80e9a67b8bddee9414c23eb",
-    "generated_utc": "2026-10-09T23:55:32.117002+00:00",
-    "pose_id_mapping": {
-      "Rk1a_0034": 0,
-      "Rk1a_0026": 1,
-      "Rk1a_0011": 2,
-      "Rk1a_0008": 3,
-      "Rk1a_0010": 4,
-      "Rk1a_0033": 5,
-      "Rk1a_0007": 6,
-      "Rk1a_0022": 7,
-      "Rk1a_0004": 8,
-      "Rk1a_0003": 9,
-      "Rk1a_0035": 10,
-      "Rk1a_0037": 11,
-      "Rk1a_0019": 12,
-      "Rk1a_0006": 13,
-      "Rk1a_0042": 14,
-      "Rk1a_0024": 15,
-      "Rk1a_0001": 16,
-      "Rk1a_0021": 17,
-      "Rk1a_0030": 18,
-      "Rk1a_0025": 19,
-      "Rk1a_0005": 20,
-      "Rk1a_0023": 21,
-      "Rk1a_0028": 22,
-      "Rk1a_0031": 23,
-      "Rk1a_0009": 24,
-      "Rk1a_0017": 25,
-      "Rk1a_0013": 26,
-      "Rk1a_0012": 27,
-      "Rk1a_0027": 28,
-      "Rk1a_0020": 29
-    },
-    "removed_poses": [
-      {
-        "source_pose_id": "Rk1a_0032",
-        "frequency_percent": 0.55
-      },
-      {
-        "source_pose_id": "Rk1a_0038",
-        "frequency_percent": 0.51
-      },
-      {
-        "source_pose_id": "Rk1a_0036",
-        "frequency_percent": 0.43
-      },
-      {
-        "source_pose_id": "Rk1a_0002",
-        "frequency_percent": 0.41
-      },
-      {
-        "source_pose_id": "Rk1a_0016",
-        "frequency_percent": 0.37
-      },
-      {
-        "source_pose_id": "Rk1a_0014",
-        "frequency_percent": 0.34
-      },
-      {
-        "source_pose_id": "Rk1a_0029",
-        "frequency_percent": 0.3
-      },
-      {
-        "source_pose_id": "Rk1a_0043",
-        "frequency_percent": 0.25
-      },
-      {
-        "source_pose_id": "Rk1a_0018",
-        "frequency_percent": 0.14
-      },
-      {
-        "source_pose_id": "Rk1a_0039",
-        "frequency_percent": 0.13
-      },
-      {
-        "source_pose_id": "Rk1a_0040",
-        "frequency_percent": 0.11
-      },
-      {
-        "source_pose_id": "Rk1a_0041",
-        "frequency_percent": 0.07
-      },
-      {
-        "source_pose_id": "Rk1a_0015",
-        "frequency_percent": 0.03
-      },
-      {
-        "source_pose_id": "Rk1a_0044",
-        "frequency_percent": 0.03
-      },
-      {
-        "source_pose_id": "Rk1a_0045",
-        "frequency_percent": 0.03
-      }
-    ]
-  },
   "analytical_stability_evaluated": false,
   "engine_provenance": {
-    "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose",
     "base_revision": "e9199499a2982b0e3d02b09620eb452531b1a7d6",
-    "snapshot_note": "Source hashes identify the local snapshot, including uncommitted export extensions. Only geometric action rules are extracted from roadmap.py. Bundled Python files normalize line endings to LF.",
-    "source_sha256": {
-      "src/chute_pose/geometry.py": "fc4ba197effa2a48fdde6813f4ac666a2ca1585d2dd5f25bf2ce4d6178ac494c",
-      "src/chute_pose/contacts.py": "7a2263fc4590d21845a34d7c1082de0fd0fd6fbf8389cc7d272e56487d08dc53",
-      "src/chute_pose/symmetry.py": "34f815bdf3b6b97222111aaa69fb99932c57bcdca2c7cf9cfea63028eb6bdbfc",
-      "src/chute_pose/plot_view.py": "e45eb05c049f4c9b73d49287eb66759552144e81faf01f566b76915723b7a6a5",
-      "src/chute_pose/visualization.py": "ce3be31f1de91aa3e42be089b97139e3ede8d908a8cd66bc09dd2f686d371395",
-      "src/chute_pose/roadmap.py": "87fe98d479018a188ad282a7b6d8102721bc729d9628dbf04b80f1dedbd40968"
-    },
     "bundled_files_sha256": {
       "__init__.py": "3ca58e22fe66549fbcf9c0f23cdf3bbc8060217d14a250c489ee9781a4a3280e",
       "contacts.py": "498fe5d3b66148a3446738db16fd3ca9990e2e0391bee719d98e2618ca8aa5c2",
@@ -143,7 +10,116 @@
       "symmetry.py": "fcd294c6f9463037063426c2717a5bfcac8f205fe72bc64d67e4799d2d7b043f",
       "transitions.py": "700f8975a81f3b40586d8c676eecfe4efe409e9ee707bd45402423d220418979",
       "visualization.py": "1e4ea35ea5a85035ede2cd5e401df7ab7aa1b12161d2fde1bbeafa03feb8eaeb"
-    }
+    },
+    "snapshot_note": "Source hashes identify the local snapshot, including uncommitted export extensions. Only geometric action rules are extracted from roadmap.py. Bundled Python files normalize line endings to LF.",
+    "source_sha256": {
+      "src/chute_pose/contacts.py": "7a2263fc4590d21845a34d7c1082de0fd0fd6fbf8389cc7d272e56487d08dc53",
+      "src/chute_pose/geometry.py": "fc4ba197effa2a48fdde6813f4ac666a2ca1585d2dd5f25bf2ce4d6178ac494c",
+      "src/chute_pose/plot_view.py": "e45eb05c049f4c9b73d49287eb66759552144e81faf01f566b76915723b7a6a5",
+      "src/chute_pose/roadmap.py": "87fe98d479018a188ad282a7b6d8102721bc729d9628dbf04b80f1dedbd40968",
+      "src/chute_pose/symmetry.py": "34f815bdf3b6b97222111aaa69fb99932c57bcdca2c7cf9cfea63028eb6bdbfc",
+      "src/chute_pose/visualization.py": "ce3be31f1de91aa3e42be089b97139e3ede8d908a8cd66bc09dd2f686d371395"
+    },
+    "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose"
   },
-  "warnings": []
+  "format": "bibazu_observed_roadmap_generation",
+  "generated_utc": "2026-10-13T12:30:15.574291+00:00",
+  "grouped_export": true,
+  "grouping_minimum_frequency_percent": 1,
+  "input": {
+    "frequency_denominator": "all completed drop trials, including unsettled outcomes",
+    "generated_utc": "2026-10-13T12:30:15.574291+00:00",
+    "minimum_frequency_percent": 0,
+    "numbering_tie_break": "original source ID",
+    "pose_id_mapping": {
+      "Rk1a_0001": 18,
+      "Rk1a_0003": 12,
+      "Rk1a_0004": 9,
+      "Rk1a_0005": 22,
+      "Rk1a_0007": 1,
+      "Rk1a_0008": 6,
+      "Rk1a_0009": 13,
+      "Rk1a_0010": 3,
+      "Rk1a_0011": 4,
+      "Rk1a_0017": 14,
+      "Rk1a_0019": 8,
+      "Rk1a_0021": 19,
+      "Rk1a_0022": 7,
+      "Rk1a_0023": 23,
+      "Rk1a_0024": 17,
+      "Rk1a_0025": 21,
+      "Rk1a_0026": 2,
+      "Rk1a_0028": 15,
+      "Rk1a_0030": 20,
+      "Rk1a_0033": 5,
+      "Rk1a_0034": 0,
+      "Rk1a_0035": 10,
+      "Rk1a_0037": 11,
+      "Rk1a_0042": 16
+    },
+    "removed_poses": [],
+    "renumber_by_frequency": true,
+    "source_file": "poses.json",
+    "source_sha256": "c17b7c7beec7afcb533983fbe7b2dd74cc8be1f389afc0e5cdbcc312755da3a3"
+  },
+  "minimum_frequency_percent": 0,
+  "pose_count": 24,
+  "provenance": {
+    "baseline_roadmap_ids": {
+      "Rk1a_0001": 16,
+      "Rk1a_0003": 9,
+      "Rk1a_0004": 8,
+      "Rk1a_0005": 20,
+      "Rk1a_0006": 13,
+      "Rk1a_0007": 6,
+      "Rk1a_0008": 3,
+      "Rk1a_0009": 24,
+      "Rk1a_0010": 4,
+      "Rk1a_0011": 2,
+      "Rk1a_0012": 27,
+      "Rk1a_0013": 26,
+      "Rk1a_0017": 25,
+      "Rk1a_0019": 12,
+      "Rk1a_0020": 29,
+      "Rk1a_0021": 17,
+      "Rk1a_0022": 7,
+      "Rk1a_0023": 21,
+      "Rk1a_0024": 15,
+      "Rk1a_0025": 19,
+      "Rk1a_0026": 1,
+      "Rk1a_0027": 28,
+      "Rk1a_0028": 22,
+      "Rk1a_0030": 18,
+      "Rk1a_0031": 23,
+      "Rk1a_0033": 5,
+      "Rk1a_0034": 0,
+      "Rk1a_0035": 10,
+      "Rk1a_0037": 11,
+      "Rk1a_0042": 14
+    },
+    "engine_fingerprint": "7928d319b149a3d4cd6b833e338788a5cb5932f8269228a7f2810ff633355081",
+    "pose_revision": "9e00d03389d3b81013700def03fb1b19504144be",
+    "reused": false,
+    "roadmap_revision": "0b3b5c5fe42e787bd47f381b1f1ac57359d5aa55"
+  },
+  "renumber_by_frequency": true,
+  "schema_version": 1,
+  "settings": {
+    "minimum_frequency_percent": 0,
+    "output_root": ".",
+    "outputs": [
+      "json",
+      "yaml",
+      "graphml",
+      "roadmap_png",
+      "roadmap_svg",
+      "poses_png",
+      "poses_svg"
+    ],
+    "renumber_by_frequency": true
+  },
+  "status": "complete",
+  "transition_count": 120,
+  "warnings": [],
+  "workpiece": "Rk1a"
 }

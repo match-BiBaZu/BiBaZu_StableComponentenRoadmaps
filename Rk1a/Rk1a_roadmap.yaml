@@ -45,12 +45,6 @@ classification:
   - 21
   - 22
   - 23
-  - 24
-  - 25
-  - 26
-  - 27
-  - 28
-  - 29
   metastable_pose_ids: []
   unresolved_metastable_pose_ids: []
   main_face_ids:
@@ -65,75 +59,40 @@ classification:
   csa_rocking_fallback_catalog_pose_ids: []
   classical_metadata:
     observed_pose_generation: &id001
-      minimum_frequency_percent: 1.0
+      minimum_frequency_percent: 0
       renumber_by_frequency: true
       frequency_denominator: all completed drop trials, including unsettled outcomes
       numbering_tie_break: original source ID
       source_file: poses.json
-      source_sha256: 3a717f50f50f61e5dc14663af962ff73801f8554c80e9a67b8bddee9414c23eb
-      generated_utc: '2026-10-09T23:55:32.117002+00:00'
+      source_sha256: c17b7c7beec7afcb533983fbe7b2dd74cc8be1f389afc0e5cdbcc312755da3a3
+      generated_utc: '2026-10-13T12:30:15.574291+00:00'
       pose_id_mapping:
         Rk1a_0034: 0
-        Rk1a_0026: 1
-        Rk1a_0011: 2
-        Rk1a_0008: 3
-        Rk1a_0010: 4
+        Rk1a_0007: 1
+        Rk1a_0026: 2
+        Rk1a_0010: 3
+        Rk1a_0011: 4
         Rk1a_0033: 5
-        Rk1a_0007: 6
+        Rk1a_0008: 6
         Rk1a_0022: 7
-        Rk1a_0004: 8
-        Rk1a_0003: 9
+        Rk1a_0019: 8
+        Rk1a_0004: 9
         Rk1a_0035: 10
         Rk1a_0037: 11
-        Rk1a_0019: 12
-        Rk1a_0006: 13
-        Rk1a_0042: 14
-        Rk1a_0024: 15
-        Rk1a_0001: 16
-        Rk1a_0021: 17
-        Rk1a_0030: 18
-        Rk1a_0025: 19
-        Rk1a_0005: 20
-        Rk1a_0023: 21
-        Rk1a_0028: 22
-        Rk1a_0031: 23
-        Rk1a_0009: 24
-        Rk1a_0017: 25
-        Rk1a_0013: 26
-        Rk1a_0012: 27
-        Rk1a_0027: 28
-        Rk1a_0020: 29
-      removed_poses:
-      - source_pose_id: Rk1a_0032
-        frequency_percent: 0.55
-      - source_pose_id: Rk1a_0038
-        frequency_percent: 0.51
-      - source_pose_id: Rk1a_0036
-        frequency_percent: 0.43
-      - source_pose_id: Rk1a_0002
-        frequency_percent: 0.41
-      - source_pose_id: Rk1a_0016
-        frequency_percent: 0.37
-      - source_pose_id: Rk1a_0014
-        frequency_percent: 0.34
-      - source_pose_id: Rk1a_0029
-        frequency_percent: 0.3
-      - source_pose_id: Rk1a_0043
-        frequency_percent: 0.25
-      - source_pose_id: Rk1a_0018
-        frequency_percent: 0.14
-      - source_pose_id: Rk1a_0039
-        frequency_percent: 0.13
-      - source_pose_id: Rk1a_0040
-        frequency_percent: 0.11
-      - source_pose_id: Rk1a_0041
-        frequency_percent: 0.07
-      - source_pose_id: Rk1a_0015
-        frequency_percent: 0.03
-      - source_pose_id: Rk1a_0044
-        frequency_percent: 0.03
-      - source_pose_id: Rk1a_0045
-        frequency_percent: 0.03
+        Rk1a_0003: 12
+        Rk1a_0009: 13
+        Rk1a_0017: 14
+        Rk1a_0028: 15
+        Rk1a_0042: 16
+        Rk1a_0024: 17
+        Rk1a_0001: 18
+        Rk1a_0021: 19
+        Rk1a_0030: 20
+        Rk1a_0025: 21
+        Rk1a_0005: 22
+        Rk1a_0023: 23
+      removed_poses: []
+  group_ranking_method: representative_group_retention_auc
 poses:
 - id: 0
   original_catalog_pose_id: 0
@@ -143,7 +102,7 @@ poses:
   - Rk1a_0034
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.45431386304943217
   - 0.5415290578575572
@@ -163,22 +122,26 @@ poses:
     wall: 2-edge
     main_face_on_floor: true
     main_face_on_wall: false
+  group_members:
+  - Rk1a_0034
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 22
 - id: 1
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
   - 1
   source_pose_ids:
-  - Rk1a_0026
+  - Rk1a_0007
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
-  - 0.0002674203866027125
-  - -0.6425932290032078
-  - 0.0001391916205230881
-  - -0.7662074465516898
-  observed_count: 656
-  observed_frequency_percent: 6.56
+  - 0.6431277299655405
+  - 0.0005508130401010725
+  - -0.7657586441469915
+  - -0.0003441925727497852
+  observed_count: 673
+  observed_frequency_percent: 6.7299999999999995
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -191,15 +154,87 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  group_members:
+  - Rk1a_0006
+  - Rk1a_0007
+  - Rk1a_0043
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 5
 - id: 2
   original_catalog_pose_id: 2
   equivalent_catalog_pose_ids:
   - 2
   source_pose_ids:
+  - Rk1a_0026
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_group_retention
+  orientation_quaternion_xyzw:
+  - 0.0002674203866027125
+  - -0.6425932290032078
+  - 0.0001391916205230881
+  - -0.7662074465516898
+  observed_count: 656
+  observed_frequency_percent: 6.5600000000000005
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: 2-edge
+    wall: face
+    main_face_on_floor: false
+    main_face_on_wall: true
+  group_members:
+  - Rk1a_0026
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 17
+- id: 3
+  original_catalog_pose_id: 3
+  equivalent_catalog_pose_ids:
+  - 3
+  source_pose_ids:
+  - Rk1a_0010
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_group_retention
+  orientation_quaternion_xyzw:
+  - -0.5414783306978992
+  - 0.4545500755854341
+  - -0.4549382229228011
+  - 0.5414948379197502
+  observed_count: 652
+  observed_frequency_percent: 6.52
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: face
+    wall: 2-edge
+    main_face_on_floor: true
+    main_face_on_wall: false
+  group_members:
+  - Rk1a_0010
+  - Rk1a_0014
+  - Rk1a_0018
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 8
+- id: 4
+  original_catalog_pose_id: 4
+  equivalent_catalog_pose_ids:
+  - 4
+  source_pose_ids:
   - Rk1a_0011
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.5416810792746971
   - -0.4544149461142784
@@ -219,15 +254,53 @@ poses:
     wall: 2-edge
     main_face_on_floor: true
     main_face_on_wall: false
-- id: 3
-  original_catalog_pose_id: 3
+  group_members:
+  - Rk1a_0011
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 9
+- id: 5
+  original_catalog_pose_id: 5
   equivalent_catalog_pose_ids:
-  - 3
+  - 5
+  source_pose_ids:
+  - Rk1a_0033
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_group_retention
+  orientation_quaternion_xyzw:
+  - -0.45466941919429094
+  - -0.541509392597341
+  - -0.541432310091108
+  - -0.4548564065370425
+  observed_count: 630
+  observed_frequency_percent: 6.3
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: face
+    wall: 2-edge
+    main_face_on_floor: true
+    main_face_on_wall: false
+  group_members:
+  - Rk1a_0033
+  - Rk1a_0036
+  - Rk1a_0040
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 21
+- id: 6
+  original_catalog_pose_id: 6
+  equivalent_catalog_pose_ids:
+  - 6
   source_pose_ids:
   - Rk1a_0008
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.6424738010704913
   - 5.661735109474542e-05
@@ -247,90 +320,10 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
-- id: 4
-  original_catalog_pose_id: 4
-  equivalent_catalog_pose_ids:
-  - 4
-  source_pose_ids:
-  - Rk1a_0010
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - -0.5414783306978992
-  - 0.4545500755854341
-  - -0.4549382229228011
-  - 0.5414948379197502
-  observed_count: 604
-  observed_frequency_percent: 6.04
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: face
-    wall: 2-edge
-    main_face_on_floor: true
-    main_face_on_wall: false
-- id: 5
-  original_catalog_pose_id: 5
-  equivalent_catalog_pose_ids:
-  - 5
-  source_pose_ids:
-  - Rk1a_0033
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - -0.45466941919429094
-  - -0.541509392597341
-  - -0.541432310091108
-  - -0.4548564065370425
-  observed_count: 576
-  observed_frequency_percent: 5.76
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: face
-    wall: 2-edge
-    main_face_on_floor: true
-    main_face_on_wall: false
-- id: 6
-  original_catalog_pose_id: 6
-  equivalent_catalog_pose_ids:
-  - 6
-  source_pose_ids:
-  - Rk1a_0007
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - 0.6431277299655405
-  - 0.0005508130401010725
-  - -0.7657586441469915
-  - -0.0003441925727497852
-  observed_count: 391
-  observed_frequency_percent: 3.91
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: 2-edge
-    wall: face
-    main_face_on_floor: false
-    main_face_on_wall: true
+  group_members:
+  - Rk1a_0008
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 6
 - id: 7
   original_catalog_pose_id: 7
   equivalent_catalog_pose_ids:
@@ -339,14 +332,14 @@ poses:
   - Rk1a_0022
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.0002077555430932132
   - 0.6428194268799908
   - -0.0002565181270864081
   - -0.7660176730740389
-  observed_count: 385
-  observed_frequency_percent: 3.85
+  observed_count: 620
+  observed_frequency_percent: 6.2
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -359,22 +352,28 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  group_members:
+  - Rk1a_0022
+  - Rk1a_0029
+  - Rk1a_0031
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 13
 - id: 8
   original_catalog_pose_id: 8
   equivalent_catalog_pose_ids:
   - 8
   source_pose_ids:
-  - Rk1a_0004
+  - Rk1a_0019
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
-  - 0.7070793974588087
-  - 0.7071341066257097
-  - -0.00018489821306952317
-  - -0.00021621424192469488
-  observed_count: 345
-  observed_frequency_percent: 3.45
+  - -0.00013368040027217365
+  - 0.0002949432638888472
+  - 0.7061621858448754
+  - 0.7080500423139662
+  observed_count: 393
+  observed_frequency_percent: 3.93
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -387,22 +386,27 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rk1a_0019
+  - Rk1a_0020
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 11
 - id: 9
   original_catalog_pose_id: 9
   equivalent_catalog_pose_ids:
   - 9
   source_pose_ids:
-  - Rk1a_0003
+  - Rk1a_0004
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
-  - 0.7068586865116793
-  - -0.7073546929988761
-  - -0.00024020130483959345
-  - -0.0002791035335092118
-  observed_count: 321
-  observed_frequency_percent: 3.21
+  - 0.7070793974588087
+  - 0.7071341066257097
+  - -0.00018489821306952317
+  - -0.00021621424192469488
+  observed_count: 386
+  observed_frequency_percent: 3.8600000000000003
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -415,6 +419,11 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rk1a_0002
+  - Rk1a_0004
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 2
 - id: 10
   original_catalog_pose_id: 10
   equivalent_catalog_pose_ids:
@@ -423,14 +432,14 @@ poses:
   - Rk1a_0035
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.49952700389560445
   - -0.500153795998047
   - 0.5003756027115114
   - 0.4999432057133257
-  observed_count: 319
-  observed_frequency_percent: 3.19
+  observed_count: 374
+  observed_frequency_percent: 3.74
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -443,6 +452,11 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rk1a_0032
+  - Rk1a_0035
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 20
 - id: 11
   original_catalog_pose_id: 11
   equivalent_catalog_pose_ids:
@@ -451,14 +465,14 @@ poses:
   - Rk1a_0037
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.5000270329770966
   - -0.499591007093248
   - 0.4998824642417786
   - -0.5004990648015666
-  observed_count: 316
-  observed_frequency_percent: 3.16
+  observed_count: 367
+  observed_frequency_percent: 3.6700000000000004
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -471,22 +485,27 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rk1a_0037
+  - Rk1a_0038
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 23
 - id: 12
   original_catalog_pose_id: 12
   equivalent_catalog_pose_ids:
   - 12
   source_pose_ids:
-  - Rk1a_0019
+  - Rk1a_0003
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
-  - -0.00013368040027217365
-  - 0.0002949432638888472
-  - 0.7061621858448754
-  - 0.7080500423139662
-  observed_count: 267
-  observed_frequency_percent: 2.67
+  - 0.7068586865116793
+  - -0.7073546929988761
+  - -0.00024020130483959345
+  - -0.0002791035335092118
+  observed_count: 358
+  observed_frequency_percent: 3.58
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -499,22 +518,93 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
+  group_members:
+  - Rk1a_0003
+  - Rk1a_0016
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 3
 - id: 13
   original_catalog_pose_id: 13
   equivalent_catalog_pose_ids:
   - 13
   source_pose_ids:
-  - Rk1a_0006
+  - Rk1a_0009
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
-  - 0.7061360936165678
-  - -6.333668465935417e-05
-  - -0.7080760662832368
-  - 0.00031246960732519985
-  observed_count: 257
-  observed_frequency_percent: 2.57
+  - 0.6151565123489804
+  - -0.3485713152782958
+  - -0.3486595150404699
+  - -0.6152373899979926
+  observed_count: 341
+  observed_frequency_percent: 3.4099999999999997
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: edge+point
+    wall: face
+    main_face_on_floor: false
+    main_face_on_wall: false
+  group_members:
+  - Rk1a_0009
+  - Rk1a_0012
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 7
+- id: 14
+  original_catalog_pose_id: 14
+  equivalent_catalog_pose_ids:
+  - 14
+  source_pose_ids:
+  - Rk1a_0017
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_group_retention
+  orientation_quaternion_xyzw:
+  - 0.34905579149225774
+  - 0.6149205015251895
+  - 0.6147931343193248
+  - -0.3493740591737507
+  observed_count: 336
+  observed_frequency_percent: 3.36
+  rocking_barrier_mm: null
+  csa_stability_index: null
+  cad_status: provisional
+  csa_feasible_fraction: null
+  csa_feasible_solid_angle_sr: null
+  csa_angular_clearance_deg: null
+  csa_applicable: null
+  contacts:
+    floor: 2-edge
+    wall: face
+    main_face_on_floor: false
+    main_face_on_wall: false
+  group_members:
+  - Rk1a_0013
+  - Rk1a_0017
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 10
+- id: 15
+  original_catalog_pose_id: 15
+  equivalent_catalog_pose_ids:
+  - 15
+  source_pose_ids:
+  - Rk1a_0028
+  stability: robust
+  planner_role: stable_target
+  classification_basis: observed_group_retention
+  orientation_quaternion_xyzw:
+  - -0.00013430122298849212
+  - -0.00014088305802845147
+  - -0.7071736043652439
+  - 0.7070399249011439
+  observed_count: 332
+  observed_frequency_percent: 3.32
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -526,16 +616,21 @@ poses:
     floor: face
     wall: face
     main_face_on_floor: false
-    main_face_on_wall: true
-- id: 14
-  original_catalog_pose_id: 14
+    main_face_on_wall: false
+  group_members:
+  - Rk1a_0027
+  - Rk1a_0028
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 18
+- id: 16
+  original_catalog_pose_id: 16
   equivalent_catalog_pose_ids:
-  - 14
+  - 16
   source_pose_ids:
   - Rk1a_0042
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.7072763108946489
   - -0.000556138354669281
@@ -555,22 +650,26 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
-- id: 15
-  original_catalog_pose_id: 15
+  group_members:
+  - Rk1a_0042
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 24
+- id: 17
+  original_catalog_pose_id: 17
   equivalent_catalog_pose_ids:
-  - 15
+  - 17
   source_pose_ids:
   - Rk1a_0024
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 8.654448735978536e-06
   - -0.9999999724650424
   - 0.00023386241413198006
   - -1.741799335765816e-05
   observed_count: 243
-  observed_frequency_percent: 2.43
+  observed_frequency_percent: 2.4299999999999997
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -583,22 +682,26 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
-- id: 16
-  original_catalog_pose_id: 16
+  group_members:
+  - Rk1a_0024
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 15
+- id: 18
+  original_catalog_pose_id: 18
   equivalent_catalog_pose_ids:
-  - 16
+  - 18
   source_pose_ids:
   - Rk1a_0001
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.9999997379175777
   - 0.0006443738882738028
   - 0.0001711718702657476
   - 0.0002822184597092159
   observed_count: 238
-  observed_frequency_percent: 2.38
+  observed_frequency_percent: 2.3800000000000003
   rocking_barrier_mm: null
   csa_stability_index: null
   cad_status: provisional
@@ -611,15 +714,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
-- id: 17
-  original_catalog_pose_id: 17
+  group_members:
+  - Rk1a_0001
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 1
+- id: 19
+  original_catalog_pose_id: 19
   equivalent_catalog_pose_ids:
-  - 17
+  - 19
   source_pose_ids:
   - Rk1a_0021
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -0.00018149698539258094
   - -0.707156362184993
@@ -639,15 +746,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
-- id: 18
-  original_catalog_pose_id: 18
+  group_members:
+  - Rk1a_0021
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 12
+- id: 20
+  original_catalog_pose_id: 20
   equivalent_catalog_pose_ids:
-  - 18
+  - 20
   source_pose_ids:
   - Rk1a_0030
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.00022606054354268323
   - 7.685574198500222e-06
@@ -667,15 +778,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
-- id: 19
-  original_catalog_pose_id: 19
+  group_members:
+  - Rk1a_0030
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 19
+- id: 21
+  original_catalog_pose_id: 21
   equivalent_catalog_pose_ids:
-  - 19
+  - 21
   source_pose_ids:
   - Rk1a_0025
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.00025785639826985643
   - 1.6352674626685104e-05
@@ -695,15 +810,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
-- id: 20
-  original_catalog_pose_id: 20
+  group_members:
+  - Rk1a_0025
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 16
+- id: 22
+  original_catalog_pose_id: 22
   equivalent_catalog_pose_ids:
-  - 20
+  - 22
   source_pose_ids:
   - Rk1a_0005
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - 0.7069353304846396
   - -0.0004879702743723979
@@ -723,15 +842,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
-- id: 21
-  original_catalog_pose_id: 21
+  group_members:
+  - Rk1a_0005
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 4
+- id: 23
+  original_catalog_pose_id: 23
   equivalent_catalog_pose_ids:
-  - 21
+  - 23
   source_pose_ids:
   - Rk1a_0023
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_simulation
+  classification_basis: observed_group_retention
   orientation_quaternion_xyzw:
   - -2.322568123165914e-05
   - -0.7071125968558452
@@ -751,234 +874,14 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
-- id: 22
-  original_catalog_pose_id: 22
-  equivalent_catalog_pose_ids:
-  - 22
-  source_pose_ids:
-  - Rk1a_0028
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - -0.00013430122298849212
-  - -0.00014088305802845147
-  - -0.7071736043652439
-  - 0.7070399249011439
-  observed_count: 205
-  observed_frequency_percent: 2.05
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: face
-    wall: face
-    main_face_on_floor: false
-    main_face_on_wall: false
-- id: 23
-  original_catalog_pose_id: 23
-  equivalent_catalog_pose_ids:
-  - 23
-  source_pose_ids:
-  - Rk1a_0031
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - 0.00013359720419592325
-  - 0.7061848183313955
-  - 0.00024062981270261963
-  - -0.7080274900082159
-  observed_count: 205
-  observed_frequency_percent: 2.05
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: face
-    wall: face
-    main_face_on_floor: false
-    main_face_on_wall: true
-- id: 24
-  original_catalog_pose_id: 24
-  equivalent_catalog_pose_ids:
-  - 24
-  source_pose_ids:
-  - Rk1a_0009
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - 0.6151565123489804
-  - -0.3485713152782958
-  - -0.3486595150404699
-  - -0.6152373899979926
-  observed_count: 189
-  observed_frequency_percent: 1.89
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: edge+point
-    wall: face
-    main_face_on_floor: false
-    main_face_on_wall: false
-- id: 25
-  original_catalog_pose_id: 25
-  equivalent_catalog_pose_ids:
-  - 25
-  source_pose_ids:
-  - Rk1a_0017
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - 0.34905579149225774
-  - 0.6149205015251895
-  - 0.6147931343193248
-  - -0.3493740591737507
-  observed_count: 181
-  observed_frequency_percent: 1.81
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: 2-edge
-    wall: face
-    main_face_on_floor: false
-    main_face_on_wall: false
-- id: 26
-  original_catalog_pose_id: 26
-  equivalent_catalog_pose_ids:
-  - 26
-  source_pose_ids:
-  - Rk1a_0013
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - -0.5000009488634111
-  - -0.49990681444692847
-  - -0.4999641082380017
-  - 0.5001281020688526
-  observed_count: 155
-  observed_frequency_percent: 1.55
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: face
-    wall: face
-    main_face_on_floor: false
-    main_face_on_wall: false
-- id: 27
-  original_catalog_pose_id: 27
-  equivalent_catalog_pose_ids:
-  - 27
-  source_pose_ids:
-  - Rk1a_0012
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - 0.500788012530685
-  - -0.49868859848396413
-  - -0.4989398135621327
-  - -0.5015776217997074
-  observed_count: 152
-  observed_frequency_percent: 1.52
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: face
-    wall: face
-    main_face_on_floor: false
-    main_face_on_wall: false
-- id: 28
-  original_catalog_pose_id: 28
-  equivalent_catalog_pose_ids:
-  - 28
-  source_pose_ids:
-  - Rk1a_0027
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - 0.000200743650054791
-  - 0.00019401418459097375
-  - 0.869502572065714
-  - -0.4939283341048488
-  observed_count: 127
-  observed_frequency_percent: 1.27
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: face
-    wall: 2-edge
-    main_face_on_floor: false
-    main_face_on_wall: false
-- id: 29
-  original_catalog_pose_id: 29
-  equivalent_catalog_pose_ids:
-  - 29
-  source_pose_ids:
-  - Rk1a_0020
-  stability: robust
-  planner_role: stable_target
-  classification_basis: observed_simulation
-  orientation_quaternion_xyzw:
-  - 8.274655685497345e-05
-  - 0.00015121714040605694
-  - 0.4933173474620127
-  - 0.8698493921245376
-  observed_count: 126
-  observed_frequency_percent: 1.26
-  rocking_barrier_mm: null
-  csa_stability_index: null
-  cad_status: provisional
-  csa_feasible_fraction: null
-  csa_feasible_solid_angle_sr: null
-  csa_angular_clearance_deg: null
-  csa_applicable: null
-  contacts:
-    floor: face
-    wall: 2-edge
-    main_face_on_floor: false
-    main_face_on_wall: false
+  group_members:
+  - Rk1a_0023
+  representative_group_retention_auc: 1.0
+  group_stability_rank: 14
 transitions:
-- id: a0:0->4:free_y
+- id: a0:0->3:free_y
   from_pose: 0
-  to_pose: 4
+  to_pose: 3
   directed: true
   type: actuated
   action:
@@ -1046,9 +949,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a2:0->14:free_z
+- id: a2:0->16:free_z
   from_pose: 0
-  to_pose: 14
+  to_pose: 16
   directed: true
   type: actuated
   action:
@@ -1081,9 +984,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a3:0->21:free_z
+- id: a3:0->23:free_z
   from_pose: 0
-  to_pose: 21
+  to_pose: 23
   directed: true
   type: actuated
   action:
@@ -1116,9 +1019,149 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a4:1->6:free_z
+- id: a4:1->2:free_z
+  from_pose: 1
+  to_pose: 2
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: positive
+    commanded_angle_deg: 179.99715497369596
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.04470669245481903
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a5:1->6:free_y
   from_pose: 1
   to_pose: 6
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 160.00399904663948
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.060301233127551375
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a6:1->18:free_y
+  from_pose: 1
+  to_pose: 18
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: negative
+    commanded_angle_deg: -99.92955993635103
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.10112275003859941
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a7:1->21:free_y
+  from_pose: 1
+  to_pose: 21
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 80.02137604796484
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.03711905319776659
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a8:2->1:free_z
+  from_pose: 2
+  to_pose: 1
   directed: true
   type: actuated
   action:
@@ -1151,8 +1194,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a5:1->7:free_y
-  from_pose: 1
+- id: a9:2->7:free_y
+  from_pose: 2
   to_pose: 7
   directed: true
   type: actuated
@@ -1186,9 +1229,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a6:1->15:free_y
-  from_pose: 1
-  to_pose: 15
+- id: a10:2->17:free_y
+  from_pose: 2
+  to_pose: 17
   directed: true
   type: actuated
   action:
@@ -1221,9 +1264,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a7:1->18:free_y
-  from_pose: 1
-  to_pose: 18
+- id: a11:2->20:free_y
+  from_pose: 2
+  to_pose: 20
   directed: true
   type: actuated
   action:
@@ -1256,358 +1299,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a8:1->23:free_y
-  from_pose: 1
-  to_pose: 23
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -169.8216142917572
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.014462276819131877
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a9:2->4:free_z
-  from_pose: 2
-  to_pose: 4
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -160.05597050502544
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.023643129437063534
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a10:2->5:free_y
-  from_pose: 2
-  to_pose: 5
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 179.97859214787312
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.027580342417677373
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a11:2->17:free_z
-  from_pose: 2
-  to_pose: 17
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 99.98503841397562
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.01189327870032539
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a12:2->20:free_z
-  from_pose: 2
-  to_pose: 20
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -80.06958127482116
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.014036572507690795
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a13:3->6:free_y
+- id: a12:3->0:free_y
   from_pose: 3
-  to_pose: 6
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -160.00399904663948
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.060301233127551375
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a14:3->7:free_z
-  from_pose: 3
-  to_pose: 7
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 179.97717417799245
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.0259066269529235
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a15:3->13:free_y
-  from_pose: 3
-  to_pose: 13
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -169.79586795011863
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.02238386305710045
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a16:3->16:free_y
-  from_pose: 3
-  to_pose: 16
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 100.0665508551785
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.023785811183228797
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a17:3->19:free_y
-  from_pose: 3
-  to_pose: 19
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -79.9826529870197
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.055359858558746394
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a18:4->0:free_y
-  from_pose: 4
   to_pose: 0
   directed: true
   type: actuated
@@ -1641,9 +1334,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a19:4->2:free_z
-  from_pose: 4
-  to_pose: 2
+- id: a13:3->4:free_z
+  from_pose: 3
+  to_pose: 4
   directed: true
   type: actuated
   action:
@@ -1676,9 +1369,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a20:4->17:free_z
-  from_pose: 4
-  to_pose: 17
+- id: a14:3->19:free_z
+  from_pose: 3
+  to_pose: 19
   directed: true
   type: actuated
   action:
@@ -1711,9 +1404,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a21:4->20:free_z
-  from_pose: 4
-  to_pose: 20
+- id: a15:3->22:free_z
+  from_pose: 3
+  to_pose: 22
   directed: true
   type: actuated
   action:
@@ -1746,7 +1439,147 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a22:5->0:free_z
+- id: a16:4->3:free_z
+  from_pose: 4
+  to_pose: 3
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: negative
+    commanded_angle_deg: -160.05597050502544
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.023643129437063534
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a17:4->5:free_y
+  from_pose: 4
+  to_pose: 5
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 179.97859214787312
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.027580342417677373
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a18:4->19:free_z
+  from_pose: 4
+  to_pose: 19
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: positive
+    commanded_angle_deg: 99.98503841397562
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.01189327870032539
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a19:4->22:free_z
+  from_pose: 4
+  to_pose: 22
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: negative
+    commanded_angle_deg: -80.06958127482116
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.014036572507690795
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a20:5->0:free_z
   from_pose: 5
   to_pose: 0
   directed: true
@@ -1781,9 +1614,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a23:5->2:free_y
+- id: a21:5->4:free_y
   from_pose: 5
-  to_pose: 2
+  to_pose: 4
   directed: true
   type: actuated
   action:
@@ -1816,9 +1649,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a24:5->14:free_z
+- id: a22:5->16:free_z
   from_pose: 5
-  to_pose: 14
+  to_pose: 16
   directed: true
   type: actuated
   action:
@@ -1851,9 +1684,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a25:5->21:free_z
+- id: a23:5->23:free_z
   from_pose: 5
-  to_pose: 21
+  to_pose: 23
   directed: true
   type: actuated
   action:
@@ -1886,44 +1719,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a26:6->1:free_z
+- id: a24:6->1:free_y
   from_pose: 6
   to_pose: 1
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 179.99715497369596
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.04470669245481903
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a27:6->3:free_y
-  from_pose: 6
-  to_pose: 3
   directed: true
   type: actuated
   action:
@@ -1933,8 +1731,8 @@ transitions:
     - 0.0
     - 1.0
     - 0.0
-    direction: positive
-    commanded_angle_deg: 160.00399904663948
+    direction: negative
+    commanded_angle_deg: -160.00399904663948
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -1956,20 +1754,20 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a28:6->13:free_y
+- id: a25:6->7:free_z
   from_pose: 6
-  to_pose: 13
+  to_pose: 7
   directed: true
   type: actuated
   action:
-    name: free_y
-    axis: y
+    name: free_z
+    axis: z
     axis_vector_chute:
     - 0.0
-    - 1.0
     - 0.0
-    direction: negative
-    commanded_angle_deg: -9.792440407336676
+    - 1.0
+    direction: positive
+    commanded_angle_deg: 179.97717417799245
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -1982,7 +1780,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.5935230640355778
+    axis_error_deg: 0.0259066269529235
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -1991,44 +1789,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a29:6->16:free_y
+- id: a26:6->18:free_y
   from_pose: 6
-  to_pose: 16
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -99.92955993635103
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.10112275003859941
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a30:6->19:free_y
-  from_pose: 6
-  to_pose: 19
+  to_pose: 18
   directed: true
   type: actuated
   action:
@@ -2039,7 +1802,7 @@ transitions:
     - 1.0
     - 0.0
     direction: positive
-    commanded_angle_deg: 80.02137604796484
+    commanded_angle_deg: 100.0665508551785
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -2052,7 +1815,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.03711905319776659
+    axis_error_deg: 0.023785811183228797
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -2061,9 +1824,44 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a31:7->1:free_y
+- id: a27:6->21:free_y
+  from_pose: 6
+  to_pose: 21
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: negative
+    commanded_angle_deg: -79.9826529870197
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.055359858558746394
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a28:7->2:free_y
   from_pose: 7
-  to_pose: 1
+  to_pose: 2
   directed: true
   type: actuated
   action:
@@ -2096,9 +1894,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a32:7->3:free_z
+- id: a29:7->6:free_z
   from_pose: 7
-  to_pose: 3
+  to_pose: 6
   directed: true
   type: actuated
   action:
@@ -2131,9 +1929,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a33:7->15:free_y
+- id: a30:7->17:free_y
   from_pose: 7
-  to_pose: 15
+  to_pose: 17
   directed: true
   type: actuated
   action:
@@ -2166,9 +1964,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a34:7->18:free_y
+- id: a31:7->20:free_y
   from_pose: 7
-  to_pose: 18
+  to_pose: 20
   directed: true
   type: actuated
   action:
@@ -2201,9 +1999,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a35:7->23:free_y
-  from_pose: 7
-  to_pose: 23
+- id: a32:8->9:free_y
+  from_pose: 8
+  to_pose: 9
   directed: true
   type: actuated
   action:
@@ -2214,7 +2012,7 @@ transitions:
     - 1.0
     - 0.0
     direction: negative
-    commanded_angle_deg: -9.846094505774534
+    commanded_angle_deg: -179.98056334121205
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -2227,7 +2025,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.3256749396392665
+    axis_error_deg: 0.0759927885802059
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -2236,9 +2034,79 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a36:8->9:free_z
+- id: a33:8->15:free_z
   from_pose: 8
-  to_pose: 9
+  to_pose: 15
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: negative
+    commanded_angle_deg: -179.85786438505787
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.02919807663727979
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a34:8->20:free_z
+  from_pose: 8
+  to_pose: 20
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: negative
+    commanded_angle_deg: -89.84461362705764
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.037363853205057036
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a35:8->21:free_z
+  from_pose: 8
+  to_pose: 21
   directed: true
   type: actuated
   action:
@@ -2249,7 +2117,7 @@ transitions:
     - 0.0
     - 1.0
     direction: positive
-    commanded_angle_deg: 179.95538835958905
+    commanded_angle_deg: 90.12499200866512
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -2262,7 +2130,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.026706927255027043
+    axis_error_deg: 0.011148092117330524
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -2271,9 +2139,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a37:8->12:free_y
-  from_pose: 8
-  to_pose: 12
+- id: a36:9->8:free_y
+  from_pose: 9
+  to_pose: 8
   directed: true
   type: actuated
   action:
@@ -2306,9 +2174,44 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a38:8->15:free_z
-  from_pose: 8
-  to_pose: 15
+- id: a37:9->12:free_z
+  from_pose: 9
+  to_pose: 12
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: positive
+    commanded_angle_deg: 179.95538835958905
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.026706927255027043
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a38:9->17:free_z
+  from_pose: 9
+  to_pose: 17
   directed: true
   type: actuated
   action:
@@ -2341,9 +2244,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a39:8->16:free_z
-  from_pose: 8
-  to_pose: 16
+- id: a39:9->18:free_z
+  from_pose: 9
+  to_pose: 18
   directed: true
   type: actuated
   action:
@@ -2376,147 +2279,7 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a40:9->8:free_z
-  from_pose: 9
-  to_pose: 8
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -179.95538835958905
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.026706927255027043
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a41:9->15:free_z
-  from_pose: 9
-  to_pose: 15
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -89.95883687008768
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.03292512552495603
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a42:9->16:free_z
-  from_pose: 9
-  to_pose: 16
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 89.96634541772838
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.026043887739659825
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a43:9->22:free_y
-  from_pose: 9
-  to_pose: 22
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -179.9973929259881
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.027361619324934652
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a44:10->11:free_y
+- id: a40:10->11:free_y
   from_pose: 10
   to_pose: 11
   directed: true
@@ -2551,9 +2314,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a45:10->14:free_y
+- id: a41:10->16:free_y
   from_pose: 10
-  to_pose: 14
+  to_pose: 16
   directed: true
   type: actuated
   action:
@@ -2586,9 +2349,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a46:10->17:free_y
+- id: a42:10->19:free_y
   from_pose: 10
-  to_pose: 17
+  to_pose: 19
   directed: true
   type: actuated
   action:
@@ -2621,77 +2384,7 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a47:10->23:free_z
-  from_pose: 10
-  to_pose: 23
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -90.01934330382952
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.0935818372231687
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a48:10->26:free_z
-  from_pose: 10
-  to_pose: 26
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -179.98486021106137
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.026372009799382548
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a49:11->10:free_y
+- id: a43:11->10:free_y
   from_pose: 11
   to_pose: 10
   directed: true
@@ -2726,44 +2419,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a50:11->13:free_z
+- id: a44:11->16:free_y
   from_pose: 11
-  to_pose: 13
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -89.99029046988821
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.08296349849826182
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a51:11->14:free_y
-  from_pose: 11
-  to_pose: 14
+  to_pose: 16
   directed: true
   type: actuated
   action:
@@ -2796,9 +2454,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a52:11->17:free_y
+- id: a45:11->19:free_y
   from_pose: 11
-  to_pose: 17
+  to_pose: 19
   directed: true
   type: actuated
   action:
@@ -2831,9 +2489,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a53:11->27:free_z
-  from_pose: 11
-  to_pose: 27
+- id: a46:12->9:free_z
+  from_pose: 12
+  to_pose: 9
   directed: true
   type: actuated
   action:
@@ -2843,8 +2501,8 @@ transitions:
     - 0.0
     - 0.0
     - 1.0
-    direction: positive
-    commanded_angle_deg: 179.9586711541
+    direction: negative
+    commanded_angle_deg: -179.95538835958905
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -2857,7 +2515,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.1660488794681157
+    axis_error_deg: 0.026706927255027043
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -2866,9 +2524,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a54:12->8:free_y
+- id: a47:12->15:free_y
   from_pose: 12
-  to_pose: 8
+  to_pose: 15
   directed: true
   type: actuated
   action:
@@ -2879,7 +2537,7 @@ transitions:
     - 1.0
     - 0.0
     direction: negative
-    commanded_angle_deg: -179.98056334121205
+    commanded_angle_deg: -179.9973929259881
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -2892,7 +2550,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.0759927885802059
+    axis_error_deg: 0.027361619324934652
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -2901,7 +2559,42 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a55:12->18:free_z
+- id: a48:12->17:free_z
+  from_pose: 12
+  to_pose: 17
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: negative
+    commanded_angle_deg: -89.95883687008768
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.03292512552495603
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a49:12->18:free_z
   from_pose: 12
   to_pose: 18
   directed: true
@@ -2913,8 +2606,8 @@ transitions:
     - 0.0
     - 0.0
     - 1.0
-    direction: negative
-    commanded_angle_deg: -89.84461362705764
+    direction: positive
+    commanded_angle_deg: 89.96634541772838
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -2927,7 +2620,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.037363853205057036
+    axis_error_deg: 0.026043887739659825
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -2936,9 +2629,219 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a56:12->19:free_z
-  from_pose: 12
-  to_pose: 19
+- id: a50:13->14:free_y
+  from_pose: 13
+  to_pose: 14
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: negative
+    commanded_angle_deg: -179.8882957250947
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.0165715164596823
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a51:13->22:free_y
+  from_pose: 13
+  to_pose: 22
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: negative
+    commanded_angle_deg: -59.060217029863175
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.07617990677228509
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a52:13->23:free_y
+  from_pose: 13
+  to_pose: 23
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 120.92984815112594
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.007867173327740527
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a53:14->13:free_y
+  from_pose: 14
+  to_pose: 13
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 179.8882957250947
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.0165715164596823
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a54:14->22:free_y
+  from_pose: 14
+  to_pose: 22
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 120.82813302961932
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.025436534662020265
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a55:14->23:free_y
+  from_pose: 14
+  to_pose: 23
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: negative
+    commanded_angle_deg: -59.181858620127024
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.024884491832306035
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a56:15->8:free_z
+  from_pose: 15
+  to_pose: 8
   directed: true
   type: actuated
   action:
@@ -2949,42 +2852,7 @@ transitions:
     - 0.0
     - 1.0
     direction: positive
-    commanded_angle_deg: 90.12499200866512
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.011148092117330524
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a57:12->22:free_z
-  from_pose: 12
-  to_pose: 22
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -179.85786438505787
+    commanded_angle_deg: 179.85786438505787
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -3006,9 +2874,44 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a58:12->28:free_z
-  from_pose: 12
-  to_pose: 28
+- id: a57:15->12:free_y
+  from_pose: 15
+  to_pose: 12
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 179.9973929259881
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.027361619324934652
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a58:15->20:free_z
+  from_pose: 15
+  to_pose: 20
   directed: true
   type: actuated
   action:
@@ -3019,7 +2922,7 @@ transitions:
     - 0.0
     - 1.0
     direction: positive
-    commanded_angle_deg: 149.3511885177034
+    commanded_angle_deg: 90.01325247716655
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -3032,7 +2935,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.03417757924846444
+    axis_error_deg: 0.024057445851717138
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -3041,219 +2944,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a59:12->29:free_z
-  from_pose: 12
-  to_pose: 29
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -30.72933160660436
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.04650454963864775
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a60:13->3:free_y
-  from_pose: 13
-  to_pose: 3
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 169.79586795011863
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.02238386305710045
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a61:13->6:free_y
-  from_pose: 13
-  to_pose: 6
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 9.792440407336676
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.5935230640355778
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a62:13->11:free_z
-  from_pose: 13
-  to_pose: 11
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 89.99029046988821
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.08296349849826182
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a63:13->16:free_y
-  from_pose: 13
-  to_pose: 16
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -90.13761997842498
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.048086353413377345
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a64:13->19:free_y
-  from_pose: 13
-  to_pose: 19
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 89.81328060116287
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.04338324193537812
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a65:13->27:free_z
-  from_pose: 13
-  to_pose: 27
+- id: a59:15->21:free_z
+  from_pose: 15
+  to_pose: 21
   directed: true
   type: actuated
   action:
@@ -3264,7 +2957,7 @@ transitions:
     - 0.0
     - 1.0
     direction: negative
-    commanded_angle_deg: -90.05186143877708
+    commanded_angle_deg: -90.01716331132035
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -3277,7 +2970,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.22418188799865119
+    axis_error_deg: 0.03669455349434319
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -3286,8 +2979,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a66:14->0:free_z
-  from_pose: 14
+- id: a60:16->0:free_z
+  from_pose: 16
   to_pose: 0
   directed: true
   type: actuated
@@ -3321,8 +3014,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a67:14->5:free_z
-  from_pose: 14
+- id: a61:16->5:free_z
+  from_pose: 16
   to_pose: 5
   directed: true
   type: actuated
@@ -3356,8 +3049,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a68:14->10:free_y
-  from_pose: 14
+- id: a62:16->10:free_y
+  from_pose: 16
   to_pose: 10
   directed: true
   type: actuated
@@ -3391,8 +3084,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a69:14->11:free_y
-  from_pose: 14
+- id: a63:16->11:free_y
+  from_pose: 16
   to_pose: 11
   directed: true
   type: actuated
@@ -3426,9 +3119,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a70:14->17:free_y
-  from_pose: 14
-  to_pose: 17
+- id: a64:16->19:free_y
+  from_pose: 16
+  to_pose: 19
   directed: true
   type: actuated
   action:
@@ -3461,9 +3154,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a71:14->18:floor_main_neg_x
-  from_pose: 14
-  to_pose: 18
+- id: a65:16->20:floor_main_neg_x
+  from_pose: 16
+  to_pose: 20
   directed: true
   type: actuated
   action:
@@ -3496,9 +3189,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a72:14->20:floor_main_neg_x
-  from_pose: 14
-  to_pose: 20
+- id: a66:16->22:floor_main_neg_x
+  from_pose: 16
+  to_pose: 22
   directed: true
   type: actuated
   action:
@@ -3531,9 +3224,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a73:14->21:free_z
-  from_pose: 14
-  to_pose: 21
+- id: a67:16->23:free_z
+  from_pose: 16
+  to_pose: 23
   directed: true
   type: actuated
   action:
@@ -3566,9 +3259,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a74:15->1:free_y
-  from_pose: 15
-  to_pose: 1
+- id: a68:17->2:free_y
+  from_pose: 17
+  to_pose: 2
   directed: true
   type: actuated
   action:
@@ -3601,8 +3294,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a75:15->7:free_y
-  from_pose: 15
+- id: a69:17->7:free_y
+  from_pose: 17
   to_pose: 7
   directed: true
   type: actuated
@@ -3636,9 +3329,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a76:15->8:free_z
-  from_pose: 15
-  to_pose: 8
+- id: a70:17->9:free_z
+  from_pose: 17
+  to_pose: 9
   directed: true
   type: actuated
   action:
@@ -3671,9 +3364,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a77:15->9:free_z
-  from_pose: 15
-  to_pose: 9
+- id: a71:17->12:free_z
+  from_pose: 17
+  to_pose: 12
   directed: true
   type: actuated
   action:
@@ -3706,9 +3399,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a78:15->16:free_z
-  from_pose: 15
-  to_pose: 16
+- id: a72:17->18:free_z
+  from_pose: 17
+  to_pose: 18
   directed: true
   type: actuated
   action:
@@ -3741,9 +3434,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a79:15->18:free_y
-  from_pose: 15
-  to_pose: 18
+- id: a73:17->20:free_y
+  from_pose: 17
+  to_pose: 20
   directed: true
   type: actuated
   action:
@@ -3776,9 +3469,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a80:15->21:wall_main_pos_x
-  from_pose: 15
-  to_pose: 21
+- id: a74:17->23:wall_main_pos_x
+  from_pose: 17
+  to_pose: 23
   directed: true
   type: actuated
   action:
@@ -3811,79 +3504,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a81:15->23:free_y
-  from_pose: 15
-  to_pose: 23
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 90.15132161992672
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.04069670303984016
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a82:16->3:free_y
-  from_pose: 16
-  to_pose: 3
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -100.0665508551785
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.023785811183228797
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a83:16->6:free_y
-  from_pose: 16
-  to_pose: 6
+- id: a75:18->1:free_y
+  from_pose: 18
+  to_pose: 1
   directed: true
   type: actuated
   action:
@@ -3916,9 +3539,44 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a84:16->8:free_z
-  from_pose: 16
-  to_pose: 8
+- id: a76:18->6:free_y
+  from_pose: 18
+  to_pose: 6
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: negative
+    commanded_angle_deg: -100.0665508551785
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.023785811183228797
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a77:18->9:free_z
+  from_pose: 18
+  to_pose: 9
   directed: true
   type: actuated
   action:
@@ -3951,9 +3609,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a85:16->9:free_z
-  from_pose: 16
-  to_pose: 9
+- id: a78:18->12:free_z
+  from_pose: 18
+  to_pose: 12
   directed: true
   type: actuated
   action:
@@ -3986,44 +3644,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a86:16->13:free_y
-  from_pose: 16
-  to_pose: 13
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 90.13761997842498
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.048086353413377345
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a87:16->15:free_z
-  from_pose: 16
-  to_pose: 15
+- id: a79:18->17:free_z
+  from_pose: 18
+  to_pose: 17
   directed: true
   type: actuated
   action:
@@ -4056,9 +3679,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a88:16->18:wall_main_pos_x
-  from_pose: 16
-  to_pose: 18
+- id: a80:18->20:wall_main_pos_x
+  from_pose: 18
+  to_pose: 20
   directed: true
   type: actuated
   action:
@@ -4091,9 +3714,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a89:16->19:free_y
-  from_pose: 16
-  to_pose: 19
+- id: a81:18->21:free_y
+  from_pose: 18
+  to_pose: 21
   directed: true
   type: actuated
   action:
@@ -4126,9 +3749,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a90:16->20:wall_main_pos_x
-  from_pose: 16
-  to_pose: 20
+- id: a82:18->22:wall_main_pos_x
+  from_pose: 18
+  to_pose: 22
   directed: true
   type: actuated
   action:
@@ -4161,44 +3784,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a91:17->2:free_z
-  from_pose: 17
-  to_pose: 2
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -99.98503841397562
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.01189327870032539
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a92:17->4:free_z
-  from_pose: 17
-  to_pose: 4
+- id: a83:19->3:free_z
+  from_pose: 19
+  to_pose: 3
   directed: true
   type: actuated
   action:
@@ -4231,8 +3819,43 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a93:17->10:free_y
-  from_pose: 17
+- id: a84:19->4:free_z
+  from_pose: 19
+  to_pose: 4
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: negative
+    commanded_angle_deg: -99.98503841397562
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.01189327870032539
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a85:19->10:free_y
+  from_pose: 19
   to_pose: 10
   directed: true
   type: actuated
@@ -4266,8 +3889,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a94:17->11:free_y
-  from_pose: 17
+- id: a86:19->11:free_y
+  from_pose: 19
   to_pose: 11
   directed: true
   type: actuated
@@ -4301,9 +3924,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a95:17->14:free_y
-  from_pose: 17
-  to_pose: 14
+- id: a87:19->16:free_y
+  from_pose: 19
+  to_pose: 16
   directed: true
   type: actuated
   action:
@@ -4336,9 +3959,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a96:17->19:floor_main_neg_x
-  from_pose: 17
-  to_pose: 19
+- id: a88:19->21:floor_main_neg_x
+  from_pose: 19
+  to_pose: 21
   directed: true
   type: actuated
   action:
@@ -4371,9 +3994,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a97:17->20:free_z
-  from_pose: 17
-  to_pose: 20
+- id: a89:19->22:free_z
+  from_pose: 19
+  to_pose: 22
   directed: true
   type: actuated
   action:
@@ -4406,9 +4029,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a98:18->1:free_y
-  from_pose: 18
-  to_pose: 1
+- id: a90:20->2:free_y
+  from_pose: 20
+  to_pose: 2
   directed: true
   type: actuated
   action:
@@ -4441,8 +4064,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a99:18->7:free_y
-  from_pose: 18
+- id: a91:20->7:free_y
+  from_pose: 20
   to_pose: 7
   directed: true
   type: actuated
@@ -4476,9 +4099,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a100:18->12:free_z
-  from_pose: 18
-  to_pose: 12
+- id: a92:20->8:free_z
+  from_pose: 20
+  to_pose: 8
   directed: true
   type: actuated
   action:
@@ -4511,114 +4134,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a101:18->14:wall_main_pos_x
-  from_pose: 18
-  to_pose: 14
-  directed: true
-  type: actuated
-  action:
-    name: wall_main_pos_x
-    axis: x
-    axis_vector_chute:
-    - 1.0
-    - 0.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 90.05344376001425
-    impulse_cost: 1
-    surface_requirement: main_face_on_wall
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.058563394219492006
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a102:18->15:free_y
-  from_pose: 18
+- id: a93:20->15:free_z
+  from_pose: 20
   to_pose: 15
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 179.99888508884646
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.026406825001571783
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a103:18->19:free_z
-  from_pose: 18
-  to_pose: 19
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 179.9695895034355
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.019384182305795247
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a104:18->22:free_z
-  from_pose: 18
-  to_pose: 22
   directed: true
   type: actuated
   action:
@@ -4651,92 +4169,22 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a105:18->23:free_y
-  from_pose: 18
-  to_pose: 23
+- id: a94:20->16:wall_main_pos_x
+  from_pose: 20
+  to_pose: 16
   directed: true
   type: actuated
   action:
-    name: free_y
-    axis: y
+    name: wall_main_pos_x
+    axis: x
     axis_vector_chute:
-    - 0.0
     - 1.0
     - 0.0
-    direction: negative
-    commanded_angle_deg: -89.84981362334337
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.008477719575329936
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a106:18->28:free_z
-  from_pose: 18
-  to_pose: 28
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
     - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -120.80419956709282
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.02605862683550042
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a107:18->29:free_z
-  from_pose: 18
-  to_pose: 29
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
     direction: positive
-    commanded_angle_deg: 59.11530393490993
+    commanded_angle_deg: 90.05344376001425
     impulse_cost: 1
-    surface_requirement: null
+    surface_requirement: main_face_on_wall
     additional_requirement: null
   capture:
     interval_deg: null
@@ -4747,7 +4195,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.04476443334152612
+    axis_error_deg: 0.058563394219492006
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -4756,9 +4204,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a108:19->3:free_y
-  from_pose: 19
-  to_pose: 3
+- id: a95:20->17:free_y
+  from_pose: 20
+  to_pose: 17
   directed: true
   type: actuated
   action:
@@ -4769,7 +4217,7 @@ transitions:
     - 1.0
     - 0.0
     direction: positive
-    commanded_angle_deg: 79.9826529870197
+    commanded_angle_deg: 179.99888508884646
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -4782,7 +4230,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.055359858558746394
+    axis_error_deg: 0.026406825001571783
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -4791,9 +4239,44 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a109:19->6:free_y
-  from_pose: 19
-  to_pose: 6
+- id: a96:20->21:free_z
+  from_pose: 20
+  to_pose: 21
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: positive
+    commanded_angle_deg: 179.9695895034355
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.019384182305795247
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a97:21->1:free_y
+  from_pose: 21
+  to_pose: 1
   directed: true
   type: actuated
   action:
@@ -4826,9 +4309,44 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a110:19->12:free_z
-  from_pose: 19
-  to_pose: 12
+- id: a98:21->6:free_y
+  from_pose: 21
+  to_pose: 6
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
+    axis_vector_chute:
+    - 0.0
+    - 1.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 79.9826529870197
+    impulse_cost: 1
+    surface_requirement: null
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.055359858558746394
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a99:21->8:free_z
+  from_pose: 21
+  to_pose: 8
   directed: true
   type: actuated
   action:
@@ -4861,184 +4379,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a111:19->13:free_y
-  from_pose: 19
-  to_pose: 13
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -89.81328060116287
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.04338324193537812
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a112:19->15:wall_main_pos_x
-  from_pose: 19
+- id: a100:21->15:free_z
+  from_pose: 21
   to_pose: 15
-  directed: true
-  type: actuated
-  action:
-    name: wall_main_pos_x
-    axis: x
-    axis_vector_chute:
-    - 1.0
-    - 0.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 179.9713282074671
-    impulse_cost: 1
-    surface_requirement: main_face_on_wall
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.020758207063767582
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a113:19->16:free_y
-  from_pose: 19
-  to_pose: 16
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -179.95083029942703
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.053707179715504795
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a114:19->17:wall_main_pos_x
-  from_pose: 19
-  to_pose: 17
-  directed: true
-  type: actuated
-  action:
-    name: wall_main_pos_x
-    axis: x
-    axis_vector_chute:
-    - 1.0
-    - 0.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 90.0061699128062
-    impulse_cost: 1
-    surface_requirement: main_face_on_wall
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.03946353272197713
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a115:19->18:free_z
-  from_pose: 19
-  to_pose: 18
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -179.9695895034355
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.019384182305795247
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a116:19->22:free_z
-  from_pose: 19
-  to_pose: 22
   directed: true
   type: actuated
   action:
@@ -5071,20 +4414,55 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a117:19->28:free_z
-  from_pose: 19
-  to_pose: 28
+- id: a101:21->17:wall_main_pos_x
+  from_pose: 21
+  to_pose: 17
   directed: true
   type: actuated
   action:
-    name: free_z
-    axis: z
+    name: wall_main_pos_x
+    axis: x
+    axis_vector_chute:
+    - 1.0
+    - 0.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 179.9713282074671
+    impulse_cost: 1
+    surface_requirement: main_face_on_wall
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.020758207063767582
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a102:21->18:free_y
+  from_pose: 21
+  to_pose: 18
+  directed: true
+  type: actuated
+  action:
+    name: free_y
+    axis: y
     axis_vector_chute:
     - 0.0
-    - 0.0
     - 1.0
-    direction: positive
-    commanded_angle_deg: 59.226229587622676
+    - 0.0
+    direction: negative
+    commanded_angle_deg: -179.95083029942703
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -5097,7 +4475,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.06205393209130031
+    axis_error_deg: 0.053707179715504795
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -5106,9 +4484,44 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a118:19->29:free_z
-  from_pose: 19
-  to_pose: 29
+- id: a103:21->19:wall_main_pos_x
+  from_pose: 21
+  to_pose: 19
+  directed: true
+  type: actuated
+  action:
+    name: wall_main_pos_x
+    axis: x
+    axis_vector_chute:
+    - 1.0
+    - 0.0
+    - 0.0
+    direction: positive
+    commanded_angle_deg: 90.0061699128062
+    impulse_cost: 1
+    surface_requirement: main_face_on_wall
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.03946353272197713
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a104:21->20:free_z
+  from_pose: 21
+  to_pose: 20
   directed: true
   type: actuated
   action:
@@ -5119,7 +4532,7 @@ transitions:
     - 0.0
     - 1.0
     direction: negative
-    commanded_angle_deg: -120.85431132073616
+    commanded_angle_deg: -179.9695895034355
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -5132,7 +4545,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.01537939988382625
+    axis_error_deg: 0.019384182305795247
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -5141,44 +4554,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a119:20->2:free_z
-  from_pose: 20
-  to_pose: 2
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 80.06958127482116
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.014036572507690795
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a120:20->4:free_z
-  from_pose: 20
-  to_pose: 4
+- id: a105:22->3:free_z
+  from_pose: 22
+  to_pose: 3
   directed: true
   type: actuated
   action:
@@ -5211,44 +4589,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a121:20->16:floor_main_neg_x
-  from_pose: 20
-  to_pose: 16
-  directed: true
-  type: actuated
-  action:
-    name: floor_main_neg_x
-    axis: x
-    axis_vector_chute:
-    - 1.0
-    - 0.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -89.99542346988734
-    impulse_cost: 1
-    surface_requirement: main_face_on_floor
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.06946425347127841
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a122:20->17:free_z
-  from_pose: 20
-  to_pose: 17
+- id: a106:22->4:free_z
+  from_pose: 22
+  to_pose: 4
   directed: true
   type: actuated
   action:
@@ -5258,43 +4601,8 @@ transitions:
     - 0.0
     - 0.0
     - 1.0
-    direction: negative
-    commanded_angle_deg: -179.94538373738214
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.01806539382027311
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a123:20->21:free_y
-  from_pose: 20
-  to_pose: 21
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
     direction: positive
-    commanded_angle_deg: 179.99002508754197
+    commanded_angle_deg: 80.06958127482116
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -5307,7 +4615,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.03148352133407252
+    axis_error_deg: 0.014036572507690795
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -5316,9 +4624,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a124:20->24:free_y
-  from_pose: 20
-  to_pose: 24
+- id: a107:22->13:free_y
+  from_pose: 22
+  to_pose: 13
   directed: true
   type: actuated
   action:
@@ -5351,9 +4659,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a125:20->25:free_y
-  from_pose: 20
-  to_pose: 25
+- id: a108:22->14:free_y
+  from_pose: 22
+  to_pose: 14
   directed: true
   type: actuated
   action:
@@ -5386,20 +4694,55 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a126:20->26:free_y
-  from_pose: 20
-  to_pose: 26
+- id: a109:22->18:floor_main_neg_x
+  from_pose: 22
+  to_pose: 18
   directed: true
   type: actuated
   action:
-    name: free_y
-    axis: y
+    name: floor_main_neg_x
+    axis: x
     axis_vector_chute:
-    - 0.0
     - 1.0
     - 0.0
+    - 0.0
     direction: negative
-    commanded_angle_deg: -90.00314813180019
+    commanded_angle_deg: -89.99542346988734
+    impulse_cost: 1
+    surface_requirement: main_face_on_floor
+    additional_requirement: null
+  capture:
+    interval_deg: null
+    width_deg: null
+    fraction: null
+  geometry:
+    geometric_score: null
+    target_barrier_score: null
+    passive_escape_barrier_mm: null
+    passive_saddle_angle_deg: null
+    axis_error_deg: 0.06946425347127841
+    passive_settling_via_catalog_pose_ids: []
+  experimental:
+    status: untested
+    trials: null
+    successes: null
+    empirical_success_rate: null
+    difficulty_rating: null
+    notes: ''
+- id: a110:22->19:free_z
+  from_pose: 22
+  to_pose: 19
+  directed: true
+  type: actuated
+  action:
+    name: free_z
+    axis: z
+    axis_vector_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    direction: negative
+    commanded_angle_deg: -179.94538373738214
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -5412,7 +4755,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.03951833508292491
+    axis_error_deg: 0.01806539382027311
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -5421,9 +4764,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a127:20->27:free_y
-  from_pose: 20
-  to_pose: 27
+- id: a111:22->23:free_y
+  from_pose: 22
+  to_pose: 23
   directed: true
   type: actuated
   action:
@@ -5434,7 +4777,7 @@ transitions:
     - 1.0
     - 0.0
     direction: positive
-    commanded_angle_deg: 89.71068524290347
+    commanded_angle_deg: 179.99002508754197
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -5447,7 +4790,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.0856027208204489
+    axis_error_deg: 0.03148352133407252
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -5456,8 +4799,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a128:21->0:free_z
-  from_pose: 21
+- id: a112:23->0:free_z
+  from_pose: 23
   to_pose: 0
   directed: true
   type: actuated
@@ -5491,8 +4834,8 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a129:21->5:free_z
-  from_pose: 21
+- id: a113:23->5:free_z
+  from_pose: 23
   to_pose: 5
   directed: true
   type: actuated
@@ -5526,149 +4869,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a130:21->14:free_z
-  from_pose: 21
-  to_pose: 14
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 179.91217471220168
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.013305571891424079
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a131:21->15:floor_main_neg_x
-  from_pose: 21
-  to_pose: 15
-  directed: true
-  type: actuated
-  action:
-    name: floor_main_neg_x
-    axis: x
-    axis_vector_chute:
-    - 1.0
-    - 0.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -90.02585645083082
-    impulse_cost: 1
-    surface_requirement: main_face_on_floor
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.00768402808799775
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a132:21->17:floor_main_neg_x
-  from_pose: 21
-  to_pose: 17
-  directed: true
-  type: actuated
-  action:
-    name: floor_main_neg_x
-    axis: x
-    axis_vector_chute:
-    - 1.0
-    - 0.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -179.99101986036007
-    impulse_cost: 1
-    surface_requirement: main_face_on_floor
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.007552222146319857
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a133:21->20:free_y
-  from_pose: 21
-  to_pose: 20
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -179.99002508754197
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.03148352133407252
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a134:21->24:free_y
-  from_pose: 21
-  to_pose: 24
+- id: a114:23->13:free_y
+  from_pose: 23
+  to_pose: 13
   directed: true
   type: actuated
   action:
@@ -5701,9 +4904,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a135:21->25:free_y
-  from_pose: 21
-  to_pose: 25
+- id: a115:23->14:free_y
+  from_pose: 23
+  to_pose: 14
   directed: true
   type: actuated
   action:
@@ -5736,359 +4939,9 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a136:21->26:free_y
-  from_pose: 21
-  to_pose: 26
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 90.00684065642112
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.005004843399622728
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a137:21->27:free_y
-  from_pose: 21
-  to_pose: 27
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -90.27939549268608
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.049710693471047715
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a138:22->9:free_y
-  from_pose: 22
-  to_pose: 9
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 179.9973929259881
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.027361619324934652
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a139:22->12:free_z
-  from_pose: 22
-  to_pose: 12
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 179.85786438505787
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.02919807663727979
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a140:22->18:free_z
-  from_pose: 22
-  to_pose: 18
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 90.01325247716655
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.024057445851717138
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a141:22->19:free_z
-  from_pose: 22
-  to_pose: 19
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -90.01716331132035
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.03669455349434319
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a142:22->28:free_z
-  from_pose: 22
-  to_pose: 28
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -30.790949736193138
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.021530746885210006
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a143:22->29:free_z
-  from_pose: 22
-  to_pose: 29
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 149.12854854295733
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.018939992230286695
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a144:23->1:free_y
+- id: a116:23->16:free_z
   from_pose: 23
-  to_pose: 1
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 169.8216142917572
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.014462276819131877
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a145:23->7:free_y
-  from_pose: 23
-  to_pose: 7
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 9.846094505774534
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.3256749396392665
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a146:23->10:free_z
-  from_pose: 23
-  to_pose: 10
+  to_pose: 16
   directed: true
   type: actuated
   action:
@@ -6099,7 +4952,7 @@ transitions:
     - 0.0
     - 1.0
     direction: positive
-    commanded_angle_deg: 90.01934330382952
+    commanded_angle_deg: 179.91217471220168
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -6112,7 +4965,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.0935818372231687
+    axis_error_deg: 0.013305571891424079
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -6121,22 +4974,22 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a147:23->13:wall_main_pos_x
+- id: a117:23->17:floor_main_neg_x
   from_pose: 23
-  to_pose: 13
+  to_pose: 17
   directed: true
   type: actuated
   action:
-    name: wall_main_pos_x
+    name: floor_main_neg_x
     axis: x
     axis_vector_chute:
     - 1.0
     - 0.0
     - 0.0
-    direction: positive
-    commanded_angle_deg: 179.9608084392644
+    direction: negative
+    commanded_angle_deg: -90.02585645083082
     impulse_cost: 1
-    surface_requirement: main_face_on_wall
+    surface_requirement: main_face_on_floor
     additional_requirement: null
   capture:
     interval_deg: null
@@ -6147,7 +5000,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.15333043592692755
+    axis_error_deg: 0.00768402808799775
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -6156,1037 +5009,22 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a148:23->15:free_y
+- id: a118:23->19:floor_main_neg_x
   from_pose: 23
-  to_pose: 15
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -90.15132161992672
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.04069670303984016
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a149:23->18:free_y
-  from_pose: 23
-  to_pose: 18
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 89.84981362334337
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.008477719575329936
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a150:23->26:free_z
-  from_pose: 23
-  to_pose: 26
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -89.96574065307168
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.09952383687837058
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a151:24->20:free_y
-  from_pose: 24
-  to_pose: 20
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -59.060217029863175
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.07617990677228509
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a152:24->21:free_y
-  from_pose: 24
-  to_pose: 21
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 120.92984815112594
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.007867173327740527
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a153:24->25:free_y
-  from_pose: 24
-  to_pose: 25
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -179.8882957250947
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.0165715164596823
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a154:24->26:free_y
-  from_pose: 24
-  to_pose: 26
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -149.0633119291762
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.010427359263612908
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a155:24->27:free_y
-  from_pose: 24
-  to_pose: 27
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 30.650529848861364
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.10935474471003068
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a156:25->20:free_y
-  from_pose: 25
-  to_pose: 20
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 120.82813302961932
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.025436534662020265
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a157:25->21:free_y
-  from_pose: 25
-  to_pose: 21
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -59.181858620127024
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.024884491832306035
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a158:25->24:free_y
-  from_pose: 25
-  to_pose: 24
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 179.8882957250947
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.0165715164596823
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a159:25->26:free_y
-  from_pose: 25
-  to_pose: 26
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 30.824992949393224
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.03565657490904281
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a160:25->27:free_y
-  from_pose: 25
-  to_pose: 27
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -149.46125005046073
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.04014047952715233
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a161:26->10:free_z
-  from_pose: 26
-  to_pose: 10
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 179.98486021106137
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.026372009799382548
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a162:26->20:free_y
-  from_pose: 26
-  to_pose: 20
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 90.00314813180019
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.03951833508292491
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a163:26->21:free_y
-  from_pose: 26
-  to_pose: 21
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -90.00684065642112
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.005004843399622728
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a164:26->23:free_z
-  from_pose: 26
-  to_pose: 23
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 89.96574065307168
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.09952383687837058
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a165:26->24:free_y
-  from_pose: 26
-  to_pose: 24
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 149.0633119291762
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.010427359263612908
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a166:26->25:free_y
-  from_pose: 26
-  to_pose: 25
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -30.824992949393224
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.03565657490904281
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a167:26->27:free_y
-  from_pose: 26
-  to_pose: 27
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 179.7137823194441
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.037570976779279
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a168:27->11:free_z
-  from_pose: 27
-  to_pose: 11
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -179.9586711541
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.1660488794681157
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a169:27->13:free_z
-  from_pose: 27
-  to_pose: 13
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 90.05186143877708
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.22418188799865119
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a170:27->20:free_y
-  from_pose: 27
-  to_pose: 20
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -89.71068524290347
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.0856027208204489
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a171:27->21:free_y
-  from_pose: 27
-  to_pose: 21
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 90.27939549268608
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.049710693471047715
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a172:27->24:free_y
-  from_pose: 27
-  to_pose: 24
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -30.650529848861364
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.10935474471003068
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a173:27->25:free_y
-  from_pose: 27
-  to_pose: 25
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: positive
-    commanded_angle_deg: 149.46125005046073
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.04014047952715233
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a174:27->26:free_y
-  from_pose: 27
-  to_pose: 26
-  directed: true
-  type: actuated
-  action:
-    name: free_y
-    axis: y
-    axis_vector_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    direction: negative
-    commanded_angle_deg: -179.7137823194441
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.037570976779279
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a175:28->12:free_z
-  from_pose: 28
-  to_pose: 12
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -149.3511885177034
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.03417757924846444
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a176:28->18:free_z
-  from_pose: 28
-  to_pose: 18
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 120.80419956709282
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.02605862683550042
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a177:28->19:free_z
-  from_pose: 28
   to_pose: 19
   directed: true
   type: actuated
   action:
-    name: free_z
-    axis: z
+    name: floor_main_neg_x
+    axis: x
     axis_vector_chute:
-    - 0.0
-    - 0.0
     - 1.0
+    - 0.0
+    - 0.0
     direction: negative
-    commanded_angle_deg: -59.226229587622676
+    commanded_angle_deg: -179.99101986036007
     impulse_cost: 1
-    surface_requirement: null
+    surface_requirement: main_face_on_floor
     additional_requirement: null
   capture:
     interval_deg: null
@@ -7197,7 +5035,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.06205393209130031
+    axis_error_deg: 0.007552222146319857
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
@@ -7206,125 +5044,20 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a178:28->22:free_z
-  from_pose: 28
+- id: a119:23->22:free_y
+  from_pose: 23
   to_pose: 22
   directed: true
   type: actuated
   action:
-    name: free_z
-    axis: z
+    name: free_y
+    axis: y
     axis_vector_chute:
     - 0.0
-    - 0.0
     - 1.0
-    direction: positive
-    commanded_angle_deg: 30.790949736193138
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.021530746885210006
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a179:28->29:free_z
-  from_pose: 28
-  to_pose: 29
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
     - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 179.9194979607202
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.021154600195699716
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a180:29->12:free_z
-  from_pose: 29
-  to_pose: 12
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 30.72933160660436
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.04650454963864775
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a181:29->18:free_z
-  from_pose: 29
-  to_pose: 18
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
     direction: negative
-    commanded_angle_deg: -59.11530393490993
+    commanded_angle_deg: -179.99002508754197
     impulse_cost: 1
     surface_requirement: null
     additional_requirement: null
@@ -7337,112 +5070,7 @@ transitions:
     target_barrier_score: null
     passive_escape_barrier_mm: null
     passive_saddle_angle_deg: null
-    axis_error_deg: 0.04476443334152612
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a182:29->19:free_z
-  from_pose: 29
-  to_pose: 19
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: positive
-    commanded_angle_deg: 120.85431132073616
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.01537939988382625
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a183:29->22:free_z
-  from_pose: 29
-  to_pose: 22
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -149.12854854295733
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.018939992230286695
-    passive_settling_via_catalog_pose_ids: []
-  experimental:
-    status: untested
-    trials: null
-    successes: null
-    empirical_success_rate: null
-    difficulty_rating: null
-    notes: ''
-- id: a184:29->28:free_z
-  from_pose: 29
-  to_pose: 28
-  directed: true
-  type: actuated
-  action:
-    name: free_z
-    axis: z
-    axis_vector_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    direction: negative
-    commanded_angle_deg: -179.9194979607202
-    impulse_cost: 1
-    surface_requirement: null
-    additional_requirement: null
-  capture:
-    interval_deg: null
-    width_deg: null
-    fraction: null
-  geometry:
-    geometric_score: null
-    target_barrier_score: null
-    passive_escape_barrier_mm: null
-    passive_saddle_angle_deg: null
-    axis_error_deg: 0.021154600195699716
+    axis_error_deg: 0.03148352133407252
     passive_settling_via_catalog_pose_ids: []
   experimental:
     status: untested
