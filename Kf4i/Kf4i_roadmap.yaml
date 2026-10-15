@@ -233,3 +233,132 @@ transitions:
     difficulty_rating: null
     notes: ''
 generation: *id001
+consumer_export:
+  version: 1
+  calibration_choices:
+  - actuation: free_z
+    actuation_count: 1
+    axis_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    axis_error_deg: 0.02879954697639666
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a0:1->2:free_z
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: -39.59674623525401
+    source: 1
+    target: 2
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -39.59674623525401
+      start_quaternion_xyzw: &id002
+      - -6.4714879591532e-06
+      - 1.4437585209081673e-05
+      - -0.8974540347227936
+      - 0.44110798599600864
+      end_quaternion_xyzw: &id003
+      - -1.1987889358628772e-06
+      - 1.5776150612941406e-05
+      - -0.993814091082128
+      - 0.11105652667124083
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 39.59674623525401
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -39.59674623525401
+      start_quaternion_xyzw: *id002
+      end_quaternion_xyzw: *id003
+      segment_kind: command
+  - actuation: free_z
+    actuation_count: 1
+    axis_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    axis_error_deg: 0.02879954697639666
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a1:2->1:free_z
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: 39.59674623525401
+    source: 2
+    target: 1
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 39.59674623525401
+      start_quaternion_xyzw: &id004
+      - -4.9395505564382713e-05
+      - -0.0001475115291158513
+      - -0.9938140748167196
+      - 0.1110565644013031
+      end_quaternion_xyzw: &id005
+      - 3.488051337611067e-06
+      - -0.00015552299087248742
+      - -0.8974540066392325
+      - 0.44110801598658544
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 39.59674623525401
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 39.59674623525401
+      start_quaternion_xyzw: *id004
+      end_quaternion_xyzw: *id005
+      segment_kind: command
+  execution_routes:
+  - route_id: a0:1->2:free_z:profile
+    source: 1
+    target: 2
+    profile_edge_ids:
+    - a0:1->2:free_z
+    steps:
+    - edge_id: a0:1->2:free_z
+      source: 1
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a1:2->1:free_z:profile
+    source: 2
+    target: 1
+    profile_edge_ids:
+    - a1:2->1:free_z
+    steps:
+    - edge_id: a1:2->1:free_z
+      source: 2
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  route_policy: exported_only; explicit calibration and source coverage required

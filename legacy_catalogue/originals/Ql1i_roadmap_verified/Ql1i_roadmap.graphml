@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d18" for="edge" attr.name="escape_barrier_mm" attr.type="double" />
+  <key id="d17" for="edge" attr.name="geometric_score" attr.type="double" />
+  <key id="d16" for="edge" attr.name="capture_width_deg" attr.type="double" />
+  <key id="d15" for="edge" attr.name="signed_angle_deg" attr.type="double" />
+  <key id="d14" for="edge" attr.name="actuation" attr.type="string" />
+  <key id="d13" for="edge" attr.name="transition_kind" attr.type="string" />
+  <key id="d12" for="edge" attr.name="edge_id" attr.type="string" />
+  <key id="d11" for="node" attr.name="robustness_method" attr.type="string" />
+  <key id="d10" for="node" attr.name="pose_ranking_method" attr.type="string" />
+  <key id="d9" for="node" attr.name="main_face_on_wall" attr.type="boolean" />
+  <key id="d8" for="node" attr.name="main_face_on_floor" attr.type="boolean" />
+  <key id="d7" for="node" attr.name="wall_contact" attr.type="string" />
+  <key id="d6" for="node" attr.name="floor_contact" attr.type="string" />
+  <key id="d5" for="node" attr.name="rocking_barrier_mm" attr.type="double" />
+  <key id="d4" for="node" attr.name="main_face_min_span_mm" attr.type="double" />
+  <key id="d3" for="node" attr.name="cad_status" attr.type="string" />
+  <key id="d2" for="node" attr.name="kind" attr.type="string" />
+  <key id="d1" for="node" attr.name="pose_ids" attr.type="string" />
+  <key id="d0" for="node" attr.name="original_catalog_pose_id" attr.type="long" />
+  <graph edgedefault="directed">
+    <node id="0">
+      <data key="d0">2</data>
+      <data key="d1">2/5/14/19</data>
+      <data key="d2">robust</data>
+      <data key="d3">verified</data>
+      <data key="d4">20.0</data>
+      <data key="d5">1.1076657161317633</data>
+      <data key="d6">face</data>
+      <data key="d7">face</data>
+      <data key="d8">True</data>
+      <data key="d9">True</data>
+      <data key="d10">rocking</data>
+      <data key="d11">rocking</data>
+    </node>
+    <node id="1">
+      <data key="d0">3</data>
+      <data key="d1">3/11/17/21</data>
+      <data key="d2">robust</data>
+      <data key="d3">verified</data>
+      <data key="d4">20.0</data>
+      <data key="d5">1.1076657161317633</data>
+      <data key="d6">face</data>
+      <data key="d7">face</data>
+      <data key="d8">True</data>
+      <data key="d9">True</data>
+      <data key="d10">rocking</data>
+      <data key="d11">rocking</data>
+    </node>
+    <node id="2">
+      <data key="d0">0</data>
+      <data key="d1">0/1/4/12</data>
+      <data key="d2">metastable</data>
+      <data key="d3">verified</data>
+      <data key="d4">20.0</data>
+      <data key="d5">0.48994398862299593</data>
+      <data key="d6">face</data>
+      <data key="d7">face</data>
+      <data key="d8">True</data>
+      <data key="d9">False</data>
+      <data key="d10">rocking</data>
+      <data key="d11">rocking</data>
+    </node>
+    <node id="3">
+      <data key="d0">6</data>
+      <data key="d1">6/7/8/9</data>
+      <data key="d2">metastable</data>
+      <data key="d3">verified</data>
+      <data key="d4">20.0</data>
+      <data key="d5">0.48994398862299593</data>
+      <data key="d6">face</data>
+      <data key="d7">face</data>
+      <data key="d8">False</data>
+      <data key="d9">True</data>
+      <data key="d10">rocking</data>
+      <data key="d11">rocking</data>
+    </node>
+    <node id="4">
+      <data key="d0">10</data>
+      <data key="d1">10/15/16/20</data>
+      <data key="d2">metastable</data>
+      <data key="d3">verified</data>
+      <data key="d4">20.0</data>
+      <data key="d5">0.4660127826285168</data>
+      <data key="d6">face</data>
+      <data key="d7">face</data>
+      <data key="d8">True</data>
+      <data key="d9">False</data>
+      <data key="d10">rocking</data>
+      <data key="d11">rocking</data>
+    </node>
+    <node id="5">
+      <data key="d0">13</data>
+      <data key="d1">13/18/22/23</data>
+      <data key="d2">metastable</data>
+      <data key="d3">verified</data>
+      <data key="d4">20.0</data>
+      <data key="d5">0.466012782628511</data>
+      <data key="d6">face</data>
+      <data key="d7">face</data>
+      <data key="d8">False</data>
+      <data key="d9">True</data>
+      <data key="d10">rocking</data>
+      <data key="d11">rocking</data>
+    </node>
+    <edge source="0" target="2" id="a5:0-&gt;2:free_z">
+      <data key="d12">a5:0-&gt;2:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">31.599999999999994</data>
+      <data key="d17">0.08777777777777776</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="0" target="1" id="a6:0-&gt;1:free_y">
+      <data key="d12">a6:0-&gt;1:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">180.0</data>
+      <data key="d16">74.19999999999993</data>
+      <data key="d17">0.2061111111111109</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="0" target="1" id="a7:0-&gt;1:free_z">
+      <data key="d12">a7:0-&gt;1:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">180.0</data>
+      <data key="d16">77.39999999999992</data>
+      <data key="d17">0.21499999999999977</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="0" target="3" id="a8:0-&gt;3:free_y">
+      <data key="d12">a8:0-&gt;3:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">31.599999999999994</data>
+      <data key="d17">0.08777777777777776</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="0" target="4" id="a9:0-&gt;4:free_z">
+      <data key="d12">a9:0-&gt;4:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">25.19999999999999</data>
+      <data key="d17">0.06999999999999997</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="0" target="5" id="a10:0-&gt;5:free_y">
+      <data key="d12">a10:0-&gt;5:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">25.19999999999999</data>
+      <data key="d17">0.06999999999999997</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="1" target="2" id="a11:1-&gt;2:free_z">
+      <data key="d12">a11:1-&gt;2:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">31.599999999999994</data>
+      <data key="d17">0.08777777777777776</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="1" target="0" id="a12:1-&gt;0:free_y">
+      <data key="d12">a12:1-&gt;0:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">180.0</data>
+      <data key="d16">77.39999999999992</data>
+      <data key="d17">0.21499999999999977</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="1" target="0" id="a13:1-&gt;0:free_z">
+      <data key="d12">a13:1-&gt;0:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">-180.0</data>
+      <data key="d16">77.39999999999992</data>
+      <data key="d17">0.21499999999999977</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="1" target="3" id="a14:1-&gt;3:free_y">
+      <data key="d12">a14:1-&gt;3:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">31.599999999999994</data>
+      <data key="d17">0.08777777777777776</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="1" target="4" id="a15:1-&gt;4:free_z">
+      <data key="d12">a15:1-&gt;4:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">25.19999999999999</data>
+      <data key="d17">0.06999999999999997</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="1" target="5" id="a16:1-&gt;5:free_y">
+      <data key="d12">a16:1-&gt;5:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">25.19999999999999</data>
+      <data key="d17">0.06999999999999997</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="2" target="0" id="a0:2-&gt;0:free_z">
+      <data key="d12">a0:2-&gt;0:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">151.59999999999985</data>
+      <data key="d17">0.4211111111111107</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="2" target="1" id="a1:2-&gt;1:free_z">
+      <data key="d12">a1:2-&gt;1:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">151.59999999999985</data>
+      <data key="d17">0.4211111111111107</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="2" target="4" id="a2:2-&gt;4:floor_main_neg_x">
+      <data key="d12">a2:2-&gt;4:floor_main_neg_x</data>
+      <data key="d13">actuated</data>
+      <data key="d14">floor_main_neg_x</data>
+      <data key="d15">-180.0</data>
+      <data key="d16">45.0</data>
+      <data key="d17">0.25</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="2" target="4" id="a3:2-&gt;4:free_z">
+      <data key="d12">a3:2-&gt;4:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">-180.0</data>
+      <data key="d16">12.599999999999994</data>
+      <data key="d17">0.03499999999999998</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="2" target="5" id="a4:2-&gt;5:floor_main_neg_x">
+      <data key="d12">a4:2-&gt;5:floor_main_neg_x</data>
+      <data key="d13">actuated</data>
+      <data key="d14">floor_main_neg_x</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">84.60000000000002</data>
+      <data key="d17">0.47000000000000014</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="3" target="0" id="a17:3-&gt;0:free_y">
+      <data key="d12">a17:3-&gt;0:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">151.59999999999985</data>
+      <data key="d17">0.4211111111111107</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="3" target="1" id="a18:3-&gt;1:free_y">
+      <data key="d12">a18:3-&gt;1:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">151.59999999999985</data>
+      <data key="d17">0.4211111111111107</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="3" target="4" id="a19:3-&gt;4:wall_main_pos_x">
+      <data key="d12">a19:3-&gt;4:wall_main_pos_x</data>
+      <data key="d13">actuated</data>
+      <data key="d14">wall_main_pos_x</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">84.60000000000002</data>
+      <data key="d17">0.47000000000000014</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="3" target="5" id="a20:3-&gt;5:wall_main_pos_x">
+      <data key="d12">a20:3-&gt;5:wall_main_pos_x</data>
+      <data key="d13">actuated</data>
+      <data key="d14">wall_main_pos_x</data>
+      <data key="d15">180.0</data>
+      <data key="d16">45.0</data>
+      <data key="d17">0.25</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="3" target="5" id="a21:3-&gt;5:free_y">
+      <data key="d12">a21:3-&gt;5:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">180.0</data>
+      <data key="d16">12.599999999999994</data>
+      <data key="d17">0.03499999999999998</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="4" target="2" id="a22:4-&gt;2:floor_main_neg_x">
+      <data key="d12">a22:4-&gt;2:floor_main_neg_x</data>
+      <data key="d13">actuated</data>
+      <data key="d14">floor_main_neg_x</data>
+      <data key="d15">-180.0</data>
+      <data key="d16">45.0</data>
+      <data key="d17">0.25</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="4" target="2" id="a23:4-&gt;2:free_z">
+      <data key="d12">a23:4-&gt;2:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">-180.0</data>
+      <data key="d16">15.800000000000011</data>
+      <data key="d17">0.04388888888888892</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="4" target="0" id="a24:4-&gt;0:free_z">
+      <data key="d12">a24:4-&gt;0:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">151.59999999999985</data>
+      <data key="d17">0.4211111111111107</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="4" target="1" id="a25:4-&gt;1:free_z">
+      <data key="d12">a25:4-&gt;1:free_z</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_z</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">151.59999999999985</data>
+      <data key="d17">0.4211111111111107</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="4" target="3" id="a26:4-&gt;3:floor_main_neg_x">
+      <data key="d12">a26:4-&gt;3:floor_main_neg_x</data>
+      <data key="d13">actuated</data>
+      <data key="d14">floor_main_neg_x</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">95.40000000000003</data>
+      <data key="d17">0.5300000000000001</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="5" target="2" id="a27:5-&gt;2:wall_main_pos_x">
+      <data key="d12">a27:5-&gt;2:wall_main_pos_x</data>
+      <data key="d13">actuated</data>
+      <data key="d14">wall_main_pos_x</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">95.40000000000003</data>
+      <data key="d17">0.5300000000000001</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="5" target="0" id="a28:5-&gt;0:free_y">
+      <data key="d12">a28:5-&gt;0:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">89.99999999999999</data>
+      <data key="d16">151.59999999999985</data>
+      <data key="d17">0.4211111111111107</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="5" target="1" id="a29:5-&gt;1:free_y">
+      <data key="d12">a29:5-&gt;1:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">-89.99999999999999</data>
+      <data key="d16">151.59999999999985</data>
+      <data key="d17">0.4211111111111107</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="5" target="3" id="a30:5-&gt;3:wall_main_pos_x">
+      <data key="d12">a30:5-&gt;3:wall_main_pos_x</data>
+      <data key="d13">actuated</data>
+      <data key="d14">wall_main_pos_x</data>
+      <data key="d15">180.0</data>
+      <data key="d16">45.0</data>
+      <data key="d17">0.25</data>
+      <data key="d18">-1.0</data>
+    </edge>
+    <edge source="5" target="3" id="a31:5-&gt;3:free_y">
+      <data key="d12">a31:5-&gt;3:free_y</data>
+      <data key="d13">actuated</data>
+      <data key="d14">free_y</data>
+      <data key="d15">180.0</data>
+      <data key="d16">15.800000000000011</data>
+      <data key="d17">0.04388888888888892</data>
+      <data key="d18">-1.0</data>
+    </edge>
+  </graph>
+</graphml>

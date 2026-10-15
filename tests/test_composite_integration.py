@@ -8,6 +8,7 @@ import yaml
 from scipy.spatial.transform import Rotation
 
 from bibazu_stable_roadmaps.connectivity import augment_roadmap
+from bibazu_stable_roadmaps.consumer_export import attach_consumer_export
 from bibazu_stable_roadmaps.roadmap import handover_dict
 
 
@@ -33,6 +34,7 @@ def test_export_consumers_and_profile_only_runtime(part, total, tmp_path, monkey
     assert data['nodes'] == original['nodes'] and data['edges'] == original['edges']
     # The report's original relative mesh path refers to its publication checkout.
     data['source'] = str(workspace/'Dashas_drop_sim/src/dashas_drop_sim/assets/geometry/cad'/f'{part}.STL')
+    attach_consumer_export(data)
     path = tmp_path/f'{part}_roadmap.json'
     path.write_text(json.dumps(data), encoding='utf-8')
     path.with_suffix('.yaml').write_text(yaml.safe_dump(handover_dict(data)), encoding='utf-8')
@@ -47,7 +49,7 @@ def test_export_consumers_and_profile_only_runtime(part, total, tmp_path, monkey
     legs = list(selected.values()) + list(roadmap.composite_transitions)
     specs = tuple(TransitionSpec(e.from_pose, e.to_pose, tmp_path/'explicit-profile.json', e.edge_id,
                                  transition_kind=e.transition_kind, evidence_status=e.evidence_status) for e in legs)
-    definition = PartDefinition(2, part, tmp_path/'model.pt', poses, 0, specs)
+    definition = PartDefinition(2, part, tmp_path/'model.pt', poses, 0, specs, execution_routes=roadmap.execution_routes)
     checked = 0
     for a in poses:
         for b in poses:

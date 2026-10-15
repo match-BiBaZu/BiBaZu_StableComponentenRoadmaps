@@ -608,3 +608,3106 @@ transitions:
     difficulty_rating: null
     notes: ''
 generation: *id001
+consumer_export:
+  version: 1
+  calibration_choices:
+  - actuation: wall_main_pos_x
+    actuation_count: 1
+    axis_chute:
+    - 1.0
+    - 0.0
+    - 0.0
+    axis_error_deg: 0.009517450109428156
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a0:0->3:wall_main_pos_x
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: 90.12204132322938
+    source: 0
+    target: 3
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: &id002
+      - 0.6124738555929501
+      - 0.35336633678602225
+      - -0.6124472842023313
+      - -0.3534350468116064
+      end_quaternion_xyzw: &id003
+      - 0.18244059093038667
+      - 0.6831280812748133
+      - -0.18247045918223492
+      - -0.6831954236384986
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 90.12204132322938
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: *id002
+      end_quaternion_xyzw: *id003
+      segment_kind: command
+  - actuation: wall_main_pos_x
+    actuation_count: 1
+    axis_chute:
+    - 1.0
+    - 0.0
+    - 0.0
+    axis_error_deg: 0.016399269629498076
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a1:1->2:wall_main_pos_x
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: 90.03965361884889
+    source: 1
+    target: 2
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: &id004
+      - 0.00016901765700774732
+      - 0.7071879126004911
+      - 0.00023366782008663048
+      - 0.7070255816476105
+      end_quaternion_xyzw: &id005
+      - 0.5002350271699808
+      - 0.49971901196593876
+      - 0.5003955509481234
+      - 0.4996499967610917
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 90.03965361884889
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: *id004
+      end_quaternion_xyzw: *id005
+      segment_kind: command
+  - actuation: floor_main_neg_x
+    actuation_count: 1
+    axis_chute:
+    - 1.0
+    - 0.0
+    - 0.0
+    axis_error_deg: 0.016399269629498076
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a2:2->1:floor_main_neg_x
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: -90.03965361884889
+    source: 2
+    target: 1
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: &id006
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id007
+      - -0.0002894017769147772
+      - -0.7071104433086552
+      - -0.00011327529080012999
+      - -0.7071030507494342
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 90.03965361884889
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: *id006
+      end_quaternion_xyzw: *id007
+      segment_kind: command
+  - actuation: free_z
+    actuation_count: 1
+    axis_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    axis_error_deg: 0.04840019765755818
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a3:2->5:free_z
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: -179.9994449534406
+    source: 2
+    target: 5
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id008
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id009
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 179.9994449534406
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id008
+      end_quaternion_xyzw: *id009
+      segment_kind: command
+  - actuation: floor_main_neg_x
+    actuation_count: 1
+    axis_chute:
+    - 1.0
+    - 0.0
+    - 0.0
+    axis_error_deg: 0.009517450109428156
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a4:3->0:floor_main_neg_x
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: -90.12204132322938
+    source: 3
+    target: 0
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: &id010
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id011
+      - 0.6123944915866393
+      - 0.35334154440108057
+      - -0.6125266494336306
+      - -0.35345981866148635
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 90.12204132322938
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: *id010
+      end_quaternion_xyzw: *id011
+      segment_kind: command
+  - actuation: free_z
+    actuation_count: 1
+    axis_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    axis_error_deg: 0.04367013761945948
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a5:3->4:free_z
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: 179.9952358986527
+    source: 3
+    target: 4
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id012
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id013
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 179.9952358986527
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id012
+      end_quaternion_xyzw: *id013
+      segment_kind: command
+  - actuation: floor_main_neg_x
+    actuation_count: 1
+    axis_chute:
+    - 1.0
+    - 0.0
+    - 0.0
+    axis_error_deg: 0.0052646360194255806
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a6:4->2:floor_main_neg_x
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: -119.92149981521871
+    source: 4
+    target: 2
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id014
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id015
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 119.92149981521871
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id014
+      end_quaternion_xyzw: *id015
+      segment_kind: command
+  - actuation: free_z
+    actuation_count: 1
+    axis_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    axis_error_deg: 0.04367013761945948
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a7:4->3:free_z
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: -179.9952358986527
+    source: 4
+    target: 3
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9952358986527
+      start_quaternion_xyzw: &id016
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id017
+      - 0.1828934350605744
+      - 0.6830512813228263
+      - -0.18305784435518258
+      - -0.6829939707750154
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 179.9952358986527
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9952358986527
+      start_quaternion_xyzw: *id016
+      end_quaternion_xyzw: *id017
+      segment_kind: command
+  - actuation: free_z
+    actuation_count: 1
+    axis_chute:
+    - 0.0
+    - 0.0
+    - 1.0
+    axis_error_deg: 0.04840019765755818
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a8:5->2:free_z
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: 179.9994449534406
+    source: 5
+    target: 2
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9994449534406
+      start_quaternion_xyzw: &id018
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id019
+      - -0.49991031707736366
+      - -0.5001247546546667
+      - -0.4998804450657312
+      - -0.5000844381723006
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 179.9994449534406
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9994449534406
+      start_quaternion_xyzw: *id018
+      end_quaternion_xyzw: *id019
+      segment_kind: command
+  - actuation: floor_main_neg_x
+    actuation_count: 1
+    axis_chute:
+    - 1.0
+    - 0.0
+    - 0.0
+    axis_error_deg: 0.006446266495932461
+    capture_fraction: null
+    capture_interval_deg: null
+    capture_width_deg: null
+    directed: true
+    edge_id: a9:5->3:floor_main_neg_x
+    escape_barrier_mm: null
+    experimental_status: untested
+    geometric_score: null
+    saddle_angle_deg: null
+    settling_pose_ids: []
+    signed_angle_deg: -119.93050647561425
+    source: 5
+    target: 3
+    target_barrier_score: null
+    transition_kind: actuated
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id020
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id021
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    component_edge_ids: []
+    via_pose_ids: []
+    evidence_status: ''
+    total_absolute_angle_deg: 119.93050647561425
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id020
+      end_quaternion_xyzw: *id021
+      segment_kind: command
+  - edge_id: multi2:0->3->4
+    source: 0
+    target: 4
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a0:0->3:wall_main_pos_x
+    - a5:3->4:free_z
+    via_pose_ids:
+    - 3
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: &id022
+      - 0.6124738555929501
+      - 0.35336633678602225
+      - -0.6124472842023313
+      - -0.3534350468116064
+      end_quaternion_xyzw: &id023
+      - 0.18244059093038667
+      - 0.6831280812748133
+      - -0.18247045918223492
+      - -0.6831954236384986
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id024
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id025
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    total_absolute_angle_deg: 270.1172772218821
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: *id022
+      end_quaternion_xyzw: *id023
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id024
+      end_quaternion_xyzw: *id025
+      segment_kind: command
+  - edge_id: multi2:1->2->5
+    source: 1
+    target: 5
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a1:1->2:wall_main_pos_x
+    - a3:2->5:free_z
+    via_pose_ids:
+    - 2
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: &id026
+      - 0.00016901765700774732
+      - 0.7071879126004911
+      - 0.00023366782008663048
+      - 0.7070255816476105
+      end_quaternion_xyzw: &id027
+      - 0.5002350271699808
+      - 0.49971901196593876
+      - 0.5003955509481234
+      - 0.4996499967610917
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id028
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id029
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    total_absolute_angle_deg: 270.0390985722895
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: *id026
+      end_quaternion_xyzw: *id027
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id028
+      end_quaternion_xyzw: *id029
+      segment_kind: command
+  - edge_id: multi2:2->5->3
+    source: 2
+    target: 3
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    via_pose_ids:
+    - 5
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id030
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id031
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id032
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id033
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    total_absolute_angle_deg: 299.9299514290548
+    evidence_status: ''
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id030
+      end_quaternion_xyzw: *id031
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id032
+      end_quaternion_xyzw: *id033
+      segment_kind: command
+  - edge_id: multi2:3->4->2
+    source: 3
+    target: 2
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    via_pose_ids:
+    - 4
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id034
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id035
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id036
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id037
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    total_absolute_angle_deg: 299.9167357138714
+    evidence_status: ''
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id034
+      end_quaternion_xyzw: *id035
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id036
+      end_quaternion_xyzw: *id037
+      segment_kind: command
+  - edge_id: multi2:4->2->1
+    source: 4
+    target: 1
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a6:4->2:floor_main_neg_x
+    - a2:2->1:floor_main_neg_x
+    via_pose_ids:
+    - 2
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id038
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id039
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: &id040
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id041
+      - -0.0002894017769147772
+      - -0.7071104433086552
+      - -0.00011327529080012999
+      - -0.7071030507494342
+    total_absolute_angle_deg: 209.9611534340676
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id038
+      end_quaternion_xyzw: *id039
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: *id040
+      end_quaternion_xyzw: *id041
+      segment_kind: command
+  - edge_id: multi2:4->2->5
+    source: 4
+    target: 5
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a6:4->2:floor_main_neg_x
+    - a3:2->5:free_z
+    via_pose_ids:
+    - 2
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id042
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id043
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id044
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id045
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    total_absolute_angle_deg: 299.9209447686593
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id042
+      end_quaternion_xyzw: *id043
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id044
+      end_quaternion_xyzw: *id045
+      segment_kind: command
+  - edge_id: multi2:4->3->0
+    source: 4
+    target: 0
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a7:4->3:free_z
+    - a4:3->0:floor_main_neg_x
+    via_pose_ids:
+    - 3
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9952358986527
+      start_quaternion_xyzw: &id046
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id047
+      - 0.1828934350605744
+      - 0.6830512813228263
+      - -0.18305784435518258
+      - -0.6829939707750154
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: &id048
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id049
+      - 0.6123944915866393
+      - 0.35334154440108057
+      - -0.6125266494336306
+      - -0.35345981866148635
+    total_absolute_angle_deg: 270.1172772218821
+    evidence_status: ''
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9952358986527
+      start_quaternion_xyzw: *id046
+      end_quaternion_xyzw: *id047
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: *id048
+      end_quaternion_xyzw: *id049
+      segment_kind: command
+  - edge_id: multi2:5->2->1
+    source: 5
+    target: 1
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a8:5->2:free_z
+    - a2:2->1:floor_main_neg_x
+    via_pose_ids:
+    - 2
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9994449534406
+      start_quaternion_xyzw: &id050
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id051
+      - -0.49991031707736366
+      - -0.5001247546546667
+      - -0.4998804450657312
+      - -0.5000844381723006
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: &id052
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id053
+      - -0.0002894017769147772
+      - -0.7071104433086552
+      - -0.00011327529080012999
+      - -0.7071030507494342
+    total_absolute_angle_deg: 270.0390985722895
+    evidence_status: ''
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9994449534406
+      start_quaternion_xyzw: *id050
+      end_quaternion_xyzw: *id051
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: *id052
+      end_quaternion_xyzw: *id053
+      segment_kind: command
+  - edge_id: multi2:5->3->0
+    source: 5
+    target: 0
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a9:5->3:floor_main_neg_x
+    - a4:3->0:floor_main_neg_x
+    via_pose_ids:
+    - 3
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id054
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id055
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: &id056
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id057
+      - 0.6123944915866393
+      - 0.35334154440108057
+      - -0.6125266494336306
+      - -0.35345981866148635
+    total_absolute_angle_deg: 210.05254779884365
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id054
+      end_quaternion_xyzw: *id055
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: *id056
+      end_quaternion_xyzw: *id057
+      segment_kind: command
+  - edge_id: multi2:5->3->4
+    source: 5
+    target: 4
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_2
+    actuation_count: 2
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a9:5->3:floor_main_neg_x
+    - a5:3->4:free_z
+    via_pose_ids:
+    - 3
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id058
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id059
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id060
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id061
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    total_absolute_angle_deg: 299.925742374267
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id058
+      end_quaternion_xyzw: *id059
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id060
+      end_quaternion_xyzw: *id061
+      segment_kind: command
+  - edge_id: multi3:0->3->4->2
+    source: 0
+    target: 2
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_3
+    actuation_count: 3
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a0:0->3:wall_main_pos_x
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    via_pose_ids:
+    - 3
+    - 4
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: &id062
+      - 0.6124738555929501
+      - 0.35336633678602225
+      - -0.6124472842023313
+      - -0.3534350468116064
+      end_quaternion_xyzw: &id063
+      - 0.18244059093038667
+      - 0.6831280812748133
+      - -0.18247045918223492
+      - -0.6831954236384986
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id064
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id065
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id066
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id067
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    total_absolute_angle_deg: 390.0387770371008
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: *id062
+      end_quaternion_xyzw: *id063
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id064
+      end_quaternion_xyzw: *id065
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id066
+      end_quaternion_xyzw: *id067
+      segment_kind: command
+  - edge_id: multi3:1->2->5->3
+    source: 1
+    target: 3
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_3
+    actuation_count: 3
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a1:1->2:wall_main_pos_x
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    via_pose_ids:
+    - 2
+    - 5
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: &id068
+      - 0.00016901765700774732
+      - 0.7071879126004911
+      - 0.00023366782008663048
+      - 0.7070255816476105
+      end_quaternion_xyzw: &id069
+      - 0.5002350271699808
+      - 0.49971901196593876
+      - 0.5003955509481234
+      - 0.4996499967610917
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id070
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id071
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id072
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id073
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    total_absolute_angle_deg: 389.9696050479037
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: *id068
+      end_quaternion_xyzw: *id069
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id070
+      end_quaternion_xyzw: *id071
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id072
+      end_quaternion_xyzw: *id073
+      segment_kind: command
+  - edge_id: multi3:2->5->3->0
+    source: 2
+    target: 0
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_3
+    actuation_count: 3
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    - a4:3->0:floor_main_neg_x
+    via_pose_ids:
+    - 5
+    - 3
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id074
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id075
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id076
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id077
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: &id078
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id079
+      - 0.6123944915866393
+      - 0.35334154440108057
+      - -0.6125266494336306
+      - -0.35345981866148635
+    total_absolute_angle_deg: 390.0519927522842
+    evidence_status: ''
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id074
+      end_quaternion_xyzw: *id075
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id076
+      end_quaternion_xyzw: *id077
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: *id078
+      end_quaternion_xyzw: *id079
+      segment_kind: command
+  - edge_id: multi3:2->5->3->4
+    source: 2
+    target: 4
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_3
+    actuation_count: 3
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    - a5:3->4:free_z
+    via_pose_ids:
+    - 5
+    - 3
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id080
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id081
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id082
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id083
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id084
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id085
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    total_absolute_angle_deg: 479.92518732770753
+    evidence_status: ''
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id080
+      end_quaternion_xyzw: *id081
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id082
+      end_quaternion_xyzw: *id083
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id084
+      end_quaternion_xyzw: *id085
+      segment_kind: command
+  - edge_id: multi3:3->4->2->1
+    source: 3
+    target: 1
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_3
+    actuation_count: 3
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    - a2:2->1:floor_main_neg_x
+    via_pose_ids:
+    - 4
+    - 2
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id086
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id087
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id088
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id089
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: &id090
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id091
+      - -0.0002894017769147772
+      - -0.7071104433086552
+      - -0.00011327529080012999
+      - -0.7071030507494342
+    total_absolute_angle_deg: 389.9563893327203
+    evidence_status: ''
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id086
+      end_quaternion_xyzw: *id087
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id088
+      end_quaternion_xyzw: *id089
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: *id090
+      end_quaternion_xyzw: *id091
+      segment_kind: command
+  - edge_id: multi3:3->4->2->5
+    source: 3
+    target: 5
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_3
+    actuation_count: 3
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    - a3:2->5:free_z
+    via_pose_ids:
+    - 4
+    - 2
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id092
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id093
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id094
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id095
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id096
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id097
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    total_absolute_angle_deg: 479.916180667312
+    evidence_status: ''
+    preview_segments:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id092
+      end_quaternion_xyzw: *id093
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id094
+      end_quaternion_xyzw: *id095
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id096
+      end_quaternion_xyzw: *id097
+      segment_kind: command
+  - edge_id: multi3:4->2->5->3
+    source: 4
+    target: 3
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_3
+    actuation_count: 3
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a6:4->2:floor_main_neg_x
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    via_pose_ids:
+    - 2
+    - 5
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id098
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id099
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id100
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id101
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id102
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id103
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    total_absolute_angle_deg: 419.85145124427356
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id098
+      end_quaternion_xyzw: *id099
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id100
+      end_quaternion_xyzw: *id101
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id102
+      end_quaternion_xyzw: *id103
+      segment_kind: command
+  - edge_id: multi3:5->3->4->2
+    source: 5
+    target: 2
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_3
+    actuation_count: 3
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a9:5->3:floor_main_neg_x
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    via_pose_ids:
+    - 3
+    - 4
+    commands:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id104
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id105
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id106
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id107
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id108
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id109
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    total_absolute_angle_deg: 419.84724218948566
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id104
+      end_quaternion_xyzw: *id105
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id106
+      end_quaternion_xyzw: *id107
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id108
+      end_quaternion_xyzw: *id109
+      segment_kind: command
+  - edge_id: multi4:0->3->4->2->1
+    source: 0
+    target: 1
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_4
+    actuation_count: 4
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a0:0->3:wall_main_pos_x
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    - a2:2->1:floor_main_neg_x
+    via_pose_ids:
+    - 3
+    - 4
+    - 2
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: &id110
+      - 0.6124738555929501
+      - 0.35336633678602225
+      - -0.6124472842023313
+      - -0.3534350468116064
+      end_quaternion_xyzw: &id111
+      - 0.18244059093038667
+      - 0.6831280812748133
+      - -0.18247045918223492
+      - -0.6831954236384986
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id112
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id113
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id114
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id115
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: &id116
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id117
+      - -0.0002894017769147772
+      - -0.7071104433086552
+      - -0.00011327529080012999
+      - -0.7071030507494342
+    total_absolute_angle_deg: 480.07843065594966
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: *id110
+      end_quaternion_xyzw: *id111
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id112
+      end_quaternion_xyzw: *id113
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id114
+      end_quaternion_xyzw: *id115
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.03965361884889
+      start_quaternion_xyzw: *id116
+      end_quaternion_xyzw: *id117
+      segment_kind: command
+  - edge_id: multi4:0->3->4->2->5
+    source: 0
+    target: 5
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_4
+    actuation_count: 4
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a0:0->3:wall_main_pos_x
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    - a3:2->5:free_z
+    via_pose_ids:
+    - 3
+    - 4
+    - 2
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: &id118
+      - 0.6124738555929501
+      - 0.35336633678602225
+      - -0.6124472842023313
+      - -0.3534350468116064
+      end_quaternion_xyzw: &id119
+      - 0.18244059093038667
+      - 0.6831280812748133
+      - -0.18247045918223492
+      - -0.6831954236384986
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id120
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id121
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: &id122
+      - -0.6830436770061378
+      - 0.18292183250488772
+      - -0.6830015807463888
+      - 0.18302944897726972
+      end_quaternion_xyzw: &id123
+      - -0.5003724079153068
+      - -0.49969322224304125
+      - -0.5002581731000291
+      - -0.49967579217731356
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id124
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id125
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    total_absolute_angle_deg: 570.0382219905414
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.12204132322938
+      start_quaternion_xyzw: *id118
+      end_quaternion_xyzw: *id119
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id120
+      end_quaternion_xyzw: *id121
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.92149981521871
+      start_quaternion_xyzw: *id122
+      end_quaternion_xyzw: *id123
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id124
+      end_quaternion_xyzw: *id125
+      segment_kind: command
+  - edge_id: multi4:1->2->5->3->0
+    source: 1
+    target: 0
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_4
+    actuation_count: 4
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a1:1->2:wall_main_pos_x
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    - a4:3->0:floor_main_neg_x
+    via_pose_ids:
+    - 2
+    - 5
+    - 3
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: &id126
+      - 0.00016901765700774732
+      - 0.7071879126004911
+      - 0.00023366782008663048
+      - 0.7070255816476105
+      end_quaternion_xyzw: &id127
+      - 0.5002350271699808
+      - 0.49971901196593876
+      - 0.5003955509481234
+      - 0.4996499967610917
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id128
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id129
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id130
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id131
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: &id132
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id133
+      - 0.6123944915866393
+      - 0.35334154440108057
+      - -0.6125266494336306
+      - -0.35345981866148635
+    total_absolute_angle_deg: 480.0916463711331
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: *id126
+      end_quaternion_xyzw: *id127
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id128
+      end_quaternion_xyzw: *id129
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id130
+      end_quaternion_xyzw: *id131
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -90.12204132322938
+      start_quaternion_xyzw: *id132
+      end_quaternion_xyzw: *id133
+      segment_kind: command
+  - edge_id: multi4:1->2->5->3->4
+    source: 1
+    target: 4
+    directed: true
+    transition_kind: multi_reorientation
+    actuation: multiple_reorientation_4
+    actuation_count: 4
+    signed_angle_deg: null
+    geometric_score: null
+    experimental_status: experimental_non_preferred
+    component_edge_ids:
+    - a1:1->2:wall_main_pos_x
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    - a5:3->4:free_z
+    via_pose_ids:
+    - 2
+    - 5
+    - 3
+    commands:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: &id134
+      - 0.00016901765700774732
+      - 0.7071879126004911
+      - 0.00023366782008663048
+      - 0.7070255816476105
+      end_quaternion_xyzw: &id135
+      - 0.5002350271699808
+      - 0.49971901196593876
+      - 0.5003955509481234
+      - 0.4996499967610917
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: &id136
+      - -0.5003749200155189
+      - -0.49974941169108783
+      - -0.5002556520239086
+      - -0.49961960285001683
+      end_quaternion_xyzw: &id137
+      - -0.49975183534871453
+      - 0.5003724993759315
+      - 0.49961717975836456
+      - -0.5002580720230033
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: &id138
+      - -0.500127176061894
+      - 0.499907894619735
+      - 0.500082016898031
+      - -0.4998828673163509
+      end_quaternion_xyzw: &id139
+      - 0.18243339919390605
+      - 0.6831484662792771
+      - -0.18247766917683422
+      - -0.6831750347682636
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: &id140
+      - 0.18236699691414981
+      - 0.6831667485213287
+      - -0.18254406859968414
+      - -0.6831567427540943
+      end_quaternion_xyzw: &id141
+      - -0.6831591660910102
+      - 0.18239539915942382
+      - -0.6831643313652916
+      - 0.18251566645503098
+    total_absolute_angle_deg: 569.9648409465565
+    evidence_status: ''
+    preview_segments:
+    - axis: x
+      actuation: wall_main_pos_x
+      signed_angle_deg: 90.03965361884889
+      start_quaternion_xyzw: *id134
+      end_quaternion_xyzw: *id135
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9994449534406
+      start_quaternion_xyzw: *id136
+      end_quaternion_xyzw: *id137
+      segment_kind: command
+    - axis: x
+      actuation: floor_main_neg_x
+      signed_angle_deg: -119.93050647561425
+      start_quaternion_xyzw: *id138
+      end_quaternion_xyzw: *id139
+      segment_kind: command
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9952358986527
+      start_quaternion_xyzw: *id140
+      end_quaternion_xyzw: *id141
+      segment_kind: command
+  execution_routes:
+  - route_id: a0:0->3:wall_main_pos_x:profile
+    source: 0
+    target: 3
+    profile_edge_ids:
+    - a0:0->3:wall_main_pos_x
+    steps:
+    - edge_id: a0:0->3:wall_main_pos_x
+      source: 0
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a1:1->2:wall_main_pos_x:profile
+    source: 1
+    target: 2
+    profile_edge_ids:
+    - a1:1->2:wall_main_pos_x
+    steps:
+    - edge_id: a1:1->2:wall_main_pos_x
+      source: 1
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a2:2->1:floor_main_neg_x:profile
+    source: 2
+    target: 1
+    profile_edge_ids:
+    - a2:2->1:floor_main_neg_x
+    steps:
+    - edge_id: a2:2->1:floor_main_neg_x
+      source: 2
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a3:2->5:free_z:profile
+    source: 2
+    target: 5
+    profile_edge_ids:
+    - a3:2->5:free_z
+    steps:
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a4:3->0:floor_main_neg_x:profile
+    source: 3
+    target: 0
+    profile_edge_ids:
+    - a4:3->0:floor_main_neg_x
+    steps:
+    - edge_id: a4:3->0:floor_main_neg_x
+      source: 3
+      target: 0
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a5:3->4:free_z:profile
+    source: 3
+    target: 4
+    profile_edge_ids:
+    - a5:3->4:free_z
+    steps:
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a6:4->2:floor_main_neg_x:profile
+    source: 4
+    target: 2
+    profile_edge_ids:
+    - a6:4->2:floor_main_neg_x
+    steps:
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a7:4->3:free_z:profile
+    source: 4
+    target: 3
+    profile_edge_ids:
+    - a7:4->3:free_z
+    steps:
+    - edge_id: a7:4->3:free_z
+      source: 4
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a8:5->2:free_z:profile
+    source: 5
+    target: 2
+    profile_edge_ids:
+    - a8:5->2:free_z
+    steps:
+    - edge_id: a8:5->2:free_z
+      source: 5
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: a9:5->3:floor_main_neg_x:profile
+    source: 5
+    target: 3
+    profile_edge_ids:
+    - a9:5->3:floor_main_neg_x
+    steps:
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 0
+    - 1
+    evidence_status: ''
+  - route_id: multi2:0->3->4:profile
+    source: 0
+    target: 4
+    profile_edge_ids:
+    - multi2:0->3->4
+    steps:
+    - edge_id: multi2:0->3->4
+      source: 0
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:0->3->4:profiles
+    source: 0
+    target: 4
+    profile_edge_ids:
+    - a0:0->3:wall_main_pos_x
+    - a5:3->4:free_z
+    steps:
+    - edge_id: a0:0->3:wall_main_pos_x
+      source: 0
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi2:1->2->5:profile
+    source: 1
+    target: 5
+    profile_edge_ids:
+    - multi2:1->2->5
+    steps:
+    - edge_id: multi2:1->2->5
+      source: 1
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:1->2->5:profiles
+    source: 1
+    target: 5
+    profile_edge_ids:
+    - a1:1->2:wall_main_pos_x
+    - a3:2->5:free_z
+    steps:
+    - edge_id: a1:1->2:wall_main_pos_x
+      source: 1
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi2:2->5->3:profile
+    source: 2
+    target: 3
+    profile_edge_ids:
+    - multi2:2->5->3
+    steps:
+    - edge_id: multi2:2->5->3
+      source: 2
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:2->5->3:profiles
+    source: 2
+    target: 3
+    profile_edge_ids:
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    steps:
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi2:3->4->2:profile
+    source: 3
+    target: 2
+    profile_edge_ids:
+    - multi2:3->4->2
+    steps:
+    - edge_id: multi2:3->4->2
+      source: 3
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:3->4->2:profiles
+    source: 3
+    target: 2
+    profile_edge_ids:
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    steps:
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi2:4->2->1:profile
+    source: 4
+    target: 1
+    profile_edge_ids:
+    - multi2:4->2->1
+    steps:
+    - edge_id: multi2:4->2->1
+      source: 4
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:4->2->1:profiles
+    source: 4
+    target: 1
+    profile_edge_ids:
+    - a6:4->2:floor_main_neg_x
+    - a2:2->1:floor_main_neg_x
+    steps:
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a2:2->1:floor_main_neg_x
+      source: 2
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi2:4->2->5:profile
+    source: 4
+    target: 5
+    profile_edge_ids:
+    - multi2:4->2->5
+    steps:
+    - edge_id: multi2:4->2->5
+      source: 4
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:4->2->5:profiles
+    source: 4
+    target: 5
+    profile_edge_ids:
+    - a6:4->2:floor_main_neg_x
+    - a3:2->5:free_z
+    steps:
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi2:4->3->0:profile
+    source: 4
+    target: 0
+    profile_edge_ids:
+    - multi2:4->3->0
+    steps:
+    - edge_id: multi2:4->3->0
+      source: 4
+      target: 0
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:4->3->0:profiles
+    source: 4
+    target: 0
+    profile_edge_ids:
+    - a7:4->3:free_z
+    - a4:3->0:floor_main_neg_x
+    steps:
+    - edge_id: a7:4->3:free_z
+      source: 4
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a4:3->0:floor_main_neg_x
+      source: 3
+      target: 0
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi2:5->2->1:profile
+    source: 5
+    target: 1
+    profile_edge_ids:
+    - multi2:5->2->1
+    steps:
+    - edge_id: multi2:5->2->1
+      source: 5
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:5->2->1:profiles
+    source: 5
+    target: 1
+    profile_edge_ids:
+    - a8:5->2:free_z
+    - a2:2->1:floor_main_neg_x
+    steps:
+    - edge_id: a8:5->2:free_z
+      source: 5
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a2:2->1:floor_main_neg_x
+      source: 2
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi2:5->3->0:profile
+    source: 5
+    target: 0
+    profile_edge_ids:
+    - multi2:5->3->0
+    steps:
+    - edge_id: multi2:5->3->0
+      source: 5
+      target: 0
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:5->3->0:profiles
+    source: 5
+    target: 0
+    profile_edge_ids:
+    - a9:5->3:floor_main_neg_x
+    - a4:3->0:floor_main_neg_x
+    steps:
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a4:3->0:floor_main_neg_x
+      source: 3
+      target: 0
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi2:5->3->4:profile
+    source: 5
+    target: 4
+    profile_edge_ids:
+    - multi2:5->3->4
+    steps:
+    - edge_id: multi2:5->3->4
+      source: 5
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi2:5->3->4:profiles
+    source: 5
+    target: 4
+    profile_edge_ids:
+    - a9:5->3:floor_main_neg_x
+    - a5:3->4:free_z
+    steps:
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 2
+    evidence_status: ''
+  - route_id: multi3:0->3->4->2:profile
+    source: 0
+    target: 2
+    profile_edge_ids:
+    - multi3:0->3->4->2
+    steps:
+    - edge_id: multi3:0->3->4->2
+      source: 0
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi3:0->3->4->2:profiles
+    source: 0
+    target: 2
+    profile_edge_ids:
+    - a0:0->3:wall_main_pos_x
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    steps:
+    - edge_id: a0:0->3:wall_main_pos_x
+      source: 0
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 3
+    evidence_status: ''
+  - route_id: multi3:1->2->5->3:profile
+    source: 1
+    target: 3
+    profile_edge_ids:
+    - multi3:1->2->5->3
+    steps:
+    - edge_id: multi3:1->2->5->3
+      source: 1
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi3:1->2->5->3:profiles
+    source: 1
+    target: 3
+    profile_edge_ids:
+    - a1:1->2:wall_main_pos_x
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    steps:
+    - edge_id: a1:1->2:wall_main_pos_x
+      source: 1
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 3
+    evidence_status: ''
+  - route_id: multi3:2->5->3->0:profile
+    source: 2
+    target: 0
+    profile_edge_ids:
+    - multi3:2->5->3->0
+    steps:
+    - edge_id: multi3:2->5->3->0
+      source: 2
+      target: 0
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi3:2->5->3->0:profiles
+    source: 2
+    target: 0
+    profile_edge_ids:
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    - a4:3->0:floor_main_neg_x
+    steps:
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a4:3->0:floor_main_neg_x
+      source: 3
+      target: 0
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 3
+    evidence_status: ''
+  - route_id: multi3:2->5->3->4:profile
+    source: 2
+    target: 4
+    profile_edge_ids:
+    - multi3:2->5->3->4
+    steps:
+    - edge_id: multi3:2->5->3->4
+      source: 2
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi3:2->5->3->4:profiles
+    source: 2
+    target: 4
+    profile_edge_ids:
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    - a5:3->4:free_z
+    steps:
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 3
+    evidence_status: ''
+  - route_id: multi3:3->4->2->1:profile
+    source: 3
+    target: 1
+    profile_edge_ids:
+    - multi3:3->4->2->1
+    steps:
+    - edge_id: multi3:3->4->2->1
+      source: 3
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi3:3->4->2->1:profiles
+    source: 3
+    target: 1
+    profile_edge_ids:
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    - a2:2->1:floor_main_neg_x
+    steps:
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a2:2->1:floor_main_neg_x
+      source: 2
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 3
+    evidence_status: ''
+  - route_id: multi3:3->4->2->5:profile
+    source: 3
+    target: 5
+    profile_edge_ids:
+    - multi3:3->4->2->5
+    steps:
+    - edge_id: multi3:3->4->2->5
+      source: 3
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi3:3->4->2->5:profiles
+    source: 3
+    target: 5
+    profile_edge_ids:
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    - a3:2->5:free_z
+    steps:
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 3
+    evidence_status: ''
+  - route_id: multi3:4->2->5->3:profile
+    source: 4
+    target: 3
+    profile_edge_ids:
+    - multi3:4->2->5->3
+    steps:
+    - edge_id: multi3:4->2->5->3
+      source: 4
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi3:4->2->5->3:profiles
+    source: 4
+    target: 3
+    profile_edge_ids:
+    - a6:4->2:floor_main_neg_x
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    steps:
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 3
+    evidence_status: ''
+  - route_id: multi3:5->3->4->2:profile
+    source: 5
+    target: 2
+    profile_edge_ids:
+    - multi3:5->3->4->2
+    steps:
+    - edge_id: multi3:5->3->4->2
+      source: 5
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi3:5->3->4->2:profiles
+    source: 5
+    target: 2
+    profile_edge_ids:
+    - a9:5->3:floor_main_neg_x
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    steps:
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 3
+    evidence_status: ''
+  - route_id: multi4:0->3->4->2->1:profile
+    source: 0
+    target: 1
+    profile_edge_ids:
+    - multi4:0->3->4->2->1
+    steps:
+    - edge_id: multi4:0->3->4->2->1
+      source: 0
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi4:0->3->4->2->1:profiles
+    source: 0
+    target: 1
+    profile_edge_ids:
+    - a0:0->3:wall_main_pos_x
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    - a2:2->1:floor_main_neg_x
+    steps:
+    - edge_id: a0:0->3:wall_main_pos_x
+      source: 0
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a2:2->1:floor_main_neg_x
+      source: 2
+      target: 1
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 4
+    evidence_status: ''
+  - route_id: multi4:0->3->4->2->5:profile
+    source: 0
+    target: 5
+    profile_edge_ids:
+    - multi4:0->3->4->2->5
+    steps:
+    - edge_id: multi4:0->3->4->2->5
+      source: 0
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi4:0->3->4->2->5:profiles
+    source: 0
+    target: 5
+    profile_edge_ids:
+    - a0:0->3:wall_main_pos_x
+    - a5:3->4:free_z
+    - a6:4->2:floor_main_neg_x
+    - a3:2->5:free_z
+    steps:
+    - edge_id: a0:0->3:wall_main_pos_x
+      source: 0
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a6:4->2:floor_main_neg_x
+      source: 4
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 4
+    evidence_status: ''
+  - route_id: multi4:1->2->5->3->0:profile
+    source: 1
+    target: 0
+    profile_edge_ids:
+    - multi4:1->2->5->3->0
+    steps:
+    - edge_id: multi4:1->2->5->3->0
+      source: 1
+      target: 0
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi4:1->2->5->3->0:profiles
+    source: 1
+    target: 0
+    profile_edge_ids:
+    - a1:1->2:wall_main_pos_x
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    - a4:3->0:floor_main_neg_x
+    steps:
+    - edge_id: a1:1->2:wall_main_pos_x
+      source: 1
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a4:3->0:floor_main_neg_x
+      source: 3
+      target: 0
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 4
+    evidence_status: ''
+  - route_id: multi4:1->2->5->3->4:profile
+    source: 1
+    target: 4
+    profile_edge_ids:
+    - multi4:1->2->5->3->4
+    steps:
+    - edge_id: multi4:1->2->5->3->4
+      source: 1
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 1
+    - 1
+    evidence_status: ''
+  - route_id: multi4:1->2->5->3->4:profiles
+    source: 1
+    target: 4
+    profile_edge_ids:
+    - a1:1->2:wall_main_pos_x
+    - a3:2->5:free_z
+    - a9:5->3:floor_main_neg_x
+    - a5:3->4:free_z
+    steps:
+    - edge_id: a1:1->2:wall_main_pos_x
+      source: 1
+      target: 2
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a3:2->5:free_z
+      source: 2
+      target: 5
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a9:5->3:floor_main_neg_x
+      source: 5
+      target: 3
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    - edge_id: a5:3->4:free_z
+      source: 3
+      target: 4
+      required_source_member_ids: []
+      possible_target_member_ids: []
+    priority:
+    - 2
+    - 4
+    evidence_status: ''
+  route_policy: exported_only; explicit calibration and source coverage required

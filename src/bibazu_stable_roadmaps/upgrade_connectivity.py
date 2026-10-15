@@ -48,7 +48,9 @@ def upgrade_component(folder, *, include_members=True, sample_capture=True, prog
         augment_members(source, built, sample_capture=sample_capture, progress=progress)
     if before_nodes != json.dumps(document['nodes'], sort_keys=True) or before_edges != json.dumps(document['edges'], sort_keys=True):
         raise ValueError('Connectivity extension modified existing poses or direct edges')
-    fields = {key: document[key] for key in ('composite_transfers', 'routes', 'connectivity',
+    from .consumer_export import attach_consumer_export
+    attach_consumer_export(document)
+    fields = {key: document[key] for key in ('consumer_export', 'composite_transfers', 'routes', 'connectivity',
               'member_states', 'member_transfers', 'member_routes', 'capture_analysis') if key in document}
     write_json(path, document)
     handover_path = path.with_suffix('.yaml')

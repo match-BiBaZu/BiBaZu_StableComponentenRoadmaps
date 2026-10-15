@@ -38,3 +38,7 @@ JSON/YAML contain ordered commands, preferred routes and separate directed conne
 20 known-member actions connect groups. 649 total member transfer candidates include sampled downhill capture intervals and composite fallbacks. Routes preserve possible member orientations, including explicit intra-group repositioning. The group overview alone is not a proof that two member-conditioned actions can be chained.
 
 All retained source members have candidate paths to every retained group: **True**. Runtime use requires a calibrated profile with explicitly declared source-member coverage; old profiles receive no automatic group-wide coverage.
+
+<!-- CONSUMER EXPORT -->
+
+Control applications read finished calibration choices, ordered commands, preview segments and execution routes from `consumer_export` in JSON/YAML. They do not construct routes. Execution requires assigned pressure profiles and explicit source-member coverage; geometry-only evidence does not grant either.

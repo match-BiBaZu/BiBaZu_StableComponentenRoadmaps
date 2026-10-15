@@ -25,3 +25,7 @@ Files: [Rf3a_roadmap.graphml](Rf3a_roadmap.graphml), [Rf3a_roadmap.json](Rf3a_ro
 [Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
 
 Nodes use the chosen representative orientations. Direct connections remain geometric action candidates.
+
+<!-- CONSUMER EXPORT -->
+
+Control applications read finished calibration choices, ordered commands, preview segments and execution routes from `consumer_export` in JSON/YAML. They do not construct routes. Execution requires assigned pressure profiles and explicit source-member coverage; geometry-only evidence does not grant either.

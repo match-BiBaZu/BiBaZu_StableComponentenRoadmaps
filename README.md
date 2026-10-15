@@ -254,3 +254,51 @@ Qk1a, Dl1a, and Dk1i reuse the previously audited grouped runs. Full raw trial d
 Each component page links representative images, full membership and barrier evidence, and individual/member stability curves. Percentages use all completed drops. Roadmap connections are computed from representative orientations.
 
 Published comparison baselines: poses `9e00d03389d3b81013700def03fb1b19504144be`, roadmaps `0b3b5c5fe42e787bd47f381b1f1ac57359d5aa55`. Merge repair: `3523350d8e12a1b7e57467044b9cfe25ff49b0bd`.
+
+
+## Finished exports for control applications
+
+This application owns roadmap generation, geometric verification, member/capture
+analysis, connectivity, route construction, deterministic IDs and preview segments.
+The Big Boi control GUIs read the finished files directly. They do not import this
+application, generate roadmaps, or search for new routes.
+
+The additive JSON/YAML `consumer_export` section has `version: 1` and contains:
+
+- `calibration_choices`: complete records with stable edge IDs, endpoints, ordered
+  commands, component edge IDs, source/arrival members, evidence, costs and flattened
+  `preview_segments`. Representative thumbnails and schema-v1 direct data are preserved.
+- `execution_routes`: exported profile sequences, their endpoint references, selection
+  priority, and explicit per-step source-member coverage requirements. An entire macro
+  can have its own calibrated profile, or its exported component profiles may be used.
+
+Only assigned pressure profiles may execute. Missing source coverage is not inferred
+from geometry or older profiles. Group recognition leaves every retained source member
+possible. If calibrated coverage extends beyond a geometric witness, exported requirements
+conservatively retain every target-group member. A consumer reports missing calibration
+or ambiguity instead of constructing another path. Previews interpolate exported segments
+for display; they do not establish physical feasibility.
+
+To upgrade existing schema-v1 exports offline without recomputing their poses or edges:
+
+```powershell
+python -m bibazu_stable_roadmaps.upgrade_consumer_exports --repository PATH_TO_CATALOGUE --staging-root NEW_STAGING_DIRECTORY
+```
+
+Review staging, validate checksums, and publish with rollback backups. The utility also
+works on ungrouped/main-branch exports; this rollout leaves the separate main catalogue
+unchanged. Both GUIs still accept its explicit transitions without an upgrade.
+
+The former Big Boi bundled roadmaps live under `legacy_catalogue/originals/`, separated
+from grouped targets. `legacy_catalogue/path_migrations.json` records exact old paths and
+SHA-256 hashes. Their original files remain byte-for-byte intact. Offline-produced,
+hash-bound `<filename>.consumer.json` sidecars preserve existing derived route identities:
+
+```powershell
+python -m bibazu_stable_roadmaps.upgrade_consumer_exports --legacy-root legacy_catalogue/originals
+```
+
+No migration substitutes grouped poses for similarly numbered ungrouped poses.
+Big Boi defaults to this grouped catalogue; `BIBAZU_ROADMAPS_DIR` or an explicitly selected
+file can choose another external catalogue. Calibration profiles and recognition mappings
+remain in the control application.

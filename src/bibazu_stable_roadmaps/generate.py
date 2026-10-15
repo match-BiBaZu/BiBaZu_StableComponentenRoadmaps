@@ -246,6 +246,8 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
         built.document.update(part_name=source.workpiece, generation=metadata,
                               pose_ranking_method="observed_frequency" if config.renumber_by_frequency else "source_id",
                               classical_metadata={"observed_pose_generation": metadata})
+        from .consumer_export import attach_consumer_export
+        attach_consumer_export(built.document)
         progress(f"Exporting {len(numbered)} poses and {len(built.document['edges'])} direct connections")
         with tempfile.TemporaryDirectory(prefix=".roadmap-stage-", dir=root) as temporary:
             staging = Path(temporary) / source.workpiece
@@ -282,6 +284,9 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                 manifest.update(connectivity=built.document["connectivity"],
                                 composite_transfer_count=len(built.document.get("composite_transfers", [])),
                                 member_transfer_count=len(built.document.get('member_transfers', [])))
+            manifest["consumer_export"] = dict(version=1, route_policy="exported_only",
+                calibration_choice_count=len(built.document["consumer_export"]["calibration_choices"]),
+                execution_route_count=len(built.document["consumer_export"]["execution_routes"]))
             write_json(staging / "manifest.json", manifest)
             lines = [f"# {source.workpiece}\n", "Observed simulation poses; geometry supplies untested direct connection candidates.",
                      f"\nMinimum frequency: **{config.minimum_frequency_percent:g}%**. Percentages retain the source denominator.",
