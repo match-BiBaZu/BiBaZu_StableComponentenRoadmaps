@@ -76,7 +76,13 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
     colors = {"x": "#e63946", "y": "#2ca02c", "z": "#277da1"}
     pairs = defaultdict(list)
     render_edges = built.document["edges"] + built.document.get("composite_transfers", [])
-    member_overview = bool(built.document.get('member_states'))
+    group_overview = "group_transfers" in built.document
+    member_overview = bool(built.document.get('member_states')) and not group_overview
+    if group_overview:
+        preferred = {}
+        for transfer in built.document["group_transfers"]:
+            preferred.setdefault((transfer["source"], transfer["target"]), transfer)
+        render_edges = [dict(t, transition_kind="group_overview", caption=t["display_name"]) for t in preferred.values()]
     if member_overview:
         grouped = defaultdict(list)
         for transfer in built.document['member_transfers']:
@@ -84,11 +90,11 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
                 grouped[transfer['source'], transfer['target']].append(transfer)
         render_edges = []
         for (a,b), transfers in sorted(grouped.items()):
-            counts = {kind: sum(t['transfer_model']==kind for t in transfers)
-                      for kind in ('known_member_endpoint','downhill_capture','composite_fallback')}
-            caption = ' '.join(f'{label}{counts[kind]}' for label,kind in zip('KCF',counts) if counts[kind])
+            preferred = min(transfers, key=lambda t: (len(t['commands']),
+                sum(abs(c['signed_angle_deg']) for c in t['commands']), t['edge_id']))
+            caption = ' → '.join(f"{c['axis'].upper()} {c['signed_angle_deg']:+.8g}°" for c in preferred['commands']) or 'No rotation'
             render_edges.append(dict(source=a, target=b, actuation='member', transition_kind='member_overview',
-                                     caption=caption, fallback_only=counts['composite_fallback']==len(transfers)))
+                                     caption=caption, fallback_only=False))
     for edge in render_edges:
         pairs[tuple(sorted((edge["source"], edge["target"])))].append(edge)
     for pair, edges in pairs.items():
@@ -98,17 +104,18 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
             direction = 1 if edge["source"] == pair[0] else -1
             radius *= direction
             composite = edge.get("transition_kind") == "composite_candidate"
-            member_edge = edge.get('transition_kind') == 'member_overview'
+            member_edge = edge.get('transition_kind') in {'member_overview', 'group_overview'}
             action_axis = "x" if "main_" in edge.get("actuation", "") else edge.get("actuation", "z")[-1]
-            color = '#0e827b' if member_edge else "#8a4baf" if composite else colors[action_axis]
+            color = colors[edge['commands'][0]['axis']] if group_overview and edge.get('commands') else '#0e827b' if member_edge else "#8a4baf" if composite else colors[action_axis]
             axis.annotate("", xy=end, xytext=start,
                           arrowprops={"arrowstyle": "-|>", "color": color, "lw": 1.8, "linestyle": "--" if composite or edge.get('fallback_only') else "-",
                                       "shrinkA": 45 * image_scale, "shrinkB": 45 * image_scale, "connectionstyle": f"arc3,rad={radius}"}, zorder=2)
             delta = end - start
             normal = np.array([delta[1], -delta[0]])
-            label = (start + end) / 2 + normal * radius / 2
-            text = edge['caption'] if member_edge else (f"C{built.document['composite_transfers'].index(edge) + 1} · {edge['actuation_count']} rotations"
-                    if composite else f"{edge['signed_angle_deg']:+.1f}°")
+            label = (start * .58 + end * .42 if group_overview else (start + end) / 2) + normal * radius / 2
+            text = edge['caption'] if member_edge else (' → '.join(
+                f"{c['axis'].upper()} {c['signed_angle_deg']:+.8g}°" for c in edge['commands'])
+                if composite else f"{action_axis.upper()} {edge['signed_angle_deg']:+.8g}°")
             axis.text(*label, text, color=color, fontsize=7,
                       ha="center", va="center", bbox={"facecolor": "white", "alpha": .85, "edgecolor": "none", "pad": .5}, zorder=4)
     for pose, number in built.numbered:
@@ -116,27 +123,31 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
         box = AnnotationBbox(OffsetImage(images[number], zoom=.34 * image_scale), position, frameon=True,
                              bboxprops={"edgecolor": "#084081", "lw": 1.8, "facecolor": "white"}, zorder=5)
         axis.add_artist(box)
-        axis.annotate(f"Pose {number}\n{pose.source_id} · {pose.frequency_percent:g}%", position,
+        axis.annotate(f"{'Group' if group_overview else 'Pose'} {number}\n{pose.source_id} · {pose.frequency_percent:g}%", position,
                       xytext=(0, 43 * image_scale), textcoords="offset points", ha="center", va="bottom", fontsize=9 * image_scale, weight="bold", zorder=6)
     cutoff = built.document["generation"]["minimum_frequency_percent"]
     mode = "frequency numbering" if built.document["generation"]["renumber_by_frequency"] else "source numbering"
     axis.set_title(f"{built.source.workpiece}: observed stable-pose roadmap\n{count} poses · {len(built.document['edges'])} direct connections · minimum {cutoff:g}% · {mode}", fontsize=14, pad=20)
     reachability = built.document.get("connectivity")
-    if reachability:
+    if reachability and "direct" in reachability and "with_candidates" in reachability:
         direct, augmented = reachability['direct'], reachability['with_candidates']
         axis.set_title(axis.get_title() + f"\nReachable pairs: {direct['reachable_pair_count']} direct graph / "
                        f"{augmented['reachable_pair_count']} with candidates / {direct['total_pair_count']} total", fontsize=12)
     if member_overview:
         info = reachability['members']
         axis.set_title(f"{built.source.workpiece}: member-conditioned group roadmap\n"
-                       f"{info['known_member_inter_group_action_count']} known-member inter-group actions · representative images unchanged\n"
-                       "K = known endpoint · C = downhill capture · F = composite fallback", fontsize=12)
+                       f"{info['known_member_inter_group_action_count']} known-member inter-group actions · representative images unchanged", fontsize=12)
+    if group_overview:
+        stats = reachability['groups']
+        axis.set_title(f"{built.source.workpiece}: whole-group roadmap\n{count} groups · "
+            f"Cartesian routes {stats['cartesian']['reachable_pair_count']}/{stats['cartesian']['total_pair_count']} · "
+            f"all routes {stats['all_candidates']['reachable_pair_count']}/{stats['all_candidates']['total_pair_count']}", fontsize=12)
     handles = ([Line2D([0],[0],color='#0e827b',label='Member candidates · source conditions apply')] if member_overview else
                [Line2D([0], [0], color=color, label=f"{name.upper()} rotation") for name, color in colors.items()]
-               + ([Line2D([0], [0], color='#8a4baf', linestyle='--', label='Composite · geometry only')] if reachability else []))
+               + ([Line2D([0], [0], color='#8a4baf', linestyle='--', label='Multiple rotations' if group_overview else 'Composite · geometry only')] if reachability else []))
     figure.legend(handles=handles,
                   loc="lower center", bbox_to_anchor=(.5, .045), ncol=4 if reachability else 3, fontsize=8)
-    figure.text(.5, .015, "Group arrows summarize conditional candidates; member continuity and calibrated source coverage are required." if member_overview else "Observed simulation poses; connections are geometric candidates and remain untested. No analytical stability classification.", ha="center", fontsize=8)
+    figure.text(.5, .015, "Groups contain all members; routes assume member interchangeability. Group calibration required." if group_overview else "Group arrows summarize conditional candidates; member continuity and calibrated source coverage are required." if member_overview else "Observed simulation poses; connections are geometric candidates and remain untested. No analytical stability classification.", ha="center", fontsize=8)
     for fmt in formats:
         figure.savefig(path.with_suffix("." + fmt), bbox_inches="tight")
     plt.close(figure)

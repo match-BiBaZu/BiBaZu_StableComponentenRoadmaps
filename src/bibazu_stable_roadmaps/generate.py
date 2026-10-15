@@ -146,7 +146,7 @@ def _write_graphml(document: dict, destination: Path):
     graph = nx.MultiDiGraph()
     graph.graph["generation"] = json.dumps(document["generation"])
     graph.graph["classification_basis"] = "observed_simulation"
-    for key in ("composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis"):
+    for key in ("group_keys", "group_transfers", "group_routes", "composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis"):
         if key in document:
             graph.graph[key] = json.dumps(document[key])
     for node in document["nodes"]:
@@ -220,10 +220,12 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             check_cancel()
             progress(message)
         check_cancel()
-        built = build_roadmap(source, numbered, report, include_composites=config.include_composites)
         catalogue = read_json(source.path)
         if 'poses' not in catalogue:
             catalogue = read_json(source.path.with_name('poses.json'))
+        group_mode = config.include_members and any('group_members' in row for row in catalogue.get('poses', []))
+        built = build_roadmap(source, numbered, report,
+                             include_composites=config.include_composites and not group_mode)
         rows = {str(p['id']): p for p in catalogue.get('poses', [])}
         for node in built.document['nodes']:
             row = rows.get(node['source_pose_ids'][0], {})
@@ -233,7 +235,9 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
         if config.include_members and any('group_members' in n for n in built.document['nodes']):
             from .member_transfers import augment_members
             augment_members(source, built, sample_capture=config.estimate_capture_intervals,
-                            include_fallback=config.include_composites, progress=report)
+                            include_fallback=False, progress=report)
+            from .group_transfers import augment_groups
+            augment_groups(source, built, include_fallback=config.include_composites, progress=report)
         for warning in built.warnings:
             progress(warning)
         generated_utc = datetime.now(timezone.utc).isoformat()
@@ -284,7 +288,7 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                 manifest.update(connectivity=built.document["connectivity"],
                                 composite_transfer_count=len(built.document.get("composite_transfers", [])),
                                 member_transfer_count=len(built.document.get('member_transfers', [])))
-            manifest["consumer_export"] = dict(version=1, route_policy="exported_only",
+            manifest["consumer_export"] = dict(version=built.document["consumer_export"]["version"], route_policy="exported_only",
                 calibration_choice_count=len(built.document["consumer_export"]["calibration_choices"]),
                 execution_route_count=len(built.document["consumer_export"]["execution_routes"]))
             write_json(staging / "manifest.json", manifest)
@@ -294,7 +298,16 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             lines.extend(f"| {number} | {pose.source_id} | {pose.frequency_percent:g}% | {pose.count if pose.count is not None else 'unknown'} |" for pose, number in numbered)
             lines.append("\nThe legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.")
             lines.append("\nOriginal inputs are in `source/`; generation settings and exclusions are in `manifest.json`.")
-            if "connectivity" in built.document:
+            if "groups" in built.document.get("connectivity", {}):
+                groups = built.document["connectivity"]["groups"]
+                direct = groups["cartesian"]
+                augmented = groups["all_candidates"]
+                lines.append(f"\nOrdered group reachability: {direct['reachable_pair_count']}/{direct['total_pair_count']} using Cartesian rotations; "
+                             f"{augmented['reachable_pair_count']}/{augmented['total_pair_count']} with all candidates. "
+                             "Groups are interchangeable member sets for planning. Consecutive transfers may use different members. "
+                             "Execution requires an assigned pressure profile explicitly calibrated for the source group. "
+                             "Contact feasibility and settling reliability are unverified.")
+            elif "direct" in built.document.get("connectivity", {}):
                 direct = built.document["connectivity"]["direct"]
                 augmented = built.document["connectivity"]["with_candidates"]
                 lines.append(f"\nDirected reachability: {direct['reachable_pair_count']}/{direct['total_pair_count']} with existing connections; "

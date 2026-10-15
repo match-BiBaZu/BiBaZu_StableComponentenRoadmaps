@@ -1,117 +1,133 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
-  <key id="d28" for="edge" attr.name="transition_kind" attr.type="string" />
-  <key id="d27" for="edge" attr.name="signed_angle_deg" attr.type="double" />
-  <key id="d26" for="edge" attr.name="settling_pose_ids" attr.type="string" />
-  <key id="d25" for="edge" attr.name="experimental_status" attr.type="string" />
-  <key id="d24" for="edge" attr.name="edge_id" attr.type="string" />
-  <key id="d23" for="edge" attr.name="directed" attr.type="boolean" />
-  <key id="d22" for="edge" attr.name="axis_error_deg" attr.type="double" />
-  <key id="d21" for="edge" attr.name="axis_chute" attr.type="string" />
-  <key id="d20" for="edge" attr.name="actuation_count" attr.type="long" />
-  <key id="d19" for="edge" attr.name="actuation" attr.type="string" />
-  <key id="d18" for="node" attr.name="wall_contact_topology" attr.type="string" />
-  <key id="d17" for="node" attr.name="source_pose_ids" attr.type="string" />
-  <key id="d16" for="node" attr.name="representative_quaternion_xyzw" attr.type="string" />
-  <key id="d15" for="node" attr.name="representative_group_retention_auc" attr.type="double" />
-  <key id="d14" for="node" attr.name="pose_ids" attr.type="string" />
-  <key id="d13" for="node" attr.name="original_catalog_pose_id" attr.type="long" />
-  <key id="d12" for="node" attr.name="observed_frequency_percent" attr.type="double" />
-  <key id="d11" for="node" attr.name="observed_count" attr.type="long" />
-  <key id="d10" for="node" attr.name="main_face_on_wall" attr.type="boolean" />
-  <key id="d9" for="node" attr.name="main_face_on_floor" attr.type="boolean" />
-  <key id="d8" for="node" attr.name="kind" attr.type="string" />
-  <key id="d7" for="node" attr.name="group_stability_rank" attr.type="long" />
-  <key id="d6" for="node" attr.name="group_members" attr.type="string" />
-  <key id="d5" for="node" attr.name="floor_contact_topology" attr.type="string" />
-  <key id="d4" for="node" attr.name="classification_basis" attr.type="string" />
-  <key id="d3" for="node" attr.name="classical_metrics" attr.type="string" />
-  <key id="d2" for="node" attr.name="cad_status" attr.type="string" />
+  <key id="d36" for="edge" attr.name="transition_kind" attr.type="string" />
+  <key id="d35" for="edge" attr.name="signed_angle_deg" attr.type="double" />
+  <key id="d34" for="edge" attr.name="settling_pose_ids" attr.type="string" />
+  <key id="d33" for="edge" attr.name="experimental_status" attr.type="string" />
+  <key id="d32" for="edge" attr.name="edge_id" attr.type="string" />
+  <key id="d31" for="edge" attr.name="directed" attr.type="boolean" />
+  <key id="d30" for="edge" attr.name="axis_error_deg" attr.type="double" />
+  <key id="d29" for="edge" attr.name="axis_chute" attr.type="string" />
+  <key id="d28" for="edge" attr.name="actuation_count" attr.type="long" />
+  <key id="d27" for="edge" attr.name="actuation" attr.type="string" />
+  <key id="d26" for="node" attr.name="wall_contact_topology" attr.type="string" />
+  <key id="d25" for="node" attr.name="source_pose_ids" attr.type="string" />
+  <key id="d24" for="node" attr.name="representative_quaternion_xyzw" attr.type="string" />
+  <key id="d23" for="node" attr.name="representative_group_retention_auc" attr.type="double" />
+  <key id="d22" for="node" attr.name="pose_ids" attr.type="string" />
+  <key id="d21" for="node" attr.name="original_catalog_pose_id" attr.type="long" />
+  <key id="d20" for="node" attr.name="observed_frequency_percent" attr.type="double" />
+  <key id="d19" for="node" attr.name="observed_count" attr.type="long" />
+  <key id="d18" for="node" attr.name="main_face_on_wall" attr.type="boolean" />
+  <key id="d17" for="node" attr.name="main_face_on_floor" attr.type="boolean" />
+  <key id="d16" for="node" attr.name="kind" attr.type="string" />
+  <key id="d15" for="node" attr.name="group_stability_rank" attr.type="long" />
+  <key id="d14" for="node" attr.name="group_members" attr.type="string" />
+  <key id="d13" for="node" attr.name="floor_contact_topology" attr.type="string" />
+  <key id="d12" for="node" attr.name="classification_basis" attr.type="string" />
+  <key id="d11" for="node" attr.name="classical_metrics" attr.type="string" />
+  <key id="d10" for="node" attr.name="cad_status" attr.type="string" />
+  <key id="d9" for="graph" attr.name="capture_analysis" attr.type="string" />
+  <key id="d8" for="graph" attr.name="member_routes" attr.type="string" />
+  <key id="d7" for="graph" attr.name="member_transfers" attr.type="string" />
+  <key id="d6" for="graph" attr.name="member_states" attr.type="string" />
+  <key id="d5" for="graph" attr.name="connectivity" attr.type="string" />
+  <key id="d4" for="graph" attr.name="group_routes" attr.type="string" />
+  <key id="d3" for="graph" attr.name="group_transfers" attr.type="string" />
+  <key id="d2" for="graph" attr.name="group_keys" attr.type="string" />
   <key id="d1" for="graph" attr.name="classification_basis" attr.type="string" />
   <key id="d0" for="graph" attr.name="generation" attr.type="string" />
   <graph edgedefault="directed">
     <node id="0">
-      <data key="d2">provisional</data>
-      <data key="d3">{}</data>
-      <data key="d4">observed_group_retention</data>
-      <data key="d5">2-edge</data>
-      <data key="d6">["Kf2a_0003", "Kf2a_0006"]</data>
-      <data key="d7">2</data>
-      <data key="d8">robust</data>
-      <data key="d9">False</data>
-      <data key="d10">True</data>
-      <data key="d11">5378</data>
-      <data key="d12">53.779999999999994</data>
-      <data key="d13">0</data>
-      <data key="d14">[0]</data>
-      <data key="d15">1.0</data>
-      <data key="d16">[-0.24334421995236347, 0.66398848645109, 0.6637884005197587, 0.24349094400323584]</data>
-      <data key="d17">["Kf2a_0003"]</data>
-      <data key="d18">face</data>
+      <data key="d10">provisional</data>
+      <data key="d11">{}</data>
+      <data key="d12">observed_group_retention</data>
+      <data key="d13">2-edge</data>
+      <data key="d14">["Kf2a_0003", "Kf2a_0006"]</data>
+      <data key="d15">2</data>
+      <data key="d16">robust</data>
+      <data key="d17">False</data>
+      <data key="d18">True</data>
+      <data key="d19">5378</data>
+      <data key="d20">53.779999999999994</data>
+      <data key="d21">0</data>
+      <data key="d22">[0]</data>
+      <data key="d23">1.0</data>
+      <data key="d24">[-0.24334421995236347, 0.66398848645109, 0.6637884005197587, 0.24349094400323584]</data>
+      <data key="d25">["Kf2a_0003"]</data>
+      <data key="d26">face</data>
     </node>
     <node id="1">
-      <data key="d2">provisional</data>
-      <data key="d3">{}</data>
-      <data key="d4">observed_group_retention</data>
-      <data key="d5">face</data>
-      <data key="d6">["Kf2a_0001"]</data>
-      <data key="d7">1</data>
-      <data key="d8">robust</data>
-      <data key="d9">False</data>
-      <data key="d10">False</data>
-      <data key="d11">2097</data>
-      <data key="d12">20.97</data>
-      <data key="d13">1</data>
-      <data key="d14">[1]</data>
-      <data key="d15">1.0</data>
-      <data key="d16">[-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731]</data>
-      <data key="d17">["Kf2a_0001"]</data>
-      <data key="d18">2-edge</data>
+      <data key="d10">provisional</data>
+      <data key="d11">{}</data>
+      <data key="d12">observed_group_retention</data>
+      <data key="d13">face</data>
+      <data key="d14">["Kf2a_0001"]</data>
+      <data key="d15">1</data>
+      <data key="d16">robust</data>
+      <data key="d17">False</data>
+      <data key="d18">False</data>
+      <data key="d19">2097</data>
+      <data key="d20">20.97</data>
+      <data key="d21">1</data>
+      <data key="d22">[1]</data>
+      <data key="d23">1.0</data>
+      <data key="d24">[-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731]</data>
+      <data key="d25">["Kf2a_0001"]</data>
+      <data key="d26">2-edge</data>
     </node>
     <node id="2">
-      <data key="d2">provisional</data>
-      <data key="d3">{}</data>
-      <data key="d4">observed_group_retention</data>
-      <data key="d5">face</data>
-      <data key="d6">["Kf2a_0002"]</data>
-      <data key="d7">3</data>
-      <data key="d8">robust</data>
-      <data key="d9">True</data>
-      <data key="d10">False</data>
-      <data key="d11">105</data>
-      <data key="d12">1.05</data>
-      <data key="d13">2</data>
-      <data key="d14">[2]</data>
-      <data key="d15">0.2552083333333333</data>
-      <data key="d16">[-0.6988948367020132, 0.715224396098087, 0.0001866159610129925, -0.00018876407578216625]</data>
-      <data key="d17">["Kf2a_0002"]</data>
-      <data key="d18">edge</data>
+      <data key="d10">provisional</data>
+      <data key="d11">{}</data>
+      <data key="d12">observed_group_retention</data>
+      <data key="d13">face</data>
+      <data key="d14">["Kf2a_0002"]</data>
+      <data key="d15">3</data>
+      <data key="d16">robust</data>
+      <data key="d17">True</data>
+      <data key="d18">False</data>
+      <data key="d19">105</data>
+      <data key="d20">1.05</data>
+      <data key="d21">2</data>
+      <data key="d22">[2]</data>
+      <data key="d23">0.2552083333333333</data>
+      <data key="d24">[-0.6988948367020132, 0.715224396098087, 0.0001866159610129925, -0.00018876407578216625]</data>
+      <data key="d25">["Kf2a_0002"]</data>
+      <data key="d26">edge</data>
     </node>
     <edge source="1" target="2" id="a0:1-&gt;2:free_z">
-      <data key="d19">free_z</data>
-      <data key="d20">1</data>
-      <data key="d21">[0.0, 0.0, 1.0]</data>
-      <data key="d22">0.02960042767521937</data>
-      <data key="d23">True</data>
-      <data key="d24">a0:1-&gt;2:free_z</data>
-      <data key="d25">untested</data>
-      <data key="d26">[]</data>
-      <data key="d27">-51.04284192098437</data>
-      <data key="d28">actuated</data>
+      <data key="d27">free_z</data>
+      <data key="d28">1</data>
+      <data key="d29">[0.0, 0.0, 1.0]</data>
+      <data key="d30">0.02960042767521937</data>
+      <data key="d31">True</data>
+      <data key="d32">a0:1-&gt;2:free_z</data>
+      <data key="d33">untested</data>
+      <data key="d34">[]</data>
+      <data key="d35">-51.04284192098437</data>
+      <data key="d36">actuated</data>
     </edge>
     <edge source="2" target="1" id="a1:2-&gt;1:free_z">
-      <data key="d19">free_z</data>
-      <data key="d20">1</data>
-      <data key="d21">[0.0, 0.0, 1.0]</data>
-      <data key="d22">0.02960042767521937</data>
-      <data key="d23">True</data>
-      <data key="d24">a1:2-&gt;1:free_z</data>
-      <data key="d25">untested</data>
-      <data key="d26">[]</data>
-      <data key="d27">51.04284192098438</data>
-      <data key="d28">actuated</data>
+      <data key="d27">free_z</data>
+      <data key="d28">1</data>
+      <data key="d29">[0.0, 0.0, 1.0]</data>
+      <data key="d30">0.02960042767521937</data>
+      <data key="d31">True</data>
+      <data key="d32">a1:2-&gt;1:free_z</data>
+      <data key="d33">untested</data>
+      <data key="d34">[]</data>
+      <data key="d35">51.04284192098438</data>
+      <data key="d36">actuated</data>
     </edge>
     <data key="d0">{"frequency_denominator": "all completed drop trials, including unsettled outcomes", "generated_utc": "2026-10-12T23:33:57.729275+00:00", "minimum_frequency_percent": 0, "numbering_tie_break": "original source ID", "pose_id_mapping": {"Kf2a_0001": 1, "Kf2a_0002": 2, "Kf2a_0003": 0}, "removed_poses": [], "renumber_by_frequency": true, "source_file": "poses.json", "source_sha256": "60cb7bcf0bff7ceb14e8547245fca62193956ba75e67327c21cb2244f13186bf"}</data>
     <data key="d1">observed_simulation</data>
+    <data key="d2">{"0": "Kf2a:group:0:1707d40ca1e027253f1b", "1": "Kf2a:group:1:be70b430593d97533111", "2": "Kf2a:group:2:781858ac53286c4fd528"}</data>
+    <data key="d3">[{"source": 1, "target": 2, "edge_id": "group:1-&gt;2:cbc055f7dea4e843c7ca", "witnesses": [{"origin_edge_id": "member:1-&gt;2:45b82e98dd6ea0dd", "landing_model": "known_member_endpoint", "settling_segments": [], "endpoint_error_deg": null, "possible_outcomes": [{"member_id": "Kf2a_0002", "group_id": 2, "retained": true}], "source_member_id": "Kf2a_0001", "target_member_id": "Kf2a_0002", "commands": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": -51.04284192098437, "start_quaternion_xyzw": [-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731], "end_quaternion_xyzw": [-3.736281405093171e-05, 0.00034978047384850725, -0.7152244071392082, 0.6988947872820402]}], "is_composite": false}], "commands": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": -51.04284192098437, "start_quaternion_xyzw": [-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731], "end_quaternion_xyzw": [-3.736281405093171e-05, 0.00034978047384850725, -0.7152244071392082, 0.6988947872820402]}], "directed": true, "transition_kind": "group_transfer", "evidence_status": "geometry_only", "experimental_status": "untested", "actuation": "group_reorientation", "display_name": "Z -51.042842\u00b0", "cartesian_preferred": false, "is_composite": false, "settling_required": false, "source_group_key": "Kf2a:group:1:be70b430593d97533111", "target_group_key": "Kf2a:group:2:781858ac53286c4fd528", "source_member_ids": ["Kf2a_0001"], "possible_target_member_ids": ["Kf2a_0002"], "source_group_member_ids": ["Kf2a_0001"], "target_group_member_ids": ["Kf2a_0002"], "preview_source_member_id": "Kf2a_0001", "preview_target_member_id": "Kf2a_0002", "actuation_count": 1, "total_absolute_angle_deg": 51.04284192098437, "preview_segments": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": -51.04284192098437, "start_quaternion_xyzw": [-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731], "end_quaternion_xyzw": [-3.736281405093171e-05, 0.00034978047384850725, -0.7152244071392082, 0.6988947872820402], "segment_kind": "command"}], "planning_assumption": "group_union: arrival and departure may use different group members", "contact_feasibility_evaluated": false, "preference_cost": [1, 0, 1, 51.04284192098437, 0]}, {"source": 2, "target": 1, "edge_id": "group:2-&gt;1:0f36db3778b0557b6871", "witnesses": [{"origin_edge_id": "member:2-&gt;1:2e3d181c65afe852", "landing_model": "known_member_endpoint", "settling_segments": [], "endpoint_error_deg": null, "possible_outcomes": [{"member_id": "Kf2a_0001", "group_id": 1, "retained": true}], "source_member_id": "Kf2a_0002", "target_member_id": "Kf2a_0001", "commands": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": 51.04284192098438, "start_quaternion_xyzw": [0.6988948367020132, -0.715224396098087, -0.0001866159610129925, 0.00018876407578216625], "end_quaternion_xyzw": [0.9388530286672052, -0.34431805079754796, -8.707805061168193e-05, 0.0002507484921437565]}], "is_composite": false}], "commands": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": 51.04284192098438, "start_quaternion_xyzw": [0.6988948367020132, -0.715224396098087, -0.0001866159610129925, 0.00018876407578216625], "end_quaternion_xyzw": [0.9388530286672052, -0.34431805079754796, -8.707805061168193e-05, 0.0002507484921437565]}], "directed": true, "transition_kind": "group_transfer", "evidence_status": "geometry_only", "experimental_status": "untested", "actuation": "group_reorientation", "display_name": "Z +51.042842\u00b0", "cartesian_preferred": false, "is_composite": false, "settling_required": false, "source_group_key": "Kf2a:group:2:781858ac53286c4fd528", "target_group_key": "Kf2a:group:1:be70b430593d97533111", "source_member_ids": ["Kf2a_0002"], "possible_target_member_ids": ["Kf2a_0001"], "source_group_member_ids": ["Kf2a_0002"], "target_group_member_ids": ["Kf2a_0001"], "preview_source_member_id": "Kf2a_0002", "preview_target_member_id": "Kf2a_0001", "actuation_count": 1, "total_absolute_angle_deg": 51.04284192098438, "preview_segments": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": 51.04284192098438, "start_quaternion_xyzw": [0.6988948367020132, -0.715224396098087, -0.0001866159610129925, 0.00018876407578216625], "end_quaternion_xyzw": [0.9388530286672052, -0.34431805079754796, -8.707805061168193e-05, 0.0002507484921437565], "segment_kind": "command"}], "planning_assumption": "group_union: arrival and departure may use different group members", "contact_feasibility_evaluated": false, "preference_cost": [1, 0, 1, 51.04284192098438, 0]}, {"source": 1, "target": 0, "edge_id": "group:1-&gt;0:eb6c65488321af517d4b", "witnesses": [{"landing_model": "composite_endpoint", "settling_segments": [], "endpoint_error_deg": 1.2722218725854067e-14, "terminal_symmetry_quaternion_xyzw": [0.9999999999999988, 5.0229749973172673e-08, 0.0, 1.6081226496766366e-16], "source_member_id": "Kf2a_0001", "target_member_id": "Kf2a_0003", "commands": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": -9.448289536348915, "start_quaternion_xyzw": [-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731], "end_quaternion_xyzw": [-0.00015912228544247167, 0.0003137235375853322, -0.4204708684919465, 0.9073059709972533]}, {"axis": "y", "actuation": "free_y", "signed_angle_deg": 89.94858631086538, "start_quaternion_xyzw": [-0.00015912228544247167, 0.0003137235375853322, -0.4204708684919465, 0.9073059709972533], "end_quaternion_xyzw": [-0.29729694209502777, 0.6414962265649834, -0.2973387038231303, 0.641628252754361]}, {"axis": "z", "actuation": "free_z", "signed_angle_deg": -90.01817122260739, "start_quaternion_xyzw": [-0.29729694209502777, 0.6414962265649834, -0.2973387038231303, 0.641628252754361], "end_quaternion_xyzw": [0.24349091066131, 0.6637884127502474, -0.6639884986742084, 0.24334418660038742]}], "is_composite": true}], "commands": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": -9.448289536348915, "start_quaternion_xyzw": [-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731], "end_quaternion_xyzw": [-0.00015912228544247167, 0.0003137235375853322, -0.4204708684919465, 0.9073059709972533]}, {"axis": "y", "actuation": "free_y", "signed_angle_deg": 89.94858631086538, "start_quaternion_xyzw": [-0.00015912228544247167, 0.0003137235375853322, -0.4204708684919465, 0.9073059709972533], "end_quaternion_xyzw": [-0.29729694209502777, 0.6414962265649834, -0.2973387038231303, 0.641628252754361]}, {"axis": "z", "actuation": "free_z", "signed_angle_deg": -90.01817122260739, "start_quaternion_xyzw": [-0.29729694209502777, 0.6414962265649834, -0.2973387038231303, 0.641628252754361], "end_quaternion_xyzw": [0.24349091066131, 0.6637884127502474, -0.6639884986742084, 0.24334418660038742]}], "directed": true, "transition_kind": "group_transfer", "evidence_status": "geometry_only", "experimental_status": "untested", "actuation": "group_reorientation", "display_name": "Z -9.4482895\u00b0 \u2192 Y +89.948586\u00b0 \u2192 Z -90.018171\u00b0", "cartesian_preferred": false, "is_composite": true, "settling_required": false, "source_group_key": "Kf2a:group:1:be70b430593d97533111", "target_group_key": "Kf2a:group:0:1707d40ca1e027253f1b", "source_member_ids": ["Kf2a_0001"], "possible_target_member_ids": ["Kf2a_0003"], "source_group_member_ids": ["Kf2a_0001"], "target_group_member_ids": ["Kf2a_0003", "Kf2a_0006"], "preview_source_member_id": "Kf2a_0001", "preview_target_member_id": "Kf2a_0003", "actuation_count": 3, "total_absolute_angle_deg": 189.4150470698217, "preview_segments": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": -9.448289536348915, "start_quaternion_xyzw": [-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731], "end_quaternion_xyzw": [-0.00015912228544247167, 0.0003137235375853322, -0.4204708684919465, 0.9073059709972533], "segment_kind": "command"}, {"axis": "y", "actuation": "free_y", "signed_angle_deg": 89.94858631086538, "start_quaternion_xyzw": [-0.00015912228544247167, 0.0003137235375853322, -0.4204708684919465, 0.9073059709972533], "end_quaternion_xyzw": [-0.29729694209502777, 0.6414962265649834, -0.2973387038231303, 0.641628252754361], "segment_kind": "command"}, {"axis": "z", "actuation": "free_z", "signed_angle_deg": -90.01817122260739, "start_quaternion_xyzw": [-0.29729694209502777, 0.6414962265649834, -0.2973387038231303, 0.641628252754361], "end_quaternion_xyzw": [0.24349091066131, 0.6637884127502474, -0.6639884986742084, 0.24334418660038742], "segment_kind": "command"}], "planning_assumption": "group_union: arrival and departure may use different group members", "contact_feasibility_evaluated": false, "preference_cost": [1, 1, 3, 189.4150470698217, 0]}, {"source": 0, "target": 1, "edge_id": "group:0-&gt;1:7af2fabaadd20b9c0d8e", "witnesses": [{"landing_model": "composite_endpoint", "settling_segments": [], "endpoint_error_deg": 2.8971966795200786e-14, "terminal_symmetry_quaternion_xyzw": [0.9999999999999988, 5.0229749973172673e-08, 0.0, 1.6081226496766366e-16], "source_member_id": "Kf2a_0003", "target_member_id": "Kf2a_0001", "commands": [{"axis": "y", "actuation": "free_y", "signed_angle_deg": -9.448286706980783, "start_quaternion_xyzw": [-0.24334421995236347, 0.66398848645109, 0.6637884005197587, 0.24349094400323584], "end_quaternion_xyzw": [-0.2971861179380526, 0.6416792250226216, 0.6414919027966867, 0.2973488223039802]}, {"axis": "z", "actuation": "free_z", "signed_angle_deg": 90.02636465120048, "start_quaternion_xyzw": [-0.2971861179380526, 0.6416792250226216, 0.6414919027966867, 0.2973488223039802], "end_quaternion_xyzw": [0.6639340778075891, -0.24344066391321878, -0.6638046377971027, 0.24349863720015974]}, {"axis": "y", "actuation": "free_y", "signed_angle_deg": -89.95226672019702, "start_quaternion_xyzw": [0.6639340778075891, -0.24344066391321878, -0.6638046377971027, 0.24349863720015974], "end_quaternion_xyzw": [0.938853006121483, -0.34431803489549406, -0.0002995526843551643, 0.00018441949206984826]}], "is_composite": true}], "commands": [{"axis": "y", "actuation": "free_y", "signed_angle_deg": -9.448286706980783, "start_quaternion_xyzw": [-0.24334421995236347, 0.66398848645109, 0.6637884005197587, 0.24349094400323584], "end_quaternion_xyzw": [-0.2971861179380526, 0.6416792250226216, 0.6414919027966867, 0.2973488223039802]}, {"axis": "z", "actuation": "free_z", "signed_angle_deg": 90.02636465120048, "start_quaternion_xyzw": [-0.2971861179380526, 0.6416792250226216, 0.6414919027966867, 0.2973488223039802], "end_quaternion_xyzw": [0.6639340778075891, -0.24344066391321878, -0.6638046377971027, 0.24349863720015974]}, {"axis": "y", "actuation": "free_y", "signed_angle_deg": -89.95226672019702, "start_quaternion_xyzw": [0.6639340778075891, -0.24344066391321878, -0.6638046377971027, 0.24349863720015974], "end_quaternion_xyzw": [0.938853006121483, -0.34431803489549406, -0.0002995526843551643, 0.00018441949206984826]}], "directed": true, "transition_kind": "group_transfer", "evidence_status": "geometry_only", "experimental_status": "untested", "actuation": "group_reorientation", "display_name": "Y -9.4482867\u00b0 \u2192 Z +90.026365\u00b0 \u2192 Y -89.952267\u00b0", "cartesian_preferred": false, "is_composite": true, "settling_required": false, "source_group_key": "Kf2a:group:0:1707d40ca1e027253f1b", "target_group_key": "Kf2a:group:1:be70b430593d97533111", "source_member_ids": ["Kf2a_0003"], "possible_target_member_ids": ["Kf2a_0001"], "source_group_member_ids": ["Kf2a_0003", "Kf2a_0006"], "target_group_member_ids": ["Kf2a_0001"], "preview_source_member_id": "Kf2a_0003", "preview_target_member_id": "Kf2a_0001", "actuation_count": 3, "total_absolute_angle_deg": 189.4269180783783, "preview_segments": [{"axis": "y", "actuation": "free_y", "signed_angle_deg": -9.448286706980783, "start_quaternion_xyzw": [-0.24334421995236347, 0.66398848645109, 0.6637884005197587, 0.24349094400323584], "end_quaternion_xyzw": [-0.2971861179380526, 0.6416792250226216, 0.6414919027966867, 0.2973488223039802], "segment_kind": "command"}, {"axis": "z", "actuation": "free_z", "signed_angle_deg": 90.02636465120048, "start_quaternion_xyzw": [-0.2971861179380526, 0.6416792250226216, 0.6414919027966867, 0.2973488223039802], "end_quaternion_xyzw": [0.6639340778075891, -0.24344066391321878, -0.6638046377971027, 0.24349863720015974], "segment_kind": "command"}, {"axis": "y", "actuation": "free_y", "signed_angle_deg": -89.95226672019702, "start_quaternion_xyzw": [0.6639340778075891, -0.24344066391321878, -0.6638046377971027, 0.24349863720015974], "end_quaternion_xyzw": [0.938853006121483, -0.34431803489549406, -0.0002995526843551643, 0.00018441949206984826], "segment_kind": "command"}], "planning_assumption": "group_union: arrival and departure may use different group members", "contact_feasibility_evaluated": false, "preference_cost": [1, 1, 3, 189.4269180783783, 0]}]</data>
+    <data key="d4">[{"edge_id": "group-route:0-&gt;1:a2e0aa1f69d3f21ddee7", "source": 0, "target": 1, "component_edge_ids": ["group:0-&gt;1:7af2fabaadd20b9c0d8e"], "preference_cost": [1, 1, 3, 189.4269180783783, 0], "planning_assumption": "group_union: arrival and departure may use different group members", "evidence_status": "geometry_only"}, {"edge_id": "group-route:0-&gt;2:7852dfb016946eb61e05", "source": 0, "target": 2, "component_edge_ids": ["group:0-&gt;1:7af2fabaadd20b9c0d8e", "group:1-&gt;2:cbc055f7dea4e843c7ca"], "preference_cost": [2, 1, 4, 240.46975999936268, 0], "planning_assumption": "group_union: arrival and departure may use different group members", "evidence_status": "geometry_only"}, {"edge_id": "group-route:1-&gt;0:b5f95efdda83d39fef15", "source": 1, "target": 0, "component_edge_ids": ["group:1-&gt;0:eb6c65488321af517d4b"], "preference_cost": [1, 1, 3, 189.4150470698217, 0], "planning_assumption": "group_union: arrival and departure may use different group members", "evidence_status": "geometry_only"}, {"edge_id": "group-route:1-&gt;2:516ab8fdf969f1ea66b2", "source": 1, "target": 2, "component_edge_ids": ["group:1-&gt;2:cbc055f7dea4e843c7ca"], "preference_cost": [1, 0, 1, 51.04284192098437, 0], "planning_assumption": "group_union: arrival and departure may use different group members", "evidence_status": "geometry_only"}, {"edge_id": "group-route:2-&gt;0:435455b13eecd43b0cae", "source": 2, "target": 0, "component_edge_ids": ["group:2-&gt;1:0f36db3778b0557b6871", "group:1-&gt;0:eb6c65488321af517d4b"], "preference_cost": [2, 1, 4, 240.45788899080608, 0], "planning_assumption": "group_union: arrival and departure may use different group members", "evidence_status": "geometry_only"}, {"edge_id": "group-route:2-&gt;1:1194c3ba8f2bc22ad07c", "source": 2, "target": 1, "component_edge_ids": ["group:2-&gt;1:0f36db3778b0557b6871"], "preference_cost": [1, 0, 1, 51.04284192098438, 0], "planning_assumption": "group_union: arrival and departure may use different group members", "evidence_status": "geometry_only"}]</data>
+    <data key="d5">{"members": {"group_overview": {"strongly_connected_components": [[0], [1, 2]], "unreachable_pairs": [[0, 1], [0, 2], [1, 0], [2, 0]], "reachable_pair_count": 2, "total_pair_count": 6, "strongly_connected": false}, "known_member_inter_group_action_count": 2, "source_member_coverage": {"Kf2a_0001": [1, 2], "Kf2a_0002": [1, 2], "Kf2a_0003": [0], "Kf2a_0006": [0]}, "every_source_member_reaches_every_group": false, "note": "Group overview is existential. Executable route candidates preserve possible member states; profiles require explicit source coverage."}, "groups": {"cartesian": {"strongly_connected_components": [[0], [1], [2]], "unreachable_pairs": [[0, 1], [0, 2], [1, 0], [1, 2], [2, 0], [2, 1]], "reachable_pair_count": 0, "total_pair_count": 6, "strongly_connected": false}, "all_candidates": {"strongly_connected_components": [[0, 1, 2]], "unreachable_pairs": [], "reachable_pair_count": 6, "total_pair_count": 6, "strongly_connected": true}, "transfer_count": 4, "planning_assumption": "group_union: arrival and departure may use different group members", "endpoint_tolerance_deg": 1.0}}</data>
+    <data key="d6">[{"member_id": "Kf2a_0001", "group_id": 1, "quaternion_xyzw": [-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731], "position_com_chute_mm": [451.26996052760285, 38.80144629871242, 4.998838175036453], "retained": true, "observed_count": 2097}, {"member_id": "Kf2a_0002", "group_id": 2, "quaternion_xyzw": [0.6988948367020132, -0.715224396098087, -0.0001866159610129925, 0.00018876407578216625], "position_com_chute_mm": [450.7872887945526, 48.41959300638685, 4.9925251992637625], "retained": true, "observed_count": 105}, {"member_id": "Kf2a_0003", "group_id": 0, "quaternion_xyzw": [-0.24334421995236347, 0.66398848645109, 0.6637884005197587, 0.24349094400323584], "position_com_chute_mm": [451.401961296994, 5.008539398137709, 38.79190567809681], "retained": true, "observed_count": 5375}, {"member_id": "Kf2a_0004", "group_id": null, "quaternion_xyzw": [0.8217426656958754, -0.5698586747861246, -0.0001753167714652615, 0.00022673788493088323], "position_com_chute_mm": [450.60249811222366, 48.634850813005, 4.994656731409989], "retained": false, "observed_count": 3}, {"member_id": "Kf2a_0005", "group_id": null, "quaternion_xyzw": [-0.5003069455395572, 0.49963898708876203, 0.4997495754723553, 0.5003041121567912], "position_com_chute_mm": [450.8548560126582, 4.99936500485702, 48.2059644657398], "retained": false, "observed_count": 1}, {"member_id": "Kf2a_0006", "group_id": 0, "quaternion_xyzw": [0.45382872194579066, 0.7773492371791512, -0.4289814782303852, 0.07577958781436875], "position_com_chute_mm": [450.75110417091526, 31.834714807026884, 33.52153074855058], "retained": true, "observed_count": 3}]</data>
+    <data key="d7">[{"source": 1, "target": 2, "source_member_ids": ["Kf2a_0001"], "possible_target_member_ids": ["Kf2a_0002"], "transfer_model": "known_member_endpoint", "actuation": "free_z", "commands": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": -51.04284192098437, "start_quaternion_xyzw": [-0.0001844195071161736, 0.00029955267509157446, -0.3443180820538456, 0.9388529888264731], "end_quaternion_xyzw": [-3.736281405093171e-05, 0.00034978047384850725, -0.7152244071392082, 0.6988947872820402]}], "actuation_count": 1, "total_absolute_angle_deg": 51.04284192098437, "evidence_status": "geometry_only", "directed": true, "conditional": true, "experimental_status": "untested", "capture_interval_deg": null, "settling_segments": [], "axis_error_deg": 0.02960042767521937, "edge_id": "member:1-&gt;2:45b82e98dd6ea0dd"}, {"source": 2, "target": 1, "source_member_ids": ["Kf2a_0002"], "possible_target_member_ids": ["Kf2a_0001"], "transfer_model": "known_member_endpoint", "actuation": "free_z", "commands": [{"axis": "z", "actuation": "free_z", "signed_angle_deg": 51.04284192098438, "start_quaternion_xyzw": [0.6988948367020132, -0.715224396098087, -0.0001866159610129925, 0.00018876407578216625], "end_quaternion_xyzw": [0.9388530286672052, -0.34431805079754796, -8.707805061168193e-05, 0.0002507484921437565]}], "actuation_count": 1, "total_absolute_angle_deg": 51.04284192098438, "evidence_status": "geometry_only", "directed": true, "conditional": true, "experimental_status": "untested", "capture_interval_deg": null, "settling_segments": [], "axis_error_deg": 0.02960042767521937, "edge_id": "member:2-&gt;1:2e3d181c65afe852"}]</data>
+    <data key="d8">[{"source": 1, "source_member_id": "Kf2a_0001", "target": 1, "component_edge_ids": [], "possible_target_member_ids": ["Kf2a_0001"], "member_chain": [["Kf2a_0001"]], "actuation_count": 0, "composite_transfer_count": 0, "total_absolute_angle_deg": 0.0, "conditional": true, "evidence_status": "geometry_only"}, {"source": 1, "source_member_id": "Kf2a_0001", "target": 2, "component_edge_ids": ["member:1-&gt;2:45b82e98dd6ea0dd"], "possible_target_member_ids": ["Kf2a_0002"], "member_chain": [["Kf2a_0001"], ["Kf2a_0002"]], "actuation_count": 1, "composite_transfer_count": 0, "total_absolute_angle_deg": 51.04284192098437, "conditional": true, "evidence_status": "geometry_only"}, {"source": 2, "source_member_id": "Kf2a_0002", "target": 1, "component_edge_ids": ["member:2-&gt;1:2e3d181c65afe852"], "possible_target_member_ids": ["Kf2a_0001"], "member_chain": [["Kf2a_0002"], ["Kf2a_0001"]], "actuation_count": 1, "composite_transfer_count": 0, "total_absolute_angle_deg": 51.04284192098438, "conditional": true, "evidence_status": "geometry_only"}, {"source": 2, "source_member_id": "Kf2a_0002", "target": 2, "component_edge_ids": [], "possible_target_member_ids": ["Kf2a_0002"], "member_chain": [["Kf2a_0002"]], "actuation_count": 0, "composite_transfer_count": 0, "total_absolute_angle_deg": 0.0, "conditional": true, "evidence_status": "geometry_only"}, {"source": 0, "source_member_id": "Kf2a_0003", "target": 0, "component_edge_ids": [], "possible_target_member_ids": ["Kf2a_0003"], "member_chain": [["Kf2a_0003"]], "actuation_count": 0, "composite_transfer_count": 0, "total_absolute_angle_deg": 0.0, "conditional": true, "evidence_status": "geometry_only"}, {"source": 0, "source_member_id": "Kf2a_0006", "target": 0, "component_edge_ids": [], "possible_target_member_ids": ["Kf2a_0006"], "member_chain": [["Kf2a_0006"]], "actuation_count": 0, "composite_transfer_count": 0, "total_absolute_angle_deg": 0.0, "conditional": true, "evidence_status": "geometry_only"}]</data>
+    <data key="d9">{"model": "sampled_seated_downhill_v1", "action_step_deg": 1.0, "boundary_step_deg": 0.1, "settling_step_deg": 0.1, "maximum_settling_angle_deg": 60.0, "energy_tolerance_mm": 1e-06, "grouping_barrier_used_as_passive_permission": false, "samples": []}</data>
   </graph>
 </graphml>

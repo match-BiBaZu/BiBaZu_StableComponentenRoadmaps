@@ -21,24 +21,15 @@ Files: [Qk1a_roadmap.graphml](Qk1a_roadmap.graphml), [Qk1a_roadmap.json](Qk1a_ro
 
 [Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
 
-Nodes use the chosen representative orientations. Direct connections remain geometric action candidates.
+Thumbnails retain the chosen representative orientations. Each group contains all its observed members.
 
-<!-- COMPOSITE CONNECTIVITY -->
 
-## Composite orientation candidates
+## Whole-group reorientations
 
-Existing connections reach 6/30 ordered pairs. With 3 composite bridges, candidate routes reach 30/30 pairs.
+Cartesian-only routes reach **30/30** ordered group pairs; all candidate routes reach **30/30**.
 
-Representatives and direct edges are unchanged. Dashed purple bridges are geometry-only candidates: contact, settling, actuator feasibility and reliability remain unverified. Transient orientations are not pose catalogue entries. Calibrate a full transfer pressure profile before execution.
+A transfer may use any source member and reach any target member. Consecutive transfers may use different members of the same intermediate group. This interchangeability is the planning assumption; no extra motion is invented between those witnesses.
 
-JSON/YAML contain ordered commands, preferred routes and separate directed connectivity reports.
+Exact ±90° and ±180° chute X/Y/Z commands are evaluated without contact/support pruning and preferred over other rotations. Arrow labels show the preferred reorientation; exports and control pickers retain alternatives and member witnesses. Competing landing outcomes and sampled downhill evidence remain in the records.
 
-## Member-conditioned transfers
-
-20 known-member actions connect groups. 649 total member transfer candidates include sampled downhill capture intervals and composite fallbacks. Routes preserve possible member orientations, including explicit intra-group repositioning. The group overview alone is not a proof that two member-conditioned actions can be chained.
-
-All retained source members have candidate paths to every retained group: **True**. Runtime use requires a calibrated profile with explicitly declared source-member coverage; old profiles receive no automatic group-wide coverage.
-
-<!-- CONSUMER EXPORT -->
-
-Control applications read finished calibration choices, ordered commands, preview segments and execution routes from `consumer_export` in JSON/YAML. They do not construct routes. Execution requires assigned pressure profiles and explicit source-member coverage; geometry-only evidence does not grant either.
+The additive `group_transfers`, `group_routes` and consumer-export version 2 records contain finished choices and previews. Execution requires an assigned pressure profile explicitly calibrated for the exported source group. Existing profiles receive no automatic group qualification. Contact feasibility and physical settling reliability remain unverified.

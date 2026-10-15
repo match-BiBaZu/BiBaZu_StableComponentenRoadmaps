@@ -71,10 +71,130 @@
   "warnings": [],
   "workpiece": "Kf2a",
   "consumer_export": {
-    "version": 1,
+    "version": 2,
     "route_policy": "exported_only",
-    "calibration_choice_count": 2,
-    "execution_route_count": 2,
-    "implementation_sha256": "1dcfcb5dde65d706f643e87d3e94ae8f00b4b6c4520f35783f05ba069620fa26"
+    "calibration_choice_count": 8,
+    "execution_route_count": 8
+  },
+  "connectivity": {
+    "members": {
+      "group_overview": {
+        "strongly_connected_components": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "unreachable_pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "reachable_pair_count": 2,
+        "total_pair_count": 6,
+        "strongly_connected": false
+      },
+      "known_member_inter_group_action_count": 2,
+      "source_member_coverage": {
+        "Kf2a_0001": [
+          1,
+          2
+        ],
+        "Kf2a_0002": [
+          1,
+          2
+        ],
+        "Kf2a_0003": [
+          0
+        ],
+        "Kf2a_0006": [
+          0
+        ]
+      },
+      "every_source_member_reaches_every_group": false,
+      "note": "Group overview is existential. Executable route candidates preserve possible member states; profiles require explicit source coverage."
+    },
+    "groups": {
+      "cartesian": {
+        "strongly_connected_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "unreachable_pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "reachable_pair_count": 0,
+        "total_pair_count": 6,
+        "strongly_connected": false
+      },
+      "all_candidates": {
+        "strongly_connected_components": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "unreachable_pairs": [],
+        "reachable_pair_count": 6,
+        "total_pair_count": 6,
+        "strongly_connected": true
+      },
+      "transfer_count": 4,
+      "planning_assumption": "group_union: arrival and departure may use different group members",
+      "endpoint_tolerance_deg": 1.0
+    }
+  },
+  "group_transfer_count": 4,
+  "group_route_count": 6,
+  "group_extension": {
+    "planning_assumption": "group_union: arrival and departure may use different group members",
+    "implementation_sha256": "e93e3ba43453fdd6a533566e010315a56e31c0972f300b36ea5c69858f544d0e"
   }
 }

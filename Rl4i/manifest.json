@@ -85,10 +85,163 @@
   "warnings": [],
   "workpiece": "Rl4i",
   "consumer_export": {
-    "version": 1,
+    "version": 2,
     "route_policy": "exported_only",
-    "calibration_choice_count": 262,
-    "execution_route_count": 496,
-    "implementation_sha256": "1dcfcb5dde65d706f643e87d3e94ae8f00b4b6c4520f35783f05ba069620fa26"
+    "calibration_choice_count": 370,
+    "execution_route_count": 124
+  },
+  "connectivity": {
+    "members": {
+      "group_overview": {
+        "strongly_connected_components": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "unreachable_pairs": [],
+        "reachable_pair_count": 56,
+        "total_pair_count": 56,
+        "strongly_connected": true
+      },
+      "known_member_inter_group_action_count": 28,
+      "source_member_coverage": {
+        "Rl4i_0001": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Rl4i_0002": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Rl4i_0004": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Rl4i_0005": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Rl4i_0007": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Rl4i_0008": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Rl4i_0012": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Rl4i_0014": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "every_source_member_reaches_every_group": true,
+      "note": "Group overview is existential. Executable route candidates preserve possible member states; profiles require explicit source coverage."
+    },
+    "groups": {
+      "cartesian": {
+        "strongly_connected_components": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "unreachable_pairs": [],
+        "reachable_pair_count": 56,
+        "total_pair_count": 56,
+        "strongly_connected": true
+      },
+      "all_candidates": {
+        "strongly_connected_components": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "unreachable_pairs": [],
+        "reachable_pair_count": 56,
+        "total_pair_count": 56,
+        "strongly_connected": true
+      },
+      "transfer_count": 92,
+      "planning_assumption": "group_union: arrival and departure may use different group members",
+      "endpoint_tolerance_deg": 1.0
+    }
+  },
+  "group_transfer_count": 92,
+  "group_route_count": 56,
+  "group_extension": {
+    "planning_assumption": "group_union: arrival and departure may use different group members",
+    "implementation_sha256": "e93e3ba43453fdd6a533566e010315a56e31c0972f300b36ea5c69858f544d0e"
   }
 }

@@ -229,4 +229,4 @@ def handover_dict(document: dict) -> dict:
                                "csa_rocking_fallback_catalog_pose_ids": [],
                                "classical_metadata": document.get("classical_metadata", {})},
             "poses": poses, "transitions": transitions, "generation": document.get("generation", {}),
-            **{key: document[key] for key in ("consumer_export", "composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis") if key in document}}
+            **{key: document[key] for key in ("consumer_export", "group_keys", "group_transfers", "group_routes", "composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis") if key in document}}

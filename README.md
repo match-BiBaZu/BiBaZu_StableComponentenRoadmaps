@@ -88,6 +88,8 @@ try to convert these uncomputed metrics to floats and cannot load them.
 The YAML experimental block follows the existing handover fields (`trials`,
 `successes`, `empirical_success_rate`, `difficulty_rating`, `notes`).
 
+### Legacy representative-only alternatives
+
 Schema version 1 keeps direct `edges`/`transitions` and their IDs intact. Optional
 `composite_transfers`, `routes` and `connectivity` sections describe separate
 orientation candidates, one preferred route per ordered pose pair, and directed
@@ -102,13 +104,14 @@ Updated Reorientation Control and Pressure Control display these candidates and
 their transient rotation previews. Selecting a candidate for calibration does not
 create or assign an executable pressure profile. Runtime routing uses assigned
 profiles only and supports simple routes through up to `pose_count - 1` transfers.
-Legacy two/three-flip choices retain their IDs; longer routes use bounded shortest
-path searches instead of enumerating every simple path.
+Legacy two/three-flip choices retain their IDs; the external generator constructs
+longer routes using bounded shortest-path searches.
 
 The [catalogue connectivity audit](connectivity_audit.json) covers 39 workpieces:
-13 direct roadmaps are disconnected and Kf1i has no eligible groups. Qk1a now has
-3 composite bridges (candidate reachability 30/30 pairs); Dl1a has 4 (20/20).
-Representatives, memberships, frequencies, and direct edges were preserved.
+13 representative-only direct roadmaps were disconnected and Kf1i has no eligible
+groups. Qk1a's earlier 3 composite bridges and Dl1a's earlier 4 are retained as
+alternatives. Whole-group reachability and Cartesian priorities are reported
+separately below and in the audit.
 
 To stage the same extension against a selected Git snapshot without rebuilding
 direct edges or overwriting existing output, use a fresh staging directory:
@@ -121,50 +124,56 @@ Inspect the staged JSON/YAML, rendered roadmap, manifest and checksums before
 replacing generated folders. `include_composites: false` in worker settings
 disables bridge generation for new exports.
 
-### Member-conditioned transfers and capture ranges
+### Whole-group routing and Cartesian priority
 
-**Use all group members and estimate capture intervals** is enabled by default
-for grouped inputs. Representatives remain the displayed group anchors. The
-generator loads every retained group's member orientations from
-`original_observations.json`, including rare members, and retains the original
-direct edges and their IDs. Missing declared member data blocks generation
-instead of silently reverting to the representative. Needed evidence is copied
-into the exported `source/` snapshot.
+**Route between whole groups; prefer Cartesian rotations** is enabled by default
+for grouped inputs. Every retained group's original members, including rare
+observations, participate. Representatives, thumbnails, memberships, frequencies,
+recognition identities, and existing direct edges stay unchanged.
 
-Optional schema-v1 sections `member_states`, `member_transfers`, `member_routes`
-and `capture_analysis` store source conditions, possible arrivals, ordered
-commands, settling witnesses and sampled intervals. GraphML stores the same
-sections as graph metadata. Overview arrows aggregate conditional alternatives:
-**K** = known member endpoint, **C** = sampled downhill capture, **F** = composite
-fallback. An overview connection does not imply that any arrival member can use
-every outgoing action. Internal route searches preserve member states and
-possible arrival sets, charging explicit intra-group repositioning actions.
+A group transfer may start at any member and end at any member of its target.
+The next transfer may depart from a different member of that intermediate group.
+This interchangeability is an explicit planning assumption. Previews use each
+leg's actual witnesses without inventing motion between intermediate members.
 
-Capture estimation samples permitted actions at 1°, refines changed outcomes at
-0.1°, and samples seated shortest settling paths at 0.1° within a 60° guard.
-Potential must decrease without an uphill step beyond 0.000001 mm equivalent lift;
-the 0.5 mm grouping barrier is not a passive-motion allowance. Excluded observed
-groups remain competing destinations. Unresolved intervals and multiple outcomes
-are retained. These sampled geometric witnesses do not establish physical
-settling reliability.
+Exact ±90° and ±180° chute X/Y/Z commands bypass contact, support and action-domain
+pruning. A target can match within 1° under permitted symmetry, or have a sampled
+downhill settling witness. Opposite directions remain separate. Identical
+group-to-group commands retain all member witnesses and competing destinations.
+Contact feasibility remains unverified. Route ranking minimizes non-Cartesian
+transfers, composite transfers, actuations, absolute commanded angle, settling,
+then stable IDs. Entirely Cartesian routes take priority even when longer.
+Other rotations remain alternatives; additional composite bridges are generated
+only for remaining gaps in group connectivity.
 
-Qk1a recovers **20** known-member inter-group actions; Dl1a recovers **34**.
-Composite fallbacks ensure every retained source member has a candidate path to
-every retained target group. Existing representative quaternions, thumbnails,
-memberships, frequencies and direct edges are unchanged.
+Schema-v1 nodes and direct edges are preserved. Additive `group_transfers`,
+`group_routes`, `group_keys`, and `connectivity.groups` provide group choices and
+reachability. Existing member-conditioned records remain diagnostic alternatives.
+Arrow labels and option lists show rotation names such as **X +90°** and ordered
+composite commands, with evidence available in the details.
 
-The control GUIs show member endpoints, capture intervals and settling previews.
-Profiles must explicitly declare `covered_source_member_ids`. Pressure Control
-offers a comma-separated field; `*` explicitly declares testing for all source
-group members. Reorientation setup offers the same declaration, saved in
-`transition_source_coverage` or read from matching pressure-profile metadata.
-Blank coverage means calibration only. Legacy profiles are retained without
-automatic group-wide promotion. Runtime carries possible member states and
-requires each assigned profile to cover all currently possible source members.
+Exact Cartesian landings also use the existing seated downhill model: 0.1° path
+sampling, a 60° guard, and at most 0.000001 mm equivalent-lift numerical increase.
+The 0.5 mm grouping barrier does not authorize passive uphill motion. Excluded
+observed groups remain competing destinations. Existing capture scans retain
+their 1° samples and 0.1° boundary refinement. These are geometry-only candidates;
+calibration must establish physical settling and execution reliability.
 
-Worker settings `include_members: false` disable the member extension;
-`estimate_capture_intervals: false` retain member endpoints and fallback routes
-without running angle sampling.
+All **38 generated grouped roadmaps** have complete candidate group reachability.
+Qk1a reaches **30/30** ordered group pairs and Dl1a **20/20**, both using Cartesian
+routes alone. Their **20** and **34** original known-member actions remain intact.
+The separate main-branch catalogue and no-output entries remain unchanged.
+
+Upgrade a finished grouped catalogue into a new staging directory:
+
+```powershell
+python -m bibazu_stable_roadmaps.upgrade_groups --repository . --staging-root ../group-review --parts Qk1a Dl1a
+```
+
+Inspect staging, verify checksums and representative data, and retain rollback
+backups when publishing. Worker settings `include_members: false` retain legacy
+representative-only generation; `estimate_capture_intervals: false` disables the
+full permitted-angle scan while exact Cartesian landing checks still run.
 
 Original IDs are in `source_pose_ids`; counts
 and percentages are in `observed_count` and `observed_frequency_percent`.
@@ -263,21 +272,22 @@ analysis, connectivity, route construction, deterministic IDs and preview segmen
 The Big Boi control GUIs read the finished files directly. They do not import this
 application, generate roadmaps, or search for new routes.
 
-The additive JSON/YAML `consumer_export` section has `version: 1` and contains:
+Grouped exports use additive **consumer-export version 2**, while schema-v1 core
+data and consumer version 1 remain readable. Version 2 contains finished
+`calibration_choices`, `execution_routes`, group identities, ordered commands,
+witnesses, costs, preview segments, and per-step source-group requirements.
+Legacy choice and route identities remain available for restoring older profiles.
+Runtime selects only exported group routes; it never builds another path.
 
-- `calibration_choices`: complete records with stable edge IDs, endpoints, ordered
-  commands, component edge IDs, source/arrival members, evidence, costs and flattened
-  `preview_segments`. Representative thumbnails and schema-v1 direct data are preserved.
-- `execution_routes`: exported profile sequences, their endpoint references, selection
-  priority, and explicit per-step source-member coverage requirements. An entire macro
-  can have its own calibrated profile, or its exported component profiles may be used.
-
-Only assigned pressure profiles may execute. Missing source coverage is not inferred
-from geometry or older profiles. Group recognition leaves every retained source member
-possible. If calibrated coverage extends beyond a geometric witness, exported requirements
-conservatively retain every target-group member. A consumer reports missing calibration
-or ambiguity instead of constructing another path. Previews interpolate exported segments
-for display; they do not establish physical feasibility.
+Each executable group choice requires an assigned pressure profile and an explicit
+**Calibrated for source group** declaration. `transition_group_coverage` binds
+the declaration to the transfer ID and stable source-group identity, including
+membership/orientation content. Numeric group IDs alone are insufficient.
+Pressure-profile metadata can carry the same declaration. Older member-coverage
+declarations remain intact but do not automatically qualify a group choice.
+A whole exported macro may have its own profile, or its exported component
+profiles may be used. Missing calibration excludes the choice from execution.
+Previews interpolate exported segments for display only.
 
 To upgrade existing schema-v1 exports offline without recomputing their poses or edges:
 
