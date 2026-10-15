@@ -21,3 +21,13 @@ Files: [Dl1a_roadmap.graphml](Dl1a_roadmap.graphml), [Dl1a_roadmap.json](Dl1a_ro
 [Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
 
 Nodes use the chosen representative orientations. Direct connections remain geometric action candidates.
+
+<!-- COMPOSITE CONNECTIVITY -->
+
+## Composite orientation candidates
+
+Existing connections reach 2/20 ordered pairs. With 4 composite bridges, candidate routes reach 20/20 pairs.
+
+Representatives and direct edges are unchanged. Dashed purple bridges are geometry-only candidates: contact, settling, actuator feasibility and reliability remain unverified. Transient orientations are not pose catalogue entries. Calibrate a full transfer pressure profile before execution.
+
+JSON/YAML contain ordered commands, preferred routes and separate directed connectivity reports.

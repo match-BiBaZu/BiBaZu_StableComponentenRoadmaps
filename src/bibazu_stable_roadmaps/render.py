@@ -75,7 +75,7 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
     axis.axis("off")
     colors = {"x": "#e63946", "y": "#2ca02c", "z": "#277da1"}
     pairs = defaultdict(list)
-    for edge in built.document["edges"]:
+    for edge in built.document["edges"] + built.document.get("composite_transfers", []):
         pairs[tuple(sorted((edge["source"], edge["target"])))].append(edge)
     for pair, edges in pairs.items():
         for index, edge in enumerate(edges):
@@ -83,28 +83,37 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
             radius = (index - (len(edges) - 1) / 2) * .18
             direction = 1 if edge["source"] == pair[0] else -1
             radius *= direction
-            action_axis = "x" if "main_" in edge["actuation"] else edge["actuation"][-1]
-            color = colors[action_axis]
+            composite = edge.get("transition_kind") == "composite_candidate"
+            action_axis = "x" if "main_" in edge.get("actuation", "") else edge.get("actuation", "z")[-1]
+            color = "#8a4baf" if composite else colors[action_axis]
             axis.annotate("", xy=end, xytext=start,
-                          arrowprops={"arrowstyle": "-|>", "color": color, "lw": 1.8,
+                          arrowprops={"arrowstyle": "-|>", "color": color, "lw": 1.8, "linestyle": "--" if composite else "-",
                                       "shrinkA": 45 * image_scale, "shrinkB": 45 * image_scale, "connectionstyle": f"arc3,rad={radius}"}, zorder=2)
             delta = end - start
             normal = np.array([delta[1], -delta[0]])
             label = (start + end) / 2 + normal * radius / 2
-            axis.text(*label, f"{edge['signed_angle_deg']:+.1f}°", color=color, fontsize=7,
+            text = (f"C{built.document['composite_transfers'].index(edge) + 1} · {edge['actuation_count']} rotations"
+                    if composite else f"{edge['signed_angle_deg']:+.1f}°")
+            axis.text(*label, text, color=color, fontsize=7,
                       ha="center", va="center", bbox={"facecolor": "white", "alpha": .85, "edgecolor": "none", "pad": .5}, zorder=4)
     for pose, number in built.numbered:
         position = positions[number]
-        box = AnnotationBbox(OffsetImage(images[number], zoom=.47 * image_scale), position, frameon=True,
+        box = AnnotationBbox(OffsetImage(images[number], zoom=.34 * image_scale), position, frameon=True,
                              bboxprops={"edgecolor": "#084081", "lw": 1.8, "facecolor": "white"}, zorder=5)
         axis.add_artist(box)
         axis.annotate(f"Pose {number}\n{pose.source_id} · {pose.frequency_percent:g}%", position,
-                      xytext=(0, 56 * image_scale), textcoords="offset points", ha="center", va="bottom", fontsize=9 * image_scale, weight="bold", zorder=6)
+                      xytext=(0, 43 * image_scale), textcoords="offset points", ha="center", va="bottom", fontsize=9 * image_scale, weight="bold", zorder=6)
     cutoff = built.document["generation"]["minimum_frequency_percent"]
     mode = "frequency numbering" if built.document["generation"]["renumber_by_frequency"] else "source numbering"
     axis.set_title(f"{built.source.workpiece}: observed stable-pose roadmap\n{count} poses · {len(built.document['edges'])} direct connections · minimum {cutoff:g}% · {mode}", fontsize=14, pad=20)
-    figure.legend(handles=[Line2D([0], [0], color=color, label=f"{name.upper()} rotation") for name, color in colors.items()],
-                  loc="lower center", bbox_to_anchor=(.5, .045), ncol=3, fontsize=8)
+    reachability = built.document.get("connectivity")
+    if reachability:
+        direct, augmented = reachability['direct'], reachability['with_candidates']
+        axis.set_title(axis.get_title() + f"\nReachable pairs: {direct['reachable_pair_count']} direct graph / "
+                       f"{augmented['reachable_pair_count']} with candidates / {direct['total_pair_count']} total", fontsize=12)
+    figure.legend(handles=[Line2D([0], [0], color=color, label=f"{name.upper()} rotation") for name, color in colors.items()]
+                  + ([Line2D([0], [0], color='#8a4baf', linestyle='--', label='Composite · geometry only')] if reachability else []),
+                  loc="lower center", bbox_to_anchor=(.5, .045), ncol=4 if reachability else 3, fontsize=8)
     figure.text(.5, .015, "Observed simulation poses; connections are geometric candidates and remain untested. No analytical stability classification.", ha="center", fontsize=8)
     for fmt in formats:
         figure.savefig(path.with_suffix("." + fmt), bbox_inches="tight")

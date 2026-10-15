@@ -72,7 +72,8 @@ def _symmetry(source: PoseSource):
     return rotations, axis, symbol
 
 
-def build_roadmap(source: PoseSource, numbered: list[tuple[ObservedPose, int]], progress=lambda message: None) -> BuiltRoadmap:
+def build_roadmap(source: PoseSource, numbered: list[tuple[ObservedPose, int]], progress=lambda message: None,
+                  *, include_composites=False) -> BuiltRoadmap:
     if not numbered:
         raise ValueError("No retained observed poses to generate.")
     mesh = load_solid_mesh(source.mesh)
@@ -172,13 +173,18 @@ def build_roadmap(source: PoseSource, numbered: list[tuple[ObservedPose, int]], 
         "analytical_stability_evaluated": False, "catalogue_id_namespace": "input_pose_list_index",
         "classification_note": "Legacy robust labels designate observed stable targets for consumer compatibility; no analytical robustness is asserted.",
     }
+    if include_composites:
+        from .connectivity import augment_roadmap
+        augment_roadmap(document, symmetries)
     return BuiltRoadmap(source, numbered, contacts, mesh, document, warnings)
 
 
 def handover_dict(document: dict) -> dict:
     poses = []
     for node in document["nodes"]:
-        poses.append({"id": node["node_id"], "original_catalog_pose_id": node["original_catalog_pose_id"],
+        poses.append({"id": node["node_id"],
+                      **{key: node[key] for key in ('group_members', 'representative_retention_auc', 'representative_group_retention_auc', 'group_stability_rank') if key in node},
+                      "original_catalog_pose_id": node["original_catalog_pose_id"],
                       "equivalent_catalog_pose_ids": node["pose_ids"], "source_pose_ids": node["source_pose_ids"],
                       "stability": node["kind"], "planner_role": "stable_target", "classification_basis": "observed_simulation",
                       "orientation_quaternion_xyzw": node["representative_quaternion_xyzw"],
@@ -222,4 +228,5 @@ def handover_dict(document: dict) -> dict:
                                "csa_cap_half_angle_deg": None, "csa_direction_samples": None,
                                "csa_rocking_fallback_catalog_pose_ids": [],
                                "classical_metadata": document.get("classical_metadata", {})},
-            "poses": poses, "transitions": transitions, "generation": document.get("generation", {})}
+            "poses": poses, "transitions": transitions, "generation": document.get("generation", {}),
+            **{key: document[key] for key in ("composite_transfers", "routes", "connectivity") if key in document}}

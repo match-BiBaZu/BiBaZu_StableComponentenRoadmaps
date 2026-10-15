@@ -326,5 +326,809 @@
   "source": "source/Dl1a.stl",
   "symmetry_symbol": "C3",
   "symmetry_tolerance_mm": 0.05,
-  "unresolved_metastable_node_ids": []
+  "unresolved_metastable_node_ids": [],
+  "composite_transfers": [
+    {
+      "edge_id": "composite:1->2:9f8be6471ff4c88c",
+      "source": 1,
+      "target": 2,
+      "directed": true,
+      "transition_kind": "composite_candidate",
+      "evidence_status": "geometry_only",
+      "experimental_status": "untested",
+      "commands": [
+        {
+          "axis": "y",
+          "actuation": "free_y",
+          "signed_angle_deg": -0.021147529625735084,
+          "start_quaternion_xyzw": [
+            0.6123591233766645,
+            -0.35343697685913,
+            -0.612556582954874,
+            0.3533737965450896
+          ],
+          "end_quaternion_xyzw": [
+            0.6124721584343159,
+            -0.35350218491782887,
+            -0.6124435634789533,
+            0.3533085647905138
+          ]
+        },
+        {
+          "axis": "z",
+          "actuation": "free_z",
+          "signed_angle_deg": 90.00336612562648,
+          "start_quaternion_xyzw": [
+            0.6124721584343159,
+            -0.35350218491782887,
+            -0.6124435634789533,
+            0.3533085647905138
+          ],
+          "end_quaternion_xyzw": [
+            0.683041629211005,
+            0.18313948881561481,
+            -0.18321605485457992,
+            0.6828952611086527
+          ]
+        },
+        {
+          "axis": "y",
+          "actuation": "free_y",
+          "signed_angle_deg": 58.02328595481258,
+          "start_quaternion_xyzw": [
+            0.683041629211005,
+            0.18313948881561481,
+            -0.18321605485457992,
+            0.6828952611086527
+          ],
+          "end_quaternion_xyzw": [
+            0.5084768988023112,
+            0.4913549166800091,
+            -0.49149286197877246,
+            0.5083860303575237
+          ]
+        }
+      ],
+      "actuation_count": 3,
+      "total_absolute_angle_deg": 148.0477996100648,
+      "axis_sequence": "yzy",
+      "symmetry_index": 2,
+      "terminal_symmetry_quaternion_xyzw": [
+        -2.2759491599940982e-09,
+        -1.4949060003953298e-09,
+        -0.8660254037844388,
+        0.4999999999999998
+      ],
+      "terminal_quaternion_xyzw": [
+        0.5084768988023111,
+        0.4913549166800091,
+        -0.49149286197877246,
+        0.5083860303575237
+      ],
+      "endpoint_error_deg": 1.1017764609091714e-14,
+      "transient_quaternions_xyzw": [
+        [
+          0.6124721584343159,
+          -0.35350218491782887,
+          -0.6124435634789533,
+          0.3533085647905138
+        ],
+        [
+          0.683041629211005,
+          0.18313948881561481,
+          -0.18321605485457992,
+          0.6828952611086527
+        ]
+      ],
+      "contact_feasibility_evaluated": false,
+      "settling_evaluated": false
+    },
+    {
+      "edge_id": "composite:2->3:16c166afc5e8f59e",
+      "source": 2,
+      "target": 3,
+      "directed": true,
+      "transition_kind": "composite_candidate",
+      "evidence_status": "geometry_only",
+      "experimental_status": "untested",
+      "commands": [
+        {
+          "axis": "z",
+          "actuation": "free_z",
+          "signed_angle_deg": -179.98240756444585,
+          "start_quaternion_xyzw": [
+            0.6797642914122259,
+            -0.19467645361894972,
+            0.19452878587118266,
+            0.6798383175393006
+          ],
+          "end_quaternion_xyzw": [
+            -0.1945720918977324,
+            -0.6797941707071025,
+            -0.6798084448923734,
+            0.19463315437046277
+          ]
+        },
+        {
+          "axis": "y",
+          "actuation": "free_y",
+          "signed_angle_deg": 56.12225424600899,
+          "start_quaternion_xyzw": [
+            -0.1945720918977324,
+            -0.6797941707071025,
+            -0.6798084448923734,
+            0.19463315437046277
+          ],
+          "end_quaternion_xyzw": [
+            -0.49149033205330395,
+            -0.5083237785048875,
+            -0.5083650993042104,
+            0.4915375016354985
+          ]
+        },
+        {
+          "axis": "z",
+          "actuation": "free_z",
+          "signed_angle_deg": -0.023680488686077247,
+          "start_quaternion_xyzw": [
+            -0.49149033205330395,
+            -0.5083237785048875,
+            -0.5083650993042104,
+            0.4915375016354985
+          ],
+          "end_quaternion_xyzw": [
+            -0.491595367301303,
+            -0.5082222005611816,
+            -0.508466665286853,
+            0.49143243685853166
+          ]
+        }
+      ],
+      "actuation_count": 3,
+      "total_absolute_angle_deg": 236.1283422991409,
+      "axis_sequence": "zyz",
+      "symmetry_index": 2,
+      "terminal_symmetry_quaternion_xyzw": [
+        -2.2759491599940982e-09,
+        -1.4949060003953298e-09,
+        -0.8660254037844388,
+        0.4999999999999998
+      ],
+      "terminal_quaternion_xyzw": [
+        -0.49159536730130293,
+        -0.5082222005611815,
+        -0.5084666652868531,
+        0.4914324368585317
+      ],
+      "endpoint_error_deg": 2.0115594032272068e-14,
+      "transient_quaternions_xyzw": [
+        [
+          -0.1945720918977324,
+          -0.6797941707071025,
+          -0.6798084448923734,
+          0.19463315437046277
+        ],
+        [
+          -0.49149033205330395,
+          -0.5083237785048875,
+          -0.5083650993042104,
+          0.4915375016354985
+        ]
+      ],
+      "contact_feasibility_evaluated": false,
+      "settling_evaluated": false
+    },
+    {
+      "edge_id": "composite:3->4:d033c800b31a0bf5",
+      "source": 3,
+      "target": 4,
+      "directed": true,
+      "transition_kind": "composite_candidate",
+      "evidence_status": "geometry_only",
+      "experimental_status": "untested",
+      "commands": [
+        {
+          "axis": "z",
+          "actuation": "free_z",
+          "signed_angle_deg": -89.9791466716799,
+          "start_quaternion_xyzw": [
+            -0.6859310182252795,
+            0.17162297576248078,
+            0.17135964234155326,
+            0.6860612694238302
+          ],
+          "end_quaternion_xyzw": [
+            -0.3637810476320098,
+            0.606316053685613,
+            -0.3638386726865929,
+            0.6063543623035301
+          ]
+        },
+        {
+          "axis": "y",
+          "actuation": "free_y",
+          "signed_angle_deg": 90.01054171103698,
+          "start_quaternion_xyzw": [
+            -0.3637810476320098,
+            0.606316053685613,
+            -0.3638386726865929,
+            0.6063543623035301
+          ],
+          "end_quaternion_xyzw": [
+            0.5145048399337298,
+            -0.8574874733537917,
+            -6.5841797965426885e-06,
+            5.179523331655389e-05
+          ]
+        },
+        {
+          "axis": "z",
+          "actuation": "free_z",
+          "signed_angle_deg": 26.161458563133454,
+          "start_quaternion_xyzw": [
+            0.5145048399337298,
+            -0.8574874733537917,
+            -6.5841797965426885e-06,
+            5.179523331655389e-05
+          ],
+          "end_quaternion_xyzw": [
+            0.6952242884321712,
+            -0.7187928672767168,
+            5.3091549201300965e-06,
+            5.1941414034886585e-05
+          ]
+        }
+      ],
+      "actuation_count": 3,
+      "total_absolute_angle_deg": 206.15114694585034,
+      "axis_sequence": "zyz",
+      "symmetry_index": 0,
+      "terminal_symmetry_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "terminal_quaternion_xyzw": [
+        0.6952242884321711,
+        -0.7187928672767168,
+        5.309154920196678e-06,
+        5.1941414034889486e-05
+      ],
+      "endpoint_error_deg": 1.4838449327301092e-14,
+      "transient_quaternions_xyzw": [
+        [
+          -0.3637810476320098,
+          0.606316053685613,
+          -0.3638386726865929,
+          0.6063543623035301
+        ],
+        [
+          0.5145048399337298,
+          -0.8574874733537917,
+          -6.5841797965426885e-06,
+          5.179523331655389e-05
+        ]
+      ],
+      "contact_feasibility_evaluated": false,
+      "settling_evaluated": false
+    },
+    {
+      "edge_id": "composite:4->0:f03ce25ee43c488a",
+      "source": 4,
+      "target": 0,
+      "directed": true,
+      "transition_kind": "composite_candidate",
+      "evidence_status": "geometry_only",
+      "experimental_status": "untested",
+      "commands": [
+        {
+          "axis": "y",
+          "actuation": "free_y",
+          "signed_angle_deg": -0.004063618044784711,
+          "start_quaternion_xyzw": [
+            0.6952242884321711,
+            -0.7187928672767168,
+            5.309154920196678e-06,
+            5.1941414034889486e-05
+          ],
+          "end_quaternion_xyzw": [
+            0.6952242878067643,
+            -0.7187928686666966,
+            2.996302983628777e-05,
+            2.645175586214791e-05
+          ]
+        },
+        {
+          "axis": "z",
+          "actuation": "free_z",
+          "signed_angle_deg": 31.954747900552494,
+          "start_quaternion_xyzw": [
+            0.6952242878067643,
+            -0.7187928686666966,
+            2.996302983628777e-05,
+            2.645175586214791e-05
+          ],
+          "end_quaternion_xyzw": [
+            0.8662213957855227,
+            -0.49966037654180884,
+            3.60866224260867e-05,
+            1.7182381297073006e-05
+          ]
+        },
+        {
+          "axis": "y",
+          "actuation": "free_y",
+          "signed_angle_deg": -89.99308916671845,
+          "start_quaternion_xyzw": [
+            0.8662213957855227,
+            -0.49966037654180884,
+            3.60866224260867e-05,
+            1.7182381297073006e-05
+          ],
+          "end_quaternion_xyzw": [
+            -0.6125224458566192,
+            0.3533466967013027,
+            -0.6124996009310445,
+            0.35327978163406704
+          ]
+        }
+      ],
+      "actuation_count": 3,
+      "total_absolute_angle_deg": 121.95190068531572,
+      "axis_sequence": "yzy",
+      "symmetry_index": 2,
+      "terminal_symmetry_quaternion_xyzw": [
+        -2.2759491599940982e-09,
+        -1.4949060003953298e-09,
+        -0.8660254037844388,
+        0.4999999999999998
+      ],
+      "terminal_quaternion_xyzw": [
+        -0.6125224458566193,
+        0.35334669670130275,
+        -0.6124996009310444,
+        0.3532797816340668
+      ],
+      "endpoint_error_deg": 3.12034946419672e-14,
+      "transient_quaternions_xyzw": [
+        [
+          0.6952242878067643,
+          -0.7187928686666966,
+          2.996302983628777e-05,
+          2.645175586214791e-05
+        ],
+        [
+          0.8662213957855227,
+          -0.49966037654180884,
+          3.60866224260867e-05,
+          1.7182381297073006e-05
+        ]
+      ],
+      "contact_feasibility_evaluated": false,
+      "settling_evaluated": false
+    }
+  ],
+  "routes": [
+    {
+      "source": 0,
+      "target": 1,
+      "component_edge_ids": [
+        "a0:0->1:free_y"
+      ],
+      "via_pose_ids": [],
+      "composite_transfer_count": 0,
+      "actuation_count": 1,
+      "total_absolute_angle_deg": 179.9930117451931,
+      "evidence_status": "direct_geometric_candidates"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "component_edge_ids": [
+        "a0:0->1:free_y",
+        "composite:1->2:9f8be6471ff4c88c"
+      ],
+      "via_pose_ids": [
+        1
+      ],
+      "composite_transfer_count": 1,
+      "actuation_count": 4,
+      "total_absolute_angle_deg": 328.0408113552579,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "component_edge_ids": [
+        "a0:0->1:free_y",
+        "composite:1->2:9f8be6471ff4c88c",
+        "composite:2->3:16c166afc5e8f59e"
+      ],
+      "via_pose_ids": [
+        1,
+        2
+      ],
+      "composite_transfer_count": 2,
+      "actuation_count": 7,
+      "total_absolute_angle_deg": 564.1691536543988,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "component_edge_ids": [
+        "a0:0->1:free_y",
+        "composite:1->2:9f8be6471ff4c88c",
+        "composite:2->3:16c166afc5e8f59e",
+        "composite:3->4:d033c800b31a0bf5"
+      ],
+      "via_pose_ids": [
+        1,
+        2,
+        3
+      ],
+      "composite_transfer_count": 3,
+      "actuation_count": 10,
+      "total_absolute_angle_deg": 770.3203006002491,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "component_edge_ids": [
+        "a1:1->0:free_y"
+      ],
+      "via_pose_ids": [],
+      "composite_transfer_count": 0,
+      "actuation_count": 1,
+      "total_absolute_angle_deg": 179.9930117451931,
+      "evidence_status": "direct_geometric_candidates"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "component_edge_ids": [
+        "composite:1->2:9f8be6471ff4c88c"
+      ],
+      "via_pose_ids": [],
+      "composite_transfer_count": 1,
+      "actuation_count": 3,
+      "total_absolute_angle_deg": 148.0477996100648,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "component_edge_ids": [
+        "composite:1->2:9f8be6471ff4c88c",
+        "composite:2->3:16c166afc5e8f59e"
+      ],
+      "via_pose_ids": [
+        2
+      ],
+      "composite_transfer_count": 2,
+      "actuation_count": 6,
+      "total_absolute_angle_deg": 384.17614190920574,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "component_edge_ids": [
+        "composite:1->2:9f8be6471ff4c88c",
+        "composite:2->3:16c166afc5e8f59e",
+        "composite:3->4:d033c800b31a0bf5"
+      ],
+      "via_pose_ids": [
+        2,
+        3
+      ],
+      "composite_transfer_count": 3,
+      "actuation_count": 9,
+      "total_absolute_angle_deg": 590.327288855056,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 2,
+      "target": 0,
+      "component_edge_ids": [
+        "composite:2->3:16c166afc5e8f59e",
+        "composite:3->4:d033c800b31a0bf5",
+        "composite:4->0:f03ce25ee43c488a"
+      ],
+      "via_pose_ids": [
+        3,
+        4
+      ],
+      "composite_transfer_count": 3,
+      "actuation_count": 9,
+      "total_absolute_angle_deg": 564.231389930307,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "component_edge_ids": [
+        "composite:2->3:16c166afc5e8f59e",
+        "composite:3->4:d033c800b31a0bf5",
+        "composite:4->0:f03ce25ee43c488a",
+        "a0:0->1:free_y"
+      ],
+      "via_pose_ids": [
+        3,
+        4,
+        0
+      ],
+      "composite_transfer_count": 3,
+      "actuation_count": 10,
+      "total_absolute_angle_deg": 744.2244016755001,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "component_edge_ids": [
+        "composite:2->3:16c166afc5e8f59e"
+      ],
+      "via_pose_ids": [],
+      "composite_transfer_count": 1,
+      "actuation_count": 3,
+      "total_absolute_angle_deg": 236.1283422991409,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "component_edge_ids": [
+        "composite:2->3:16c166afc5e8f59e",
+        "composite:3->4:d033c800b31a0bf5"
+      ],
+      "via_pose_ids": [
+        3
+      ],
+      "composite_transfer_count": 2,
+      "actuation_count": 6,
+      "total_absolute_angle_deg": 442.2794892449913,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 3,
+      "target": 0,
+      "component_edge_ids": [
+        "composite:3->4:d033c800b31a0bf5",
+        "composite:4->0:f03ce25ee43c488a"
+      ],
+      "via_pose_ids": [
+        4
+      ],
+      "composite_transfer_count": 2,
+      "actuation_count": 6,
+      "total_absolute_angle_deg": 328.1030476311661,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "component_edge_ids": [
+        "composite:3->4:d033c800b31a0bf5",
+        "composite:4->0:f03ce25ee43c488a",
+        "a0:0->1:free_y"
+      ],
+      "via_pose_ids": [
+        4,
+        0
+      ],
+      "composite_transfer_count": 2,
+      "actuation_count": 7,
+      "total_absolute_angle_deg": 508.09605937635916,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "component_edge_ids": [
+        "composite:3->4:d033c800b31a0bf5",
+        "composite:4->0:f03ce25ee43c488a",
+        "a0:0->1:free_y",
+        "composite:1->2:9f8be6471ff4c88c"
+      ],
+      "via_pose_ids": [
+        4,
+        0,
+        1
+      ],
+      "composite_transfer_count": 3,
+      "actuation_count": 10,
+      "total_absolute_angle_deg": 656.143858986424,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "component_edge_ids": [
+        "composite:3->4:d033c800b31a0bf5"
+      ],
+      "via_pose_ids": [],
+      "composite_transfer_count": 1,
+      "actuation_count": 3,
+      "total_absolute_angle_deg": 206.15114694585034,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "component_edge_ids": [
+        "composite:4->0:f03ce25ee43c488a"
+      ],
+      "via_pose_ids": [],
+      "composite_transfer_count": 1,
+      "actuation_count": 3,
+      "total_absolute_angle_deg": 121.95190068531572,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 4,
+      "target": 1,
+      "component_edge_ids": [
+        "composite:4->0:f03ce25ee43c488a",
+        "a0:0->1:free_y"
+      ],
+      "via_pose_ids": [
+        0
+      ],
+      "composite_transfer_count": 1,
+      "actuation_count": 4,
+      "total_absolute_angle_deg": 301.9449124305088,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 4,
+      "target": 2,
+      "component_edge_ids": [
+        "composite:4->0:f03ce25ee43c488a",
+        "a0:0->1:free_y",
+        "composite:1->2:9f8be6471ff4c88c"
+      ],
+      "via_pose_ids": [
+        0,
+        1
+      ],
+      "composite_transfer_count": 2,
+      "actuation_count": 7,
+      "total_absolute_angle_deg": 449.99271204057356,
+      "evidence_status": "geometry_only"
+    },
+    {
+      "source": 4,
+      "target": 3,
+      "component_edge_ids": [
+        "composite:4->0:f03ce25ee43c488a",
+        "a0:0->1:free_y",
+        "composite:1->2:9f8be6471ff4c88c",
+        "composite:2->3:16c166afc5e8f59e"
+      ],
+      "via_pose_ids": [
+        0,
+        1,
+        2
+      ],
+      "composite_transfer_count": 3,
+      "actuation_count": 10,
+      "total_absolute_angle_deg": 686.1210543397144,
+      "evidence_status": "geometry_only"
+    }
+  ],
+  "connectivity": {
+    "direct": {
+      "strongly_connected_components": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "unreachable_pairs": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "reachable_pair_count": 2,
+      "total_pair_count": 20,
+      "strongly_connected": false
+    },
+    "with_candidates": {
+      "strongly_connected_components": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "unreachable_pairs": [],
+      "reachable_pair_count": 20,
+      "total_pair_count": 20,
+      "strongly_connected": true
+    },
+    "note": "Orientation geometry only; physical feasibility and reliability are unverified."
+  }
 }

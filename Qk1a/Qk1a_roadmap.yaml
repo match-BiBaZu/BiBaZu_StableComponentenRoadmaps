@@ -539,3 +539,630 @@ transitions:
     difficulty_rating: null
     notes: ''
 generation: *id001
+composite_transfers:
+- edge_id: composite:1->4:93387a3ae5913ca7
+  source: 1
+  target: 4
+  directed: true
+  transition_kind: composite_candidate
+  evidence_status: geometry_only
+  experimental_status: untested
+  commands:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: -7.215340617210025
+    start_quaternion_xyzw:
+    - 0.43536316324985513
+    - 0.49445324355551096
+    - 0.5642388845492433
+    - 0.4976036446662548
+    end_quaternion_xyzw: &id002
+    - 0.4656134486465375
+    - 0.4660785453300373
+    - 0.5318094651135229
+    - 0.5321217894788592
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: 97.59539558889685
+    start_quaternion_xyzw:
+    - 0.4656134486465375
+    - 0.4660785453300373
+    - 0.5318094651135229
+    - 0.5321217894788592
+    end_quaternion_xyzw: &id003
+    - -0.7068360422808412
+    - -0.7073773998676021
+    - 8.809656067365612e-06
+    - 0.0001530088150162312
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: -21.774709705961197
+    start_quaternion_xyzw:
+    - -0.7068360422808412
+    - -0.7073773998676021
+    - 8.809656067365612e-06
+    - 0.0001530088150162312
+    end_quaternion_xyzw:
+    - -0.8277218301297216
+    - -0.5611386178453563
+    - -2.0249023250513726e-05
+    - 0.00015191867748929586
+  actuation_count: 3
+  total_absolute_angle_deg: 126.58544591206807
+  axis_sequence: zyz
+  symmetry_index: 2
+  terminal_symmetry_quaternion_xyzw:
+  - -4.5625355806536024e-10
+  - -4.562550516798686e-10
+  - -0.7071067811865477
+  - 0.7071067811865475
+  terminal_quaternion_xyzw:
+  - -0.8277218301297218
+  - -0.5611386178453561
+  - -2.024902325070148e-05
+  - 0.00015191867748934215
+  endpoint_error_deg: 3.876390332749095e-14
+  transient_quaternions_xyzw:
+  - *id002
+  - *id003
+  contact_feasibility_evaluated: false
+  settling_evaluated: false
+- edge_id: composite:4->5:c1bf5c5dd3ec1bfe
+  source: 4
+  target: 5
+  directed: true
+  transition_kind: composite_candidate
+  evidence_status: geometry_only
+  experimental_status: untested
+  commands:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: 43.44911673891504
+    start_quaternion_xyzw:
+    - -0.9820726408848851
+    - 0.18850279715682813
+    - 9.310438375785546e-05
+    - 0.00012174158236794019
+    end_quaternion_xyzw: &id004
+    - -0.9820933157440922
+    - -0.18839505216787344
+    - 0.00013155358676239878
+    - 7.863264565260418e-05
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: 89.96148019795693
+    start_quaternion_xyzw:
+    - -0.9820933157440922
+    - -0.18839505216787344
+    - 0.00013155358676239878
+    - 7.863264565260418e-05
+    end_quaternion_xyzw: &id005
+    - -0.6945852496447269
+    - -0.1332046086073469
+    - 0.6943044210658202
+    - 0.13322625158050588
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: -89.9836349692101
+    start_quaternion_xyzw:
+    - -0.6945852496447269
+    - -0.1332046086073469
+    - 0.6943044210658202
+    - 0.13322625158050588
+    end_quaternion_xyzw:
+    - -0.585392506221241
+    - 0.3968724611739625
+    - 0.3968257410819995
+    - 0.5850958848226997
+  actuation_count: 3
+  total_absolute_angle_deg: 223.39423190608207
+  axis_sequence: zyz
+  symmetry_index: 0
+  terminal_symmetry_quaternion_xyzw:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  terminal_quaternion_xyzw:
+  - -0.5853925062212411
+  - 0.3968724611739625
+  - 0.3968257410819994
+  - 0.5850958848226997
+  endpoint_error_deg: 1.8545661346538785e-14
+  transient_quaternions_xyzw:
+  - *id004
+  - *id005
+  contact_feasibility_evaluated: false
+  settling_evaluated: false
+- edge_id: composite:5->0:60dc3c6c9ce321c4
+  source: 5
+  target: 0
+  directed: true
+  transition_kind: composite_candidate
+  evidence_status: geometry_only
+  experimental_status: untested
+  commands:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: 18.25861301289521
+    start_quaternion_xyzw:
+    - -0.5853925062212411
+    - 0.3968724611739625
+    - 0.3968257410819994
+    - 0.5850958848226997
+    end_quaternion_xyzw: &id006
+    - -0.6409462273658507
+    - 0.298964998626507
+    - 0.4846321914304279
+    - 0.5147227430870692
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: 23.699441355574532
+    start_quaternion_xyzw:
+    - -0.6409462273658507
+    - 0.298964998626507
+    - 0.4846321914304279
+    - 0.5147227430870692
+    end_quaternion_xyzw: &id007
+    - -0.5277703780648391
+    - 0.39828988391495806
+    - 0.6059198423739501
+    - 0.44236268041713644
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: 65.53935924260973
+    start_quaternion_xyzw:
+    - -0.5277703780648391
+    - 0.39828988391495806
+    - 0.6059198423739501
+    - 0.44236268041713644
+    end_quaternion_xyzw:
+    - -0.6593570889963882
+    - 0.049240560332951044
+    - 0.7489243003543307
+    - 0.04399987212575013
+  actuation_count: 3
+  total_absolute_angle_deg: 107.49741361107948
+  axis_sequence: zyz
+  symmetry_index: 2
+  terminal_symmetry_quaternion_xyzw:
+  - -4.5625355806536024e-10
+  - -4.562550516798686e-10
+  - -0.7071067811865477
+  - 0.7071067811865475
+  terminal_quaternion_xyzw:
+  - -0.6593570889963882
+  - 0.04924056033295092
+  - 0.7489243003543307
+  - 0.043999872125750066
+  endpoint_error_deg: 1.56248415831037e-14
+  transient_quaternions_xyzw:
+  - *id006
+  - *id007
+  contact_feasibility_evaluated: false
+  settling_evaluated: false
+routes:
+- source: 0
+  target: 1
+  component_edge_ids:
+  - a0:0->1:free_y
+  via_pose_ids: []
+  composite_transfer_count: 0
+  actuation_count: 1
+  total_absolute_angle_deg: 165.20066664961865
+  evidence_status: direct_geometric_candidates
+- source: 0
+  target: 2
+  component_edge_ids:
+  - a0:0->1:free_y
+  - composite:1->4:93387a3ae5913ca7
+  - a6:4->2:floor_main_neg_x
+  via_pose_ids:
+  - 1
+  - 4
+  composite_transfer_count: 1
+  actuation_count: 5
+  total_absolute_angle_deg: 381.80748503298963
+  evidence_status: geometry_only
+- source: 0
+  target: 3
+  component_edge_ids:
+  - a0:0->1:free_y
+  - composite:1->4:93387a3ae5913ca7
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  - a7:5->3:wall_main_pos_x
+  via_pose_ids:
+  - 1
+  - 4
+  - 5
+  composite_transfer_count: 2
+  actuation_count: 8
+  total_absolute_angle_deg: 605.2365387062149
+  evidence_status: geometry_only
+- source: 0
+  target: 4
+  component_edge_ids:
+  - a0:0->1:free_y
+  - composite:1->4:93387a3ae5913ca7
+  via_pose_ids:
+  - 1
+  composite_transfer_count: 1
+  actuation_count: 4
+  total_absolute_angle_deg: 291.7861125616867
+  evidence_status: geometry_only
+- source: 0
+  target: 5
+  component_edge_ids:
+  - a0:0->1:free_y
+  - composite:1->4:93387a3ae5913ca7
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  via_pose_ids:
+  - 1
+  - 4
+  composite_transfer_count: 2
+  actuation_count: 7
+  total_absolute_angle_deg: 515.1803444677688
+  evidence_status: geometry_only
+- source: 1
+  target: 0
+  component_edge_ids:
+  - a2:1->0:free_y
+  via_pose_ids: []
+  composite_transfer_count: 0
+  actuation_count: 1
+  total_absolute_angle_deg: 165.20066664961865
+  evidence_status: direct_geometric_candidates
+- source: 1
+  target: 2
+  component_edge_ids:
+  - composite:1->4:93387a3ae5913ca7
+  - a6:4->2:floor_main_neg_x
+  via_pose_ids:
+  - 4
+  composite_transfer_count: 1
+  actuation_count: 4
+  total_absolute_angle_deg: 216.60681838337098
+  evidence_status: geometry_only
+- source: 1
+  target: 3
+  component_edge_ids:
+  - composite:1->4:93387a3ae5913ca7
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  - a7:5->3:wall_main_pos_x
+  via_pose_ids:
+  - 4
+  - 5
+  composite_transfer_count: 2
+  actuation_count: 7
+  total_absolute_angle_deg: 440.03587205659625
+  evidence_status: geometry_only
+- source: 1
+  target: 4
+  component_edge_ids:
+  - composite:1->4:93387a3ae5913ca7
+  via_pose_ids: []
+  composite_transfer_count: 1
+  actuation_count: 3
+  total_absolute_angle_deg: 126.58544591206807
+  evidence_status: geometry_only
+- source: 1
+  target: 5
+  component_edge_ids:
+  - composite:1->4:93387a3ae5913ca7
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  via_pose_ids:
+  - 4
+  composite_transfer_count: 2
+  actuation_count: 6
+  total_absolute_angle_deg: 349.97967781815015
+  evidence_status: geometry_only
+- source: 2
+  target: 0
+  component_edge_ids:
+  - a4:2->4:wall_main_pos_x
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  - composite:5->0:60dc3c6c9ce321c4
+  via_pose_ids:
+  - 4
+  - 5
+  composite_transfer_count: 2
+  actuation_count: 7
+  total_absolute_angle_deg: 420.91301798846445
+  evidence_status: geometry_only
+- source: 2
+  target: 1
+  component_edge_ids:
+  - a4:2->4:wall_main_pos_x
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  - composite:5->0:60dc3c6c9ce321c4
+  - a0:0->1:free_y
+  via_pose_ids:
+  - 4
+  - 5
+  - 0
+  composite_transfer_count: 2
+  actuation_count: 8
+  total_absolute_angle_deg: 586.1136846380831
+  evidence_status: geometry_only
+- source: 2
+  target: 3
+  component_edge_ids:
+  - a4:2->4:wall_main_pos_x
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  - a7:5->3:wall_main_pos_x
+  via_pose_ids:
+  - 4
+  - 5
+  composite_transfer_count: 1
+  actuation_count: 5
+  total_absolute_angle_deg: 403.47179861583106
+  evidence_status: geometry_only
+- source: 2
+  target: 4
+  component_edge_ids:
+  - a4:2->4:wall_main_pos_x
+  via_pose_ids: []
+  composite_transfer_count: 0
+  actuation_count: 1
+  total_absolute_angle_deg: 90.02137247130293
+  evidence_status: direct_geometric_candidates
+- source: 2
+  target: 5
+  component_edge_ids:
+  - a4:2->4:wall_main_pos_x
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  via_pose_ids:
+  - 4
+  composite_transfer_count: 1
+  actuation_count: 4
+  total_absolute_angle_deg: 313.41560437738497
+  evidence_status: geometry_only
+- source: 3
+  target: 0
+  component_edge_ids:
+  - a5:3->5:floor_main_neg_x
+  - composite:5->0:60dc3c6c9ce321c4
+  via_pose_ids:
+  - 5
+  composite_transfer_count: 1
+  actuation_count: 4
+  total_absolute_angle_deg: 197.55360784952558
+  evidence_status: geometry_only
+- source: 3
+  target: 1
+  component_edge_ids:
+  - a5:3->5:floor_main_neg_x
+  - composite:5->0:60dc3c6c9ce321c4
+  - a0:0->1:free_y
+  via_pose_ids:
+  - 5
+  - 0
+  composite_transfer_count: 1
+  actuation_count: 5
+  total_absolute_angle_deg: 362.75427449914423
+  evidence_status: geometry_only
+- source: 3
+  target: 2
+  component_edge_ids:
+  - a5:3->5:floor_main_neg_x
+  - composite:5->0:60dc3c6c9ce321c4
+  - a0:0->1:free_y
+  - composite:1->4:93387a3ae5913ca7
+  - a6:4->2:floor_main_neg_x
+  via_pose_ids:
+  - 5
+  - 0
+  - 1
+  - 4
+  composite_transfer_count: 2
+  actuation_count: 9
+  total_absolute_angle_deg: 579.3610928825152
+  evidence_status: geometry_only
+- source: 3
+  target: 4
+  component_edge_ids:
+  - a5:3->5:floor_main_neg_x
+  - composite:5->0:60dc3c6c9ce321c4
+  - a0:0->1:free_y
+  - composite:1->4:93387a3ae5913ca7
+  via_pose_ids:
+  - 5
+  - 0
+  - 1
+  composite_transfer_count: 2
+  actuation_count: 8
+  total_absolute_angle_deg: 489.3397204112123
+  evidence_status: geometry_only
+- source: 3
+  target: 5
+  component_edge_ids:
+  - a5:3->5:floor_main_neg_x
+  via_pose_ids: []
+  composite_transfer_count: 0
+  actuation_count: 1
+  total_absolute_angle_deg: 90.05619423844608
+  evidence_status: direct_geometric_candidates
+- source: 4
+  target: 0
+  component_edge_ids:
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  - composite:5->0:60dc3c6c9ce321c4
+  via_pose_ids:
+  - 5
+  composite_transfer_count: 2
+  actuation_count: 6
+  total_absolute_angle_deg: 330.8916455171616
+  evidence_status: geometry_only
+- source: 4
+  target: 1
+  component_edge_ids:
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  - composite:5->0:60dc3c6c9ce321c4
+  - a0:0->1:free_y
+  via_pose_ids:
+  - 5
+  - 0
+  composite_transfer_count: 2
+  actuation_count: 7
+  total_absolute_angle_deg: 496.09231216678023
+  evidence_status: geometry_only
+- source: 4
+  target: 2
+  component_edge_ids:
+  - a6:4->2:floor_main_neg_x
+  via_pose_ids: []
+  composite_transfer_count: 0
+  actuation_count: 1
+  total_absolute_angle_deg: 90.02137247130293
+  evidence_status: direct_geometric_candidates
+- source: 4
+  target: 3
+  component_edge_ids:
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  - a7:5->3:wall_main_pos_x
+  via_pose_ids:
+  - 5
+  composite_transfer_count: 1
+  actuation_count: 4
+  total_absolute_angle_deg: 313.45042614452814
+  evidence_status: geometry_only
+- source: 4
+  target: 5
+  component_edge_ids:
+  - composite:4->5:c1bf5c5dd3ec1bfe
+  via_pose_ids: []
+  composite_transfer_count: 1
+  actuation_count: 3
+  total_absolute_angle_deg: 223.39423190608207
+  evidence_status: geometry_only
+- source: 5
+  target: 0
+  component_edge_ids:
+  - composite:5->0:60dc3c6c9ce321c4
+  via_pose_ids: []
+  composite_transfer_count: 1
+  actuation_count: 3
+  total_absolute_angle_deg: 107.49741361107948
+  evidence_status: geometry_only
+- source: 5
+  target: 1
+  component_edge_ids:
+  - composite:5->0:60dc3c6c9ce321c4
+  - a0:0->1:free_y
+  via_pose_ids:
+  - 0
+  composite_transfer_count: 1
+  actuation_count: 4
+  total_absolute_angle_deg: 272.69808026069813
+  evidence_status: geometry_only
+- source: 5
+  target: 2
+  component_edge_ids:
+  - composite:5->0:60dc3c6c9ce321c4
+  - a0:0->1:free_y
+  - composite:1->4:93387a3ae5913ca7
+  - a6:4->2:floor_main_neg_x
+  via_pose_ids:
+  - 0
+  - 1
+  - 4
+  composite_transfer_count: 2
+  actuation_count: 8
+  total_absolute_angle_deg: 489.3048986440691
+  evidence_status: geometry_only
+- source: 5
+  target: 3
+  component_edge_ids:
+  - a7:5->3:wall_main_pos_x
+  via_pose_ids: []
+  composite_transfer_count: 0
+  actuation_count: 1
+  total_absolute_angle_deg: 90.05619423844608
+  evidence_status: direct_geometric_candidates
+- source: 5
+  target: 4
+  component_edge_ids:
+  - composite:5->0:60dc3c6c9ce321c4
+  - a0:0->1:free_y
+  - composite:1->4:93387a3ae5913ca7
+  via_pose_ids:
+  - 0
+  - 1
+  composite_transfer_count: 2
+  actuation_count: 7
+  total_absolute_angle_deg: 399.2835261727662
+  evidence_status: geometry_only
+connectivity:
+  direct:
+    strongly_connected_components:
+    - - 0
+      - 1
+    - - 2
+      - 4
+    - - 3
+      - 5
+    unreachable_pairs:
+    - - 0
+      - 2
+    - - 0
+      - 3
+    - - 0
+      - 4
+    - - 0
+      - 5
+    - - 1
+      - 2
+    - - 1
+      - 3
+    - - 1
+      - 4
+    - - 1
+      - 5
+    - - 2
+      - 0
+    - - 2
+      - 1
+    - - 2
+      - 3
+    - - 2
+      - 5
+    - - 3
+      - 0
+    - - 3
+      - 1
+    - - 3
+      - 2
+    - - 3
+      - 4
+    - - 4
+      - 0
+    - - 4
+      - 1
+    - - 4
+      - 3
+    - - 4
+      - 5
+    - - 5
+      - 0
+    - - 5
+      - 1
+    - - 5
+      - 2
+    - - 5
+      - 4
+    reachable_pair_count: 6
+    total_pair_count: 30
+    strongly_connected: false
+  with_candidates:
+    strongly_connected_components:
+    - - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+    unreachable_pairs: []
+    reachable_pair_count: 30
+    total_pair_count: 30
+    strongly_connected: true
+  note: Orientation geometry only; physical feasibility and reliability are unverified.

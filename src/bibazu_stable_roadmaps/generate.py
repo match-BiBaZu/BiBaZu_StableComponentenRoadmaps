@@ -37,6 +37,7 @@ class GenerationConfig:
     minimum_frequency_percent: float = 5.0
     renumber_by_frequency: bool = True
     outputs: tuple[str, ...] = ("yaml", "json", "graphml", "roadmap_svg", "roadmap_png")
+    include_composites: bool = True
 
     def validate(self):
         if not self.output_root.strip():
@@ -45,6 +46,8 @@ class GenerationConfig:
             raise ValueError("Minimum observed frequency must be between 0 and 100%.")
         if not isinstance(self.renumber_by_frequency, bool):
             raise ValueError("Frequency numbering must be on or off.")
+        if not isinstance(self.include_composites, bool):
+            raise ValueError("Composite candidate generation must be on or off.")
         if not self.outputs or set(self.outputs) - OUTPUTS.keys():
             raise ValueError("Select at least one valid output format.")
 
@@ -139,6 +142,9 @@ def _write_graphml(document: dict, destination: Path):
     graph = nx.MultiDiGraph()
     graph.graph["generation"] = json.dumps(document["generation"])
     graph.graph["classification_basis"] = "observed_simulation"
+    for key in ("composite_transfers", "routes", "connectivity"):
+        if key in document:
+            graph.graph[key] = json.dumps(document[key])
     for node in document["nodes"]:
         graph.add_node(node["node_id"], **{key: json.dumps(value) if isinstance(value, (list, dict)) else value
                                           for key, value in node.items() if value is not None and key not in {"node_id", "thumbnail_png_base64"}})
@@ -210,7 +216,16 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             check_cancel()
             progress(message)
         check_cancel()
-        built = build_roadmap(source, numbered, report)
+        built = build_roadmap(source, numbered, report, include_composites=config.include_composites)
+        catalogue = read_json(source.path)
+        if 'poses' not in catalogue:
+            catalogue = read_json(source.path.with_name('poses.json'))
+        rows = {str(p['id']): p for p in catalogue.get('poses', [])}
+        for node in built.document['nodes']:
+            row = rows.get(node['source_pose_ids'][0], {})
+            for key in ('group_members', 'representative_retention_auc', 'representative_group_retention_auc', 'group_stability_rank'):
+                if key in row:
+                    node[key] = row[key]
         for warning in built.warnings:
             progress(warning)
         generated_utc = datetime.now(timezone.utc).isoformat()
@@ -255,6 +270,9 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                         "settings": {**asdict(config), "output_root": "."}, "input": metadata,
                         "analytical_stability_evaluated": False,
                         "engine_provenance": read_json(ROOT / "ENGINE_PROVENANCE.json"), "warnings": built.warnings}
+            if "connectivity" in built.document:
+                manifest.update(connectivity=built.document["connectivity"],
+                                composite_transfer_count=len(built.document["composite_transfers"]))
             write_json(staging / "manifest.json", manifest)
             lines = [f"# {source.workpiece}\n", "Observed simulation poses; geometry supplies untested direct connection candidates.",
                      f"\nMinimum frequency: **{config.minimum_frequency_percent:g}%**. Percentages retain the source denominator.",
@@ -262,6 +280,12 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             lines.extend(f"| {number} | {pose.source_id} | {pose.frequency_percent:g}% | {pose.count if pose.count is not None else 'unknown'} |" for pose, number in numbered)
             lines.append("\nThe legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.")
             lines.append("\nOriginal inputs are in `source/`; generation settings and exclusions are in `manifest.json`.")
+            if "connectivity" in built.document:
+                direct = built.document["connectivity"]["direct"]
+                augmented = built.document["connectivity"]["with_candidates"]
+                lines.append(f"\nDirected reachability: {direct['reachable_pair_count']}/{direct['total_pair_count']} with existing connections; "
+                             f"{augmented['reachable_pair_count']}/{augmented['total_pair_count']} including composite candidates. "
+                             "Composite commands describe orientation geometry only. Contact, settling and hardware feasibility are unverified; calibration is required.")
             lines.append("\nFiles: " + ", ".join(f"[{p.name}]({p.name})" for p in sorted(staging.glob(f"{source.workpiece}_roadmap.*"))))
             (staging / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
             write_json(staging / "files.sha256.json", {p.relative_to(staging).as_posix(): sha256(p) for p in sorted(staging.rglob("*")) if p.is_file()})

@@ -48,7 +48,7 @@ class ObservedRoadmapGUI(QMainWindow):
         self.controls = QWidget()
         body = QVBoxLayout(self.controls)
         body.setContentsMargins(0, 0, 0, 0)
-        self.source_path = QLineEdit(str(ROOT.parent / "BiBaZu_StableComponentenPoses"))
+        self.source_path = QLineEdit(str(ROOT.parent / "BiBaZu_StableComponentenPoses_grouped"))
         self.source_path.setPlaceholderText("poses.json, pose_registry.json, or a poses repository folder")
         row = QHBoxLayout()
         row.addWidget(QLabel("Pose input"))
@@ -79,6 +79,10 @@ class ObservedRoadmapGUI(QMainWindow):
         self.renumber = QCheckBox("Renumber by frequency (pose 0 = most frequent)")
         self.renumber.setChecked(True)
         row.addWidget(self.renumber)
+        self.composites = QCheckBox("Add geometry-only composite bridges")
+        self.composites.setChecked(True)
+        self.composites.setToolTip("Keep representatives fixed. Propose multi-axis orientation transfers for calibration; contact and settling are unverified.")
+        row.addWidget(self.composites)
         row.addStretch()
         body.addWidget(options)
         formats = QGroupBox("Files to generate")
@@ -248,6 +252,7 @@ class ObservedRoadmapGUI(QMainWindow):
     def config(self):
         return GenerationConfig(output_root=self.output_root.text(), minimum_frequency_percent=self.minimum_frequency.value(),
                                 renumber_by_frequency=self.renumber.isChecked(),
+                                include_composites=self.composites.isChecked(),
                                 outputs=tuple(key for key, check in self.outputs.items() if check.isChecked()))
 
     def persist(self):
@@ -262,6 +267,7 @@ class ObservedRoadmapGUI(QMainWindow):
             self.output_root.setText(data.get("output_root", self.output_root.text()))
             self.minimum_frequency.setValue(data.get("minimum_frequency_percent", 5))
             self.renumber.setChecked(data.get("renumber_by_frequency", True))
+            self.composites.setChecked(data.get("include_composites", True))
             if "outputs" in data:
                 for key, check in self.outputs.items():
                     check.setChecked(key in data["outputs"])

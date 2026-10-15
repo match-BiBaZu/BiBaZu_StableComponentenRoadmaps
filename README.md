@@ -53,9 +53,13 @@ Connections use the bundled engine's directed action domains, contact/main-face
 requirements, 25 mm opposite-X support rule, and 1° axis tolerance. Part symmetry
 is used to find equivalent connection representations; it never merges nodes.
 Uncertain contacts can prevent constrained actions but do not remove poses.
-Only direct connections between retained nodes are exported, with no generated
-intermediate nodes or passive settling paths. Connections remain experimentally
-untested. Rocking barriers, capture widths and reliability scores are unknown.
+Direct connections retain those rules. The grouped application also offers
+**Add geometry-only composite bridges**, enabled by default. It keeps each
+representative fixed and adds ordered Y–Z–Y or Z–Y–Z orientation transfers between
+disconnected components. Transient orientations do not become catalogue poses.
+Contact feasibility, settling, actuator feasibility and reliability are unverified;
+calibrate a full transfer pressure profile before execution. Rocking barriers,
+capture widths and reliability scores remain unknown.
 
 ## Repository and export format
 
@@ -83,6 +87,39 @@ already-running Pressure Control GUI after updating that loader; older versions
 try to convert these uncomputed metrics to floats and cannot load them.
 The YAML experimental block follows the existing handover fields (`trials`,
 `successes`, `empirical_success_rate`, `difficulty_rating`, `notes`).
+
+Schema version 1 keeps direct `edges`/`transitions` and their IDs intact. Optional
+`composite_transfers`, `routes` and `connectivity` sections describe separate
+orientation candidates, one preferred route per ordered pose pair, and directed
+reachability before/after candidate augmentation. GraphML keeps direct edges and
+stores these optional sections as graph metadata. Roadmap images use dashed
+purple arrows for composite candidates. Existing-only routes are preferred;
+otherwise route costs minimize composite transfers, rotation count, and total
+absolute angle, followed by stable IDs. Generated composite IDs include a digest
+of their endpoints and commands; equivalent quaternion signs have the same ID.
+
+Updated Reorientation Control and Pressure Control display these candidates and
+their transient rotation previews. Selecting a candidate for calibration does not
+create or assign an executable pressure profile. Runtime routing uses assigned
+profiles only and supports simple routes through up to `pose_count - 1` transfers.
+Legacy two/three-flip choices retain their IDs; longer routes use bounded shortest
+path searches instead of enumerating every simple path.
+
+The [catalogue connectivity audit](connectivity_audit.json) covers 39 workpieces:
+13 direct roadmaps are disconnected and Kf1i has no eligible groups. Qk1a now has
+3 composite bridges (candidate reachability 30/30 pairs); Dl1a has 4 (20/20).
+Representatives, memberships, frequencies, and direct edges were preserved.
+
+To stage the same extension against a selected Git snapshot without rebuilding
+direct edges or overwriting existing output, use a fresh staging directory:
+
+```powershell
+uv run python -m bibazu_stable_roadmaps.upgrade_connectivity --repository . --staging-root ../.task_artifacts/connectivity-review --parts Qk1a Dl1a
+```
+
+Inspect the staged JSON/YAML, rendered roadmap, manifest and checksums before
+replacing generated folders. `include_composites: false` in worker settings
+disables bridge generation for new exports.
 
 Original IDs are in `source_pose_ids`; counts
 and percentages are in `observed_count` and `observed_frequency_percent`.
