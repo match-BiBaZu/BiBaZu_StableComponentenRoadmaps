@@ -31,3 +31,9 @@ Existing connections reach 2/20 ordered pairs. With 4 composite bridges, candida
 Representatives and direct edges are unchanged. Dashed purple bridges are geometry-only candidates: contact, settling, actuator feasibility and reliability remain unverified. Transient orientations are not pose catalogue entries. Calibrate a full transfer pressure profile before execution.
 
 JSON/YAML contain ordered commands, preferred routes and separate directed connectivity reports.
+
+## Member-conditioned transfers
+
+34 known-member actions connect groups. 670 total member transfer candidates include sampled downhill capture intervals and composite fallbacks. Routes preserve possible member orientations, including explicit intra-group repositioning. The group overview alone is not a proof that two member-conditioned actions can be chained.
+
+All retained source members have candidate paths to every retained group: **True**. Runtime use requires a calibrated profile with explicitly declared source-member coverage; old profiles receive no automatic group-wide coverage.

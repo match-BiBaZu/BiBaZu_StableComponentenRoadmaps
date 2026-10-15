@@ -218,11 +218,152 @@
       "total_pair_count": 30,
       "strongly_connected": true
     },
-    "note": "Orientation geometry only; physical feasibility and reliability are unverified."
+    "note": "Orientation geometry only; physical feasibility and reliability are unverified.",
+    "members": {
+      "group_overview": {
+        "strongly_connected_components": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "unreachable_pairs": [],
+        "reachable_pair_count": 30,
+        "total_pair_count": 30,
+        "strongly_connected": true
+      },
+      "known_member_inter_group_action_count": 20,
+      "source_member_coverage": {
+        "Qk1a_0001": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0002": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0003": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0004": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0005": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0006": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0007": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0008": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0009": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0010": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0011": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0012": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Qk1a_0013": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "every_source_member_reaches_every_group": true,
+      "note": "Group overview is existential. Executable route candidates preserve possible member states; profiles require explicit source coverage."
+    }
   },
   "composite_transfer_count": 3,
   "connectivity_extension": {
     "method": "fixed_representative_yzy_zyz_v1",
     "implementation_sha256": "bb8474ae0a4c0fd0ba94fdfb6e1f6a2793b06d41c85fa9c1f6bc4e278f44af86"
+  },
+  "member_transfer_count": 649,
+  "member_extension": {
+    "method": "member_conditioned_sampled_downhill_v1",
+    "implementation_sha256": "72d65f3774d38c36cfe1e58981ab9a93849d2f7131c98cea51182ed432111cda",
+    "capture_parameters": {
+      "model": "sampled_seated_downhill_v1",
+      "action_step_deg": 1.0,
+      "boundary_step_deg": 0.1,
+      "settling_step_deg": 0.1,
+      "maximum_settling_angle_deg": 60.0,
+      "energy_tolerance_mm": 1e-06,
+      "grouping_barrier_used_as_passive_permission": false
+    }
   }
 }

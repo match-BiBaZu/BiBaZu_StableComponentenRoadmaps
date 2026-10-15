@@ -38,6 +38,8 @@ class GenerationConfig:
     renumber_by_frequency: bool = True
     outputs: tuple[str, ...] = ("yaml", "json", "graphml", "roadmap_svg", "roadmap_png")
     include_composites: bool = True
+    include_members: bool = True
+    estimate_capture_intervals: bool = True
 
     def validate(self):
         if not self.output_root.strip():
@@ -48,6 +50,8 @@ class GenerationConfig:
             raise ValueError("Frequency numbering must be on or off.")
         if not isinstance(self.include_composites, bool):
             raise ValueError("Composite candidate generation must be on or off.")
+        if not isinstance(self.include_members, bool) or not isinstance(self.estimate_capture_intervals, bool):
+            raise ValueError("Member transfers and capture estimation must be on or off.")
         if not self.outputs or set(self.outputs) - OUTPUTS.keys():
             raise ValueError("Select at least one valid output format.")
 
@@ -142,7 +146,7 @@ def _write_graphml(document: dict, destination: Path):
     graph = nx.MultiDiGraph()
     graph.graph["generation"] = json.dumps(document["generation"])
     graph.graph["classification_basis"] = "observed_simulation"
-    for key in ("composite_transfers", "routes", "connectivity"):
+    for key in ("composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis"):
         if key in document:
             graph.graph[key] = json.dumps(document[key])
     for node in document["nodes"]:
@@ -226,6 +230,10 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             for key in ('group_members', 'representative_retention_auc', 'representative_group_retention_auc', 'group_stability_rank'):
                 if key in row:
                     node[key] = row[key]
+        if config.include_members and any('group_members' in n for n in built.document['nodes']):
+            from .member_transfers import augment_members
+            augment_members(source, built, sample_capture=config.estimate_capture_intervals,
+                            include_fallback=config.include_composites, progress=report)
         for warning in built.warnings:
             progress(warning)
         generated_utc = datetime.now(timezone.utc).isoformat()
@@ -272,7 +280,8 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                         "engine_provenance": read_json(ROOT / "ENGINE_PROVENANCE.json"), "warnings": built.warnings}
             if "connectivity" in built.document:
                 manifest.update(connectivity=built.document["connectivity"],
-                                composite_transfer_count=len(built.document["composite_transfers"]))
+                                composite_transfer_count=len(built.document.get("composite_transfers", [])),
+                                member_transfer_count=len(built.document.get('member_transfers', [])))
             write_json(staging / "manifest.json", manifest)
             lines = [f"# {source.workpiece}\n", "Observed simulation poses; geometry supplies untested direct connection candidates.",
                      f"\nMinimum frequency: **{config.minimum_frequency_percent:g}%**. Percentages retain the source denominator.",

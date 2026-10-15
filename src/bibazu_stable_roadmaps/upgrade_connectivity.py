@@ -30,7 +30,7 @@ def git(repository, *args):
                            *args], check=True, capture_output=True).stdout
 
 
-def upgrade_component(folder):
+def upgrade_component(folder, *, include_members=True, sample_capture=True, progress=lambda message: None):
     folder = Path(folder)
     part = folder.name
     path = folder / f'{part}_roadmap.json'
@@ -40,26 +40,35 @@ def upgrade_component(folder):
     source = load_source(folder / 'source/poses.json')
     symmetries, _, _ = _symmetry(source)
     augment_roadmap(document, symmetries)
+    observed = {p.source_id: p for p in source.poses}
+    built = build_roadmap(source, [(observed[n['source_pose_ids'][0]], n['node_id']) for n in document['nodes']])
+    built.document = document
+    if include_members and any('group_members' in n for n in document['nodes']):
+        from .member_transfers import augment_members
+        augment_members(source, built, sample_capture=sample_capture, progress=progress)
     if before_nodes != json.dumps(document['nodes'], sort_keys=True) or before_edges != json.dumps(document['edges'], sort_keys=True):
         raise ValueError('Connectivity extension modified existing poses or direct edges')
-    fields = {key: document[key] for key in ('composite_transfers', 'routes', 'connectivity')}
+    fields = {key: document[key] for key in ('composite_transfers', 'routes', 'connectivity',
+              'member_states', 'member_transfers', 'member_routes', 'capture_analysis') if key in document}
     write_json(path, document)
     handover_path = path.with_suffix('.yaml')
     handover = yaml.safe_load(handover_path.read_text(encoding='utf-8'))
     handover.update(fields)
     handover_path.write_text(yaml.safe_dump(handover, sort_keys=False, allow_unicode=True), encoding='utf-8')
     _write_graphml(document, path.with_suffix('.graphml'))
-    observed = {p.source_id: p for p in source.poses}
-    built = build_roadmap(source, [(observed[n['source_pose_ids'][0]], n['node_id']) for n in document['nodes']])
-    built.document = document
     images = {n['node_id']: mpimg.imread(io.BytesIO(base64.b64decode(n['thumbnail_png_base64'])), format='png')
               for n in document['nodes']}
     render_roadmap(built, path.with_suffix(''), ('svg', 'png'), images)
     manifest_path = folder / 'manifest.json'
     manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
     manifest.update(connectivity=document['connectivity'], composite_transfer_count=len(document['composite_transfers']),
+                    member_transfer_count=len(document.get('member_transfers', [])),
                     connectivity_extension={'method': 'fixed_representative_yzy_zyz_v1',
                                             'implementation_sha256': sha256(Path(__file__).with_name('connectivity.py'))})
+    if 'member_states' in document:
+        manifest['member_extension'] = dict(method='member_conditioned_sampled_downhill_v1',
+             implementation_sha256=sha256(Path(__file__).with_name('member_transfers.py')),
+             capture_parameters={key:value for key,value in document['capture_analysis'].items() if key!='samples'})
     write_json(manifest_path, manifest)
     direct, augmented = document['connectivity']['direct'], document['connectivity']['with_candidates']
     readme = folder / 'README.md'
@@ -73,6 +82,16 @@ def upgrade_component(folder):
              "contact, settling, actuator feasibility and reliability remain unverified. "
              "Transient orientations are not pose catalogue entries. Calibrate a full transfer pressure profile before execution.\n\n"
              "JSON/YAML contain ordered commands, preferred routes and separate directed connectivity reports.\n")
+    if 'member_transfers' in document:
+        info = document['connectivity']['members']
+        text += (f"\n## Member-conditioned transfers\n\n{info['known_member_inter_group_action_count']} known-member actions connect groups. "
+                 f"{len(document['member_transfers'])} total member transfer candidates include sampled downhill capture intervals and composite fallbacks. "
+                 "Routes preserve possible member orientations, including explicit intra-group repositioning. "
+                 "The group overview alone is not a proof that two member-conditioned actions can be chained.\n\n"
+                 "All retained source members have candidate paths to every retained group: "
+                 f"**{info['every_source_member_reaches_every_group']}**. "
+                 "Runtime use requires a calibrated profile with explicitly declared source-member coverage; "
+                 "old profiles receive no automatic group-wide coverage.\n")
     readme.write_text(text, encoding='utf-8')
     write_json(folder / 'files.sha256.json', {p.relative_to(folder).as_posix(): sha256(p)
                for p in sorted(folder.rglob('*')) if p.is_file() and p.name != 'files.sha256.json'})

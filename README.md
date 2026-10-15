@@ -92,8 +92,8 @@ Schema version 1 keeps direct `edges`/`transitions` and their IDs intact. Option
 `composite_transfers`, `routes` and `connectivity` sections describe separate
 orientation candidates, one preferred route per ordered pose pair, and directed
 reachability before/after candidate augmentation. GraphML keeps direct edges and
-stores these optional sections as graph metadata. Roadmap images use dashed
-purple arrows for composite candidates. Existing-only routes are preferred;
+stores these optional sections as graph metadata. Representative-only roadmap
+images use dashed purple arrows for composite candidates. Existing-only routes are preferred;
 otherwise route costs minimize composite transfers, rotation count, and total
 absolute angle, followed by stable IDs. Generated composite IDs include a digest
 of their endpoints and commands; equivalent quaternion signs have the same ID.
@@ -120,6 +120,51 @@ uv run python -m bibazu_stable_roadmaps.upgrade_connectivity --repository . --st
 Inspect the staged JSON/YAML, rendered roadmap, manifest and checksums before
 replacing generated folders. `include_composites: false` in worker settings
 disables bridge generation for new exports.
+
+### Member-conditioned transfers and capture ranges
+
+**Use all group members and estimate capture intervals** is enabled by default
+for grouped inputs. Representatives remain the displayed group anchors. The
+generator loads every retained group's member orientations from
+`original_observations.json`, including rare members, and retains the original
+direct edges and their IDs. Missing declared member data blocks generation
+instead of silently reverting to the representative. Needed evidence is copied
+into the exported `source/` snapshot.
+
+Optional schema-v1 sections `member_states`, `member_transfers`, `member_routes`
+and `capture_analysis` store source conditions, possible arrivals, ordered
+commands, settling witnesses and sampled intervals. GraphML stores the same
+sections as graph metadata. Overview arrows aggregate conditional alternatives:
+**K** = known member endpoint, **C** = sampled downhill capture, **F** = composite
+fallback. An overview connection does not imply that any arrival member can use
+every outgoing action. Internal route searches preserve member states and
+possible arrival sets, charging explicit intra-group repositioning actions.
+
+Capture estimation samples permitted actions at 1°, refines changed outcomes at
+0.1°, and samples seated shortest settling paths at 0.1° within a 60° guard.
+Potential must decrease without an uphill step beyond 0.000001 mm equivalent lift;
+the 0.5 mm grouping barrier is not a passive-motion allowance. Excluded observed
+groups remain competing destinations. Unresolved intervals and multiple outcomes
+are retained. These sampled geometric witnesses do not establish physical
+settling reliability.
+
+Qk1a recovers **20** known-member inter-group actions; Dl1a recovers **34**.
+Composite fallbacks ensure every retained source member has a candidate path to
+every retained target group. Existing representative quaternions, thumbnails,
+memberships, frequencies and direct edges are unchanged.
+
+The control GUIs show member endpoints, capture intervals and settling previews.
+Profiles must explicitly declare `covered_source_member_ids`. Pressure Control
+offers a comma-separated field; `*` explicitly declares testing for all source
+group members. Reorientation setup offers the same declaration, saved in
+`transition_source_coverage` or read from matching pressure-profile metadata.
+Blank coverage means calibration only. Legacy profiles are retained without
+automatic group-wide promotion. Runtime carries possible member states and
+requires each assigned profile to cover all currently possible source members.
+
+Worker settings `include_members: false` disable the member extension;
+`estimate_capture_intervals: false` retain member endpoints and fallback routes
+without running angle sampling.
 
 Original IDs are in `source_pose_ids`; counts
 and percentages are in `observed_count` and `observed_frequency_percent`.

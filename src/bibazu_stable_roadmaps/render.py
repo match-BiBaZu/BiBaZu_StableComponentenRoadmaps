@@ -75,7 +75,21 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
     axis.axis("off")
     colors = {"x": "#e63946", "y": "#2ca02c", "z": "#277da1"}
     pairs = defaultdict(list)
-    for edge in built.document["edges"] + built.document.get("composite_transfers", []):
+    render_edges = built.document["edges"] + built.document.get("composite_transfers", [])
+    member_overview = bool(built.document.get('member_states'))
+    if member_overview:
+        grouped = defaultdict(list)
+        for transfer in built.document['member_transfers']:
+            if transfer['source'] != transfer['target']:
+                grouped[transfer['source'], transfer['target']].append(transfer)
+        render_edges = []
+        for (a,b), transfers in sorted(grouped.items()):
+            counts = {kind: sum(t['transfer_model']==kind for t in transfers)
+                      for kind in ('known_member_endpoint','downhill_capture','composite_fallback')}
+            caption = ' '.join(f'{label}{counts[kind]}' for label,kind in zip('KCF',counts) if counts[kind])
+            render_edges.append(dict(source=a, target=b, actuation='member', transition_kind='member_overview',
+                                     caption=caption, fallback_only=counts['composite_fallback']==len(transfers)))
+    for edge in render_edges:
         pairs[tuple(sorted((edge["source"], edge["target"])))].append(edge)
     for pair, edges in pairs.items():
         for index, edge in enumerate(edges):
@@ -84,15 +98,16 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
             direction = 1 if edge["source"] == pair[0] else -1
             radius *= direction
             composite = edge.get("transition_kind") == "composite_candidate"
+            member_edge = edge.get('transition_kind') == 'member_overview'
             action_axis = "x" if "main_" in edge.get("actuation", "") else edge.get("actuation", "z")[-1]
-            color = "#8a4baf" if composite else colors[action_axis]
+            color = '#0e827b' if member_edge else "#8a4baf" if composite else colors[action_axis]
             axis.annotate("", xy=end, xytext=start,
-                          arrowprops={"arrowstyle": "-|>", "color": color, "lw": 1.8, "linestyle": "--" if composite else "-",
+                          arrowprops={"arrowstyle": "-|>", "color": color, "lw": 1.8, "linestyle": "--" if composite or edge.get('fallback_only') else "-",
                                       "shrinkA": 45 * image_scale, "shrinkB": 45 * image_scale, "connectionstyle": f"arc3,rad={radius}"}, zorder=2)
             delta = end - start
             normal = np.array([delta[1], -delta[0]])
             label = (start + end) / 2 + normal * radius / 2
-            text = (f"C{built.document['composite_transfers'].index(edge) + 1} · {edge['actuation_count']} rotations"
+            text = edge['caption'] if member_edge else (f"C{built.document['composite_transfers'].index(edge) + 1} · {edge['actuation_count']} rotations"
                     if composite else f"{edge['signed_angle_deg']:+.1f}°")
             axis.text(*label, text, color=color, fontsize=7,
                       ha="center", va="center", bbox={"facecolor": "white", "alpha": .85, "edgecolor": "none", "pad": .5}, zorder=4)
@@ -111,10 +126,17 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
         direct, augmented = reachability['direct'], reachability['with_candidates']
         axis.set_title(axis.get_title() + f"\nReachable pairs: {direct['reachable_pair_count']} direct graph / "
                        f"{augmented['reachable_pair_count']} with candidates / {direct['total_pair_count']} total", fontsize=12)
-    figure.legend(handles=[Line2D([0], [0], color=color, label=f"{name.upper()} rotation") for name, color in colors.items()]
-                  + ([Line2D([0], [0], color='#8a4baf', linestyle='--', label='Composite · geometry only')] if reachability else []),
+    if member_overview:
+        info = reachability['members']
+        axis.set_title(f"{built.source.workpiece}: member-conditioned group roadmap\n"
+                       f"{info['known_member_inter_group_action_count']} known-member inter-group actions · representative images unchanged\n"
+                       "K = known endpoint · C = downhill capture · F = composite fallback", fontsize=12)
+    handles = ([Line2D([0],[0],color='#0e827b',label='Member candidates · source conditions apply')] if member_overview else
+               [Line2D([0], [0], color=color, label=f"{name.upper()} rotation") for name, color in colors.items()]
+               + ([Line2D([0], [0], color='#8a4baf', linestyle='--', label='Composite · geometry only')] if reachability else []))
+    figure.legend(handles=handles,
                   loc="lower center", bbox_to_anchor=(.5, .045), ncol=4 if reachability else 3, fontsize=8)
-    figure.text(.5, .015, "Observed simulation poses; connections are geometric candidates and remain untested. No analytical stability classification.", ha="center", fontsize=8)
+    figure.text(.5, .015, "Group arrows summarize conditional candidates; member continuity and calibrated source coverage are required." if member_overview else "Observed simulation poses; connections are geometric candidates and remain untested. No analytical stability classification.", ha="center", fontsize=8)
     for fmt in formats:
         figure.savefig(path.with_suffix("." + fmt), bbox_inches="tight")
     plt.close(figure)

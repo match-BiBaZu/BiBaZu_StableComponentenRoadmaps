@@ -83,6 +83,10 @@ class ObservedRoadmapGUI(QMainWindow):
         self.composites.setChecked(True)
         self.composites.setToolTip("Keep representatives fixed. Propose multi-axis orientation transfers for calibration; contact and settling are unverified.")
         row.addWidget(self.composites)
+        self.members = QCheckBox("Use all group members and estimate capture intervals")
+        self.members.setChecked(True)
+        self.members.setToolTip("Retain representative images. Search member-conditioned routes and sampled downhill settling candidates.")
+        row.addWidget(self.members)
         row.addStretch()
         body.addWidget(options)
         formats = QGroupBox("Files to generate")
@@ -253,6 +257,7 @@ class ObservedRoadmapGUI(QMainWindow):
         return GenerationConfig(output_root=self.output_root.text(), minimum_frequency_percent=self.minimum_frequency.value(),
                                 renumber_by_frequency=self.renumber.isChecked(),
                                 include_composites=self.composites.isChecked(),
+                                include_members=self.members.isChecked(),
                                 outputs=tuple(key for key, check in self.outputs.items() if check.isChecked()))
 
     def persist(self):
@@ -268,6 +273,7 @@ class ObservedRoadmapGUI(QMainWindow):
             self.minimum_frequency.setValue(data.get("minimum_frequency_percent", 5))
             self.renumber.setChecked(data.get("renumber_by_frequency", True))
             self.composites.setChecked(data.get("include_composites", True))
+            self.members.setChecked(data.get("include_members", True))
             if "outputs" in data:
                 for key, check in self.outputs.items():
                     check.setChecked(key in data["outputs"])

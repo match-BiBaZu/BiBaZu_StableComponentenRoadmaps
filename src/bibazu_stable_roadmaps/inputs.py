@@ -179,6 +179,10 @@ def load_source(path: str | Path) -> PoseSource:
         files.add(other_registry)
     if config_path.is_file():
         files.add(config_path)
+    for name in ('original_observations.json', 'groups.json', 'membership.csv', 'grouping_geometry.json'):
+        evidence = path.with_name(name)
+        if evidence.is_file():
+            files.add(evidence)
     return PoseSource(path, workpiece, mesh.resolve(), tuple(poses), recognition, config,
                       tuple(sorted(files)), observations.get("frequency_denominator", denominator_name))
 
