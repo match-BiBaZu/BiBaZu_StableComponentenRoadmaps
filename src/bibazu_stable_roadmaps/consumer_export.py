@@ -255,6 +255,10 @@ def build_consumer_export(document):
 
 
 def attach_consumer_export(document):
+    if document.get('planning_semantics') == 'pose_to_group':
+        # These choices have already been compiled from source-specific witnesses.
+        # Rebuilding from the empty group-union sections would erase them.
+        return document
     if 'pose_groups' in document:
         from .individual_groups import consumer_export
         document['consumer_export'] = consumer_export(document)

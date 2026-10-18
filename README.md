@@ -4,6 +4,8 @@ The grouped catalogue displays **individual observed poses**, numbered from 0 by
 
 ## Filtering and planning
 
+**Dk1i uses exact source pose → destination group actions.** Its arrows and commands apply only to their listed source pose; any qualifying destination member satisfies the target. Actions are not inherited from other source members. Routes cannot depart an uncertain multi-member arrival group without a new exact observation. This is selected with `settings.planning_semantics: "pose_to_group"`; other catalogue entries retain the group-union policy below. See [Dk1i](Dk1i/README.md).
+
 The current rollout uses **1%** for both the original group total and each individual pose. Exactly the cutoff qualifies. Percentages retain the original completed-trial denominator; they are not renormalized after filtering. Members below the cutoff are neither shown nor used as transfer witnesses. Groups without any qualifying member are omitted. Full observations and memberships remain in each component's `source/` folder.
 
 Any outgoing action witnessed by a qualifying member is shared by all displayed members of its source group. Any qualifying destination member satisfies the target group. **There are no internal group transitions. A target in the current group is already satisfied and requires no actuation.** Intermediate legs may use different witnesses, with no invented movement between those members.

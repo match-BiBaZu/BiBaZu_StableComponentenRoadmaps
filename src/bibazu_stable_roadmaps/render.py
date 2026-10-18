@@ -172,7 +172,8 @@ def render_individual_groups(built, path, formats, images):
     ax.set_xlim(-radius-4.2,radius+4.2)
     ax.set_ylim(-radius-cell_h/2,radius+cell_h/2)
     ax.axis('off')
-    positions = {}; nodes={n['node_id']:n for n in built.document['nodes']}
+    positions = {}; pose_positions = {}; pose_boxes = {}
+    nodes={n['node_id']:n for n in built.document['nodes']}
     palette=plt.get_cmap('tab20')
     for index,group in enumerate(groups):
         x,y=unit[index]*radius
@@ -188,21 +189,33 @@ def render_individual_groups(built, path, formats, images):
             py=y+(tile_rows-1)*1.05-(j//ncols)*2.3-.15
             box=AnnotationBbox(OffsetImage(images[number],zoom=.43),(px,py),frameon=False,zorder=5)
             ax.add_artist(box)
+            pose_positions[number] = np.array([px, py])
+            pose_boxes[number] = box
             node=nodes[number]
             ax.annotate(f"Pose {number} · {node['observed_frequency_percent']:g}%\n{node['source_pose_ids'][0]}",
                 (px,py),xytext=(0,39),textcoords='offset points',ha='center',fontsize=8,weight='bold',zorder=6)
+    pose_to_group = built.document.get('planning_semantics') == 'pose_to_group'
     preferred={}
-    for t in built.document['group_transfers']:
-        preferred.setdefault((t['source'],t['target']),t)
+    transfers = built.document.get('pose_group_transfers', []) if pose_to_group else built.document['group_transfers']
+    for t in sorted(transfers, key=lambda t:(t['preference_cost'],t['edge_id'])):
+        preferred.setdefault((t['source'],t['target_group_id'] if pose_to_group else t['target']),t)
+    fig.subplots_adjust(top=.87,bottom=.10,left=.03,right=.97)
+    fig.canvas.draw()
     colors={'x':'#c73646','y':'#248738','z':'#237898'}
     labels=[]
     for (a,b),transfer in preferred.items():
-        start,end=np.asarray(positions[a]),np.asarray(positions[b]); delta=end-start
-        # Clip shared arrows to the group boundaries, never to an individual pose.
-        clip=min(3.6/max(abs(delta[0]),1e-12),(cell_h/2-.2)/max(abs(delta[1]),1e-12))
-        s=start+delta*clip; e=end-delta*clip
+        start = pose_positions[a] if pose_to_group else np.asarray(positions[a])
+        end = np.asarray(positions[b]); delta=end-start
+        end_clip=min(3.6/max(abs(delta[0]),1e-12),(cell_h/2-.2)/max(abs(delta[1]),1e-12))
+        if pose_to_group:
+            bounds = pose_boxes[a].get_window_extent(fig.canvas.get_renderer()).transformed(ax.transData.inverted())
+            start_clip=min((bounds.width/2+.08)/max(abs(delta[0]),1e-12),
+                           (bounds.height/2+.08)/max(abs(delta[1]),1e-12))
+        else:
+            start_clip=end_clip
+        s=start+delta*start_clip; e=end-delta*end_clip
         normal=np.array([-delta[1],delta[0]])/np.linalg.norm(delta)
-        s=s+normal*.12; e=e+normal*.12
+        s=s+normal*.06; e=e+normal*.12
         color=colors[transfer['commands'][0]['axis']]
         ax.add_patch(FancyArrowPatch(s,e,arrowstyle='-|>',mutation_scale=10,lw=1.1,
             connectionstyle='arc3,rad=.08',color=color,zorder=2))
@@ -218,13 +231,19 @@ def render_individual_groups(built, path, formats, images):
         ax.text(*label,transfer['display_name'],ha='center',va='center',fontsize=6,color=color,
             bbox=dict(facecolor='white',edgecolor='none',alpha=.9,pad=.6),zorder=4)
     stats=built.document['connectivity']['groups']; all_routes=stats['all_candidates']; cart=stats['cartesian']
-    fig.suptitle(f"{built.source.workpiece}: individual poses, shared group actions\n"
+    heading = 'exact source pose → destination group' if pose_to_group else 'individual poses, shared group actions'
+    fig.suptitle(f"{built.source.workpiece}: {heading}\n"
         f"{len(nodes)} poses · {len(groups)} groups · cutoff {built.document.get('filtering',{}).get('minimum_frequency_percent',0):g}%\n"
         f"Reachable group pairs: Cartesian {cart['reachable_pair_count']}/{cart['total_pair_count']} · "
         f"all {all_routes['reachable_pair_count']}/{all_routes['total_pair_count']} · no composite bridges",fontsize=13)
-    fig.text(.5,.02,'Outgoing actions apply to every displayed group member. Same-group targets require no motion. Calibration required.',
+    footer = ('Arrows start at the exact pose and accept any destination-group member. Commands use that source pose’s witnesses.\n'
+              'No actions are inherited from other source members. Same-group targets require no motion. Calibration required.') if pose_to_group else 'Outgoing actions apply to every displayed group member. Same-group targets require no motion. Calibration required.'
+    if pose_to_group:
+        info = built.document['connectivity']['pose_to_group']
+        fig.suptitle(f"{built.source.workpiece}: {heading}\n{len(nodes)} poses · {len(groups)} groups · cutoff {built.document['filtering']['minimum_frequency_percent']:g}%\n"
+            f"{len(preferred)} direct pose-to-group connections · {info['reachable_pair_count']}/{info['total_pair_count']} reachable with exported routes · no composite bridges",fontsize=13)
+    fig.text(.5,.02,footer,
         ha='center',fontsize=9)
-    fig.subplots_adjust(top=.87,bottom=.08,left=.03,right=.97)
     for fmt in formats: fig.savefig(path.with_suffix('.'+fmt),bbox_inches='tight')
     plt.close(fig)
 

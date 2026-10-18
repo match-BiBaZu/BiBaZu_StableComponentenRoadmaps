@@ -40,8 +40,11 @@ class GenerationConfig:
     include_composites: bool = True
     include_members: bool = True
     estimate_capture_intervals: bool = True
+    planning_semantics: str = 'group_union'
 
     def validate(self):
+        if self.planning_semantics not in ('group_union', 'pose_to_group'):
+            raise ValueError('Unknown roadmap planning semantics')
         if not self.output_root.strip():
             raise ValueError("Choose the output repository folder.")
         if not math.isfinite(self.minimum_frequency_percent) or not 0 <= self.minimum_frequency_percent <= 100:
@@ -146,14 +149,21 @@ def _write_graphml(document: dict, destination: Path):
     graph = nx.MultiDiGraph()
     graph.graph["generation"] = json.dumps(document["generation"])
     graph.graph["classification_basis"] = "observed_simulation"
-    for key in ("pose_groups", "pose_to_group", "filtering", "migration", "consumer_export", "group_keys", "group_transfers", "group_routes", "composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis"):
+    for key in ("planning_semantics", "pose_group_transfers", "pose_group_routes", "pose_groups", "pose_to_group", "filtering", "migration", "consumer_export", "group_keys", "group_transfers", "group_routes", "composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis"):
         if key in document:
             graph.graph[key] = json.dumps(document[key])
     for node in document["nodes"]:
         graph.add_node(node["node_id"], **{key: json.dumps(value) if isinstance(value, (list, dict)) else value
                                           for key, value in node.items() if value is not None and key not in {"node_id", "thumbnail_png_base64"}})
-    for edge in document["edges"]:
-        graph.add_edge(edge["source"], edge["target"], key=edge["edge_id"],
+    pose_to_group = document.get('planning_semantics') == 'pose_to_group'
+    if pose_to_group:
+        graph.graph['legacy_direct_edges'] = json.dumps(document['edges'])
+        for group in document['pose_groups']:
+            graph.add_node('target-group:' + group['group_key'], node_kind='accepted_target_group',
+                group_key=group['group_key'], group_id=group['group_id'], pose_ids=json.dumps(group['pose_ids']))
+    for edge in document['pose_group_transfers'] if pose_to_group else document["edges"]:
+        target = 'target-group:' + edge['target_group_key'] if pose_to_group else edge['target']
+        graph.add_edge(edge["source"], target, key=edge["edge_id"],
                        **{key: json.dumps(value) if isinstance(value, (list, dict)) else value
                           for key, value in edge.items() if value is not None and key not in {"source", "target"}})
     nx.write_graphml(graph, destination)
@@ -262,6 +272,11 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                               classical_metadata={"observed_pose_generation": metadata})
         from .consumer_export import attach_consumer_export
         attach_consumer_export(built.document)
+        if config.planning_semantics == 'pose_to_group':
+            if not group_mode:
+                raise ValueError('Pose-to-group planning requires grouped member observations')
+            from .pose_to_group import compile_pose_to_group
+            built.document = compile_pose_to_group(built.document)
         progress(f"Exporting {len(numbered)} poses and {len(built.document['edges'])} direct connections")
         with tempfile.TemporaryDirectory(prefix=".roadmap-stage-", dir=root) as temporary:
             staging = Path(temporary) / source.workpiece
@@ -307,6 +322,10 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                 manifest['group_count'] = len(built.document['pose_groups'])
                 manifest['settings']['include_composites'] = False
                 manifest['settings']['include_members'] = True
+                if config.planning_semantics == 'pose_to_group':
+                    manifest['pose_group_transfer_count'] = len(built.document['pose_group_transfers'])
+                    manifest['pose_group_route_count'] = len(built.document['pose_group_routes'])
+                    manifest['consumer_export']['planning_semantics'] = 'pose_to_group'
             if not eligible:
                 write_json(staging / 'no_eligible_poses.json', {'status':'no_eligible_poses','cutoff':config.minimum_frequency_percent})
             write_json(staging / "manifest.json", manifest)
@@ -316,7 +335,13 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             lines.extend(f"| {number} | {pose.source_id} | {pose.frequency_percent:g}% | {pose.count if pose.count is not None else 'unknown'} |" for pose, number in numbered)
             lines.append("\nThe legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.")
             lines.append("\nOriginal inputs are in `source/`; generation settings and exclusions are in `manifest.json`.")
-            if "groups" in built.document.get("connectivity", {}):
+            if config.planning_semantics == 'pose_to_group':
+                stats = built.document['connectivity']['pose_to_group']
+                lines.append(f"\nExact source pose → accepted destination group: {stats['direct_pair_count']} direct connections; "
+                    f"{stats['reachable_pair_count']}/{stats['total_pair_count']} reachable pairs. "
+                    "Actions are not inherited from other source-group members. Uncertain intermediate groups require another exact observation. "
+                    "No composite bridges. Assigned pressure profiles and explicit source-group calibration are required.")
+            elif "groups" in built.document.get("connectivity", {}):
                 groups = built.document["connectivity"]["groups"]
                 direct = groups["cartesian"]
                 augmented = groups["all_candidates"]

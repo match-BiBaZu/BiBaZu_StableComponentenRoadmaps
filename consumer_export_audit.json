@@ -39,9 +39,11 @@
       "pose_count": 8,
       "group_count": 6,
       "status": "complete",
-      "calibration_choices": 179,
-      "execution_routes": 179,
-      "group_transfers": 179
+      "calibration_choices": 196,
+      "execution_routes": 197,
+      "group_transfers": 0,
+      "pose_group_transfers": 195,
+      "planning_semantics": "pose_to_group"
     },
     {
       "part": "Dk2a",
@@ -383,5 +385,8 @@
       "execution_routes": 124,
       "group_transfers": 92
     }
-  ]
+  ],
+  "planning_semantics_overrides": {
+    "Dk1i": "pose_to_group"
+  }
 }

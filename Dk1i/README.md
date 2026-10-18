@@ -1,4 +1,4 @@
-# Dk1i: individual poses with shared group actions
+# Dk1i: exact source pose to destination group
 
 ![Roadmap](Dk1i_roadmap.png)
 
@@ -15,10 +15,10 @@ Cutoff: **1%**, applied separately to original group totals and individual obser
 | 6 | Dk1i_0001 | 7.45% | 745 | 4 |
 | 7 | Dk1i_0008 | 7.03% | 703 | 5 |
 
-8 individual poses in 6 groups. Candidate group reachability: **30/30**; Cartesian-only: **30/30**.
+8 individual poses in 6 groups. The exports contain **39/40 direct pose-to-group connections** and **40/40 reachable pose-to-group pairs** using finished routes. The picture labels the preferred action for each direct connection. Group-projection connectivity is an overview, not evidence of source-pose applicability.
 
-Every outgoing action applies to all displayed members of its source group; any qualifying destination member satisfies its target group. A target in the current group requires no motion. There are no internal group transitions and no composite fallback bridges. Ordinary multi-step routes use retained single-axis actions. Disconnected components remain disconnected.
+Each arrow starts at an **exact individual source pose** and ends at a **destination group boundary**. Its command is witnessed from that source pose; an action from another source-group member is not inherited. Any qualifying destination member satisfies the target group. A target in the current group requires no motion. There are no internal group transitions and no composite fallback bridges. Multi-step routes use retained single-axis actions and continue only through singleton arrival groups. An uncertain arrival in a multi-member group needs another exact pose observation before departing. Disconnected components remain disconnected.
 
 Commands, witnesses, competing landing outcomes, previews and finished routes are in consumer-export version 3. Poses are numbered by individual frequency; stable group identities are separate. Previews use actual witnesses and invent no internal movement. Contact feasibility and settling reliability remain unverified; assigned pressure profiles and explicit source-group calibration are required.
 
-Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. See `manifest.json` and `files.sha256.json`.
+Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. Group-only recognition cannot qualify an exact source pose in a multi-member group; runtime must report the missing observation instead of executing a member-specific action. See `manifest.json` and `files.sha256.json`.
