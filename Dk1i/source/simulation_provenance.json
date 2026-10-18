@@ -1,0 +1,44 @@
+{
+  "main_revision": "82f8bd43c70a0eb160d27dc0f7232849842efe9c",
+  "execution_revision": "e6845146859bbd72661166bd70ba7616356507c5",
+  "pose_baseline_revision": "d3a5c11b60c333d98137ca4ecbbaec6b108af961",
+  "parameter_source": "origin/main RunConfig defaults plus GUI_INITIAL_PARAMETERS",
+  "gui_initial_parameters": {
+    "belt_stop_enabled": true,
+    "roughness_enabled": true,
+    "roughness_model": "weight_impulse",
+    "roughness_impulse_delta_v_mm_s": 49.05,
+    "roughness_force_interval_s": 0.2,
+    "roughness_active_duration_s": 1.0
+  },
+  "matching_main_physics_sha256": {
+    "physics": "e63b4ddee4574dda6dec7d5e6a9e0f0333b86e1578484c81cb15897cda3c4c3e",
+    "roughness": "40026a7827950962be0fdc1fc35a161b2f8afe71323dc518f14d63b3db33c14b",
+    "belt": "539aa29d992071e6c5cd59b8e4ccfd701599ccad82f511799651017f3a85acf1",
+    "release": "6dd82cd5fcb91553f75761b252b726962442294d9a4185683458472ccbe0cd06",
+    "geometry": "3655f909f74aece4b6c965f32d9528396046bedb1e04186a0a02f75b2e7403ab",
+    "parallel": "d9dd1946a591495b7d23f2d6b784ccf788876a4adde3aa8d39e0fffbe383a69b"
+  },
+  "overrides": {
+    "trials": 10000,
+    "workers": 24,
+    "catalog_repo": null,
+    "catalog_push": false,
+    "observed_catalog_path": "C:\\Users\\Administrator\\Documents\\Dashas_ws\\.task_artifacts\\dk1i_main_20261018\\baseline\\original_observations.json",
+    "output_dir": "C:\\Users\\Administrator\\Documents\\Dashas_ws\\.task_artifacts\\dk1i_main_20261018\\results",
+    "grouping_enabled": true,
+    "grouping_barrier_mm": 0.5,
+    "grouping_max_angle_deg": 60.0,
+    "grouping_minimum_frequency_percent": 1.0
+  },
+  "extra_group_assessment_level_mm": 0.5,
+  "note": "24 independent workers change throughput only. Grouping/export extension uses the feature branch; physics modules exactly match main. Existing observations anchor historical source IDs without importing old counts.",
+  "software_versions": {
+    "mujoco": "3.14.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "trimesh": "5.1.0",
+    "coacd": "1.0.14",
+    "bibazu-chute-pose": "0.1.0"
+  }
+}

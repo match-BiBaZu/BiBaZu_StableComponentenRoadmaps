@@ -2,16 +2,16 @@
 
 Completed and validated: **39/39** workpieces. Each completed workpiece has 10,000 drops; member disturbance tests are additional.
 
-All workpieces use identical simulation settings, a 0.5 mm equivalent-lift grouping barrier, a 60° diameter guard, and a 1% cutoff after aggregation. Representatives are selected using complete member group-retention curves.
+The original study used identical simulation settings; Dk1i was rerun on 2026-10-18 with the simulator main-branch GUI defaults. All entries retain a 0.5 mm equivalent-lift grouping barrier, a 60° diameter guard, and a 1% cutoff after aggregation. Representatives are selected using complete member group-retention curves.
 
-Qk1a, Dl1a, and Dk1i reuse the previously audited grouped runs. Full raw trial data remains in the simulator's ignored results directories.
+Qk1a and Dl1a reuse the previously audited grouped runs. Dk1i now uses the fresh 10,000-drop main-parameter run published in the poses grouped branch (commit `0a4d04a`); its roadmap has been regenerated. Compressed Dk1i raw trials are published with those source poses. Other raw study data remains in the simulator results directories.
 
 | Workpiece | Status | Settled | Source poses | Eligible groups | Disturbance tests | Roadmap connections |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | [Df1a](Df1a/README.md) | Complete | 9997 | 7 | 4 | 511 | 6 |
 | [Df2i](Df2i/README.md) | Complete | 9996 | 9 | 6 | 657 | 22 |
 | [Df4a](Df4a/README.md) | Complete | 9999 | 20 | 12 | 1460 | 42 |
-| [Dk1i](Dk1i/README.md) | Complete | 9998 | 8 | 6 | 584 | 16 |
+| [Dk1i](Dk1i/README.md) | Complete (main rerun) | 9998 | 8 | 6 | 584 | 16 |
 | [Dk2a](Dk2a/README.md) | Complete | 9845 | 17 | 12 | 1241 | 56 |
 | [Dk4i](Dk4i/README.md) | Complete | 9999 | 24 | 18 | 1752 | 80 |
 | [Dl1a](Dl1a/README.md) | Complete | 9983 | 16 | 5 | 1168 | 2 |

@@ -1,38 +1,34 @@
-# Dk1i
+# Dk1i — grouped roadmap
 
-Observed simulation poses; geometry supplies untested direct connection candidates.
+![Whole-group roadmap](Dk1i_roadmap.png)
 
-Minimum frequency: **0%**. Percentages retain the source denominator.
+Updated on 2026-10-18 from **10,000 drops using the simulator main-branch GUI parameters**.
+The six groups, their eight members, representative orientations, thumbnails, stable group keys and existing 16 direct connections are unchanged. Frequencies reflect the new run.
 
-| Roadmap pose | Source pose | Frequency | Count |
-| ---: | --- | ---: | ---: |
-| 0 | Dk1i_0005 | 27.68% | 2768 |
-| 1 | Dk1i_0002 | 26.91% | 2691 |
-| 2 | Dk1i_0007 | 16.44% | 1644 |
-| 3 | Dk1i_0006 | 14.39% | 1439 |
-| 4 | Dk1i_0001 | 7.46% | 746 |
-| 5 | Dk1i_0008 | 7.1% | 710 |
-
-The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
-
-Original inputs are in `source/`; generation settings and exclusions are in `manifest.json`.
-
-Files: [Dk1i_roadmap.graphml](Dk1i_roadmap.graphml), [Dk1i_roadmap.json](Dk1i_roadmap.json), [Dk1i_roadmap.png](Dk1i_roadmap.png), [Dk1i_roadmap.svg](Dk1i_roadmap.svg), [Dk1i_roadmap.yaml](Dk1i_roadmap.yaml)
-
-[Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
-
-Thumbnails retain the chosen representative orientations. Each group contains all its observed members.
-
-<!-- CONSUMER EXPORT -->
-
-Control applications read finished calibration choices, ordered commands, preview segments and execution routes from `consumer_export` in JSON/YAML. They do not construct routes. Execution requires assigned pressure profiles and explicit source-member coverage; geometry-only evidence does not grant either.
+| Group | Representative source pose | Members | Frequency | Count |
+| ---: | --- | --- | ---: | ---: |
+| 0 | Dk1i_0005 | Dk1i_0003, Dk1i_0005 | 27.77% | 2777 |
+| 1 | Dk1i_0002 | Dk1i_0002, Dk1i_0004 | 27.02% | 2702 |
+| 2 | Dk1i_0007 | Dk1i_0007 | 16.43% | 1643 |
+| 3 | Dk1i_0006 | Dk1i_0006 | 14.28% | 1428 |
+| 4 | Dk1i_0001 | Dk1i_0001 | 7.45% | 745 |
+| 5 | Dk1i_0008 | Dk1i_0008 | 7.03% | 703 |
 
 ## Whole-group reorientations
 
-Cartesian-only routes reach **30/30** ordered group pairs; all candidate routes reach **30/30**.
+All **30/30 ordered group pairs** have candidate routes using Cartesian rotations alone.
+There are **46 distinct Cartesian group transfers** and **179 group transfers including other single-axis and settling alternatives**. No composite bridge is needed. The original **28 inter-group known-member actions** remain available.
 
-A transfer may use any source member and reach any target member. Consecutive transfers may use different members of the same intermediate group. This interchangeability is the planning assumption; no extra motion is invented between those witnesses.
+Groups contain all their members. A transfer can start at any witnessed source member and reach any witnessed target member; consecutive transfers may use different members of the shared group. Member interchangeability is the planning assumption. Previews show the actual witnesses and do not invent motion between intermediate members.
 
-Exact ±90° and ±180° chute X/Y/Z commands are evaluated without contact/support pruning and preferred over other rotations. Arrow labels show the preferred reorientation; exports and control pickers retain alternatives and member witnesses. Competing landing outcomes and sampled downhill evidence remain in the records.
+Exact **±90° and ±180° chute X/Y/Z commands** are preferred. Commands are never rounded from another rotation. Observed endpoints match within 1° under the permitted part symmetries; other Cartesian landing candidates include a sampled downhill settling path. Arrow labels show the preferred reorientation; all alternatives, witnesses, competing outcomes and settling evidence are retained in the exports.
 
-The additive `group_transfers`, `group_routes` and consumer-export version 2 records contain finished choices and previews. Execution requires an assigned pressure profile explicitly calibrated for the exported source group. Existing profiles receive no automatic group qualification. Contact feasibility and physical settling reliability remain unverified.
+These candidates are **geometry_only**. Contact feasibility and physical settling reliability are unverified. Execution requires an assigned pressure profile explicitly **calibrated for the source group**, bound to the exported transfer and stable group key. Existing profiles receive no automatic group qualification; changed file hashes require explicit reimport.
+
+## Inputs and exports
+
+The grouping cutoff is 1% after aggregation; no additional representative frequency cutoff is applied. Counts sum to the 9,998 drops that settled during transport; percentages retain all 10,000 completed drops as their denominator. After the belt stop all 10,000 were settled; those later observations do not replace the transport pose counts. The 584 member disturbance assessments are additional tests.
+
+Source poses: [grouped commit 0a4d04a](https://github.com/match-BiBaZu/BiBaZu_StableComponentenPoses/tree/0a4d04a528277c30e036bde72b78c7063ba0dc33/Dk1i). Simulator main parameters: revision `82f8bd43c70a0eb160d27dc0f7232849842efe9c`. See [simulation provenance](source/simulation_provenance.json), [source validation](source/validation.json), [groups](source/groups.json), [membership](membership.csv), [retention curves](source/group_stability.csv), and [barrier evidence](source/grouping_geometry.json). Compressed raw trials remain published in the source pose repository's `Dk1i/run_data/` folder.
+
+[JSON](Dk1i_roadmap.json), [YAML](Dk1i_roadmap.yaml), [GraphML](Dk1i_roadmap.graphml), [PNG](Dk1i_roadmap.png), [SVG](Dk1i_roadmap.svg). JSON/YAML include materialized calibration choices, commands, previews and routes in **consumer-export version 2**, with previous choice and route identities retained for profile restoration. Controls consume these records without constructing routes. Generation settings and provenance are in [manifest.json](manifest.json); byte checksums are in [files.sha256.json](files.sha256.json). The legacy `robust` compatibility tag does not assert analytical robustness.
