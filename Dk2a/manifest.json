@@ -23,35 +23,37 @@
     "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose"
   },
   "format": "bibazu_observed_roadmap_generation",
-  "generated_utc": "2026-10-12T20:00:01.274016+00:00",
+  "generated_utc": "2026-10-18T15:59:27.160856+00:00",
   "grouped_export": true,
   "grouping_minimum_frequency_percent": 1,
   "input": {
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
-    "generated_utc": "2026-10-12T20:00:01.274016+00:00",
-    "minimum_frequency_percent": 0,
+    "generated_utc": "2026-10-18T15:59:27.160856+00:00",
+    "minimum_frequency_percent": 1.0,
     "numbering_tie_break": "original source ID",
     "pose_id_mapping": {
-      "Dk2a_0001": 10,
-      "Dk2a_0002": 4,
-      "Dk2a_0003": 9,
-      "Dk2a_0004": 1,
-      "Dk2a_0005": 8,
       "Dk2a_0006": 0,
-      "Dk2a_0007": 7,
-      "Dk2a_0010": 11,
-      "Dk2a_0012": 3,
-      "Dk2a_0014": 6,
-      "Dk2a_0015": 5,
-      "Dk2a_0016": 2
+      "Dk2a_0004": 1,
+      "Dk2a_0002": 2,
+      "Dk2a_0015": 3,
+      "Dk2a_0014": 4,
+      "Dk2a_0007": 5,
+      "Dk2a_0016": 6,
+      "Dk2a_0013": 7,
+      "Dk2a_0005": 8,
+      "Dk2a_0003": 9,
+      "Dk2a_0012": 10,
+      "Dk2a_0011": 11,
+      "Dk2a_0001": 12,
+      "Dk2a_0009": 13
     },
     "removed_poses": [],
     "renumber_by_frequency": true,
     "source_file": "poses.json",
     "source_sha256": "2d7fb92c2aff7b623e45f44c5755d3687d4dd7153517d93cc8cfbead3fb33601"
   },
-  "minimum_frequency_percent": 0,
-  "pose_count": 12,
+  "minimum_frequency_percent": 1.0,
+  "pose_count": 14,
   "provenance": {
     "baseline_roadmap_ids": {
       "Dk2a_0001": 12,
@@ -77,7 +79,7 @@
   "renumber_by_frequency": true,
   "schema_version": 1,
   "settings": {
-    "minimum_frequency_percent": 0,
+    "minimum_frequency_percent": 1.0,
     "output_root": ".",
     "outputs": [
       "json",
@@ -88,272 +90,22 @@
       "poses_png",
       "poses_svg"
     ],
-    "renumber_by_frequency": true
+    "renumber_by_frequency": true,
+    "include_composites": false,
+    "include_members": true,
+    "estimate_capture_intervals": false
   },
   "status": "complete",
-  "transition_count": 56,
+  "transition_count": 66,
   "warnings": [],
   "workpiece": "Dk2a",
   "consumer_export": {
-    "version": 2,
-    "route_policy": "exported_only",
-    "calibration_choice_count": 1240,
-    "execution_route_count": 316
+    "version": 3,
+    "route_policy": "exported_only; no composite bridges",
+    "calibration_choice_count": 231,
+    "execution_route_count": 292
   },
   "connectivity": {
-    "members": {
-      "group_overview": {
-        "strongly_connected_components": [
-          [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10,
-            11
-          ]
-        ],
-        "unreachable_pairs": [],
-        "reachable_pair_count": 132,
-        "total_pair_count": 132,
-        "strongly_connected": true
-      },
-      "known_member_inter_group_action_count": 82,
-      "source_member_coverage": {
-        "Dk2a_0001": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0002": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0003": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0004": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0005": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0006": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0007": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0009": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0010": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0011": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0012": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0013": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0014": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0015": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0016": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "Dk2a_0017": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ]
-      },
-      "every_source_member_reaches_every_group": true,
-      "note": "Group overview is existential. Executable route candidates preserve possible member states; profiles require explicit source coverage."
-    },
     "groups": {
       "cartesian": {
         "strongly_connected_components": [
@@ -367,15 +119,108 @@
             6,
             7,
             8,
-            9,
-            10,
+            9
+          ],
+          [
+            10
+          ],
+          [
             11
           ]
         ],
-        "unreachable_pairs": [],
-        "reachable_pair_count": 132,
+        "unreachable_pairs": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            10
+          ]
+        ],
+        "reachable_pair_count": 110,
         "total_pair_count": 132,
-        "strongly_connected": true
+        "strongly_connected": false
       },
       "all_candidates": {
         "strongly_connected_components": [
@@ -399,15 +244,53 @@
         "total_pair_count": 132,
         "strongly_connected": true
       },
-      "transfer_count": 196,
+      "transfer_count": 170,
       "planning_assumption": "group_union: arrival and departure may use different group members",
       "endpoint_tolerance_deg": 1.0
+    },
+    "poses": {
+      "same_group_no_motion_pairs": [
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          10
+        ]
+      ],
+      "motion_reachable_pair_count": 178,
+      "unreachable_pairs": []
     }
   },
-  "group_transfer_count": 196,
+  "group_transfer_count": 170,
   "group_route_count": 132,
   "group_extension": {
     "planning_assumption": "group_union: arrival and departure may use different group members",
-    "implementation_sha256": "e93e3ba43453fdd6a533566e010315a56e31c0972f300b36ea5c69858f544d0e"
+    "implementation_sha256": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4"
+  },
+  "group_count": 12,
+  "composite_transfer_count": 0,
+  "member_transfer_count": 0,
+  "individual_extension": {
+    "consumer_export_version": 3,
+    "minimum_frequency_percent": 1,
+    "composite_fallbacks": false,
+    "implementation_sha256": {
+      "individual_groups.py": "0b2b05abeed269d9bbadb7bc854045d6254428d58cffbc8499842c2dd7777506",
+      "group_transfers.py": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4",
+      "consumer_export.py": "9b10b66ddfe9b079830c0890dca6b8366de916cd2b1b54fdb2121c7a833e6828",
+      "render.py": "0926d6d64d7d80b38858759867336df589ba0e8e2b3933de6b9088af00563658",
+      "upgrade_individual.py": "5e732f578e80206b91125eaccf1f986b2493f7667e3a8b7261e191e4046b6216"
+    },
+    "capture_interval_policy": "Reuse existing filtered intervals; reevaluate exact Cartesian settling."
   }
 }

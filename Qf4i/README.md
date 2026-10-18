@@ -1,48 +1,32 @@
-# Qf4i
+# Qf4i: individual poses with shared group actions
 
-Observed simulation poses; geometry supplies untested direct connection candidates.
+![Roadmap](Qf4i_roadmap.png)
 
-Minimum frequency: **0%**. Percentages retain the source denominator.
+Cutoff: **1%**, applied separately to original group totals and individual observation frequencies. Exactly the cutoff qualifies; the source trial denominator is unchanged. Below-cutoff members are not displayed or used as witnesses. Groups without qualifying members are omitted.
 
-| Roadmap pose | Source pose | Frequency | Count |
-| ---: | --- | ---: | ---: |
-| 0 | Qf4i_0007 | 7.52% | 752 |
-| 1 | Qf4i_0012 | 7.06% | 706 |
-| 2 | Qf4i_0005 | 7.02% | 702 |
-| 3 | Qf4i_0009 | 7.02% | 702 |
-| 4 | Qf4i_0006 | 6.34% | 634 |
-| 5 | Qf4i_0013 | 6.16% | 616 |
-| 6 | Qf4i_0010 | 6.14% | 614 |
-| 7 | Qf4i_0015 | 6.1% | 610 |
-| 8 | Qf4i_0017 | 6.01% | 601 |
-| 9 | Qf4i_0002 | 5.94% | 594 |
-| 10 | Qf4i_0008 | 5.9% | 590 |
-| 11 | Qf4i_0003 | 5.68% | 568 |
-| 12 | Qf4i_0016 | 5.53% | 553 |
-| 13 | Qf4i_0011 | 5.47% | 547 |
-| 14 | Qf4i_0004 | 5.02% | 502 |
-| 15 | Qf4i_0001 | 4.99% | 499 |
+| Pose | Original observation | Individual frequency | Count | Group |
+|---:|---|---:|---:|---:|
+| 0 | Qf4i_0007 | 7.52% | 752 | 0 |
+| 1 | Qf4i_0012 | 7.06% | 706 | 1 |
+| 2 | Qf4i_0005 | 7.02% | 702 | 2 |
+| 3 | Qf4i_0009 | 7.02% | 702 | 3 |
+| 4 | Qf4i_0006 | 6.34% | 634 | 4 |
+| 5 | Qf4i_0013 | 6.16% | 616 | 5 |
+| 6 | Qf4i_0010 | 6.13% | 613 | 6 |
+| 7 | Qf4i_0015 | 6.1% | 610 | 7 |
+| 8 | Qf4i_0017 | 6.01% | 601 | 8 |
+| 9 | Qf4i_0002 | 5.94% | 594 | 9 |
+| 10 | Qf4i_0008 | 5.9% | 590 | 10 |
+| 11 | Qf4i_0003 | 5.68% | 568 | 11 |
+| 12 | Qf4i_0016 | 5.53% | 553 | 12 |
+| 13 | Qf4i_0011 | 5.47% | 547 | 13 |
+| 14 | Qf4i_0004 | 5.01% | 501 | 14 |
+| 15 | Qf4i_0001 | 4.98% | 498 | 15 |
 
-The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
+16 individual poses in 16 groups. Candidate group reachability: **240/240**; Cartesian-only: **240/240**.
 
-Original inputs are in `source/`; generation settings and exclusions are in `manifest.json`.
+Every outgoing action applies to all displayed members of its source group; any qualifying destination member satisfies its target group. A target in the current group requires no motion. There are no internal group transitions and no composite fallback bridges. Ordinary multi-step routes use retained single-axis actions. Disconnected components remain disconnected.
 
-Files: [Qf4i_roadmap.graphml](Qf4i_roadmap.graphml), [Qf4i_roadmap.json](Qf4i_roadmap.json), [Qf4i_roadmap.png](Qf4i_roadmap.png), [Qf4i_roadmap.svg](Qf4i_roadmap.svg), [Qf4i_roadmap.yaml](Qf4i_roadmap.yaml)
+Commands, witnesses, competing landing outcomes, previews and finished routes are in consumer-export version 3. Poses are numbered by individual frequency; stable group identities are separate. Previews use actual witnesses and invent no internal movement. Contact feasibility and settling reliability remain unverified; assigned pressure profiles and explicit source-group calibration are required.
 
-[Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
-
-Thumbnails retain the chosen representative orientations. Each group contains all its observed members.
-
-<!-- CONSUMER EXPORT -->
-
-Control applications read finished calibration choices, ordered commands, preview segments and execution routes from `consumer_export` in JSON/YAML. They do not construct routes. Execution requires assigned pressure profiles and explicit source-member coverage; geometry-only evidence does not grant either.
-
-## Whole-group reorientations
-
-Cartesian-only routes reach **240/240** ordered group pairs; all candidate routes reach **240/240**.
-
-A transfer may use any source member and reach any target member. Consecutive transfers may use different members of the same intermediate group. This interchangeability is the planning assumption; no extra motion is invented between those witnesses.
-
-Exact ±90° and ±180° chute X/Y/Z commands are evaluated without contact/support pruning and preferred over other rotations. Arrow labels show the preferred reorientation; exports and control pickers retain alternatives and member witnesses. Competing landing outcomes and sampled downhill evidence remain in the records.
-
-The additive `group_transfers`, `group_routes` and consumer-export version 2 records contain finished choices and previews. Execution requires an assigned pressure profile explicitly calibrated for the exported source group. Existing profiles receive no automatic group qualification. Contact feasibility and physical settling reliability remain unverified.
+Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. See `manifest.json` and `files.sha256.json`.

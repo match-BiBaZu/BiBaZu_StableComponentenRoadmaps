@@ -23,32 +23,33 @@
     "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose"
   },
   "format": "bibazu_observed_roadmap_generation",
-  "generated_utc": "2026-10-13T15:45:24.370817+00:00",
+  "generated_utc": "2026-10-18T16:04:31.129454+00:00",
   "grouped_export": true,
   "grouping_minimum_frequency_percent": 1,
   "input": {
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
-    "generated_utc": "2026-10-13T15:45:24.370817+00:00",
-    "minimum_frequency_percent": 0,
+    "generated_utc": "2026-10-18T16:04:31.129454+00:00",
+    "minimum_frequency_percent": 1.0,
     "numbering_tie_break": "original source ID",
     "pose_id_mapping": {
-      "Rl3a_0002": 3,
-      "Rl3a_0006": 4,
-      "Rl3a_0007": 6,
-      "Rl3a_0009": 2,
-      "Rl3a_0010": 8,
-      "Rl3a_0011": 1,
       "Rl3a_0013": 0,
-      "Rl3a_0014": 7,
-      "Rl3a_0016": 5
+      "Rl3a_0011": 1,
+      "Rl3a_0009": 2,
+      "Rl3a_0002": 3,
+      "Rl3a_0016": 4,
+      "Rl3a_0007": 5,
+      "Rl3a_0014": 6,
+      "Rl3a_0006": 7,
+      "Rl3a_0010": 8,
+      "Rl3a_0004": 9
     },
     "removed_poses": [],
     "renumber_by_frequency": true,
     "source_file": "poses.json",
     "source_sha256": "ad6699144e126804ff2aec7e3dd5ca55b3acd3ee430c6bbe4fb5ac28a8e58258"
   },
-  "minimum_frequency_percent": 0,
-  "pose_count": 9,
+  "minimum_frequency_percent": 1.0,
+  "pose_count": 10,
   "provenance": {
     "baseline_roadmap_ids": {
       "Rl3a_0002": 3,
@@ -70,7 +71,7 @@
   "renumber_by_frequency": true,
   "schema_version": 1,
   "settings": {
-    "minimum_frequency_percent": 0,
+    "minimum_frequency_percent": 1.0,
     "output_root": ".",
     "outputs": [
       "json",
@@ -81,224 +82,22 @@
       "poses_png",
       "poses_svg"
     ],
-    "renumber_by_frequency": true
+    "renumber_by_frequency": true,
+    "include_composites": false,
+    "include_members": true,
+    "estimate_capture_intervals": false
   },
   "status": "complete",
-  "transition_count": 30,
+  "transition_count": 34,
   "warnings": [],
   "workpiece": "Rl3a",
   "consumer_export": {
-    "version": 2,
-    "route_policy": "exported_only",
-    "calibration_choice_count": 444,
-    "execution_route_count": 185
+    "version": 3,
+    "route_policy": "exported_only; no composite bridges",
+    "calibration_choice_count": 140,
+    "execution_route_count": 170
   },
   "connectivity": {
-    "members": {
-      "group_overview": {
-        "strongly_connected_components": [
-          [
-            0,
-            1,
-            2,
-            3,
-            5,
-            6
-          ],
-          [
-            4,
-            7,
-            8
-          ]
-        ],
-        "unreachable_pairs": [
-          [
-            4,
-            0
-          ],
-          [
-            4,
-            1
-          ],
-          [
-            4,
-            2
-          ],
-          [
-            4,
-            3
-          ],
-          [
-            4,
-            5
-          ],
-          [
-            4,
-            6
-          ],
-          [
-            7,
-            0
-          ],
-          [
-            7,
-            1
-          ],
-          [
-            7,
-            2
-          ],
-          [
-            7,
-            3
-          ],
-          [
-            7,
-            5
-          ],
-          [
-            7,
-            6
-          ],
-          [
-            8,
-            0
-          ],
-          [
-            8,
-            1
-          ],
-          [
-            8,
-            2
-          ],
-          [
-            8,
-            3
-          ],
-          [
-            8,
-            5
-          ],
-          [
-            8,
-            6
-          ]
-        ],
-        "reachable_pair_count": 54,
-        "total_pair_count": 72,
-        "strongly_connected": false
-      },
-      "known_member_inter_group_action_count": 48,
-      "source_member_coverage": {
-        "Rl3a_0002": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "Rl3a_0004": [
-          4,
-          7
-        ],
-        "Rl3a_0006": [
-          4,
-          8
-        ],
-        "Rl3a_0007": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "Rl3a_0009": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "Rl3a_0010": [
-          4,
-          8
-        ],
-        "Rl3a_0011": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "Rl3a_0013": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "Rl3a_0014": [
-          4,
-          7
-        ],
-        "Rl3a_0015": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "Rl3a_0016": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "Rl3a_0017": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ]
-      },
-      "every_source_member_reaches_every_group": false,
-      "note": "Group overview is existential. Executable route candidates preserve possible member states; profiles require explicit source coverage."
-    },
     "groups": {
       "cartesian": {
         "strongly_connected_components": [
@@ -413,15 +212,45 @@
         "total_pair_count": 72,
         "strongly_connected": true
       },
-      "transfer_count": 125,
+      "transfer_count": 110,
       "planning_assumption": "group_union: arrival and departure may use different group members",
       "endpoint_tolerance_deg": 1.0
+    },
+    "poses": {
+      "same_group_no_motion_pairs": [
+        [
+          7,
+          9
+        ],
+        [
+          9,
+          7
+        ]
+      ],
+      "motion_reachable_pair_count": 88,
+      "unreachable_pairs": []
     }
   },
-  "group_transfer_count": 125,
+  "group_transfer_count": 110,
   "group_route_count": 72,
   "group_extension": {
     "planning_assumption": "group_union: arrival and departure may use different group members",
-    "implementation_sha256": "e93e3ba43453fdd6a533566e010315a56e31c0972f300b36ea5c69858f544d0e"
+    "implementation_sha256": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4"
+  },
+  "group_count": 9,
+  "composite_transfer_count": 0,
+  "member_transfer_count": 0,
+  "individual_extension": {
+    "consumer_export_version": 3,
+    "minimum_frequency_percent": 1,
+    "composite_fallbacks": false,
+    "implementation_sha256": {
+      "individual_groups.py": "0b2b05abeed269d9bbadb7bc854045d6254428d58cffbc8499842c2dd7777506",
+      "group_transfers.py": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4",
+      "consumer_export.py": "9b10b66ddfe9b079830c0890dca6b8366de916cd2b1b54fdb2121c7a833e6828",
+      "render.py": "0926d6d64d7d80b38858759867336df589ba0e8e2b3933de6b9088af00563658",
+      "upgrade_individual.py": "5e732f578e80206b91125eaccf1f986b2493f7667e3a8b7261e191e4046b6216"
+    },
+    "capture_interval_policy": "Reuse existing filtered intervals; reevaluate exact Cartesian settling."
   }
 }

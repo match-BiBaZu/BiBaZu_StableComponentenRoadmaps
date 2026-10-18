@@ -23,29 +23,33 @@
     "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose"
   },
   "format": "bibazu_observed_roadmap_generation",
-  "generated_utc": "2026-10-12T18:54:24.285052+00:00",
+  "generated_utc": "2026-10-18T16:12:13.220554+00:00",
   "grouped_export": true,
   "grouping_minimum_frequency_percent": 1,
   "input": {
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
-    "generated_utc": "2026-10-12T18:54:24.285052+00:00",
-    "minimum_frequency_percent": 0,
+    "generated_utc": "2026-10-18T16:12:13.220554+00:00",
+    "minimum_frequency_percent": 1.0,
     "numbering_tie_break": "original source ID",
     "pose_id_mapping": {
-      "Qk1a_0004": 4,
-      "Qk1a_0006": 5,
       "Qk1a_0007": 0,
       "Qk1a_0008": 1,
-      "Qk1a_0009": 3,
-      "Qk1a_0012": 2
+      "Qk1a_0009": 2,
+      "Qk1a_0006": 3,
+      "Qk1a_0012": 4,
+      "Qk1a_0004": 5,
+      "Qk1a_0003": 6,
+      "Qk1a_0001": 7,
+      "Qk1a_0010": 8,
+      "Qk1a_0011": 9
     },
     "removed_poses": [],
     "renumber_by_frequency": true,
     "source_file": "poses.json",
     "source_sha256": "82ed5894149657699ddefa211e97834695ac4f1a14933afd3cbd539d59dcc3ce"
   },
-  "minimum_frequency_percent": 0,
-  "pose_count": 6,
+  "minimum_frequency_percent": 1.0,
+  "pose_count": 10,
   "provenance": {
     "baseline_roadmap_ids": {
       "Qk1a_0001": 7,
@@ -67,7 +71,7 @@
   "renumber_by_frequency": true,
   "schema_version": 1,
   "settings": {
-    "minimum_frequency_percent": 0,
+    "minimum_frequency_percent": 1.0,
     "output_root": ".",
     "outputs": [
       "json",
@@ -78,274 +82,16 @@
       "poses_png",
       "poses_svg"
     ],
-    "renumber_by_frequency": true
+    "renumber_by_frequency": true,
+    "include_composites": false,
+    "include_members": true,
+    "estimate_capture_intervals": false
   },
   "status": "complete",
-  "transition_count": 8,
+  "transition_count": 18,
   "warnings": [],
   "workpiece": "Qk1a",
   "connectivity": {
-    "direct": {
-      "strongly_connected_components": [
-        [
-          0,
-          1
-        ],
-        [
-          2,
-          4
-        ],
-        [
-          3,
-          5
-        ]
-      ],
-      "unreachable_pairs": [
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          3
-        ],
-        [
-          0,
-          4
-        ],
-        [
-          0,
-          5
-        ],
-        [
-          1,
-          2
-        ],
-        [
-          1,
-          3
-        ],
-        [
-          1,
-          4
-        ],
-        [
-          1,
-          5
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          2,
-          1
-        ],
-        [
-          2,
-          3
-        ],
-        [
-          2,
-          5
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          3,
-          1
-        ],
-        [
-          3,
-          2
-        ],
-        [
-          3,
-          4
-        ],
-        [
-          4,
-          0
-        ],
-        [
-          4,
-          1
-        ],
-        [
-          4,
-          3
-        ],
-        [
-          4,
-          5
-        ],
-        [
-          5,
-          0
-        ],
-        [
-          5,
-          1
-        ],
-        [
-          5,
-          2
-        ],
-        [
-          5,
-          4
-        ]
-      ],
-      "reachable_pair_count": 6,
-      "total_pair_count": 30,
-      "strongly_connected": false
-    },
-    "with_candidates": {
-      "strongly_connected_components": [
-        [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
-      ],
-      "unreachable_pairs": [],
-      "reachable_pair_count": 30,
-      "total_pair_count": 30,
-      "strongly_connected": true
-    },
-    "note": "Orientation geometry only; physical feasibility and reliability are unverified.",
-    "members": {
-      "group_overview": {
-        "strongly_connected_components": [
-          [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5
-          ]
-        ],
-        "unreachable_pairs": [],
-        "reachable_pair_count": 30,
-        "total_pair_count": 30,
-        "strongly_connected": true
-      },
-      "known_member_inter_group_action_count": 20,
-      "source_member_coverage": {
-        "Qk1a_0001": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0002": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0003": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0004": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0005": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0006": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0007": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0008": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0009": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0010": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0011": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0012": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Qk1a_0013": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "every_source_member_reaches_every_group": true,
-      "note": "Group overview is existential. Executable route candidates preserve possible member states; profiles require explicit source coverage."
-    },
     "groups": {
       "cartesian": {
         "strongly_connected_components": [
@@ -379,17 +125,71 @@
         "total_pair_count": 30,
         "strongly_connected": true
       },
-      "transfer_count": 360,
+      "transfer_count": 289,
       "planning_assumption": "group_union: arrival and departure may use different group members",
       "endpoint_tolerance_deg": 1.0
+    },
+    "poses": {
+      "same_group_no_motion_pairs": [
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          8
+        ]
+      ],
+      "motion_reachable_pair_count": 78,
+      "unreachable_pairs": []
     }
   },
-  "composite_transfer_count": 3,
+  "composite_transfer_count": 0,
   "connectivity_extension": {
     "method": "fixed_representative_yzy_zyz_v1",
     "implementation_sha256": "bb8474ae0a4c0fd0ba94fdfb6e1f6a2793b06d41c85fa9c1f6bc4e278f44af86"
   },
-  "member_transfer_count": 649,
+  "member_transfer_count": 0,
   "member_extension": {
     "method": "member_conditioned_sampled_downhill_v1",
     "implementation_sha256": "72d65f3774d38c36cfe1e58981ab9a93849d2f7131c98cea51182ed432111cda",
@@ -404,15 +204,29 @@
     }
   },
   "consumer_export": {
-    "version": 2,
-    "route_policy": "exported_only",
-    "calibration_choice_count": 1058,
-    "execution_route_count": 366
+    "version": 3,
+    "route_policy": "exported_only; no composite bridges",
+    "calibration_choice_count": 293,
+    "execution_route_count": 297
   },
-  "group_transfer_count": 360,
+  "group_transfer_count": 289,
   "group_route_count": 30,
   "group_extension": {
     "planning_assumption": "group_union: arrival and departure may use different group members",
-    "implementation_sha256": "e93e3ba43453fdd6a533566e010315a56e31c0972f300b36ea5c69858f544d0e"
+    "implementation_sha256": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4"
+  },
+  "group_count": 6,
+  "individual_extension": {
+    "consumer_export_version": 3,
+    "minimum_frequency_percent": 1,
+    "composite_fallbacks": false,
+    "implementation_sha256": {
+      "individual_groups.py": "0b2b05abeed269d9bbadb7bc854045d6254428d58cffbc8499842c2dd7777506",
+      "group_transfers.py": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4",
+      "consumer_export.py": "9b10b66ddfe9b079830c0890dca6b8366de916cd2b1b54fdb2121c7a833e6828",
+      "render.py": "0926d6d64d7d80b38858759867336df589ba0e8e2b3933de6b9088af00563658",
+      "upgrade_individual.py": "5e732f578e80206b91125eaccf1f986b2493f7667e3a8b7261e191e4046b6216"
+    },
+    "capture_interval_policy": "Reuse existing filtered intervals; reevaluate exact Cartesian settling."
   }
 }

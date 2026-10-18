@@ -23,29 +23,31 @@
     "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose"
   },
   "format": "bibazu_observed_roadmap_generation",
-  "generated_utc": "2026-10-12T21:19:55.832442+00:00",
+  "generated_utc": "2026-10-18T16:00:00.243591+00:00",
   "grouped_export": true,
   "grouping_minimum_frequency_percent": 1,
   "input": {
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
-    "generated_utc": "2026-10-12T21:19:55.832442+00:00",
-    "minimum_frequency_percent": 0,
+    "generated_utc": "2026-10-18T16:00:00.243591+00:00",
+    "minimum_frequency_percent": 1.0,
     "numbering_tie_break": "original source ID",
     "pose_id_mapping": {
-      "Dl4a_0002": 4,
       "Dl4a_0004": 0,
-      "Dl4a_0009": 3,
       "Dl4a_0011": 1,
-      "Dl4a_0021": 5,
-      "Dl4a_0022": 2
+      "Dl4a_0002": 2,
+      "Dl4a_0021": 3,
+      "Dl4a_0022": 4,
+      "Dl4a_0009": 5,
+      "Dl4a_0010": 6,
+      "Dl4a_0024": 7
     },
     "removed_poses": [],
     "renumber_by_frequency": true,
     "source_file": "poses.json",
     "source_sha256": "8fc30157badc3995fb0d0a39c8b6a970492ac37fedfb5fcaf603bb5dc0509c34"
   },
-  "minimum_frequency_percent": 0,
-  "pose_count": 6,
+  "minimum_frequency_percent": 1.0,
+  "pose_count": 8,
   "provenance": {
     "baseline_roadmap_ids": {
       "Dl4a_0002": 2,
@@ -65,7 +67,7 @@
   "renumber_by_frequency": true,
   "schema_version": 1,
   "settings": {
-    "minimum_frequency_percent": 0,
+    "minimum_frequency_percent": 1.0,
     "output_root": ".",
     "outputs": [
       "json",
@@ -76,122 +78,22 @@
       "poses_png",
       "poses_svg"
     ],
-    "renumber_by_frequency": true
+    "renumber_by_frequency": true,
+    "include_composites": false,
+    "include_members": true,
+    "estimate_capture_intervals": false
   },
   "status": "complete",
-  "transition_count": 10,
+  "transition_count": 20,
   "warnings": [],
   "workpiece": "Dl4a",
   "consumer_export": {
-    "version": 2,
-    "route_policy": "exported_only",
-    "calibration_choice_count": 114,
-    "execution_route_count": 88
+    "version": 3,
+    "route_policy": "exported_only; no composite bridges",
+    "calibration_choice_count": 62,
+    "execution_route_count": 72
   },
   "connectivity": {
-    "members": {
-      "group_overview": {
-        "strongly_connected_components": [
-          [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5
-          ]
-        ],
-        "unreachable_pairs": [],
-        "reachable_pair_count": 30,
-        "total_pair_count": 30,
-        "strongly_connected": true
-      },
-      "known_member_inter_group_action_count": 28,
-      "source_member_coverage": {
-        "Dl4a_0002": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dl4a_0003": [
-          0,
-          1
-        ],
-        "Dl4a_0004": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dl4a_0005": [
-          4,
-          5
-        ],
-        "Dl4a_0008": [
-          0,
-          1
-        ],
-        "Dl4a_0009": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dl4a_0010": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dl4a_0011": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dl4a_0021": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dl4a_0022": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dl4a_0023": [
-          4,
-          5
-        ],
-        "Dl4a_0024": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "every_source_member_reaches_every_group": false,
-      "note": "Group overview is existential. Executable route candidates preserve possible member states; profiles require explicit source coverage."
-    },
     "groups": {
       "cartesian": {
         "strongly_connected_components": [
@@ -225,15 +127,53 @@
         "total_pair_count": 30,
         "strongly_connected": true
       },
-      "transfer_count": 76,
+      "transfer_count": 52,
       "planning_assumption": "group_union: arrival and departure may use different group members",
       "endpoint_tolerance_deg": 1.0
+    },
+    "poses": {
+      "same_group_no_motion_pairs": [
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "motion_reachable_pair_count": 52,
+      "unreachable_pairs": []
     }
   },
-  "group_transfer_count": 76,
+  "group_transfer_count": 52,
   "group_route_count": 30,
   "group_extension": {
     "planning_assumption": "group_union: arrival and departure may use different group members",
-    "implementation_sha256": "e93e3ba43453fdd6a533566e010315a56e31c0972f300b36ea5c69858f544d0e"
+    "implementation_sha256": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4"
+  },
+  "group_count": 6,
+  "composite_transfer_count": 0,
+  "member_transfer_count": 0,
+  "individual_extension": {
+    "consumer_export_version": 3,
+    "minimum_frequency_percent": 1,
+    "composite_fallbacks": false,
+    "implementation_sha256": {
+      "individual_groups.py": "0b2b05abeed269d9bbadb7bc854045d6254428d58cffbc8499842c2dd7777506",
+      "group_transfers.py": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4",
+      "consumer_export.py": "9b10b66ddfe9b079830c0890dca6b8366de916cd2b1b54fdb2121c7a833e6828",
+      "render.py": "0926d6d64d7d80b38858759867336df589ba0e8e2b3933de6b9088af00563658",
+      "upgrade_individual.py": "5e732f578e80206b91125eaccf1f986b2493f7667e3a8b7261e191e4046b6216"
+    },
+    "capture_interval_policy": "Reuse existing filtered intervals; reevaluate exact Cartesian settling."
   }
 }

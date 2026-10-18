@@ -1,314 +1,82 @@
-# BiBaZu observed component roadmaps
+# BiBaZu grouped roadmaps: individual poses
 
-A focused GUI that turns simulator pose exports into frequency-filtered
-reorientation roadmaps. The simulator's list determines the nodes. Geometry
-calculates direct connection candidates and renders the observed orientations.
+The grouped catalogue displays **individual observed poses**, numbered from 0 by descending individual frequency, inside coloured group boundaries. Group identities are separate from pose numbers.
 
-This repository owns its application, bundled geometry code and Python
-environment. No geometry-to-pose checkout is required. It initially contains
-no generated component roadmaps; use your pose files to create them.
+## Filtering and planning
 
-## Setup and Windows launching
+The current rollout uses **1%** for both the original group total and each individual pose. Exactly the cutoff qualifies. Percentages retain the original completed-trial denominator; they are not renormalized after filtering. Members below the cutoff are neither shown nor used as transfer witnesses. Groups without any qualifying member are omitted. Full observations and memberships remain in each component's `source/` folder.
 
-Install Python 3.11 or newer and `uv`, then run:
+Any outgoing action witnessed by a qualifying member is shared by all displayed members of its source group. Any qualifying destination member satisfies the target group. **There are no internal group transitions. A target in the current group is already satisfied and requires no actuation.** Intermediate legs may use different witnesses, with no invented movement between those members.
 
-```powershell
-cd BiBaZu_StableComponentenRoadmaps
-uv sync
-.\StableComponentRoadmapsGUI.cmd
+Exact ±90° and ±180° chute X/Y/Z actions are preferred. Other retained single-axis actions and sampled downhill settling alternatives remain available. Routes rank by non-Cartesian actions, actuations, commanded angle, settling requirements and stable IDs. **No composite fallback bridges are generated or selected.** Ordinary multi-step routes use existing single-axis transfers. Disconnected components are reported and remain disconnected.
+
+All candidates are `geometry_only`; contact feasibility and settling reliability are unverified. Execution requires assigned pressure profiles and explicit source-group calibration. Mathematical commands never create pressure profiles.
+
+## Exports and control integration
+
+Each active component provides JSON, YAML, GraphML, PNG, SVG and individual pose sheets, plus a manifest and byte checksums. Consumer-export **version 3** contains individual nodes, stable groups, applicability sets, target sets, ordered commands, real member witnesses, preview segments, finished calibration choices and exported routes. Big Boi only reads, displays, calibrates and executes these records; it does not generate roadmaps or search for routes.
+
+`pose_groups` and `pose_to_group` separate group identity from individual numbering. Scalar consumer choice endpoints are lookup anchors within the applicability/target sets; they do not designate a representative or guarantee an exact landing pose. Eligibility and target satisfaction use stable group keys. `group_transfers` and `group_routes` retain their group-ID namespace; consumer records provide individual-pose anchors explicitly. Schema-v1 pose/edge structures remain readable only by consumers that also support the declared consumer-export version.
+
+The control GUIs retain v1/v2 support. Recognition models continue to identify groups and report possible displayed members. Selecting an individual pose accepts its group as the target. No internal motion is animated. Recognition classes for omitted groups remain unavailable for routing.
+
+**Explicit reimport is required after export hash changes.** Migration records map old group identities by the exact previous export hash, never by a coincidentally matching numeric pose ID. Compatible stable group choices and qualifications can be retained; removed choices and composite profiles remain unavailable. Each component preserves the previous export in `history/previous_roadmap.json.gz` for restoration. Existing assignments receive no automatic group qualification.
+
+The separate main-branch catalogue and source pose repository are unchanged.
+
+## Application
+
+Start `StableComponentRoadmapsGUI.cmd` on Windows, or run `uv run bibazu-stable-roadmaps`. Select the grouped source pose catalogue, keep member/group planning enabled, choose a cutoff and an output folder separate from the input catalogue. The preview lists individual observation frequencies and exclusions. Saved user settings are preserved; the default cutoff for new GUI settings is 1%.
+
+For offline generation use `uv run bibazu-stable-roadmaps-generate --config request.json`:
+
+```json
+{"settings":{"output_root":"OUTPUT_DIRECTORY","minimum_frequency_percent":1,"renumber_by_frequency":true,"include_members":true,"include_composites":false,"estimate_capture_intervals":true,"outputs":["json","yaml","graphml","roadmap_png","roadmap_svg","poses_png","poses_svg"]},"sources":["SOURCE_DIRECTORY/Dk1i/poses.json"]}
 ```
 
-For Desktop and Start Menu shortcuts with the supplied icon, double-click
-`WindowsLaunchers/Verknuepfungen-installieren.cmd`. See
-[Windows launcher instructions](WindowsLaunchers/README.md).
+Source inputs require matching mesh geometry, original member observations and grouping records. Export snapshots preserve their hashes. The application bundles its MIT geometry primitives; see [ENGINE_PROVENANCE.json](ENGINE_PROVENANCE.json), [ENGINE_LICENSE](ENGINE_LICENSE) and [LICENSE](LICENSE).
 
-## Using the GUI
+## Catalogue
 
-1. Choose a `poses.json`, a `pose_registry.json`, or your poses repository folder.
-   Folder mode lists each component once, preferring `poses.json` when both files
-   are present. Selecting a registry requires the neighboring `poses.json` for
-   frequencies; historical registry IDs absent from observations have 0%.
-2. Select components. The preview shows the original IDs, percentages, retained
-   or removed status, and proposed roadmap IDs.
-3. Set **Minimum frequency**, default **5%**. Below the threshold is removed;
-   exactly the threshold is retained. **0% disables filtering.** Percentages are
-   never rescaled after filtering. If only counts are present, use all completed
-   trials as the denominator, or all listed counts if no trial total is recorded.
-4. Enable **Renumber by frequency**, on by default, for contiguous IDs from zero
-   in descending frequency. Ties use the original source ID. If disabled, numeric
-   source suffixes are preserved: `Dl1a_0007` becomes roadmap ID 7. Full original
-   IDs are always retained. Sources without numeric suffixes require renumbering.
-5. Choose formats and Generate. Empty exports or a cutoff removing every pose
-   are logged as skipped, preserving any previous result. Cancel stops at a safe
-   boundary and retains completed results.
+38 existing generated entries were processed: **37 active roadmaps** and **Kf4i with no eligible poses at 1%**. Kf1i's pre-existing no-observation entry remains unchanged. Source simulation/grouping statistics remain in [grouped_study.json](grouped_study.json); current graph statistics are in [connectivity_audit.json](connectivity_audit.json), [consumer_export_audit.json](consumer_export_audit.json) and [index.json](index.json).
 
-The STL is resolved beside the JSON and checked against its stored hash. Angles
-are taken from the neighboring simulation `config.json`, defaulting to X=45°,
-Y=0° if it is absent. Each retained entry remains a separate node, including
-symmetry-equivalent observations. Original quaternions are normalized without
-changing their physical orientation. No theoretical enumeration, snapping,
-analytical stability selection, clustering, or rocking-based ordering occurs.
-
-Connections use the bundled engine's directed action domains, contact/main-face
-requirements, 25 mm opposite-X support rule, and 1° axis tolerance. Part symmetry
-is used to find equivalent connection representations; it never merges nodes.
-Uncertain contacts can prevent constrained actions but do not remove poses.
-Direct connections retain those rules. The grouped application also offers
-**Add geometry-only composite bridges**, enabled by default. It keeps each
-representative fixed and adds ordered Y–Z–Y or Z–Y–Z orientation transfers between
-disconnected components. Transient orientations do not become catalogue poses.
-Contact feasibility, settling, actuator feasibility and reliability are unverified;
-calibrate a full transfer pressure profile before execution. Rocking barriers,
-capture widths and reliability scores remain unknown.
-
-## Repository and export format
-
-Generation creates one folder per component, such as `Dl1a/`, containing:
-
-- `<component>_roadmap.yaml`, `.json`, `.graphml`, `.svg`, `.png`, as selected.
-- Optional `pose_sheets/` with images named by the **output roadmap IDs**.
-- `source/` snapshots of the input pose JSON, registry, STL and available config.
-- `manifest.json`, `files.sha256.json` and a component `README.md`.
-
-Each component has **one current result set**. Regeneration replaces that set
-and removes obsolete generated formats, after staging and validation. Manual
-changes or extra files in a managed component folder block replacement rather
-than being deleted. Save those changes elsewhere before regenerating. The poses
-repository is always input-only and cannot be selected as the output repository.
-Output paths are relative to the exported component folder, so moving a saved
-roadmap and its `source/` together preserves mesh access.
-
-JSON/YAML use the existing schema version 1 and action names accepted by the
-BiBaZu Reorientation Control GUI. The Pressure Control GUI uses the JSON export,
-including its directed edges, numeric roadmap IDs, signed angles, relative STL
-path and embedded pose previews. Use its updated `roadmap_transition_dialog.py`
-loader, which accepts null capture widths and geometric scores. Restart an
-already-running Pressure Control GUI after updating that loader; older versions
-try to convert these uncomputed metrics to floats and cannot load them.
-The YAML experimental block follows the existing handover fields (`trials`,
-`successes`, `empirical_success_rate`, `difficulty_rating`, `notes`).
-
-### Legacy representative-only alternatives
-
-Schema version 1 keeps direct `edges`/`transitions` and their IDs intact. Optional
-`composite_transfers`, `routes` and `connectivity` sections describe separate
-orientation candidates, one preferred route per ordered pose pair, and directed
-reachability before/after candidate augmentation. GraphML keeps direct edges and
-stores these optional sections as graph metadata. Representative-only roadmap
-images use dashed purple arrows for composite candidates. Existing-only routes are preferred;
-otherwise route costs minimize composite transfers, rotation count, and total
-absolute angle, followed by stable IDs. Generated composite IDs include a digest
-of their endpoints and commands; equivalent quaternion signs have the same ID.
-
-Updated Reorientation Control and Pressure Control display these candidates and
-their transient rotation previews. Selecting a candidate for calibration does not
-create or assign an executable pressure profile. Runtime routing uses assigned
-profiles only and supports simple routes through up to `pose_count - 1` transfers.
-Legacy two/three-flip choices retain their IDs; the external generator constructs
-longer routes using bounded shortest-path searches.
-
-The [catalogue connectivity audit](connectivity_audit.json) covers 39 workpieces:
-13 representative-only direct roadmaps were disconnected and Kf1i has no eligible
-groups. Qk1a's earlier 3 composite bridges and Dl1a's earlier 4 are retained as
-alternatives. Whole-group reachability and Cartesian priorities are reported
-separately below and in the audit.
-
-To stage the same extension against a selected Git snapshot without rebuilding
-direct edges or overwriting existing output, use a fresh staging directory:
-
-```powershell
-uv run python -m bibazu_stable_roadmaps.upgrade_connectivity --repository . --staging-root ../.task_artifacts/connectivity-review --parts Qk1a Dl1a
-```
-
-Inspect the staged JSON/YAML, rendered roadmap, manifest and checksums before
-replacing generated folders. `include_composites: false` in worker settings
-disables bridge generation for new exports.
-
-### Whole-group routing and Cartesian priority
-
-**Route between whole groups; prefer Cartesian rotations** is enabled by default
-for grouped inputs. Every retained group's original members, including rare
-observations, participate. Representatives, thumbnails, memberships, frequencies,
-recognition identities, and existing direct edges stay unchanged.
-
-A group transfer may start at any member and end at any member of its target.
-The next transfer may depart from a different member of that intermediate group.
-This interchangeability is an explicit planning assumption. Previews use each
-leg's actual witnesses without inventing motion between intermediate members.
-
-Exact ±90° and ±180° chute X/Y/Z commands bypass contact, support and action-domain
-pruning. A target can match within 1° under permitted symmetry, or have a sampled
-downhill settling witness. Opposite directions remain separate. Identical
-group-to-group commands retain all member witnesses and competing destinations.
-Contact feasibility remains unverified. Route ranking minimizes non-Cartesian
-transfers, composite transfers, actuations, absolute commanded angle, settling,
-then stable IDs. Entirely Cartesian routes take priority even when longer.
-Other rotations remain alternatives; additional composite bridges are generated
-only for remaining gaps in group connectivity.
-
-Schema-v1 nodes and direct edges are preserved. Additive `group_transfers`,
-`group_routes`, `group_keys`, and `connectivity.groups` provide group choices and
-reachability. Existing member-conditioned records remain diagnostic alternatives.
-Arrow labels and option lists show rotation names such as **X +90°** and ordered
-composite commands, with evidence available in the details.
-
-Exact Cartesian landings also use the existing seated downhill model: 0.1° path
-sampling, a 60° guard, and at most 0.000001 mm equivalent-lift numerical increase.
-The 0.5 mm grouping barrier does not authorize passive uphill motion. Excluded
-observed groups remain competing destinations. Existing capture scans retain
-their 1° samples and 0.1° boundary refinement. These are geometry-only candidates;
-calibration must establish physical settling and execution reliability.
-
-All **38 generated grouped roadmaps** have complete candidate group reachability.
-Qk1a reaches **30/30** ordered group pairs and Dl1a **20/20**, both using Cartesian
-routes alone. Their **20** and **34** original known-member actions remain intact.
-The separate main-branch catalogue and no-output entries remain unchanged.
-
-Upgrade a finished grouped catalogue into a new staging directory:
-
-```powershell
-python -m bibazu_stable_roadmaps.upgrade_groups --repository . --staging-root ../group-review --parts Qk1a Dl1a
-```
-
-Inspect staging, verify checksums and representative data, and retain rollback
-backups when publishing. Worker settings `include_members: false` retain legacy
-representative-only generation; `estimate_capture_intervals: false` disables the
-full permitted-angle scan while exact Cartesian landing checks still run.
-
-Original IDs are in `source_pose_ids`; counts
-and percentages are in `observed_count` and `observed_frequency_percent`.
-The `generation` section records filtering, numbering and excluded poses.
-`original_catalog_pose_id` / `pose_ids` refer to **input-list indices**, recorded
-as `catalogue_id_namespace: input_pose_list_index`, rather than theoretical poses.
-
-For compatibility with the existing consumer, the legacy `robust` tag designates
-an observed stable target. **It does not assert analytical robustness.**
-`classification_basis` is `observed_simulation`,
-`analytical_stability_evaluated` is false, and uncomputed physical metrics are
-null (omitted in GraphML, which cannot represent null values). The GUI and
-images display observed frequencies rather than analytical ranks.
-
-
-
-## Batch worker and development
-
-```powershell
-uv sync --extra dev
-uv run pytest
-uv run python -m bibazu_stable_roadmaps.generate --config request.json
-```
-
-The worker accepts a JSON object containing `sources` (pose JSON paths) and
-`settings`: `output_root`, `minimum_frequency_percent`, `renumber_by_frequency`,
-and `outputs` (`yaml`, `json`, `graphml`, `roadmap_svg`, `roadmap_png`, `poses_svg`,
-`poses_png`). It emits progress as JSON lines. The GUI uses the same worker in
-a separate process. Settings are stored under BiBaZu/StableComponentRoadmaps;
-they do not affect the original geometry GUI.
-
-The MIT geometry/rendering primitives are bundled under the application's
-`_engine` package. [ENGINE_PROVENANCE.json](ENGINE_PROVENANCE.json) records their
-upstream revision and source hashes. Geometric action rules are extracted from
-the upstream roadmap implementation; its stability and ranking code is not
-bundled. Preserve [ENGINE_LICENSE](ENGINE_LICENSE) when redistributing them.
-
-<!-- GROUPED STUDY -->
-Completed and validated: **39/39** workpieces. Each completed workpiece has 10,000 drops; member disturbance tests are additional.
-
-The original study used identical simulation settings; Dk1i was rerun on 2026-10-18 with the simulator main-branch GUI defaults. All entries retain a 0.5 mm equivalent-lift grouping barrier, a 60° diameter guard, and a 1% cutoff after aggregation. Representatives are selected using complete member group-retention curves.
-
-Qk1a and Dl1a reuse the previously audited grouped runs. Dk1i now uses the fresh 10,000-drop main-parameter run published in the poses grouped branch (commit `0a4d04a`); its roadmap has been regenerated. Compressed Dk1i raw trials are published with those source poses. Other raw study data remains in the simulator results directories.
-
-| Workpiece | Status | Settled | Source poses | Eligible groups | Disturbance tests | Roadmap connections |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| [Df1a](Df1a/README.md) | Complete | 9997 | 7 | 4 | 511 | 6 |
-| [Df2i](Df2i/README.md) | Complete | 9996 | 9 | 6 | 657 | 22 |
-| [Df4a](Df4a/README.md) | Complete | 9999 | 20 | 12 | 1460 | 42 |
-| [Dk1i](Dk1i/README.md) | Complete (main rerun) | 9998 | 8 | 6 | 584 | 16 |
-| [Dk2a](Dk2a/README.md) | Complete | 9845 | 17 | 12 | 1241 | 56 |
-| [Dk4i](Dk4i/README.md) | Complete | 9999 | 24 | 18 | 1752 | 80 |
-| [Dl1a](Dl1a/README.md) | Complete | 9983 | 16 | 5 | 1168 | 2 |
-| [Dl2i](Dl2i/README.md) | Complete | 9965 | 19 | 6 | 1387 | 21 |
-| [Dl4a](Dl4a/README.md) | Complete | 9973 | 29 | 6 | 2117 | 10 |
-| [Kf1i](Kf1i/README.md) | Complete | 0 | 0 | 0 | 0 | 0 |
-| [Kf2a](Kf2a/README.md) | Complete | 7584 | 6 | 3 | 438 | 2 |
-| [Kf4i](Kf4i/README.md) | Complete | 1333 | 35 | 3 | 2555 | 2 |
-| [Kk1a](Kk1a/README.md) | Complete | 2887 | 3 | 2 | 219 | 4 |
-| [Kk2i](Kk2i/README.md) | Complete | 8448 | 31 | 20 | 2263 | 22 |
-| [Kk4a](Kk4a/README.md) | Complete | 7726 | 121 | 4 | 8833 | 2 |
-| [Kl1i](Kl1i/README.md) | Complete | 9333 | 2 | 2 | 146 | 4 |
-| [Kl2a](Kl2a/README.md) | Complete | 9912 | 27 | 16 | 1971 | 23 |
-| [Kl4i](Kl4i/README.md) | Complete | 9620 | 41 | 30 | 2993 | 20 |
-| [Qf1i](Qf1i/README.md) | Complete | 9870 | 13 | 4 | 949 | 13 |
-| [Qf2a](Qf2a/README.md) | Complete | 9829 | 24 | 10 | 1752 | 62 |
-| [Qf4i](Qf4i/README.md) | Complete | 9835 | 29 | 16 | 2117 | 112 |
-| [Qk1a](Qk1a/README.md) | Complete | 9956 | 13 | 6 | 949 | 8 |
-| [Qk2i](Qk2i/README.md) | Complete | 10000 | 15 | 13 | 1095 | 63 |
-| [Qk4a](Qk4a/README.md) | Complete | 9997 | 26 | 24 | 1898 | 157 |
-| [Ql1i](Ql1i/README.md) | Complete | 9985 | 6 | 5 | 438 | 21 |
-| [Ql2a](Ql2a/README.md) | Complete | 9942 | 19 | 8 | 1387 | 39 |
-| [Ql4i](Ql4i/README.md) | Complete | 9979 | 24 | 12 | 1752 | 68 |
-| [Rf1a](Rf1a/README.md) | Complete | 9963 | 25 | 15 | 1825 | 56 |
-| [Rf2i](Rf2i/README.md) | Complete | 9839 | 19 | 8 | 1387 | 45 |
-| [Rf3a](Rf3a/README.md) | Complete | 9965 | 19 | 9 | 1387 | 48 |
-| [Rf4i](Rf4i/README.md) | Complete | 9885 | 27 | 16 | 1971 | 112 |
-| [Rk1a](Rk1a/README.md) | Complete | 9976 | 45 | 24 | 3285 | 120 |
-| [Rk2i](Rk2i/README.md) | Complete | 9999 | 12 | 12 | 876 | 68 |
-| [Rk3a](Rk3a/README.md) | Complete | 9995 | 17 | 11 | 1241 | 58 |
-| [Rk4i](Rk4i/README.md) | Complete | 9999 | 24 | 24 | 1752 | 168 |
-| [Rl1a](Rl1a/README.md) | Complete | 9830 | 30 | 7 | 2190 | 16 |
-| [Rl2i](Rl2i/README.md) | Complete | 9980 | 9 | 6 | 657 | 17 |
-| [Rl3a](Rl3a/README.md) | Complete | 9883 | 18 | 9 | 1314 | 30 |
-| [Rl4i](Rl4i/README.md) | Complete | 9992 | 19 | 8 | 1387 | 28 |
-
-Each component page links representative images, full membership and barrier evidence, and individual/member stability curves. Percentages use all completed drops. Roadmap connections are computed from representative orientations.
-
-Published comparison baselines: poses `9e00d03389d3b81013700def03fb1b19504144be`, roadmaps `0b3b5c5fe42e787bd47f381b1f1ac57359d5aa55`. Merge repair: `3523350d8e12a1b7e57467044b9cfe25ff49b0bd`.
-
-
-## Finished exports for control applications
-
-This application owns roadmap generation, geometric verification, member/capture
-analysis, connectivity, route construction, deterministic IDs and preview segments.
-The Big Boi control GUIs read the finished files directly. They do not import this
-application, generate roadmaps, or search for new routes.
-
-Grouped exports use additive **consumer-export version 2**, while schema-v1 core
-data and consumer version 1 remain readable. Version 2 contains finished
-`calibration_choices`, `execution_routes`, group identities, ordered commands,
-witnesses, costs, preview segments, and per-step source-group requirements.
-Legacy choice and route identities remain available for restoring older profiles.
-Runtime selects only exported group routes; it never builds another path.
-
-Each executable group choice requires an assigned pressure profile and an explicit
-**Calibrated for source group** declaration. `transition_group_coverage` binds
-the declaration to the transfer ID and stable source-group identity, including
-membership/orientation content. Numeric group IDs alone are insufficient.
-Pressure-profile metadata can carry the same declaration. Older member-coverage
-declarations remain intact but do not automatically qualify a group choice.
-A whole exported macro may have its own profile, or its exported component
-profiles may be used. Missing calibration excludes the choice from execution.
-Previews interpolate exported segments for display only.
-
-To upgrade existing schema-v1 exports offline without recomputing their poses or edges:
-
-```powershell
-python -m bibazu_stable_roadmaps.upgrade_consumer_exports --repository PATH_TO_CATALOGUE --staging-root NEW_STAGING_DIRECTORY
-```
-
-Review staging, validate checksums, and publish with rollback backups. The utility also
-works on ungrouped/main-branch exports; this rollout leaves the separate main catalogue
-unchanged. Both GUIs still accept its explicit transitions without an upgrade.
-
-The former Big Boi bundled roadmaps live under `legacy_catalogue/originals/`, separated
-from grouped targets. `legacy_catalogue/path_migrations.json` records exact old paths and
-SHA-256 hashes. Their original files remain byte-for-byte intact. Offline-produced,
-hash-bound `<filename>.consumer.json` sidecars preserve existing derived route identities:
-
-```powershell
-python -m bibazu_stable_roadmaps.upgrade_consumer_exports --legacy-root legacy_catalogue/originals
-```
-
-No migration substitutes grouped poses for similarly numbered ungrouped poses.
-Big Boi defaults to this grouped catalogue; `BIBAZU_ROADMAPS_DIR` or an explicitly selected
-file can choose another external catalogue. Calibration profiles and recognition mappings
-remain in the control application.
+| Workpiece | Individual poses | Displayed groups | Reachable group pairs | Status |
+|---|---:|---:|---:|---|
+| [Df1a](Df1a/README.md) | 4 | 4 | 12/12 | complete |
+| [Df2i](Df2i/README.md) | 6 | 6 | 30/30 | complete |
+| [Df4a](Df4a/README.md) | 12 | 12 | 132/132 | complete |
+| [Dk1i](Dk1i/README.md) | 8 | 6 | 30/30 | complete |
+| [Dk2a](Dk2a/README.md) | 14 | 12 | 132/132 | complete |
+| [Dk4i](Dk4i/README.md) | 24 | 18 | 306/306 | complete |
+| [Dl1a](Dl1a/README.md) | 7 | 4 | 12/12 | complete |
+| [Dl2i](Dl2i/README.md) | 9 | 6 | 30/30 | complete |
+| [Dl4a](Dl4a/README.md) | 8 | 6 | 30/30 | complete |
+| [Kf2a](Kf2a/README.md) | 3 | 3 | 2/6 | complete |
+| [Kf4i](Kf4i/README.md) | 0 | 0 | 0/0 | no_eligible_poses |
+| [Kk1a](Kk1a/README.md) | 2 | 2 | 2/2 | complete |
+| [Kk2i](Kk2i/README.md) | 20 | 20 | 116/380 | complete |
+| [Kk4a](Kk4a/README.md) | 4 | 4 | 2/12 | complete |
+| [Kl1i](Kl1i/README.md) | 2 | 2 | 2/2 | complete |
+| [Kl2a](Kl2a/README.md) | 17 | 16 | 174/240 | complete |
+| [Kl4i](Kl4i/README.md) | 30 | 30 | 677/870 | complete |
+| [Qf1i](Qf1i/README.md) | 4 | 4 | 12/12 | complete |
+| [Qf2a](Qf2a/README.md) | 10 | 10 | 90/90 | complete |
+| [Qf4i](Qf4i/README.md) | 16 | 16 | 240/240 | complete |
+| [Qk1a](Qk1a/README.md) | 10 | 6 | 30/30 | complete |
+| [Qk2i](Qk2i/README.md) | 13 | 13 | 144/156 | complete |
+| [Qk4a](Qk4a/README.md) | 24 | 24 | 552/552 | complete |
+| [Ql1i](Ql1i/README.md) | 5 | 5 | 20/20 | complete |
+| [Ql2a](Ql2a/README.md) | 8 | 8 | 56/56 | complete |
+| [Ql4i](Ql4i/README.md) | 12 | 12 | 132/132 | complete |
+| [Rf1a](Rf1a/README.md) | 16 | 15 | 196/210 | complete |
+| [Rf2i](Rf2i/README.md) | 8 | 8 | 56/56 | complete |
+| [Rf3a](Rf3a/README.md) | 9 | 9 | 72/72 | complete |
+| [Rf4i](Rf4i/README.md) | 16 | 16 | 240/240 | complete |
+| [Rk1a](Rk1a/README.md) | 30 | 24 | 552/552 | complete |
+| [Rk2i](Rk2i/README.md) | 12 | 12 | 132/132 | complete |
+| [Rk3a](Rk3a/README.md) | 13 | 11 | 110/110 | complete |
+| [Rk4i](Rk4i/README.md) | 24 | 24 | 552/552 | complete |
+| [Rl1a](Rl1a/README.md) | 6 | 6 | 30/30 | complete |
+| [Rl2i](Rl2i/README.md) | 6 | 6 | 30/30 | complete |
+| [Rl3a](Rl3a/README.md) | 10 | 9 | 72/72 | complete |
+| [Rl4i](Rl4i/README.md) | 8 | 8 | 56/56 | complete |

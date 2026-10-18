@@ -6,7 +6,7 @@ The original study used identical simulation settings; Dk1i was rerun on 2026-10
 
 Qk1a and Dl1a reuse the previously audited grouped runs. Dk1i now uses the fresh 10,000-drop main-parameter run published in the poses grouped branch (commit `0a4d04a`); its roadmap has been regenerated. Compressed Dk1i raw trials are published with those source poses. Other raw study data remains in the simulator results directories.
 
-| Workpiece | Status | Settled | Source poses | Eligible groups | Disturbance tests | Roadmap connections |
+| Workpiece | Status | Settled | Source poses | Eligible groups | Disturbance tests | Original representative connections |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | [Df1a](Df1a/README.md) | Complete | 9997 | 7 | 4 | 511 | 6 |
 | [Df2i](Df2i/README.md) | Complete | 9996 | 9 | 6 | 657 | 22 |
@@ -51,3 +51,7 @@ Qk1a and Dl1a reuse the previously audited grouped runs. Dk1i now uses the fresh
 Each component page links representative images, full membership and barrier evidence, and individual/member stability curves. Percentages use all completed drops. Roadmap connections are computed from representative orientations.
 
 Published comparison baselines: poses `9e00d03389d3b81013700def03fb1b19504144be`, roadmaps `0b3b5c5fe42e787bd47f381b1f1ac57359d5aa55`. Merge repair: `3523350d8e12a1b7e57467044b9cfe25ff49b0bd`.
+
+## Individual-pose roadmap rollout
+
+The original simulation statistics above retain their original meaning. Roadmaps now apply a 1% cutoff to both groups and individual members, omit groups without a qualifying member, and generate no composite bridges. Current pose counts and connectivity are listed in [the catalogue](README.md#catalogue). Kf4i has no eligible individual poses. Full original group membership remains provenance.

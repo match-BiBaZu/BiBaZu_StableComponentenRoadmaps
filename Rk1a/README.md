@@ -1,56 +1,46 @@
-# Rk1a
+# Rk1a: individual poses with shared group actions
 
-Observed simulation poses; geometry supplies untested direct connection candidates.
+![Roadmap](Rk1a_roadmap.png)
 
-Minimum frequency: **0%**. Percentages retain the source denominator.
+Cutoff: **1%**, applied separately to original group totals and individual observation frequencies. Exactly the cutoff qualifies; the source trial denominator is unchanged. Below-cutoff members are not displayed or used as witnesses. Groups without qualifying members are omitted.
 
-| Roadmap pose | Source pose | Frequency | Count |
-| ---: | --- | ---: | ---: |
-| 0 | Rk1a_0034 | 7.17% | 717 |
-| 1 | Rk1a_0007 | 6.73% | 673 |
-| 2 | Rk1a_0026 | 6.56% | 656 |
-| 3 | Rk1a_0010 | 6.52% | 652 |
-| 4 | Rk1a_0011 | 6.4% | 640 |
-| 5 | Rk1a_0033 | 6.3% | 630 |
-| 6 | Rk1a_0008 | 6.23% | 623 |
-| 7 | Rk1a_0022 | 6.2% | 620 |
-| 8 | Rk1a_0019 | 3.93% | 393 |
-| 9 | Rk1a_0004 | 3.86% | 386 |
-| 10 | Rk1a_0035 | 3.74% | 374 |
-| 11 | Rk1a_0037 | 3.67% | 367 |
-| 12 | Rk1a_0003 | 3.58% | 358 |
-| 13 | Rk1a_0009 | 3.41% | 341 |
-| 14 | Rk1a_0017 | 3.36% | 336 |
-| 15 | Rk1a_0028 | 3.32% | 332 |
-| 16 | Rk1a_0042 | 2.44% | 244 |
-| 17 | Rk1a_0024 | 2.43% | 243 |
-| 18 | Rk1a_0001 | 2.38% | 238 |
-| 19 | Rk1a_0021 | 2.36% | 236 |
-| 20 | Rk1a_0030 | 2.29% | 229 |
-| 21 | Rk1a_0025 | 2.23% | 223 |
-| 22 | Rk1a_0005 | 2.18% | 218 |
-| 23 | Rk1a_0023 | 2.18% | 218 |
+| Pose | Original observation | Individual frequency | Count | Group |
+|---:|---|---:|---:|---:|
+| 0 | Rk1a_0034 | 7.17% | 717 | 0 |
+| 1 | Rk1a_0026 | 6.56% | 656 | 2 |
+| 2 | Rk1a_0011 | 6.4% | 640 | 4 |
+| 3 | Rk1a_0008 | 6.23% | 623 | 6 |
+| 4 | Rk1a_0010 | 6.04% | 604 | 3 |
+| 5 | Rk1a_0033 | 5.76% | 576 | 5 |
+| 6 | Rk1a_0007 | 3.91% | 391 | 1 |
+| 7 | Rk1a_0022 | 3.85% | 385 | 7 |
+| 8 | Rk1a_0004 | 3.45% | 345 | 9 |
+| 9 | Rk1a_0003 | 3.21% | 321 | 12 |
+| 10 | Rk1a_0035 | 3.19% | 319 | 10 |
+| 11 | Rk1a_0037 | 3.16% | 316 | 11 |
+| 12 | Rk1a_0019 | 2.67% | 267 | 8 |
+| 13 | Rk1a_0006 | 2.57% | 257 | 1 |
+| 14 | Rk1a_0042 | 2.44% | 244 | 16 |
+| 15 | Rk1a_0024 | 2.43% | 243 | 17 |
+| 16 | Rk1a_0001 | 2.38% | 238 | 18 |
+| 17 | Rk1a_0021 | 2.36% | 236 | 19 |
+| 18 | Rk1a_0030 | 2.29% | 229 | 20 |
+| 19 | Rk1a_0025 | 2.23% | 223 | 21 |
+| 20 | Rk1a_0005 | 2.18% | 218 | 22 |
+| 21 | Rk1a_0023 | 2.18% | 218 | 23 |
+| 22 | Rk1a_0028 | 2.05% | 205 | 15 |
+| 23 | Rk1a_0031 | 2.05% | 205 | 7 |
+| 24 | Rk1a_0009 | 1.89% | 189 | 13 |
+| 25 | Rk1a_0017 | 1.81% | 181 | 14 |
+| 26 | Rk1a_0013 | 1.55% | 155 | 14 |
+| 27 | Rk1a_0012 | 1.52% | 152 | 13 |
+| 28 | Rk1a_0027 | 1.27% | 127 | 15 |
+| 29 | Rk1a_0020 | 1.26% | 126 | 8 |
 
-The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
+30 individual poses in 24 groups. Candidate group reachability: **552/552**; Cartesian-only: **552/552**.
 
-Original inputs are in `source/`; generation settings and exclusions are in `manifest.json`.
+Every outgoing action applies to all displayed members of its source group; any qualifying destination member satisfies its target group. A target in the current group requires no motion. There are no internal group transitions and no composite fallback bridges. Ordinary multi-step routes use retained single-axis actions. Disconnected components remain disconnected.
 
-Files: [Rk1a_roadmap.graphml](Rk1a_roadmap.graphml), [Rk1a_roadmap.json](Rk1a_roadmap.json), [Rk1a_roadmap.png](Rk1a_roadmap.png), [Rk1a_roadmap.svg](Rk1a_roadmap.svg), [Rk1a_roadmap.yaml](Rk1a_roadmap.yaml)
+Commands, witnesses, competing landing outcomes, previews and finished routes are in consumer-export version 3. Poses are numbered by individual frequency; stable group identities are separate. Previews use actual witnesses and invent no internal movement. Contact feasibility and settling reliability remain unverified; assigned pressure profiles and explicit source-group calibration are required.
 
-[Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
-
-Thumbnails retain the chosen representative orientations. Each group contains all its observed members.
-
-<!-- CONSUMER EXPORT -->
-
-Control applications read finished calibration choices, ordered commands, preview segments and execution routes from `consumer_export` in JSON/YAML. They do not construct routes. Execution requires assigned pressure profiles and explicit source-member coverage; geometry-only evidence does not grant either.
-
-## Whole-group reorientations
-
-Cartesian-only routes reach **552/552** ordered group pairs; all candidate routes reach **552/552**.
-
-A transfer may use any source member and reach any target member. Consecutive transfers may use different members of the same intermediate group. This interchangeability is the planning assumption; no extra motion is invented between those witnesses.
-
-Exact ±90° and ±180° chute X/Y/Z commands are evaluated without contact/support pruning and preferred over other rotations. Arrow labels show the preferred reorientation; exports and control pickers retain alternatives and member witnesses. Competing landing outcomes and sampled downhill evidence remain in the records.
-
-The additive `group_transfers`, `group_routes` and consumer-export version 2 records contain finished choices and previews. Execution requires an assigned pressure profile explicitly calibrated for the exported source group. Existing profiles receive no automatic group qualification. Contact feasibility and physical settling reliability remain unverified.
+Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. See `manifest.json` and `files.sha256.json`.

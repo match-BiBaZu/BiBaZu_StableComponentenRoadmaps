@@ -183,7 +183,7 @@ def handover_dict(document: dict) -> dict:
     poses = []
     for node in document["nodes"]:
         poses.append({"id": node["node_id"],
-                      **{key: node[key] for key in ('group_members', 'representative_retention_auc', 'representative_group_retention_auc', 'group_stability_rank') if key in node},
+                      **{key: node[key] for key in ('group_id', 'group_key', 'pose_key', 'group_members', 'representative_retention_auc', 'representative_group_retention_auc', 'group_stability_rank') if key in node},
                       "original_catalog_pose_id": node["original_catalog_pose_id"],
                       "equivalent_catalog_pose_ids": node["pose_ids"], "source_pose_ids": node["source_pose_ids"],
                       "stability": node["kind"], "planner_role": "stable_target", "classification_basis": "observed_simulation",
@@ -229,4 +229,4 @@ def handover_dict(document: dict) -> dict:
                                "csa_rocking_fallback_catalog_pose_ids": [],
                                "classical_metadata": document.get("classical_metadata", {})},
             "poses": poses, "transitions": transitions, "generation": document.get("generation", {}),
-            **{key: document[key] for key in ("consumer_export", "group_keys", "group_transfers", "group_routes", "composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis") if key in document}}
+            **{key: document[key] for key in ("pose_groups", "pose_to_group", "filtering", "migration", "consumer_export", "group_keys", "group_transfers", "group_routes", "composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis") if key in document}}

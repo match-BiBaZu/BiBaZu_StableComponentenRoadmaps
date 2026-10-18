@@ -35,21 +35,23 @@ classification:
   csa_direction_samples: null
   csa_rocking_fallback_catalog_pose_ids: []
   classical_metadata:
-    observed_pose_generation: &id001
-      minimum_frequency_percent: 0
-      renumber_by_frequency: true
+    observed_pose_generation:
       frequency_denominator: all completed drop trials, including unsettled outcomes
-      numbering_tie_break: original source ID
-      source_file: poses.json
-      source_sha256: bc85c551b821969b8cc5f5c53e59a39cc111402481547fe24c14d3cf9f655c43
       generated_utc: '2026-10-13T03:29:33.246140+00:00'
+      minimum_frequency_percent: 0
+      numbering_tie_break: original source ID
       pose_id_mapping:
         Kl1i_0001: 0
         Kl1i_0002: 1
       removed_poses: []
-  group_ranking_method: representative_group_retention_auc
+      renumber_by_frequency: true
+      source_file: poses.json
+      source_sha256: bc85c551b821969b8cc5f5c53e59a39cc111402481547fe24c14d3cf9f655c43
 poses:
 - id: 0
+  group_id: 0
+  group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  pose_key: Kl1i:pose:Kl1i_0001
   original_catalog_pose_id: 0
   equivalent_catalog_pose_ids:
   - 0
@@ -57,7 +59,7 @@ poses:
   - Kl1i_0001
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_group_retention
+  classification_basis: observed_simulation
   orientation_quaternion_xyzw:
   - 0.03131142498037288
   - 0.7064592900766744
@@ -77,11 +79,10 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
-  group_members:
-  - Kl1i_0001
-  representative_group_retention_auc: 1.0
-  group_stability_rank: 1
 - id: 1
+  group_id: 1
+  group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  pose_key: Kl1i:pose:Kl1i_0002
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
   - 1
@@ -89,7 +90,7 @@ poses:
   - Kl1i_0002
   stability: robust
   planner_role: stable_target
-  classification_basis: observed_group_retention
+  classification_basis: observed_simulation
   orientation_quaternion_xyzw:
   - -0.43047487919749683
   - 0.5609670811961933
@@ -109,12 +110,8 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
-  group_members:
-  - Kl1i_0002
-  representative_group_retention_auc: 1.0
-  group_stability_rank: 2
 transitions:
-- id: a0:0->1:free_y
+- id: pose:Kl1i_0001->Kl1i_0002:free_y
   from_pose: 0
   to_pose: 1
   directed: true
@@ -149,7 +146,7 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a1:0->1:free_z
+- id: pose:Kl1i_0001->Kl1i_0002:free_z
   from_pose: 0
   to_pose: 1
   directed: true
@@ -184,7 +181,7 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a2:1->0:free_y
+- id: pose:Kl1i_0002->Kl1i_0001:free_y
   from_pose: 1
   to_pose: 0
   directed: true
@@ -219,7 +216,7 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-- id: a3:1->0:free_z
+- id: pose:Kl1i_0002->Kl1i_0001:free_z
   from_pose: 1
   to_pose: 0
   directed: true
@@ -254,240 +251,79 @@ transitions:
     empirical_success_rate: null
     difficulty_rating: null
     notes: ''
-generation: *id001
+generation:
+  frequency_denominator: all completed drop trials, including unsettled outcomes
+  generated_utc: '2026-10-18T16:00:30.237145+00:00'
+  minimum_frequency_percent: 1.0
+  numbering_tie_break: original source ID
+  pose_id_mapping:
+    Kl1i_0001: 0
+    Kl1i_0002: 1
+  removed_poses: []
+  renumber_by_frequency: true
+  source_file: poses.json
+  source_sha256: bc85c551b821969b8cc5f5c53e59a39cc111402481547fe24c14d3cf9f655c43
+pose_groups:
+- group_id: 0
+  group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  observed_count: 4757
+  observed_frequency_percent: 47.57
+  original_member_ids:
+  - Kl1i_0001
+  planning_member_ids:
+  - Kl1i_0001
+  pose_ids:
+  - 0
+- group_id: 1
+  group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  observed_count: 4576
+  observed_frequency_percent: 45.76
+  original_member_ids:
+  - Kl1i_0002
+  planning_member_ids:
+  - Kl1i_0002
+  pose_ids:
+  - 1
+pose_to_group:
+  '0': Kl1i:group:0:b819e8d642744fbdcad8
+  '1': Kl1i:group:1:4d0fc83cdfc55f3c1d53
+filtering:
+  minimum_frequency_percent: 1.0
+  denominator: 10000
+  excluded_members: []
+  composite_fallbacks: false
+migration:
+  previous_roadmap_sha256: f2c5c0b97cb3f94310c61e2b97280a5a273f1c722064f765e83b5577ad02bf43
+  previous_pose_groups:
+    '0': Kl1i:group:0:b819e8d642744fbdcad8
+    '1': Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  previous_choice_ids:
+  - a0:0->1:free_y
+  - a1:0->1:free_z
+  - a2:1->0:free_y
+  - a3:1->0:free_z
+  - group:0->1:8cbce59907586df2a200
+  - group:0->1:afd5f62631cab47bb350
+  - group:0->1:d16708c7e0ddeaf89afa
+  - group:0->1:fafa3ec411e6c0b785c3
+  - group:1->0:72d2ebae2389edacf2a2
+  - group:1->0:86ff38a0888206873e43
+  - group:1->0:8f0348b8f5e4bd312281
+  - group:1->0:c77f44e9de2334745c34
+  - group:0->1:2348c32cbf150b53d6c2
+  - group:1->0:aa5e6ee3e29695983db7
+  - group:0->1:3fe59a71a32749c38a82
+  - group:1->0:12cc6e0de2e227b6e07a
+  historical_export: history/previous_roadmap.json.gz
+  requires_explicit_reimport: true
 consumer_export:
-  version: 2
+  version: 3
   planning_semantics: group_union
-  group_keys: &id038
+  group_keys:
     '0': Kl1i:group:0:b819e8d642744fbdcad8
     '1': Kl1i:group:1:4d0fc83cdfc55f3c1d53
   calibration_choices:
-  - actuation: free_y
-    actuation_count: 1
-    axis_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    axis_error_deg: 0.02191905157197994
-    capture_fraction: null
-    capture_interval_deg: null
-    capture_width_deg: null
-    directed: true
-    edge_id: a0:0->1:free_y
-    escape_barrier_mm: null
-    experimental_status: untested
-    geometric_score: null
-    saddle_angle_deg: null
-    settling_pose_ids: []
-    signed_angle_deg: -179.99337412047302
-    source: 0
-    target: 1
-    target_barrier_score: null
-    transition_kind: actuated
-    commands:
-    - axis: y
-      actuation: free_y
-      signed_angle_deg: -179.99337412047302
-      start_quaternion_xyzw:
-      - 0.03131142498037288
-      - 0.7064592900766744
-      - -0.03145274285326478
-      - -0.7063608080132039
-      end_quaternion_xyzw:
-      - 0.0314545532807195
-      - 0.7064016555143076
-      - 0.03130960627675627
-      - 0.7064184459081958
-    component_edge_ids: []
-    via_pose_ids: []
-    evidence_status: ''
-    total_absolute_angle_deg: 179.99337412047302
-    preview_segments:
-    - axis: y
-      actuation: free_y
-      signed_angle_deg: -179.99337412047302
-      start_quaternion_xyzw:
-      - 0.03131142498037288
-      - 0.7064592900766744
-      - -0.03145274285326478
-      - -0.7063608080132039
-      end_quaternion_xyzw:
-      - 0.0314545532807195
-      - 0.7064016555143076
-      - 0.03130960627675627
-      - 0.7064184459081958
-      segment_kind: command
-    legacy_choice: true
-  - actuation: free_z
-    actuation_count: 1
-    axis_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    axis_error_deg: 0.008301684772483033
-    capture_fraction: null
-    capture_interval_deg: null
-    capture_width_deg: null
-    directed: true
-    edge_id: a1:0->1:free_z
-    escape_barrier_mm: null
-    experimental_status: untested
-    geometric_score: null
-    saddle_angle_deg: null
-    settling_pose_ids: []
-    signed_angle_deg: 179.9983317913202
-    source: 0
-    target: 1
-    target_barrier_score: null
-    transition_kind: actuated
-    commands:
-    - axis: z
-      actuation: free_z
-      signed_angle_deg: 179.9983317913202
-      start_quaternion_xyzw:
-      - 0.03131142498037288
-      - 0.7064592900766744
-      - -0.03145274285326478
-      - -0.7063608080132039
-      end_quaternion_xyzw:
-      - -0.7064588341742523
-      - 0.03132170951746627
-      - -0.7063612658232021
-      - 0.03144245974320931
-    component_edge_ids: []
-    via_pose_ids: []
-    evidence_status: ''
-    total_absolute_angle_deg: 179.9983317913202
-    preview_segments:
-    - axis: z
-      actuation: free_z
-      signed_angle_deg: 179.9983317913202
-      start_quaternion_xyzw:
-      - 0.03131142498037288
-      - 0.7064592900766744
-      - -0.03145274285326478
-      - -0.7063608080132039
-      end_quaternion_xyzw:
-      - -0.7064588341742523
-      - 0.03132170951746627
-      - -0.7063612658232021
-      - 0.03144245974320931
-      segment_kind: command
-    legacy_choice: true
-  - actuation: free_y
-    actuation_count: 1
-    axis_chute:
-    - 0.0
-    - 1.0
-    - 0.0
-    axis_error_deg: 0.0219190515886077
-    capture_fraction: null
-    capture_interval_deg: null
-    capture_width_deg: null
-    directed: true
-    edge_id: a2:1->0:free_y
-    escape_barrier_mm: null
-    experimental_status: untested
-    geometric_score: null
-    saddle_angle_deg: null
-    settling_pose_ids: []
-    signed_angle_deg: 179.99337412047302
-    source: 1
-    target: 0
-    target_barrier_score: null
-    transition_kind: actuated
-    commands:
-    - axis: y
-      actuation: free_y
-      signed_angle_deg: 179.99337412047302
-      start_quaternion_xyzw:
-      - -0.43047487919749683
-      - 0.5609670811961933
-      - -0.4303820312374959
-      - 0.5610513518226393
-      end_quaternion_xyzw:
-      - -0.43040692131027
-      - 0.5610837869588153
-      - 0.43044999305427745
-      - -0.5609346393116958
-    component_edge_ids: []
-    via_pose_ids: []
-    evidence_status: ''
-    total_absolute_angle_deg: 179.99337412047302
-    preview_segments:
-    - axis: y
-      actuation: free_y
-      signed_angle_deg: 179.99337412047302
-      start_quaternion_xyzw:
-      - -0.43047487919749683
-      - 0.5609670811961933
-      - -0.4303820312374959
-      - 0.5610513518226393
-      end_quaternion_xyzw:
-      - -0.43040692131027
-      - 0.5610837869588153
-      - 0.43044999305427745
-      - -0.5609346393116958
-      segment_kind: command
-    legacy_choice: true
-  - actuation: free_z
-    actuation_count: 1
-    axis_chute:
-    - 0.0
-    - 0.0
-    - 1.0
-    axis_error_deg: 0.008301684772483033
-    capture_fraction: null
-    capture_interval_deg: null
-    capture_width_deg: null
-    directed: true
-    edge_id: a3:1->0:free_z
-    escape_barrier_mm: null
-    experimental_status: untested
-    geometric_score: null
-    saddle_angle_deg: null
-    settling_pose_ids: []
-    signed_angle_deg: -179.9983317913202
-    source: 1
-    target: 0
-    target_barrier_score: null
-    transition_kind: actuated
-    commands:
-    - axis: z
-      actuation: free_z
-      signed_angle_deg: -179.9983317913202
-      start_quaternion_xyzw:
-      - -0.43047487919749683
-      - 0.5609670811961933
-      - -0.4303820312374959
-      - 0.5610513518226393
-      end_quaternion_xyzw:
-      - 0.5609608143406962
-      - 0.4304830456360609
-      - -0.5610576172075725
-      - -0.4303738634809099
-    component_edge_ids: []
-    via_pose_ids: []
-    evidence_status: ''
-    total_absolute_angle_deg: 179.9983317913202
-    preview_segments:
-    - axis: z
-      actuation: free_z
-      signed_angle_deg: -179.9983317913202
-      start_quaternion_xyzw:
-      - -0.43047487919749683
-      - 0.5609670811961933
-      - -0.4303820312374959
-      - 0.5610513518226393
-      end_quaternion_xyzw:
-      - 0.5609608143406962
-      - 0.4304830456360609
-      - -0.5610576172075725
-      - -0.4303738634809099
-      segment_kind: command
-    legacy_choice: true
-  - &id039
-    source: 0
+  - source: 0
     target: 1
     edge_id: group:0->1:8cbce59907586df2a200
     witnesses:
@@ -501,22 +337,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0001
       target_member_id: Kl1i_0002
-      commands: &id002
+      commands:
       - axis: z
         actuation: free_z
         signed_angle_deg: 180.0
-        start_quaternion_xyzw: &id003
+        start_quaternion_xyzw:
         - -0.03131142498037288
         - -0.7064592900766744
         - 0.03145274285326478
         - 0.7063608080132039
-        end_quaternion_xyzw: &id004
+        end_quaternion_xyzw:
         - -0.7064592900766744
         - 0.03131142498037292
         - -0.7063608080132039
         - 0.031452742853264735
       is_composite: false
-    commands: *id002
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 180.0
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - -0.7064592900766744
+      - 0.03131142498037292
+      - -0.7063608080132039
+      - 0.031452742853264735
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -544,8 +393,16 @@ consumer_export:
     - axis: z
       actuation: free_z
       signed_angle_deg: 180.0
-      start_quaternion_xyzw: *id003
-      end_quaternion_xyzw: *id004
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - -0.7064592900766744
+      - 0.03131142498037292
+      - -0.7063608080132039
+      - 0.031452742853264735
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -556,8 +413,13 @@ consumer_export:
     - 1
     - 180.0
     - 0
-  - &id040
-    source: 0
+    source_group_id: 0
+    target_group_id: 1
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
+  - source: 0
     target: 1
     edge_id: group:0->1:afd5f62631cab47bb350
     witnesses:
@@ -571,22 +433,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0001
       target_member_id: Kl1i_0002
-      commands: &id005
+      commands:
       - axis: y
         actuation: free_y
         signed_angle_deg: 180.0
-        start_quaternion_xyzw: &id006
+        start_quaternion_xyzw:
         - -0.03131142498037288
         - -0.7064592900766744
         - 0.03145274285326478
         - 0.7063608080132039
-        end_quaternion_xyzw: &id007
+        end_quaternion_xyzw:
         - 0.03145274285326478
         - 0.7063608080132039
         - 0.03131142498037288
         - 0.7064592900766744
       is_composite: false
-    commands: *id005
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: 180.0
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - 0.03145274285326478
+      - 0.7063608080132039
+      - 0.03131142498037288
+      - 0.7064592900766744
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -614,8 +489,16 @@ consumer_export:
     - axis: y
       actuation: free_y
       signed_angle_deg: 180.0
-      start_quaternion_xyzw: *id006
-      end_quaternion_xyzw: *id007
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - 0.03145274285326478
+      - 0.7063608080132039
+      - 0.03131142498037288
+      - 0.7064592900766744
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -626,8 +509,13 @@ consumer_export:
     - 1
     - 180.0
     - 0
-  - &id041
-    source: 0
+    source_group_id: 0
+    target_group_id: 1
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
+  - source: 0
     target: 1
     edge_id: group:0->1:d16708c7e0ddeaf89afa
     witnesses:
@@ -641,22 +529,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0001
       target_member_id: Kl1i_0002
-      commands: &id008
+      commands:
       - axis: z
         actuation: free_z
         signed_angle_deg: -180.0
-        start_quaternion_xyzw: &id009
+        start_quaternion_xyzw:
         - -0.03131142498037288
         - -0.7064592900766744
         - 0.03145274285326478
         - 0.7063608080132039
-        end_quaternion_xyzw: &id010
+        end_quaternion_xyzw:
         - -0.7064592900766744
         - 0.031311424980372836
         - -0.7063608080132039
         - 0.03145274285326482
       is_composite: false
-    commands: *id008
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -180.0
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - -0.7064592900766744
+      - 0.031311424980372836
+      - -0.7063608080132039
+      - 0.03145274285326482
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -684,8 +585,16 @@ consumer_export:
     - axis: z
       actuation: free_z
       signed_angle_deg: -180.0
-      start_quaternion_xyzw: *id009
-      end_quaternion_xyzw: *id010
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - -0.7064592900766744
+      - 0.031311424980372836
+      - -0.7063608080132039
+      - 0.03145274285326482
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -696,8 +605,13 @@ consumer_export:
     - 1
     - 180.0
     - 0
-  - &id042
-    source: 0
+    source_group_id: 0
+    target_group_id: 1
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
+  - source: 0
     target: 1
     edge_id: group:0->1:fafa3ec411e6c0b785c3
     witnesses:
@@ -711,22 +625,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0001
       target_member_id: Kl1i_0002
-      commands: &id011
+      commands:
       - axis: y
         actuation: free_y
         signed_angle_deg: -180.0
-        start_quaternion_xyzw: &id012
+        start_quaternion_xyzw:
         - -0.03131142498037288
         - -0.7064592900766744
         - 0.03145274285326478
         - 0.7063608080132039
-        end_quaternion_xyzw: &id013
+        end_quaternion_xyzw:
         - 0.03145274285326478
         - 0.7063608080132039
         - 0.03131142498037288
         - 0.7064592900766744
       is_composite: false
-    commands: *id011
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: -180.0
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - 0.03145274285326478
+      - 0.7063608080132039
+      - 0.03131142498037288
+      - 0.7064592900766744
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -754,8 +681,16 @@ consumer_export:
     - axis: y
       actuation: free_y
       signed_angle_deg: -180.0
-      start_quaternion_xyzw: *id012
-      end_quaternion_xyzw: *id013
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - 0.03145274285326478
+      - 0.7063608080132039
+      - 0.03131142498037288
+      - 0.7064592900766744
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -766,8 +701,13 @@ consumer_export:
     - 1
     - 180.0
     - 0
-  - &id043
-    source: 1
+    source_group_id: 0
+    target_group_id: 1
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
+  - source: 1
     target: 0
     edge_id: group:1->0:72d2ebae2389edacf2a2
     witnesses:
@@ -781,22 +721,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0002
       target_member_id: Kl1i_0001
-      commands: &id014
+      commands:
       - axis: z
         actuation: free_z
         signed_angle_deg: -180.0
-        start_quaternion_xyzw: &id015
+        start_quaternion_xyzw:
         - -0.43047487919749683
         - 0.5609670811961933
         - -0.4303820312374959
         - 0.5610513518226393
-        end_quaternion_xyzw: &id016
+        end_quaternion_xyzw:
         - -0.5609670811961934
         - -0.43047487919749694
         - 0.5610513518226394
         - 0.4303820312374959
       is_composite: false
-    commands: *id014
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -180.0
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - -0.5609670811961934
+      - -0.43047487919749694
+      - 0.5610513518226394
+      - 0.4303820312374959
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -824,8 +777,16 @@ consumer_export:
     - axis: z
       actuation: free_z
       signed_angle_deg: -180.0
-      start_quaternion_xyzw: *id015
-      end_quaternion_xyzw: *id016
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - -0.5609670811961934
+      - -0.43047487919749694
+      - 0.5610513518226394
+      - 0.4303820312374959
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -836,8 +797,13 @@ consumer_export:
     - 1
     - 180.0
     - 0
-  - &id044
-    source: 1
+    source_group_id: 1
+    target_group_id: 0
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
+  - source: 1
     target: 0
     edge_id: group:1->0:86ff38a0888206873e43
     witnesses:
@@ -851,22 +817,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0002
       target_member_id: Kl1i_0001
-      commands: &id017
+      commands:
       - axis: y
         actuation: free_y
         signed_angle_deg: 180.0
-        start_quaternion_xyzw: &id018
+        start_quaternion_xyzw:
         - -0.43047487919749683
         - 0.5609670811961933
         - -0.4303820312374959
         - 0.5610513518226393
-        end_quaternion_xyzw: &id019
+        end_quaternion_xyzw:
         - 0.4303820312374959
         - -0.5610513518226393
         - -0.43047487919749683
         - 0.5609670811961933
       is_composite: false
-    commands: *id017
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: 180.0
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - 0.4303820312374959
+      - -0.5610513518226393
+      - -0.43047487919749683
+      - 0.5609670811961933
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -894,8 +873,16 @@ consumer_export:
     - axis: y
       actuation: free_y
       signed_angle_deg: 180.0
-      start_quaternion_xyzw: *id018
-      end_quaternion_xyzw: *id019
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - 0.4303820312374959
+      - -0.5610513518226393
+      - -0.43047487919749683
+      - 0.5609670811961933
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -906,8 +893,13 @@ consumer_export:
     - 1
     - 180.0
     - 0
-  - &id045
-    source: 1
+    source_group_id: 1
+    target_group_id: 0
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
+  - source: 1
     target: 0
     edge_id: group:1->0:8f0348b8f5e4bd312281
     witnesses:
@@ -921,22 +913,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0002
       target_member_id: Kl1i_0001
-      commands: &id020
+      commands:
       - axis: y
         actuation: free_y
         signed_angle_deg: -180.0
-        start_quaternion_xyzw: &id021
+        start_quaternion_xyzw:
         - -0.43047487919749683
         - 0.5609670811961933
         - -0.4303820312374959
         - 0.5610513518226393
-        end_quaternion_xyzw: &id022
+        end_quaternion_xyzw:
         - 0.4303820312374959
         - -0.5610513518226393
         - -0.43047487919749683
         - 0.5609670811961933
       is_composite: false
-    commands: *id020
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: -180.0
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - 0.4303820312374959
+      - -0.5610513518226393
+      - -0.43047487919749683
+      - 0.5609670811961933
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -964,8 +969,16 @@ consumer_export:
     - axis: y
       actuation: free_y
       signed_angle_deg: -180.0
-      start_quaternion_xyzw: *id021
-      end_quaternion_xyzw: *id022
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - 0.4303820312374959
+      - -0.5610513518226393
+      - -0.43047487919749683
+      - 0.5609670811961933
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -976,8 +989,13 @@ consumer_export:
     - 1
     - 180.0
     - 0
-  - &id046
-    source: 1
+    source_group_id: 1
+    target_group_id: 0
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
+  - source: 1
     target: 0
     edge_id: group:1->0:c77f44e9de2334745c34
     witnesses:
@@ -991,22 +1009,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0002
       target_member_id: Kl1i_0001
-      commands: &id023
+      commands:
       - axis: z
         actuation: free_z
         signed_angle_deg: 180.0
-        start_quaternion_xyzw: &id024
+        start_quaternion_xyzw:
         - -0.43047487919749683
         - 0.5609670811961933
         - -0.4303820312374959
         - 0.5610513518226393
-        end_quaternion_xyzw: &id025
+        end_quaternion_xyzw:
         - -0.5609670811961933
         - -0.4304748791974968
         - 0.5610513518226393
         - 0.43038203123749597
       is_composite: false
-    commands: *id023
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 180.0
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - -0.5609670811961933
+      - -0.4304748791974968
+      - 0.5610513518226393
+      - 0.43038203123749597
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -1034,8 +1065,16 @@ consumer_export:
     - axis: z
       actuation: free_z
       signed_angle_deg: 180.0
-      start_quaternion_xyzw: *id024
-      end_quaternion_xyzw: *id025
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - -0.5609670811961933
+      - -0.4304748791974968
+      - 0.5610513518226393
+      - 0.43038203123749597
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -1046,8 +1085,13 @@ consumer_export:
     - 1
     - 180.0
     - 0
-  - &id047
-    source: 0
+    source_group_id: 1
+    target_group_id: 0
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
+  - source: 0
     target: 1
     edge_id: group:0->1:2348c32cbf150b53d6c2
     witnesses:
@@ -1061,22 +1105,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0001
       target_member_id: Kl1i_0002
-      commands: &id026
+      commands:
       - axis: y
         actuation: free_y
         signed_angle_deg: -179.99337412047302
-        start_quaternion_xyzw: &id027
+        start_quaternion_xyzw:
         - -0.03131142498037288
         - -0.7064592900766744
         - 0.03145274285326478
         - 0.7063608080132039
-        end_quaternion_xyzw: &id028
+        end_quaternion_xyzw:
         - 0.0314545532807195
         - 0.7064016555143076
         - 0.03130960627675627
         - 0.7064184459081958
       is_composite: false
-    commands: *id026
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: -179.99337412047302
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - 0.0314545532807195
+      - 0.7064016555143076
+      - 0.03130960627675627
+      - 0.7064184459081958
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -1104,8 +1161,16 @@ consumer_export:
     - axis: y
       actuation: free_y
       signed_angle_deg: -179.99337412047302
-      start_quaternion_xyzw: *id027
-      end_quaternion_xyzw: *id028
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - 0.0314545532807195
+      - 0.7064016555143076
+      - 0.03130960627675627
+      - 0.7064184459081958
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -1116,8 +1181,13 @@ consumer_export:
     - 1
     - 179.99337412047302
     - 0
-  - &id048
-    source: 1
+    source_group_id: 0
+    target_group_id: 1
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
+  - source: 1
     target: 0
     edge_id: group:1->0:aa5e6ee3e29695983db7
     witnesses:
@@ -1131,22 +1201,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0002
       target_member_id: Kl1i_0001
-      commands: &id029
+      commands:
       - axis: y
         actuation: free_y
         signed_angle_deg: 179.99337412047302
-        start_quaternion_xyzw: &id030
+        start_quaternion_xyzw:
         - -0.43047487919749683
         - 0.5609670811961933
         - -0.4303820312374959
         - 0.5610513518226393
-        end_quaternion_xyzw: &id031
+        end_quaternion_xyzw:
         - 0.43040692131027
         - -0.5610837869588153
         - -0.43044999305427745
         - 0.5609346393116958
       is_composite: false
-    commands: *id029
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: 179.99337412047302
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - 0.43040692131027
+      - -0.5610837869588153
+      - -0.43044999305427745
+      - 0.5609346393116958
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -1174,8 +1257,16 @@ consumer_export:
     - axis: y
       actuation: free_y
       signed_angle_deg: 179.99337412047302
-      start_quaternion_xyzw: *id030
-      end_quaternion_xyzw: *id031
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - 0.43040692131027
+      - -0.5610837869588153
+      - -0.43044999305427745
+      - 0.5609346393116958
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -1186,8 +1277,13 @@ consumer_export:
     - 1
     - 179.99337412047302
     - 0
-  - &id049
-    source: 0
+    source_group_id: 1
+    target_group_id: 0
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
+  - source: 0
     target: 1
     edge_id: group:0->1:3fe59a71a32749c38a82
     witnesses:
@@ -1201,22 +1297,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0001
       target_member_id: Kl1i_0002
-      commands: &id032
+      commands:
       - axis: z
         actuation: free_z
         signed_angle_deg: 179.9983317913202
-        start_quaternion_xyzw: &id033
+        start_quaternion_xyzw:
         - -0.03131142498037288
         - -0.7064592900766744
         - 0.03145274285326478
         - 0.7063608080132039
-        end_quaternion_xyzw: &id034
+        end_quaternion_xyzw:
         - -0.7064588341742524
         - 0.031321709517466274
         - -0.7063612658232022
         - 0.03144245974320932
       is_composite: false
-    commands: *id032
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9983317913202
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - -0.7064588341742524
+      - 0.031321709517466274
+      - -0.7063612658232022
+      - 0.03144245974320932
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -1244,8 +1353,16 @@ consumer_export:
     - axis: z
       actuation: free_z
       signed_angle_deg: 179.9983317913202
-      start_quaternion_xyzw: *id033
-      end_quaternion_xyzw: *id034
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - -0.7064588341742524
+      - 0.031321709517466274
+      - -0.7063612658232022
+      - 0.03144245974320932
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -1256,8 +1373,13 @@ consumer_export:
     - 1
     - 179.9983317913202
     - 0
-  - &id050
-    source: 1
+    source_group_id: 0
+    target_group_id: 1
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
+  - source: 1
     target: 0
     edge_id: group:1->0:12cc6e0de2e227b6e07a
     witnesses:
@@ -1271,22 +1393,35 @@ consumer_export:
         retained: true
       source_member_id: Kl1i_0002
       target_member_id: Kl1i_0001
-      commands: &id035
+      commands:
       - axis: z
         actuation: free_z
         signed_angle_deg: -179.9983317913202
-        start_quaternion_xyzw: &id036
+        start_quaternion_xyzw:
         - -0.43047487919749683
         - 0.5609670811961933
         - -0.4303820312374959
         - 0.5610513518226393
-        end_quaternion_xyzw: &id037
+        end_quaternion_xyzw:
         - -0.5609608143406963
         - -0.430483045636061
         - 0.5610576172075726
         - 0.43037386348091
       is_composite: false
-    commands: *id035
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9983317913202
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - -0.5609608143406963
+      - -0.430483045636061
+      - 0.5610576172075726
+      - 0.43037386348091
     directed: true
     transition_kind: group_transfer
     evidence_status: geometry_only
@@ -1314,8 +1449,16 @@ consumer_export:
     - axis: z
       actuation: free_z
       signed_angle_deg: -179.9983317913202
-      start_quaternion_xyzw: *id036
-      end_quaternion_xyzw: *id037
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - -0.5609608143406963
+      - -0.430483045636061
+      - 0.5610576172075726
+      - 0.43037386348091
       segment_kind: command
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
@@ -1325,6 +1468,12 @@ consumer_export:
     - 0
     - 1
     - 179.9983317913202
+    - 0
+    source_group_id: 1
+    target_group_id: 0
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
     - 0
   execution_routes:
   - route_id: group:0->1:8cbce59907586df2a200:profile
@@ -1338,6 +1487,14 @@ consumer_export:
       source: 0
       target: 1
       required_source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      source_group_id: 0
+      target_group_id: 1
+      source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      applicable_source_pose_ids:
+      - 0
+      accepted_target_pose_ids:
+      - 1
     priority:
     - 0
     - 0
@@ -1350,6 +1507,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 0
+    target_group_id: 1
+    source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
   - route_id: group:0->1:afd5f62631cab47bb350:profile
     source: 0
     target: 1
@@ -1361,6 +1526,14 @@ consumer_export:
       source: 0
       target: 1
       required_source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      source_group_id: 0
+      target_group_id: 1
+      source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      applicable_source_pose_ids:
+      - 0
+      accepted_target_pose_ids:
+      - 1
     priority:
     - 0
     - 0
@@ -1373,6 +1546,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 0
+    target_group_id: 1
+    source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
   - route_id: group:0->1:d16708c7e0ddeaf89afa:profile
     source: 0
     target: 1
@@ -1384,6 +1565,14 @@ consumer_export:
       source: 0
       target: 1
       required_source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      source_group_id: 0
+      target_group_id: 1
+      source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      applicable_source_pose_ids:
+      - 0
+      accepted_target_pose_ids:
+      - 1
     priority:
     - 0
     - 0
@@ -1396,6 +1585,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 0
+    target_group_id: 1
+    source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
   - route_id: group:0->1:fafa3ec411e6c0b785c3:profile
     source: 0
     target: 1
@@ -1407,6 +1604,14 @@ consumer_export:
       source: 0
       target: 1
       required_source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      source_group_id: 0
+      target_group_id: 1
+      source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      applicable_source_pose_ids:
+      - 0
+      accepted_target_pose_ids:
+      - 1
     priority:
     - 0
     - 0
@@ -1419,6 +1624,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 0
+    target_group_id: 1
+    source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
   - route_id: group:1->0:72d2ebae2389edacf2a2:profile
     source: 1
     target: 0
@@ -1430,6 +1643,14 @@ consumer_export:
       source: 1
       target: 0
       required_source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      source_group_id: 1
+      target_group_id: 0
+      source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      applicable_source_pose_ids:
+      - 1
+      accepted_target_pose_ids:
+      - 0
     priority:
     - 0
     - 0
@@ -1442,6 +1663,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 1
+    target_group_id: 0
+    source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
   - route_id: group:1->0:86ff38a0888206873e43:profile
     source: 1
     target: 0
@@ -1453,6 +1682,14 @@ consumer_export:
       source: 1
       target: 0
       required_source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      source_group_id: 1
+      target_group_id: 0
+      source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      applicable_source_pose_ids:
+      - 1
+      accepted_target_pose_ids:
+      - 0
     priority:
     - 0
     - 0
@@ -1465,6 +1702,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 1
+    target_group_id: 0
+    source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
   - route_id: group:1->0:8f0348b8f5e4bd312281:profile
     source: 1
     target: 0
@@ -1476,6 +1721,14 @@ consumer_export:
       source: 1
       target: 0
       required_source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      source_group_id: 1
+      target_group_id: 0
+      source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      applicable_source_pose_ids:
+      - 1
+      accepted_target_pose_ids:
+      - 0
     priority:
     - 0
     - 0
@@ -1488,6 +1741,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 1
+    target_group_id: 0
+    source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
   - route_id: group:1->0:c77f44e9de2334745c34:profile
     source: 1
     target: 0
@@ -1499,6 +1760,14 @@ consumer_export:
       source: 1
       target: 0
       required_source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      source_group_id: 1
+      target_group_id: 0
+      source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      applicable_source_pose_ids:
+      - 1
+      accepted_target_pose_ids:
+      - 0
     priority:
     - 0
     - 0
@@ -1511,6 +1780,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 1
+    target_group_id: 0
+    source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
   - route_id: group:0->1:2348c32cbf150b53d6c2:profile
     source: 0
     target: 1
@@ -1522,6 +1799,14 @@ consumer_export:
       source: 0
       target: 1
       required_source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      source_group_id: 0
+      target_group_id: 1
+      source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      applicable_source_pose_ids:
+      - 0
+      accepted_target_pose_ids:
+      - 1
     priority:
     - 0
     - 1
@@ -1534,6 +1819,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 0
+    target_group_id: 1
+    source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
   - route_id: group:1->0:aa5e6ee3e29695983db7:profile
     source: 1
     target: 0
@@ -1545,6 +1838,14 @@ consumer_export:
       source: 1
       target: 0
       required_source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      source_group_id: 1
+      target_group_id: 0
+      source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      applicable_source_pose_ids:
+      - 1
+      accepted_target_pose_ids:
+      - 0
     priority:
     - 0
     - 1
@@ -1557,6 +1858,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 1
+    target_group_id: 0
+    source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    applicable_source_pose_ids:
+    - 1
+    accepted_target_pose_ids:
+    - 0
   - route_id: group:0->1:3fe59a71a32749c38a82:profile
     source: 0
     target: 1
@@ -1568,6 +1877,14 @@ consumer_export:
       source: 0
       target: 1
       required_source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      source_group_id: 0
+      target_group_id: 1
+      source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      applicable_source_pose_ids:
+      - 0
+      accepted_target_pose_ids:
+      - 1
     priority:
     - 0
     - 1
@@ -1580,6 +1897,14 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
+    source_group_id: 0
+    target_group_id: 1
+    source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    applicable_source_pose_ids:
+    - 0
+    accepted_target_pose_ids:
+    - 1
   - route_id: group:1->0:12cc6e0de2e227b6e07a:profile
     source: 1
     target: 0
@@ -1591,6 +1916,14 @@ consumer_export:
       source: 1
       target: 0
       required_source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      source_group_id: 1
+      target_group_id: 0
+      source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+      target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+      applicable_source_pose_ids:
+      - 1
+      accepted_target_pose_ids:
+      - 0
     priority:
     - 0
     - 1
@@ -1603,303 +1936,1124 @@ consumer_export:
     planning_assumption: 'group_union: arrival and departure may use different group
       members'
     evidence_status: geometry_only
-  legacy_execution_routes:
-  - route_id: a0:0->1:free_y:profile
-    source: 0
-    target: 1
-    profile_edge_ids:
-    - a0:0->1:free_y
-    steps:
-    - edge_id: a0:0->1:free_y
-      source: 0
-      target: 1
-      required_source_member_ids: []
-      possible_target_member_ids: []
-    priority:
-    - 2
-    - 0
+    source_group_id: 1
+    target_group_id: 0
+    source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    applicable_source_pose_ids:
     - 1
-    evidence_status: ''
-    legacy_choice: true
-  - route_id: a1:0->1:free_z:profile
-    source: 0
-    target: 1
-    profile_edge_ids:
-    - a1:0->1:free_z
-    steps:
-    - edge_id: a1:0->1:free_z
-      source: 0
-      target: 1
-      required_source_member_ids: []
-      possible_target_member_ids: []
-    priority:
-    - 2
+    accepted_target_pose_ids:
     - 0
-    - 1
-    evidence_status: ''
-    legacy_choice: true
-  - route_id: a2:1->0:free_y:profile
-    source: 1
-    target: 0
-    profile_edge_ids:
-    - a2:1->0:free_y
-    steps:
-    - edge_id: a2:1->0:free_y
-      source: 1
-      target: 0
-      required_source_member_ids: []
-      possible_target_member_ids: []
-    priority:
-    - 2
-    - 0
-    - 1
-    evidence_status: ''
-    legacy_choice: true
-  - route_id: a3:1->0:free_z:profile
-    source: 1
-    target: 0
-    profile_edge_ids:
-    - a3:1->0:free_z
-    steps:
-    - edge_id: a3:1->0:free_z
-      source: 1
-      target: 0
-      required_source_member_ids: []
-      possible_target_member_ids: []
-    priority:
-    - 2
-    - 0
-    - 1
-    evidence_status: ''
-    legacy_choice: true
+  legacy_execution_routes: []
   route_policy: exported_only; assigned profile and explicit source-group calibration
     required
-member_states:
-- member_id: Kl1i_0001
-  group_id: 0
-  quaternion_xyzw:
-  - -0.03131142498037288
-  - -0.7064592900766744
-  - 0.03145274285326478
-  - 0.7063608080132039
-  position_com_chute_mm:
-  - 453.1534585727631
-  - 9.961970140817822
-  - 9.955747785144617
-  retained: true
-  observed_count: 4757
-- member_id: Kl1i_0002
-  group_id: 1
-  quaternion_xyzw:
-  - -0.43047487919749683
-  - 0.5609670811961933
-  - -0.4303820312374959
-  - 0.5610513518226393
-  position_com_chute_mm:
-  - 453.4713184810629
-  - 9.964874237571472
-  - 9.961208088452798
-  retained: true
-  observed_count: 4576
-member_transfers:
-- source: 0
-  target: 1
-  source_member_ids:
-  - Kl1i_0001
-  possible_target_member_ids:
-  - Kl1i_0002
-  transfer_model: known_member_endpoint
-  actuation: free_y
-  commands: *id026
-  actuation_count: 1
-  total_absolute_angle_deg: 179.99337412047302
-  evidence_status: geometry_only
-  directed: true
-  conditional: true
-  experimental_status: untested
-  capture_interval_deg: null
-  settling_segments: []
-  axis_error_deg: 0.02191905157197994
-  edge_id: member:0->1:4b1aa9b7393ec6f9
-- source: 0
-  target: 1
-  source_member_ids:
-  - Kl1i_0001
-  possible_target_member_ids:
-  - Kl1i_0002
-  transfer_model: known_member_endpoint
-  actuation: free_z
-  commands: *id032
-  actuation_count: 1
-  total_absolute_angle_deg: 179.9983317913202
-  evidence_status: geometry_only
-  directed: true
-  conditional: true
-  experimental_status: untested
-  capture_interval_deg: null
-  settling_segments: []
-  axis_error_deg: 0.008301684772483033
-  edge_id: member:0->1:3bb05f04598dd7fa
-- source: 1
-  target: 0
-  source_member_ids:
-  - Kl1i_0002
-  possible_target_member_ids:
-  - Kl1i_0001
-  transfer_model: known_member_endpoint
-  actuation: free_y
-  commands: *id029
-  actuation_count: 1
-  total_absolute_angle_deg: 179.99337412047302
-  evidence_status: geometry_only
-  directed: true
-  conditional: true
-  experimental_status: untested
-  capture_interval_deg: null
-  settling_segments: []
-  axis_error_deg: 0.0219190515886077
-  edge_id: member:1->0:ad341a314e10888b
-- source: 1
-  target: 0
-  source_member_ids:
-  - Kl1i_0002
-  possible_target_member_ids:
-  - Kl1i_0001
-  transfer_model: known_member_endpoint
-  actuation: free_z
-  commands: *id035
-  actuation_count: 1
-  total_absolute_angle_deg: 179.9983317913202
-  evidence_status: geometry_only
-  directed: true
-  conditional: true
-  experimental_status: untested
-  capture_interval_deg: null
-  settling_segments: []
-  axis_error_deg: 0.008301684772483033
-  edge_id: member:1->0:bd293db00ce3a6f8
-member_routes:
-- source: 0
-  source_member_id: Kl1i_0001
-  target: 0
-  component_edge_ids: []
-  possible_target_member_ids:
-  - Kl1i_0001
-  member_chain:
-  - - Kl1i_0001
-  actuation_count: 0
-  composite_transfer_count: 0
-  total_absolute_angle_deg: 0.0
-  conditional: true
-  evidence_status: geometry_only
-- source: 0
-  source_member_id: Kl1i_0001
-  target: 1
-  component_edge_ids:
-  - member:0->1:4b1aa9b7393ec6f9
-  possible_target_member_ids:
-  - Kl1i_0002
-  member_chain:
-  - - Kl1i_0001
-  - - Kl1i_0002
-  actuation_count: 1
-  composite_transfer_count: 0
-  total_absolute_angle_deg: 179.99337412047302
-  conditional: true
-  evidence_status: geometry_only
-- source: 1
-  source_member_id: Kl1i_0002
-  target: 0
-  component_edge_ids:
-  - member:1->0:ad341a314e10888b
-  possible_target_member_ids:
-  - Kl1i_0001
-  member_chain:
-  - - Kl1i_0002
-  - - Kl1i_0001
-  actuation_count: 1
-  composite_transfer_count: 0
-  total_absolute_angle_deg: 179.99337412047302
-  conditional: true
-  evidence_status: geometry_only
-- source: 1
-  source_member_id: Kl1i_0002
-  target: 1
-  component_edge_ids: []
-  possible_target_member_ids:
-  - Kl1i_0002
-  member_chain:
-  - - Kl1i_0002
-  actuation_count: 0
-  composite_transfer_count: 0
-  total_absolute_angle_deg: 0.0
-  conditional: true
-  evidence_status: geometry_only
-capture_analysis:
-  model: sampled_seated_downhill_v1
-  action_step_deg: 1.0
-  boundary_step_deg: 0.1
-  settling_step_deg: 0.1
-  maximum_settling_angle_deg: 60.0
-  energy_tolerance_mm: 1.0e-06
-  grouping_barrier_used_as_passive_permission: false
-  samples: []
-connectivity:
-  members:
-    group_overview:
-      strongly_connected_components:
-      - - 0
-        - 1
-      unreachable_pairs: []
-      reachable_pair_count: 2
-      total_pair_count: 2
-      strongly_connected: true
-    known_member_inter_group_action_count: 4
-    source_member_coverage:
-      Kl1i_0001:
-      - 0
-      - 1
-      Kl1i_0002:
-      - 0
-      - 1
-    every_source_member_reaches_every_group: true
-    note: Group overview is existential. Executable route candidates preserve possible
-      member states; profiles require explicit source coverage.
-  groups:
-    cartesian:
-      strongly_connected_components:
-      - - 0
-        - 1
-      unreachable_pairs: []
-      reachable_pair_count: 2
-      total_pair_count: 2
-      strongly_connected: true
-    all_candidates:
-      strongly_connected_components:
-      - - 0
-        - 1
-      unreachable_pairs: []
-      reachable_pair_count: 2
-      total_pair_count: 2
-      strongly_connected: true
-    transfer_count: 12
-    planning_assumption: 'group_union: arrival and departure may use different group
-      members'
-    endpoint_tolerance_deg: 1.0
-group_keys: *id038
+  pose_groups:
+  - group_id: 0
+    group_key: Kl1i:group:0:b819e8d642744fbdcad8
+    observed_count: 4757
+    observed_frequency_percent: 47.57
+    original_member_ids:
+    - Kl1i_0001
+    planning_member_ids:
+    - Kl1i_0001
+    pose_ids:
+    - 0
+  - group_id: 1
+    group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+    observed_count: 4576
+    observed_frequency_percent: 45.76
+    original_member_ids:
+    - Kl1i_0002
+    planning_member_ids:
+    - Kl1i_0002
+    pose_ids:
+    - 1
+  same_group_target_satisfied: true
+  composite_fallbacks: false
+group_keys:
+  '0': Kl1i:group:0:b819e8d642744fbdcad8
+  '1': Kl1i:group:1:4d0fc83cdfc55f3c1d53
 group_transfers:
-- *id039
-- *id040
-- *id041
-- *id042
-- *id043
-- *id044
-- *id045
-- *id046
-- *id047
-- *id048
-- *id049
-- *id050
+- source: 0
+  target: 1
+  edge_id: group:0->1:8cbce59907586df2a200
+  witnesses:
+  - landing_model: observed_endpoint
+    landing_error_deg: 0.008467637805473462
+    endpoint_error_deg: 0.008467637805473462
+    settling_segments: []
+    possible_outcomes:
+    - member_id: Kl1i_0002
+      group_id: 1
+      retained: true
+    source_member_id: Kl1i_0001
+    target_member_id: Kl1i_0002
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 180.0
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - -0.7064592900766744
+      - 0.03131142498037292
+      - -0.7063608080132039
+      - 0.031452742853264735
+    is_composite: false
+  commands:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: 180.0
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - -0.7064592900766744
+    - 0.03131142498037292
+    - -0.7063608080132039
+    - 0.031452742853264735
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Z +180°
+  cartesian_preferred: true
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  source_member_ids:
+  - Kl1i_0001
+  possible_target_member_ids:
+  - Kl1i_0002
+  source_group_member_ids:
+  - Kl1i_0001
+  target_group_member_ids:
+  - Kl1i_0002
+  preview_source_member_id: Kl1i_0001
+  preview_target_member_id: Kl1i_0002
+  actuation_count: 1
+  total_absolute_angle_deg: 180.0
+  preview_segments:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: 180.0
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - -0.7064592900766744
+    - 0.03131142498037292
+    - -0.7063608080132039
+    - 0.031452742853264735
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 0
+  - 0
+  - 1
+  - 180.0
+  - 0
+- source: 0
+  target: 1
+  edge_id: group:0->1:afd5f62631cab47bb350
+  witnesses:
+  - landing_model: observed_endpoint
+    landing_error_deg: 0.02289862659826018
+    endpoint_error_deg: 0.02289862659826018
+    settling_segments: []
+    possible_outcomes:
+    - member_id: Kl1i_0002
+      group_id: 1
+      retained: true
+    source_member_id: Kl1i_0001
+    target_member_id: Kl1i_0002
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: 180.0
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - 0.03145274285326478
+      - 0.7063608080132039
+      - 0.03131142498037288
+      - 0.7064592900766744
+    is_composite: false
+  commands:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: 180.0
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - 0.03145274285326478
+    - 0.7063608080132039
+    - 0.03131142498037288
+    - 0.7064592900766744
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Y +180°
+  cartesian_preferred: true
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  source_member_ids:
+  - Kl1i_0001
+  possible_target_member_ids:
+  - Kl1i_0002
+  source_group_member_ids:
+  - Kl1i_0001
+  target_group_member_ids:
+  - Kl1i_0002
+  preview_source_member_id: Kl1i_0001
+  preview_target_member_id: Kl1i_0002
+  actuation_count: 1
+  total_absolute_angle_deg: 180.0
+  preview_segments:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: 180.0
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - 0.03145274285326478
+    - 0.7063608080132039
+    - 0.03131142498037288
+    - 0.7064592900766744
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 0
+  - 0
+  - 1
+  - 180.0
+  - 0
+- source: 0
+  target: 1
+  edge_id: group:0->1:d16708c7e0ddeaf89afa
+  witnesses:
+  - landing_model: observed_endpoint
+    landing_error_deg: 0.008467637805473462
+    endpoint_error_deg: 0.008467637805473462
+    settling_segments: []
+    possible_outcomes:
+    - member_id: Kl1i_0002
+      group_id: 1
+      retained: true
+    source_member_id: Kl1i_0001
+    target_member_id: Kl1i_0002
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -180.0
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - -0.7064592900766744
+      - 0.031311424980372836
+      - -0.7063608080132039
+      - 0.03145274285326482
+    is_composite: false
+  commands:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: -180.0
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - -0.7064592900766744
+    - 0.031311424980372836
+    - -0.7063608080132039
+    - 0.03145274285326482
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Z -180°
+  cartesian_preferred: true
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  source_member_ids:
+  - Kl1i_0001
+  possible_target_member_ids:
+  - Kl1i_0002
+  source_group_member_ids:
+  - Kl1i_0001
+  target_group_member_ids:
+  - Kl1i_0002
+  preview_source_member_id: Kl1i_0001
+  preview_target_member_id: Kl1i_0002
+  actuation_count: 1
+  total_absolute_angle_deg: 180.0
+  preview_segments:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: -180.0
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - -0.7064592900766744
+    - 0.031311424980372836
+    - -0.7063608080132039
+    - 0.03145274285326482
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 0
+  - 0
+  - 1
+  - 180.0
+  - 0
+- source: 0
+  target: 1
+  edge_id: group:0->1:fafa3ec411e6c0b785c3
+  witnesses:
+  - landing_model: observed_endpoint
+    landing_error_deg: 0.02289862659826018
+    endpoint_error_deg: 0.02289862659826018
+    settling_segments: []
+    possible_outcomes:
+    - member_id: Kl1i_0002
+      group_id: 1
+      retained: true
+    source_member_id: Kl1i_0001
+    target_member_id: Kl1i_0002
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: -180.0
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - 0.03145274285326478
+      - 0.7063608080132039
+      - 0.03131142498037288
+      - 0.7064592900766744
+    is_composite: false
+  commands:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: -180.0
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - 0.03145274285326478
+    - 0.7063608080132039
+    - 0.03131142498037288
+    - 0.7064592900766744
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Y -180°
+  cartesian_preferred: true
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  source_member_ids:
+  - Kl1i_0001
+  possible_target_member_ids:
+  - Kl1i_0002
+  source_group_member_ids:
+  - Kl1i_0001
+  target_group_member_ids:
+  - Kl1i_0002
+  preview_source_member_id: Kl1i_0001
+  preview_target_member_id: Kl1i_0002
+  actuation_count: 1
+  total_absolute_angle_deg: 180.0
+  preview_segments:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: -180.0
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - 0.03145274285326478
+    - 0.7063608080132039
+    - 0.03131142498037288
+    - 0.7064592900766744
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 0
+  - 0
+  - 1
+  - 180.0
+  - 0
+- source: 1
+  target: 0
+  edge_id: group:1->0:72d2ebae2389edacf2a2
+  witnesses:
+  - landing_model: observed_endpoint
+    landing_error_deg: 0.008467637633305151
+    endpoint_error_deg: 0.008467637633305151
+    settling_segments: []
+    possible_outcomes:
+    - member_id: Kl1i_0001
+      group_id: 0
+      retained: true
+    source_member_id: Kl1i_0002
+    target_member_id: Kl1i_0001
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -180.0
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - -0.5609670811961934
+      - -0.43047487919749694
+      - 0.5610513518226394
+      - 0.4303820312374959
+    is_composite: false
+  commands:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: -180.0
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - -0.5609670811961934
+    - -0.43047487919749694
+    - 0.5610513518226394
+    - 0.4303820312374959
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Z -180°
+  cartesian_preferred: true
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  source_member_ids:
+  - Kl1i_0002
+  possible_target_member_ids:
+  - Kl1i_0001
+  source_group_member_ids:
+  - Kl1i_0002
+  target_group_member_ids:
+  - Kl1i_0001
+  preview_source_member_id: Kl1i_0002
+  preview_target_member_id: Kl1i_0001
+  actuation_count: 1
+  total_absolute_angle_deg: 180.0
+  preview_segments:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: -180.0
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - -0.5609670811961934
+    - -0.43047487919749694
+    - 0.5610513518226394
+    - 0.4303820312374959
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 0
+  - 0
+  - 1
+  - 180.0
+  - 0
+- source: 1
+  target: 0
+  edge_id: group:1->0:86ff38a0888206873e43
+  witnesses:
+  - landing_model: observed_endpoint
+    landing_error_deg: 0.02289862659826018
+    endpoint_error_deg: 0.02289862659826018
+    settling_segments: []
+    possible_outcomes:
+    - member_id: Kl1i_0001
+      group_id: 0
+      retained: true
+    source_member_id: Kl1i_0002
+    target_member_id: Kl1i_0001
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: 180.0
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - 0.4303820312374959
+      - -0.5610513518226393
+      - -0.43047487919749683
+      - 0.5609670811961933
+    is_composite: false
+  commands:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: 180.0
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - 0.4303820312374959
+    - -0.5610513518226393
+    - -0.43047487919749683
+    - 0.5609670811961933
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Y +180°
+  cartesian_preferred: true
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  source_member_ids:
+  - Kl1i_0002
+  possible_target_member_ids:
+  - Kl1i_0001
+  source_group_member_ids:
+  - Kl1i_0002
+  target_group_member_ids:
+  - Kl1i_0001
+  preview_source_member_id: Kl1i_0002
+  preview_target_member_id: Kl1i_0001
+  actuation_count: 1
+  total_absolute_angle_deg: 180.0
+  preview_segments:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: 180.0
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - 0.4303820312374959
+    - -0.5610513518226393
+    - -0.43047487919749683
+    - 0.5609670811961933
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 0
+  - 0
+  - 1
+  - 180.0
+  - 0
+- source: 1
+  target: 0
+  edge_id: group:1->0:8f0348b8f5e4bd312281
+  witnesses:
+  - landing_model: observed_endpoint
+    landing_error_deg: 0.02289862659826018
+    endpoint_error_deg: 0.02289862659826018
+    settling_segments: []
+    possible_outcomes:
+    - member_id: Kl1i_0001
+      group_id: 0
+      retained: true
+    source_member_id: Kl1i_0002
+    target_member_id: Kl1i_0001
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: -180.0
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - 0.4303820312374959
+      - -0.5610513518226393
+      - -0.43047487919749683
+      - 0.5609670811961933
+    is_composite: false
+  commands:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: -180.0
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - 0.4303820312374959
+    - -0.5610513518226393
+    - -0.43047487919749683
+    - 0.5609670811961933
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Y -180°
+  cartesian_preferred: true
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  source_member_ids:
+  - Kl1i_0002
+  possible_target_member_ids:
+  - Kl1i_0001
+  source_group_member_ids:
+  - Kl1i_0002
+  target_group_member_ids:
+  - Kl1i_0001
+  preview_source_member_id: Kl1i_0002
+  preview_target_member_id: Kl1i_0001
+  actuation_count: 1
+  total_absolute_angle_deg: 180.0
+  preview_segments:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: -180.0
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - 0.4303820312374959
+    - -0.5610513518226393
+    - -0.43047487919749683
+    - 0.5609670811961933
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 0
+  - 0
+  - 1
+  - 180.0
+  - 0
+- source: 1
+  target: 0
+  edge_id: group:1->0:c77f44e9de2334745c34
+  witnesses:
+  - landing_model: observed_endpoint
+    landing_error_deg: 0.008467637805473462
+    endpoint_error_deg: 0.008467637805473462
+    settling_segments: []
+    possible_outcomes:
+    - member_id: Kl1i_0001
+      group_id: 0
+      retained: true
+    source_member_id: Kl1i_0002
+    target_member_id: Kl1i_0001
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 180.0
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - -0.5609670811961933
+      - -0.4304748791974968
+      - 0.5610513518226393
+      - 0.43038203123749597
+    is_composite: false
+  commands:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: 180.0
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - -0.5609670811961933
+    - -0.4304748791974968
+    - 0.5610513518226393
+    - 0.43038203123749597
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Z +180°
+  cartesian_preferred: true
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  source_member_ids:
+  - Kl1i_0002
+  possible_target_member_ids:
+  - Kl1i_0001
+  source_group_member_ids:
+  - Kl1i_0002
+  target_group_member_ids:
+  - Kl1i_0001
+  preview_source_member_id: Kl1i_0002
+  preview_target_member_id: Kl1i_0001
+  actuation_count: 1
+  total_absolute_angle_deg: 180.0
+  preview_segments:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: 180.0
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - -0.5609670811961933
+    - -0.4304748791974968
+    - 0.5610513518226393
+    - 0.43038203123749597
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 0
+  - 0
+  - 1
+  - 180.0
+  - 0
+- source: 0
+  target: 1
+  edge_id: group:0->1:2348c32cbf150b53d6c2
+  witnesses:
+  - origin_edge_id: member:0->1:4b1aa9b7393ec6f9
+    landing_model: known_member_endpoint
+    settling_segments: []
+    endpoint_error_deg: null
+    possible_outcomes:
+    - member_id: Kl1i_0002
+      group_id: 1
+      retained: true
+    source_member_id: Kl1i_0001
+    target_member_id: Kl1i_0002
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: -179.99337412047302
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - 0.0314545532807195
+      - 0.7064016555143076
+      - 0.03130960627675627
+      - 0.7064184459081958
+    is_composite: false
+  commands:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: -179.99337412047302
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - 0.0314545532807195
+    - 0.7064016555143076
+    - 0.03130960627675627
+    - 0.7064184459081958
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Y -179.99337°
+  cartesian_preferred: false
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  source_member_ids:
+  - Kl1i_0001
+  possible_target_member_ids:
+  - Kl1i_0002
+  source_group_member_ids:
+  - Kl1i_0001
+  target_group_member_ids:
+  - Kl1i_0002
+  preview_source_member_id: Kl1i_0001
+  preview_target_member_id: Kl1i_0002
+  actuation_count: 1
+  total_absolute_angle_deg: 179.99337412047302
+  preview_segments:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: -179.99337412047302
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - 0.0314545532807195
+    - 0.7064016555143076
+    - 0.03130960627675627
+    - 0.7064184459081958
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 1
+  - 0
+  - 1
+  - 179.99337412047302
+  - 0
+- source: 1
+  target: 0
+  edge_id: group:1->0:aa5e6ee3e29695983db7
+  witnesses:
+  - origin_edge_id: member:1->0:ad341a314e10888b
+    landing_model: known_member_endpoint
+    settling_segments: []
+    endpoint_error_deg: null
+    possible_outcomes:
+    - member_id: Kl1i_0001
+      group_id: 0
+      retained: true
+    source_member_id: Kl1i_0002
+    target_member_id: Kl1i_0001
+    commands:
+    - axis: y
+      actuation: free_y
+      signed_angle_deg: 179.99337412047302
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - 0.43040692131027
+      - -0.5610837869588153
+      - -0.43044999305427745
+      - 0.5609346393116958
+    is_composite: false
+  commands:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: 179.99337412047302
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - 0.43040692131027
+    - -0.5610837869588153
+    - -0.43044999305427745
+    - 0.5609346393116958
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Y +179.99337°
+  cartesian_preferred: false
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  source_member_ids:
+  - Kl1i_0002
+  possible_target_member_ids:
+  - Kl1i_0001
+  source_group_member_ids:
+  - Kl1i_0002
+  target_group_member_ids:
+  - Kl1i_0001
+  preview_source_member_id: Kl1i_0002
+  preview_target_member_id: Kl1i_0001
+  actuation_count: 1
+  total_absolute_angle_deg: 179.99337412047302
+  preview_segments:
+  - axis: y
+    actuation: free_y
+    signed_angle_deg: 179.99337412047302
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - 0.43040692131027
+    - -0.5610837869588153
+    - -0.43044999305427745
+    - 0.5609346393116958
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 1
+  - 0
+  - 1
+  - 179.99337412047302
+  - 0
+- source: 0
+  target: 1
+  edge_id: group:0->1:3fe59a71a32749c38a82
+  witnesses:
+  - origin_edge_id: member:0->1:3bb05f04598dd7fa
+    landing_model: known_member_endpoint
+    settling_segments: []
+    endpoint_error_deg: null
+    possible_outcomes:
+    - member_id: Kl1i_0002
+      group_id: 1
+      retained: true
+    source_member_id: Kl1i_0001
+    target_member_id: Kl1i_0002
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: 179.9983317913202
+      start_quaternion_xyzw:
+      - -0.03131142498037288
+      - -0.7064592900766744
+      - 0.03145274285326478
+      - 0.7063608080132039
+      end_quaternion_xyzw:
+      - -0.7064588341742524
+      - 0.031321709517466274
+      - -0.7063612658232022
+      - 0.03144245974320932
+    is_composite: false
+  commands:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: 179.9983317913202
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - -0.7064588341742524
+    - 0.031321709517466274
+    - -0.7063612658232022
+    - 0.03144245974320932
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Z +179.99833°
+  cartesian_preferred: false
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  target_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  source_member_ids:
+  - Kl1i_0001
+  possible_target_member_ids:
+  - Kl1i_0002
+  source_group_member_ids:
+  - Kl1i_0001
+  target_group_member_ids:
+  - Kl1i_0002
+  preview_source_member_id: Kl1i_0001
+  preview_target_member_id: Kl1i_0002
+  actuation_count: 1
+  total_absolute_angle_deg: 179.9983317913202
+  preview_segments:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: 179.9983317913202
+    start_quaternion_xyzw:
+    - -0.03131142498037288
+    - -0.7064592900766744
+    - 0.03145274285326478
+    - 0.7063608080132039
+    end_quaternion_xyzw:
+    - -0.7064588341742524
+    - 0.031321709517466274
+    - -0.7063612658232022
+    - 0.03144245974320932
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 1
+  - 0
+  - 1
+  - 179.9983317913202
+  - 0
+- source: 1
+  target: 0
+  edge_id: group:1->0:12cc6e0de2e227b6e07a
+  witnesses:
+  - origin_edge_id: member:1->0:bd293db00ce3a6f8
+    landing_model: known_member_endpoint
+    settling_segments: []
+    endpoint_error_deg: null
+    possible_outcomes:
+    - member_id: Kl1i_0001
+      group_id: 0
+      retained: true
+    source_member_id: Kl1i_0002
+    target_member_id: Kl1i_0001
+    commands:
+    - axis: z
+      actuation: free_z
+      signed_angle_deg: -179.9983317913202
+      start_quaternion_xyzw:
+      - -0.43047487919749683
+      - 0.5609670811961933
+      - -0.4303820312374959
+      - 0.5610513518226393
+      end_quaternion_xyzw:
+      - -0.5609608143406963
+      - -0.430483045636061
+      - 0.5610576172075726
+      - 0.43037386348091
+    is_composite: false
+  commands:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: -179.9983317913202
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - -0.5609608143406963
+    - -0.430483045636061
+    - 0.5610576172075726
+    - 0.43037386348091
+  directed: true
+  transition_kind: group_transfer
+  evidence_status: geometry_only
+  experimental_status: untested
+  actuation: group_reorientation
+  display_name: Z -179.99833°
+  cartesian_preferred: false
+  is_composite: false
+  settling_required: false
+  source_group_key: Kl1i:group:1:4d0fc83cdfc55f3c1d53
+  target_group_key: Kl1i:group:0:b819e8d642744fbdcad8
+  source_member_ids:
+  - Kl1i_0002
+  possible_target_member_ids:
+  - Kl1i_0001
+  source_group_member_ids:
+  - Kl1i_0002
+  target_group_member_ids:
+  - Kl1i_0001
+  preview_source_member_id: Kl1i_0002
+  preview_target_member_id: Kl1i_0001
+  actuation_count: 1
+  total_absolute_angle_deg: 179.9983317913202
+  preview_segments:
+  - axis: z
+    actuation: free_z
+    signed_angle_deg: -179.9983317913202
+    start_quaternion_xyzw:
+    - -0.43047487919749683
+    - 0.5609670811961933
+    - -0.4303820312374959
+    - 0.5610513518226393
+    end_quaternion_xyzw:
+    - -0.5609608143406963
+    - -0.430483045636061
+    - 0.5610576172075726
+    - 0.43037386348091
+    segment_kind: command
+  planning_assumption: 'group_union: arrival and departure may use different group
+    members'
+  contact_feasibility_evaluated: false
+  preference_cost:
+  - 1
+  - 0
+  - 1
+  - 179.9983317913202
+  - 0
 group_routes:
 - edge_id: group-route:0->1:f824569d183983995bac
   source: 0
@@ -1929,3 +3083,60 @@ group_routes:
   planning_assumption: 'group_union: arrival and departure may use different group
     members'
   evidence_status: geometry_only
+connectivity:
+  groups:
+    cartesian:
+      strongly_connected_components:
+      - - 0
+        - 1
+      unreachable_pairs: []
+      reachable_pair_count: 2
+      total_pair_count: 2
+      strongly_connected: true
+    all_candidates:
+      strongly_connected_components:
+      - - 0
+        - 1
+      unreachable_pairs: []
+      reachable_pair_count: 2
+      total_pair_count: 2
+      strongly_connected: true
+    transfer_count: 12
+    planning_assumption: 'group_union: arrival and departure may use different group
+      members'
+    endpoint_tolerance_deg: 1.0
+  poses:
+    same_group_no_motion_pairs: []
+    motion_reachable_pair_count: 2
+    unreachable_pairs: []
+member_states:
+- member_id: Kl1i_0001
+  group_id: 0
+  quaternion_xyzw:
+  - -0.03131142498037288
+  - -0.7064592900766744
+  - 0.03145274285326478
+  - 0.7063608080132039
+  position_com_chute_mm:
+  - 453.1534585727631
+  - 9.961970140817822
+  - 9.955747785144617
+  retained: true
+  observed_count: 4757
+  observed_frequency_percent: 47.57
+- member_id: Kl1i_0002
+  group_id: 1
+  quaternion_xyzw:
+  - -0.43047487919749683
+  - 0.5609670811961933
+  - -0.4303820312374959
+  - 0.5610513518226393
+  position_com_chute_mm:
+  - 453.4713184810629
+  - 9.964874237571472
+  - 9.961208088452798
+  retained: true
+  observed_count: 4576
+  observed_frequency_percent: 45.76
+member_transfers: []
+member_routes: []

@@ -128,7 +128,7 @@ def preferred_group_routes(groups, transfers):
 
 
 def augment_groups(
-    source, built, *, include_fallback=True, progress=lambda message: None
+    source, built, *, include_fallback=True, progress=lambda message: None, group_key_overrides=None
 ):
     document = built.document
     if not document.get("member_states"):
@@ -164,6 +164,8 @@ def augment_groups(
         )
         for group, members in groups.items()
     }
+    if group_key_overrides:
+        keys.update({g: group_key_overrides[str(g)] for g in groups})
     symmetries, continuous_axis, _ = _symmetry(source)
     energy = SeatedEnergy(
         np.asarray(built.mesh.convex_hull.vertices)
@@ -175,6 +177,10 @@ def augment_groups(
     witness_keys = defaultdict(set)
 
     def add(a, b, commands, witness, *, composite=False):
+        if not by_id[a]['retained'] or not by_id[b]['retained']:
+            return
+        if not include_fallback and composite:
+            return
         source_group, target_group = by_id[a]["group_id"], by_id[b]["group_id"]
         if source_group == target_group or source_group is None or target_group is None:
             return

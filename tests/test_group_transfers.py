@@ -61,7 +61,7 @@ def fixture():
     return SimpleNamespace(workpiece='Test'),SimpleNamespace(document=document,mesh=trimesh.creation.box())
 
 
-def test_fresh_group_generation_exports_union_routes_and_retains_rare_members(source_folder, tmp_path):
+def test_fresh_group_generation_exports_individual_routes_and_filters_rare_members(source_folder, tmp_path):
     import json
     import yaml
     from bibazu_stable_roadmaps.generate import GenerationConfig, generate_one
@@ -82,8 +82,8 @@ def test_fresh_group_generation_exports_union_routes_and_retains_rare_members(so
     folder = Path(result['folder'])
     document = json.loads((folder/'Test1_roadmap.json').read_text(encoding='utf-8'))
     handover = yaml.safe_load((folder/'Test1_roadmap.yaml').read_text(encoding='utf-8'))
-    assert document['consumer_export']['version']==2
-    assert next(s for s in document['member_states'] if s['member_id']==rare['id'])['retained']
+    assert document['consumer_export']['version']==3
+    assert not next(s for s in document['member_states'] if s['member_id']==rare['id'])['retained']
     assert document['connectivity']['groups']['cartesian']['strongly_connected']
     assert all(not t['is_composite'] for t in document['group_transfers'])
     assert document['group_routes']==handover['group_routes']

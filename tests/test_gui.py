@@ -20,12 +20,12 @@ def test_preview_defaults_and_persisted_settings(source_folder, tmp_path):
     window = ObservedRoadmapGUI(settings=settings)
     window.source_path.setText(str(source_folder))
     window.scan()
-    assert window.minimum_frequency.value() == 5
+    assert window.minimum_frequency.value() == 1
     assert window.renumber.isChecked()
     assert len(window.sources) == 1
-    assert window.component_table.item(0, 2).text() == "3 / 4"
+    assert window.component_table.item(0, 2).text() == "4 / 4"
     assert window.preview_table.item(0, 3).text() == "0"
-    assert window.preview_table.item(3, 2).text() == "Removed"
+    assert window.preview_table.item(3, 2).text() == "Retained"
     window.minimum_frequency.setValue(0)
     window.renumber.setChecked(False)
     assert window.preview_table.item(0, 3).text() == "7"

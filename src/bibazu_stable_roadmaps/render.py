@@ -54,6 +54,8 @@ def embed_thumbnails(document: dict, images: dict[int, np.ndarray]):
 
 
 def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], images):
+    if 'pose_groups' in built.document:
+        return render_individual_groups(built, path, formats, images)
     graph = nx.Graph()
     graph.add_nodes_from(number for _, number in built.numbered)
     graph.add_edges_from((edge["source"], edge["target"]) for edge in built.document["edges"])
@@ -151,6 +153,80 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
     for fmt in formats:
         figure.savefig(path.with_suffix("." + fmt), bbox_inches="tight")
     plt.close(figure)
+
+
+def render_individual_groups(built, path, formats, images):
+    """Pose tiles in group boundaries; arrows describe shared outgoing actions."""
+    from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+    groups = sorted(built.document['pose_groups'], key=lambda g:(min(g['pose_ids']),g['group_key']))
+    columns = min(4, max(1, int(np.ceil(np.sqrt(len(groups))))))
+    rows = int(np.ceil(len(groups)/columns))
+    max_members = max(len(g['pose_ids']) for g in groups)
+    tile_rows = int(np.ceil(max_members/3))
+    cell_w, cell_h = 8., max(4.6, tile_rows*2.3+1.4)
+    angles=np.pi/2-np.arange(len(groups))*2*np.pi/len(groups)
+    unit=np.column_stack((np.cos(angles),np.sin(angles)))
+    radius=max([min(7.9/max(abs(a[0]-b[0]),1e-12),cell_h/max(abs(a[1]-b[1]),1e-12))
+        for i,a in enumerate(unit) for b in unit[i+1:]] or [0.])
+    fig, ax = plt.subplots(figsize=(max(12,(2*radius+8)*.6),max(9,(2*radius+cell_h)*.7)),dpi=160)
+    ax.set_xlim(-radius-4.2,radius+4.2)
+    ax.set_ylim(-radius-cell_h/2,radius+cell_h/2)
+    ax.axis('off')
+    positions = {}; nodes={n['node_id']:n for n in built.document['nodes']}
+    palette=plt.get_cmap('tab20')
+    for index,group in enumerate(groups):
+        x,y=unit[index]*radius
+        positions[group['group_id']]=(x,y)
+        color=palette(group['group_id']%20)
+        ax.add_patch(FancyBboxPatch((x-3.5,y-cell_h/2+.3),7,cell_h-.6,
+            boxstyle='round,pad=.06',facecolor=(*color[:3],.13),edgecolor=color,lw=1.5,zorder=1))
+        ax.text(x,y+cell_h/2-.7,f"Group {group['group_id']} · total {group['observed_frequency_percent']:g}%",
+            ha='center',fontsize=10,weight='bold',zorder=6)
+        ids=group['pose_ids']; ncols=min(3,len(ids))
+        for j,number in enumerate(ids):
+            px=x+(j%ncols-(ncols-1)/2)*2.2
+            py=y+(tile_rows-1)*1.05-(j//ncols)*2.3-.15
+            box=AnnotationBbox(OffsetImage(images[number],zoom=.43),(px,py),frameon=False,zorder=5)
+            ax.add_artist(box)
+            node=nodes[number]
+            ax.annotate(f"Pose {number} · {node['observed_frequency_percent']:g}%\n{node['source_pose_ids'][0]}",
+                (px,py),xytext=(0,39),textcoords='offset points',ha='center',fontsize=8,weight='bold',zorder=6)
+    preferred={}
+    for t in built.document['group_transfers']:
+        preferred.setdefault((t['source'],t['target']),t)
+    colors={'x':'#c73646','y':'#248738','z':'#237898'}
+    labels=[]
+    for (a,b),transfer in preferred.items():
+        start,end=np.asarray(positions[a]),np.asarray(positions[b]); delta=end-start
+        # Clip shared arrows to the group boundaries, never to an individual pose.
+        clip=min(3.6/max(abs(delta[0]),1e-12),(cell_h/2-.2)/max(abs(delta[1]),1e-12))
+        s=start+delta*clip; e=end-delta*clip
+        normal=np.array([-delta[1],delta[0]])/np.linalg.norm(delta)
+        s=s+normal*.12; e=e+normal*.12
+        color=colors[transfer['commands'][0]['axis']]
+        ax.add_patch(FancyArrowPatch(s,e,arrowstyle='-|>',mutation_scale=10,lw=1.1,
+            connectionstyle='arc3,rad=.08',color=color,zorder=2))
+        label=(s+e)/2+normal*.25
+        for fraction in (.3,.7,.4,.6,.2,.8,.5):
+            candidate=s*(1-fraction)+e*fraction+normal*.3
+            if any(abs(candidate[0]-p[0])<3.6 and abs(candidate[1]-p[1])<cell_h/2 for p in positions.values()):
+                continue
+            if any(abs(candidate[0]-p[0])<1.1 and abs(candidate[1]-p[1])<.3 for p in labels):
+                continue
+            label=candidate;break
+        labels.append(label)
+        ax.text(*label,transfer['display_name'],ha='center',va='center',fontsize=6,color=color,
+            bbox=dict(facecolor='white',edgecolor='none',alpha=.9,pad=.6),zorder=4)
+    stats=built.document['connectivity']['groups']; all_routes=stats['all_candidates']; cart=stats['cartesian']
+    fig.suptitle(f"{built.source.workpiece}: individual poses, shared group actions\n"
+        f"{len(nodes)} poses · {len(groups)} groups · cutoff {built.document.get('filtering',{}).get('minimum_frequency_percent',0):g}%\n"
+        f"Reachable group pairs: Cartesian {cart['reachable_pair_count']}/{cart['total_pair_count']} · "
+        f"all {all_routes['reachable_pair_count']}/{all_routes['total_pair_count']} · no composite bridges",fontsize=13)
+    fig.text(.5,.02,'Outgoing actions apply to every displayed group member. Same-group targets require no motion. Calibration required.',
+        ha='center',fontsize=9)
+    fig.subplots_adjust(top=.87,bottom=.08,left=.03,right=.97)
+    for fmt in formats: fig.savefig(path.with_suffix('.'+fmt),bbox_inches='tight')
+    plt.close(fig)
 
 
 def render_pose_sheets(built: BuiltRoadmap, folder: Path, formats: tuple[str, ...], check_cancel=lambda: None):

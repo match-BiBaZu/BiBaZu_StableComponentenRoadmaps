@@ -146,7 +146,7 @@ def _write_graphml(document: dict, destination: Path):
     graph = nx.MultiDiGraph()
     graph.graph["generation"] = json.dumps(document["generation"])
     graph.graph["classification_basis"] = "observed_simulation"
-    for key in ("group_keys", "group_transfers", "group_routes", "composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis"):
+    for key in ("pose_groups", "pose_to_group", "filtering", "migration", "consumer_export", "group_keys", "group_transfers", "group_routes", "composite_transfers", "routes", "connectivity", "member_states", "member_transfers", "member_routes", "capture_analysis"):
         if key in document:
             graph.graph[key] = json.dumps(document[key])
     for node in document["nodes"]:
@@ -207,8 +207,15 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
     except EmptyPoseList as error:
         return "skipped", {"reason": str(error)}
     numbered, removed = select_poses(source, config.minimum_frequency_percent, config.renumber_by_frequency)
+    input_catalogue = read_json(source.path)
+    if 'poses' not in input_catalogue:
+        input_catalogue = read_json(source.path.with_name('poses.json'))
+    grouped_input = any('group_members' in row for row in input_catalogue.get('poses',[]))
     if not numbered:
-        return "skipped", {"reason": f"No poses remain at {config.minimum_frequency_percent:g}% minimum frequency."}
+        if grouped_input:
+            numbered, _ = select_poses(source, 0, True)
+        else:
+            return "skipped", {"reason": f"No poses remain at {config.minimum_frequency_percent:g}% minimum frequency."}
     root = Path(config.output_root).expanduser().resolve()
     destination = root / source.workpiece
     # Never replace the input catalogue itself or its component folders.
@@ -223,7 +230,9 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
         catalogue = read_json(source.path)
         if 'poses' not in catalogue:
             catalogue = read_json(source.path.with_name('poses.json'))
-        group_mode = config.include_members and any('group_members' in row for row in catalogue.get('poses', []))
+        group_mode = any('group_members' in row for row in catalogue.get('poses', []))
+        if group_mode:
+            numbered, removed = select_poses(source, 0, True)
         built = build_roadmap(source, numbered, report,
                              include_composites=config.include_composites and not group_mode)
         rows = {str(p['id']): p for p in catalogue.get('poses', [])}
@@ -232,23 +241,24 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             for key in ('group_members', 'representative_retention_auc', 'representative_group_retention_auc', 'group_stability_rank'):
                 if key in row:
                     node[key] = row[key]
-        if config.include_members and any('group_members' in n for n in built.document['nodes']):
+        if group_mode:
             from .member_transfers import augment_members
             augment_members(source, built, sample_capture=config.estimate_capture_intervals,
                             include_fallback=False, progress=report)
-            from .group_transfers import augment_groups
-            augment_groups(source, built, include_fallback=config.include_composites, progress=report)
+            from .individual_groups import individualize
+            built = individualize(source, built, config.minimum_frequency_percent, report)
+            numbered = built.numbered
         for warning in built.warnings:
             progress(warning)
         generated_utc = datetime.now(timezone.utc).isoformat()
         metadata = {"minimum_frequency_percent": config.minimum_frequency_percent,
-                    "renumber_by_frequency": config.renumber_by_frequency, "frequency_denominator": source.frequency_denominator,
+                    "renumber_by_frequency": True if group_mode else config.renumber_by_frequency, "frequency_denominator": source.frequency_denominator,
                     "numbering_tie_break": "original source ID", "source_file": source.path.name,
                     "source_sha256": sha256(source.path), "generated_utc": generated_utc,
                     "pose_id_mapping": {pose.source_id: number for pose, number in numbered},
                     "removed_poses": [{"source_pose_id": pose.source_id, "frequency_percent": pose.frequency_percent} for pose in removed]}
         built.document.update(part_name=source.workpiece, generation=metadata,
-                              pose_ranking_method="observed_frequency" if config.renumber_by_frequency else "source_id",
+                              pose_ranking_method="observed_frequency" if group_mode or config.renumber_by_frequency else "source_id",
                               classical_metadata={"observed_pose_generation": metadata})
         from .consumer_export import attach_consumer_export
         attach_consumer_export(built.document)
@@ -261,26 +271,27 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             for path in source.snapshot_files:
                 shutil.copyfile(path, snapshots / path.name)
             stem = staging / f"{source.workpiece}_roadmap"
-            need_images = "json" in config.outputs or any(fmt.startswith("roadmap_") for fmt in config.outputs)
+            eligible = bool(built.document['nodes'])
+            need_images = eligible and ("json" in config.outputs or any(fmt.startswith("roadmap_") for fmt in config.outputs))
             images = thumbnails(built, check_cancel) if need_images else {}
-            if "json" in config.outputs:
+            if eligible and "json" in config.outputs:
                 embed_thumbnails(built.document, images)
                 write_json(stem.with_suffix(".json"), built.document)
-            if "yaml" in config.outputs:
+            if eligible and "yaml" in config.outputs:
                 stem.with_suffix(".yaml").write_text(yaml.safe_dump(handover_dict(built.document), sort_keys=False, allow_unicode=True), encoding="utf-8")
-            if "graphml" in config.outputs:
+            if eligible and "graphml" in config.outputs:
                 _write_graphml(built.document, stem.with_suffix(".graphml"))
             formats = tuple(fmt for fmt in ("svg", "png") if f"roadmap_{fmt}" in config.outputs)
-            if formats:
+            if eligible and formats:
                 render_roadmap(built, stem, formats, images)
             sheet_formats = tuple(fmt for fmt in ("svg", "png") if f"poses_{fmt}" in config.outputs)
-            if sheet_formats:
+            if eligible and sheet_formats:
                 render_pose_sheets(built, staging / "pose_sheets", sheet_formats, check_cancel)
             manifest = {"format": "bibazu_observed_roadmap_generation", "schema_version": 1,
                         "workpiece": source.workpiece, "generated_utc": generated_utc,
                         "pose_count": len(numbered), "transition_count": len(built.document["edges"]),
                         "minimum_frequency_percent": config.minimum_frequency_percent,
-                        "renumber_by_frequency": config.renumber_by_frequency,
+                        "renumber_by_frequency": True if group_mode else config.renumber_by_frequency,
                         "settings": {**asdict(config), "output_root": "."}, "input": metadata,
                         "analytical_stability_evaluated": False,
                         "engine_provenance": read_json(ROOT / "ENGINE_PROVENANCE.json"), "warnings": built.warnings}
@@ -291,6 +302,13 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             manifest["consumer_export"] = dict(version=built.document["consumer_export"]["version"], route_policy="exported_only",
                 calibration_choice_count=len(built.document["consumer_export"]["calibration_choices"]),
                 execution_route_count=len(built.document["consumer_export"]["execution_routes"]))
+            manifest['status'] = 'complete' if eligible else 'no_eligible_poses'
+            if group_mode:
+                manifest['group_count'] = len(built.document['pose_groups'])
+                manifest['settings']['include_composites'] = False
+                manifest['settings']['include_members'] = True
+            if not eligible:
+                write_json(staging / 'no_eligible_poses.json', {'status':'no_eligible_poses','cutoff':config.minimum_frequency_percent})
             write_json(staging / "manifest.json", manifest)
             lines = [f"# {source.workpiece}\n", "Observed simulation poses; geometry supplies untested direct connection candidates.",
                      f"\nMinimum frequency: **{config.minimum_frequency_percent:g}%**. Percentages retain the source denominator.",
@@ -320,9 +338,9 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             ids = {node["node_id"] for node in built.document["nodes"]}
             if len(ids) != len(numbered) or any(edge["source"] not in ids or edge["target"] not in ids for edge in built.document["edges"]):
                 raise ValueError("Generated roadmap references are inconsistent.")
-            if "json" in config.outputs:
+            if eligible and "json" in config.outputs:
                 read_json(stem.with_suffix(".json"))
-            if "yaml" in config.outputs:
+            if eligible and "yaml" in config.outputs:
                 yaml.safe_load(stem.with_suffix(".yaml").read_text(encoding="utf-8"))
             check_cancel()
             _publish(root, staging, destination)

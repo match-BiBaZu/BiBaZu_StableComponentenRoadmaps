@@ -255,6 +255,10 @@ def build_consumer_export(document):
 
 
 def attach_consumer_export(document):
+    if 'pose_groups' in document:
+        from .individual_groups import consumer_export
+        document['consumer_export'] = consumer_export(document)
+        return document
     document["consumer_export"] = (
         build_group_consumer_export(document)
         if "group_transfers" in document

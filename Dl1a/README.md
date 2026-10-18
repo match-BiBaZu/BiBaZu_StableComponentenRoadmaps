@@ -1,34 +1,23 @@
-# Dl1a
+# Dl1a: individual poses with shared group actions
 
-Observed simulation poses; geometry supplies untested direct connection candidates.
+![Roadmap](Dl1a_roadmap.png)
 
-Minimum frequency: **0%**. Percentages retain the source denominator.
+Cutoff: **1%**, applied separately to original group totals and individual observation frequencies. Exactly the cutoff qualifies; the source trial denominator is unchanged. Below-cutoff members are not displayed or used as witnesses. Groups without qualifying members are omitted.
 
-| Roadmap pose | Source pose | Frequency | Count |
-| ---: | --- | ---: | ---: |
-| 0 | Dl1a_0007 | 47.24% | 4724 |
-| 1 | Dl1a_0006 | 46.28% | 4628 |
-| 2 | Dl1a_0013 | 3.32% | 332 |
-| 3 | Dl1a_0003 | 1.55% | 155 |
-| 4 | Dl1a_0002 | 1.13% | 113 |
+| Pose | Original observation | Individual frequency | Count | Group |
+|---:|---|---:|---:|---:|
+| 0 | Dl1a_0007 | 29.65% | 2965 | 0 |
+| 1 | Dl1a_0006 | 25.69% | 2569 | 1 |
+| 2 | Dl1a_0004 | 19.24% | 1924 | 1 |
+| 3 | Dl1a_0005 | 16.67% | 1667 | 0 |
+| 4 | Dl1a_0014 | 2.85% | 285 | 2 |
+| 5 | Dl1a_0009 | 1.21% | 121 | 1 |
+| 6 | Dl1a_0008 | 1.17% | 117 | 3 |
 
-The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
+7 individual poses in 4 groups. Candidate group reachability: **12/12**; Cartesian-only: **12/12**.
 
-Original inputs are in `source/`; generation settings and exclusions are in `manifest.json`.
+Every outgoing action applies to all displayed members of its source group; any qualifying destination member satisfies its target group. A target in the current group requires no motion. There are no internal group transitions and no composite fallback bridges. Ordinary multi-step routes use retained single-axis actions. Disconnected components remain disconnected.
 
-Files: [Dl1a_roadmap.graphml](Dl1a_roadmap.graphml), [Dl1a_roadmap.json](Dl1a_roadmap.json), [Dl1a_roadmap.png](Dl1a_roadmap.png), [Dl1a_roadmap.svg](Dl1a_roadmap.svg), [Dl1a_roadmap.yaml](Dl1a_roadmap.yaml)
+Commands, witnesses, competing landing outcomes, previews and finished routes are in consumer-export version 3. Poses are numbered by individual frequency; stable group identities are separate. Previews use actual witnesses and invent no internal movement. Contact feasibility and settling reliability remain unverified; assigned pressure profiles and explicit source-group calibration are required.
 
-[Group membership](membership.csv), [all groups](source/groups.json), [member stability curves](source/group_stability.csv), [barrier evidence](source/grouping_geometry.json).
-
-Thumbnails retain the chosen representative orientations. Each group contains all its observed members.
-
-
-## Whole-group reorientations
-
-Cartesian-only routes reach **20/20** ordered group pairs; all candidate routes reach **20/20**.
-
-A transfer may use any source member and reach any target member. Consecutive transfers may use different members of the same intermediate group. This interchangeability is the planning assumption; no extra motion is invented between those witnesses.
-
-Exact ±90° and ±180° chute X/Y/Z commands are evaluated without contact/support pruning and preferred over other rotations. Arrow labels show the preferred reorientation; exports and control pickers retain alternatives and member witnesses. Competing landing outcomes and sampled downhill evidence remain in the records.
-
-The additive `group_transfers`, `group_routes` and consumer-export version 2 records contain finished choices and previews. Execution requires an assigned pressure profile explicitly calibrated for the exported source group. Existing profiles receive no automatic group qualification. Contact feasibility and physical settling reliability remain unverified.
+Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. See `manifest.json` and `files.sha256.json`.

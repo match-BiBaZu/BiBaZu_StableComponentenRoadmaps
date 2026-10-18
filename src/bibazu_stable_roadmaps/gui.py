@@ -1,7 +1,7 @@
 """Focused Windows/PyQt GUI for simulator pose files and observed frequencies."""
 from __future__ import annotations
 
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import json
 import os
 from pathlib import Path
@@ -73,7 +73,7 @@ class ObservedRoadmapGUI(QMainWindow):
         self.minimum_frequency.setRange(0, 100)
         self.minimum_frequency.setDecimals(3)
         self.minimum_frequency.setSuffix(" %")
-        self.minimum_frequency.setValue(5)
+        self.minimum_frequency.setValue(1)
         self.minimum_frequency.setToolTip("Below this value is removed; exactly this value is retained. 0% disables filtering.")
         row.addWidget(self.minimum_frequency)
         self.renumber = QCheckBox("Renumber by frequency (pose 0 = most frequent)")
@@ -81,11 +81,11 @@ class ObservedRoadmapGUI(QMainWindow):
         row.addWidget(self.renumber)
         self.composites = QCheckBox("Add geometry-only composite bridges")
         self.composites.setChecked(True)
-        self.composites.setToolTip("Keep representative thumbnails. Add multi-axis transfers only where group connectivity needs them; calibration is required.")
+        self.composites.setToolTip("Available for ungrouped inputs only. Grouped roadmaps never generate composite bridges.")
         row.addWidget(self.composites)
         self.members = QCheckBox("Route between whole groups; prefer Cartesian rotations")
         self.members.setChecked(True)
-        self.members.setToolTip("Use all members, including low-frequency observations. Intermediate members may differ. Evaluate exact Cartesian rotations and sampled downhill settling candidates.")
+        self.members.setToolTip("Show individual members above the cutoff inside their groups. Share outgoing single-axis actions; never add internal moves or composite bridges.")
         row.addWidget(self.members)
         row.addStretch()
         body.addWidget(options)
@@ -227,21 +227,39 @@ class ObservedRoadmapGUI(QMainWindow):
         if not hasattr(self, "preview_table"):
             return
         selections = {}
+        preview_sources = {}
+        has_grouped = False
         for row, path in enumerate(self.sources):
             data = self.source_data.get(path)
             if not data or self.component_table.item(row, 2) is None:
                 continue
             try:
-                numbered, removed = select_poses(data, self.minimum_frequency.value(), self.renumber.isChecked())
+                original = data
+                catalogue = json.loads(data.path.read_text(encoding='utf-8-sig'))
+                grouped = any('group_members' in p for p in catalogue.get('poses',[]))
+                has_grouped = has_grouped or grouped
+                if grouped and data.path.with_name('original_observations.json').is_file():
+                    original = load_source(data.path.with_name('original_observations.json'))
+                    allowed={m for p in catalogue['poses'] if p['frequency_percent'] >= self.minimum_frequency.value() for m in p['group_members']}
+                    data=replace(original,poses=tuple(p for p in original.poses if p.source_id in allowed))
+                preview_sources[path]=original
+                numbered, removed = select_poses(data, self.minimum_frequency.value(), True if grouped else self.renumber.isChecked())
                 selections[path] = dict((pose.source_id, number) for pose, number in numbered)
-                self.component_table.item(row, 2).setText(f"{len(numbered)} / {len(data.poses)}")
+                self.component_table.item(row, 2).setText(f"{len(numbered)} / {len(original.poses)}")
                 if self.process is None:
                     self.component_table.item(row, 3).setText(self.source_errors.get(path, "Ready" if numbered else "No poses pass cutoff"))
             except ValueError as error:
                 self.component_table.item(row, 3).setText(str(error))
+        self.composites.setEnabled(not has_grouped)
+        self.members.setEnabled(not has_grouped)
+        self.renumber.setEnabled(not has_grouped)
+        if has_grouped:
+            self.composites.setChecked(False)
+            self.members.setChecked(True)
+            self.renumber.setChecked(True)
         row = self.component_table.currentRow()
         path = self.sources[row] if 0 <= row < len(self.sources) else None
-        data = self.source_data.get(path)
+        data = preview_sources.get(path, self.source_data.get(path))
         self.preview_table.setRowCount(len(data.poses) if data else 0)
         self.preview_label.setText(f"Pose preview — {data.workpiece}" if data else "Pose preview")
         if not data:
@@ -270,7 +288,7 @@ class ObservedRoadmapGUI(QMainWindow):
             self.source_path.setText(self.settings.value("source", self.source_path.text()))
             data = json.loads(self.settings.value("config", "{}"))
             self.output_root.setText(data.get("output_root", self.output_root.text()))
-            self.minimum_frequency.setValue(data.get("minimum_frequency_percent", 5))
+            self.minimum_frequency.setValue(data.get("minimum_frequency_percent", 1))
             self.renumber.setChecked(data.get("renumber_by_frequency", True))
             self.composites.setChecked(data.get("include_composites", True))
             self.members.setChecked(data.get("include_members", True))

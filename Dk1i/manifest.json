@@ -2,14 +2,14 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Dk1i",
-  "generated_utc": "2026-10-18T13:14:42.135138+00:00",
-  "pose_count": 6,
-  "transition_count": 16,
-  "minimum_frequency_percent": 0,
+  "generated_utc": "2026-10-18T16:12:05.314491+00:00",
+  "pose_count": 8,
+  "transition_count": 28,
+  "minimum_frequency_percent": 1.0,
   "renumber_by_frequency": true,
   "settings": {
     "output_root": ".",
-    "minimum_frequency_percent": 0,
+    "minimum_frequency_percent": 1.0,
     "renumber_by_frequency": true,
     "outputs": [
       "json",
@@ -20,25 +20,27 @@
       "poses_png",
       "poses_svg"
     ],
-    "include_composites": true,
+    "include_composites": false,
     "include_members": true,
-    "estimate_capture_intervals": true
+    "estimate_capture_intervals": false
   },
   "input": {
-    "minimum_frequency_percent": 0,
+    "minimum_frequency_percent": 1.0,
     "renumber_by_frequency": true,
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
     "source_sha256": "c0cb083e18bc6b28a388290d799041080c99abebd980914fa0eaffce460c83d2",
-    "generated_utc": "2026-10-18T13:14:42.135138+00:00",
+    "generated_utc": "2026-10-18T16:12:05.314491+00:00",
     "pose_id_mapping": {
-      "Dk1i_0005": 0,
+      "Dk1i_0007": 0,
       "Dk1i_0002": 1,
-      "Dk1i_0007": 2,
+      "Dk1i_0005": 2,
       "Dk1i_0006": 3,
-      "Dk1i_0001": 4,
-      "Dk1i_0008": 5
+      "Dk1i_0003": 4,
+      "Dk1i_0004": 5,
+      "Dk1i_0001": 6,
+      "Dk1i_0008": 7
     },
     "removed_poses": [],
     "provenance": {
@@ -78,93 +80,6 @@
   },
   "warnings": [],
   "connectivity": {
-    "members": {
-      "group_overview": {
-        "strongly_connected_components": [
-          [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5
-          ]
-        ],
-        "unreachable_pairs": [],
-        "reachable_pair_count": 30,
-        "total_pair_count": 30,
-        "strongly_connected": true
-      },
-      "known_member_inter_group_action_count": 28,
-      "source_member_coverage": {
-        "Dk1i_0001": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dk1i_0002": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dk1i_0003": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dk1i_0004": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dk1i_0005": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dk1i_0006": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dk1i_0007": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Dk1i_0008": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "every_source_member_reaches_every_group": true,
-      "note": "Group overview is existential. Executable route candidates preserve possible member states; profiles require explicit source coverage."
-    },
     "groups": {
       "cartesian": {
         "strongly_connected_components": [
@@ -201,14 +116,36 @@
       "transfer_count": 179,
       "planning_assumption": "group_union: arrival and departure may use different group members",
       "endpoint_tolerance_deg": 1.0
+    },
+    "poses": {
+      "same_group_no_motion_pairs": [
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "motion_reachable_pair_count": 52,
+      "unreachable_pairs": []
     }
   },
   "composite_transfer_count": 0,
-  "member_transfer_count": 169,
+  "member_transfer_count": 0,
   "consumer_export": {
-    "version": 2,
-    "route_policy": "exported_only",
-    "calibration_choice_count": 433,
+    "version": 3,
+    "route_policy": "exported_only; no composite bridges",
+    "calibration_choice_count": 179,
     "execution_route_count": 179
   },
   "grouped_export": true,
@@ -228,6 +165,21 @@
   "group_route_count": 30,
   "group_extension": {
     "planning_assumption": "group_union: arrival and departure may use different group members",
-    "implementation_sha256": "e93e3ba43453fdd6a533566e010315a56e31c0972f300b36ea5c69858f544d0e"
+    "implementation_sha256": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4"
+  },
+  "group_count": 6,
+  "status": "complete",
+  "individual_extension": {
+    "consumer_export_version": 3,
+    "minimum_frequency_percent": 1,
+    "composite_fallbacks": false,
+    "implementation_sha256": {
+      "individual_groups.py": "0b2b05abeed269d9bbadb7bc854045d6254428d58cffbc8499842c2dd7777506",
+      "group_transfers.py": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4",
+      "consumer_export.py": "9b10b66ddfe9b079830c0890dca6b8366de916cd2b1b54fdb2121c7a833e6828",
+      "render.py": "0926d6d64d7d80b38858759867336df589ba0e8e2b3933de6b9088af00563658",
+      "upgrade_individual.py": "5e732f578e80206b91125eaccf1f986b2493f7667e3a8b7261e191e4046b6216"
+    },
+    "capture_interval_policy": "Reuse existing filtered intervals; reevaluate exact Cartesian settling."
   }
 }
