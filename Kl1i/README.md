@@ -5,9 +5,9 @@
 Cutoff: **1%**, applied separately to original group totals and individual observation frequencies. Exactly the cutoff qualifies; the source trial denominator is unchanged. Below-cutoff members are not displayed or used as witnesses. Groups without qualifying members are omitted.
 
 | Pose | Original observation | Individual frequency | Count | Group |
-|---:|---|---:|---:|---:|
-| 0 | Kl1i_0001 | 47.57% | 4757 | 0 |
-| 1 | Kl1i_0002 | 45.76% | 4576 | 1 |
+| ---: | --- | ---: | ---: | --- |
+| 0 | Kl1i_0001 | 47.57% | 4757 | A |
+| 1 | Kl1i_0002 | 45.76% | 4576 | B |
 
 2 individual poses in 2 groups. Candidate group reachability: **2/2**; Cartesian-only: **2/2**.
 
@@ -16,3 +16,5 @@ Every outgoing action applies to all displayed members of its source group; any 
 Commands, witnesses, competing landing outcomes, previews and finished routes are in consumer-export version 3. Poses are numbered by individual frequency; stable group identities are separate. Previews use actual witnesses and invent no internal movement. Contact feasibility and settling reliability remain unverified; assigned pressure profiles and explicit source-group calibration are required.
 
 Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. See `manifest.json` and `files.sha256.json`.
+
+The roadmap uses alphabetic group labels in row order (A–Z, then AA onward), numeric pose labels, and straight arrows.

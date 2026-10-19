@@ -5,14 +5,14 @@
 Cutoff: **1%**, applied separately to original group totals and individual observation frequencies. Exactly the cutoff qualifies; the source trial denominator is unchanged. Below-cutoff members are not displayed or used as witnesses. Groups without qualifying members are omitted.
 
 | Pose | Original observation | Individual frequency | Count | Group |
-|---:|---|---:|---:|---:|
-| 0 | Dl1a_0007 | 29.65% | 2965 | 0 |
-| 1 | Dl1a_0006 | 25.69% | 2569 | 1 |
-| 2 | Dl1a_0004 | 19.24% | 1924 | 1 |
-| 3 | Dl1a_0005 | 16.67% | 1667 | 0 |
-| 4 | Dl1a_0014 | 2.85% | 285 | 2 |
-| 5 | Dl1a_0009 | 1.21% | 121 | 1 |
-| 6 | Dl1a_0008 | 1.17% | 117 | 3 |
+| ---: | --- | ---: | ---: | --- |
+| 0 | Dl1a_0007 | 29.65% | 2965 | A |
+| 1 | Dl1a_0006 | 25.69% | 2569 | B |
+| 2 | Dl1a_0004 | 19.24% | 1924 | B |
+| 3 | Dl1a_0005 | 16.67% | 1667 | A |
+| 4 | Dl1a_0014 | 2.85% | 285 | C |
+| 5 | Dl1a_0009 | 1.21% | 121 | B |
+| 6 | Dl1a_0008 | 1.17% | 117 | D |
 
 7 individual poses in 4 groups. Candidate group reachability: **12/12**; Cartesian-only: **12/12**.
 
@@ -21,3 +21,5 @@ Every outgoing action applies to all displayed members of its source group; any 
 Commands, witnesses, competing landing outcomes, previews and finished routes are in consumer-export version 3. Poses are numbered by individual frequency; stable group identities are separate. Previews use actual witnesses and invent no internal movement. Contact feasibility and settling reliability remain unverified; assigned pressure profiles and explicit source-group calibration are required.
 
 Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. See `manifest.json` and `files.sha256.json`.
+
+The roadmap uses alphabetic group labels in row order (A–Z, then AA onward), numeric pose labels, and straight arrows.

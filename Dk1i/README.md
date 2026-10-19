@@ -6,16 +6,16 @@ Observed simulation poses; geometry supplies untested direct connection candidat
 
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
-| Roadmap pose | Source pose | Frequency | Count |
-| ---: | --- | ---: | ---: |
-| 0 | Dk1i_0002 | 18.8% | 188 |
-| 1 | Dk1i_0004 | 18% | 180 |
-| 2 | Dk1i_0003 | 16% | 160 |
-| 3 | Dk1i_0005 | 15% | 150 |
-| 4 | Dk1i_0007 | 11.3% | 113 |
-| 5 | Dk1i_0006 | 8% | 80 |
-| 6 | Dk1i_0001 | 7.6% | 76 |
-| 7 | Dk1i_0008 | 5.1% | 51 |
+| Roadmap pose | Source pose | Frequency | Count | Group |
+| ---: | --- | ---: | ---: | --- |
+| 0 | Dk1i_0002 | 18.8% | 188 | A |
+| 1 | Dk1i_0004 | 18% | 180 | A |
+| 2 | Dk1i_0003 | 16% | 160 | B |
+| 3 | Dk1i_0005 | 15% | 150 | B |
+| 4 | Dk1i_0007 | 11.3% | 113 | C |
+| 5 | Dk1i_0006 | 8% | 80 | D |
+| 6 | Dk1i_0001 | 7.6% | 76 | E |
+| 7 | Dk1i_0008 | 5.1% | 51 | F |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 
@@ -32,3 +32,5 @@ Generated from grouped poses commit `632b830bd890498e1b07b14d44d97b25f5bba7bb`, 
 Arrows apply to the exact source pose and accept any qualifying member of the destination group. No action is inherited from another source member, and no composite bridges are used. Transport pose frequencies and after-stop observations remain separate.
 
 Changed export hashes require explicit reimport; numeric pose IDs do not carry calibration between runs. The prior export is preserved in [history](history/previous_roadmap.json.gz). See [simulation provenance](source/simulation_provenance.json), [validation](source/validation.json), [memberships](membership.csv), and [member assessment curves](source/group_stability.csv).
+
+The roadmap uses alphabetic group labels in row order (A–Z, then AA onward), numeric pose labels, and straight arrows.

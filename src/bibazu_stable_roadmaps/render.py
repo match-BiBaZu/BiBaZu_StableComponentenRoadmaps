@@ -155,34 +155,43 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
     plt.close(figure)
 
 
+def group_label(index: int) -> str:
+    """Alphabetical display labels, continuing with AA after Z."""
+    label = ''
+    number = index + 1
+    while number:
+        number, remainder = divmod(number - 1, 26)
+        label = chr(ord('A') + remainder) + label
+    return label
+
+
 def render_individual_groups(built, path, formats, images):
-    """Pose tiles in group boundaries; arrows describe shared outgoing actions."""
+    """Numbered pose tiles in lettered groups on a grid with straight arrows."""
     from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
     groups = sorted(built.document['pose_groups'], key=lambda g:(min(g['pose_ids']),g['group_key']))
     columns = min(4, max(1, int(np.ceil(np.sqrt(len(groups))))))
     rows = int(np.ceil(len(groups)/columns))
     max_members = max(len(g['pose_ids']) for g in groups)
     tile_rows = int(np.ceil(max_members/3))
-    cell_w, cell_h = 8., max(4.6, tile_rows*2.3+1.4)
-    angles=np.pi/2-np.arange(len(groups))*2*np.pi/len(groups)
-    unit=np.column_stack((np.cos(angles),np.sin(angles)))
-    radius=max([min(7.9/max(abs(a[0]-b[0]),1e-12),cell_h/max(abs(a[1]-b[1]),1e-12))
-        for i,a in enumerate(unit) for b in unit[i+1:]] or [0.])
-    fig, ax = plt.subplots(figsize=(max(12,(2*radius+8)*.6),max(9,(2*radius+cell_h)*.7)),dpi=160)
-    ax.set_xlim(-radius-4.2,radius+4.2)
-    ax.set_ylim(-radius-cell_h/2,radius+cell_h/2)
+    panel_h = max(4.6, tile_rows*2.3+1.4)
+    cell_w, cell_h = 9.5, panel_h + 2.
+    width, height = max(12, columns*5.4), max(8, rows*cell_h*.62+2.)
+    fig, ax = plt.subplots(figsize=(width, height), dpi=160)
+    ax.set_xlim(-4.1, (columns-1)*cell_w+4.1)
+    ax.set_ylim(-(rows-1)*cell_h-panel_h/2-.4, panel_h/2+.4)
     ax.axis('off')
     positions = {}; pose_positions = {}; pose_boxes = {}
     nodes={n['node_id']:n for n in built.document['nodes']}
     palette=plt.get_cmap('tab20')
     for index,group in enumerate(groups):
-        x,y=unit[index]*radius
+        x,y=(index%columns)*cell_w,-(index//columns)*cell_h
         positions[group['group_id']]=(x,y)
         color=palette(group['group_id']%20)
-        ax.add_patch(FancyBboxPatch((x-3.5,y-cell_h/2+.3),7,cell_h-.6,
+        ax.add_patch(FancyBboxPatch((x-3.5,y-panel_h/2+.3),7,panel_h-.6,
             boxstyle='round,pad=.06',facecolor=(*color[:3],.13),edgecolor=color,lw=1.5,zorder=1))
-        ax.text(x,y+cell_h/2-.7,f"Group {group['group_id']} · total {group['observed_frequency_percent']:g}%",
-            ha='center',fontsize=10,weight='bold',zorder=6)
+        ax.text(x,y+panel_h/2-.7,f"Group {group_label(index)} · total {group['observed_frequency_percent']:g}%",
+            ha='center',fontsize=10,weight='bold',zorder=6,
+            bbox=dict(facecolor='white',edgecolor='none',alpha=.95,pad=2))
         ids=group['pose_ids']; ncols=min(3,len(ids))
         for j,number in enumerate(ids):
             px=x+(j%ncols-(ncols-1)/2)*2.2
@@ -193,20 +202,21 @@ def render_individual_groups(built, path, formats, images):
             pose_boxes[number] = box
             node=nodes[number]
             ax.annotate(f"Pose {number} · {node['observed_frequency_percent']:g}%\n{node['source_pose_ids'][0]}",
-                (px,py),xytext=(0,39),textcoords='offset points',ha='center',fontsize=8,weight='bold',zorder=6)
+                (px,py),xytext=(0,39),textcoords='offset points',ha='center',fontsize=8,weight='bold',zorder=6,
+                bbox=dict(facecolor='white',edgecolor='none',alpha=.95,pad=.6))
     pose_to_group = built.document.get('planning_semantics') == 'pose_to_group'
     preferred={}
     transfers = built.document.get('pose_group_transfers', []) if pose_to_group else built.document['group_transfers']
     for t in sorted(transfers, key=lambda t:(t['preference_cost'],t['edge_id'])):
         preferred.setdefault((t['source'],t['target_group_id'] if pose_to_group else t['target']),t)
-    fig.subplots_adjust(top=.87,bottom=.10,left=.03,right=.97)
+    fig.subplots_adjust(top=1-1.2/height,bottom=.85/height,left=.03,right=.97)
     fig.canvas.draw()
     colors={'x':'#c73646','y':'#248738','z':'#237898'}
     labels=[]
     for (a,b),transfer in preferred.items():
         start = pose_positions[a] if pose_to_group else np.asarray(positions[a])
         end = np.asarray(positions[b]); delta=end-start
-        end_clip=min(3.6/max(abs(delta[0]),1e-12),(cell_h/2-.2)/max(abs(delta[1]),1e-12))
+        end_clip=min(3.6/max(abs(delta[0]),1e-12),(panel_h/2-.2)/max(abs(delta[1]),1e-12))
         if pose_to_group:
             bounds = pose_boxes[a].get_window_extent(fig.canvas.get_renderer()).transformed(ax.transData.inverted())
             start_clip=min((bounds.width/2+.08)/max(abs(delta[0]),1e-12),
@@ -215,14 +225,15 @@ def render_individual_groups(built, path, formats, images):
             start_clip=end_clip
         s=start+delta*start_clip; e=end-delta*end_clip
         normal=np.array([-delta[1],delta[0]])/np.linalg.norm(delta)
-        s=s+normal*.06; e=e+normal*.12
+        # Parallel lanes separate opposing arrows without bending their shafts.
+        s=s+normal*.10; e=e+normal*.10
         color=colors[transfer['commands'][0]['axis']]
         ax.add_patch(FancyArrowPatch(s,e,arrowstyle='-|>',mutation_scale=10,lw=1.1,
-            connectionstyle='arc3,rad=.08',color=color,zorder=2))
+            connectionstyle='arc3,rad=0',color=color,zorder=2))
         label=(s+e)/2+normal*.25
         for fraction in (.3,.7,.4,.6,.2,.8,.5):
             candidate=s*(1-fraction)+e*fraction+normal*.3
-            if any(abs(candidate[0]-p[0])<3.6 and abs(candidate[1]-p[1])<cell_h/2 for p in positions.values()):
+            if any(abs(candidate[0]-p[0])<3.6 and abs(candidate[1]-p[1])<panel_h/2 for p in positions.values()):
                 continue
             if any(abs(candidate[0]-p[0])<1.1 and abs(candidate[1]-p[1])<.3 for p in labels):
                 continue

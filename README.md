@@ -1,6 +1,6 @@
 # BiBaZu grouped roadmaps: individual poses
 
-The grouped catalogue displays **individual observed poses**, numbered from 0 by descending individual frequency, inside coloured group boundaries. Group identities are separate from pose numbers.
+The grouped catalogue displays **individual observed poses**, numbered from 0 by descending individual frequency, inside coloured groups labelled **A, B, …, Z, AA, …** in row order. Roadmap images use rows and columns with straight arrows. The component tables use the same letter labels; stable group identities remain separate from display labels and pose numbers.
 
 ## Filtering and planning
 

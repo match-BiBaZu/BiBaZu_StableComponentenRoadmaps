@@ -5,15 +5,15 @@
 Cutoff: **1%**, applied separately to original group totals and individual observation frequencies. Exactly the cutoff qualifies; the source trial denominator is unchanged. Below-cutoff members are not displayed or used as witnesses. Groups without qualifying members are omitted.
 
 | Pose | Original observation | Individual frequency | Count | Group |
-|---:|---|---:|---:|---:|
-| 0 | Rl4i_0004 | 14.76% | 1476 | 0 |
-| 1 | Rl4i_0001 | 14.24% | 1424 | 1 |
-| 2 | Rl4i_0005 | 14.04% | 1404 | 2 |
-| 3 | Rl4i_0002 | 13.62% | 1362 | 3 |
-| 4 | Rl4i_0012 | 10.4% | 1040 | 4 |
-| 5 | Rl4i_0014 | 10.37% | 1037 | 5 |
-| 6 | Rl4i_0008 | 10.27% | 1027 | 6 |
-| 7 | Rl4i_0007 | 9.81% | 981 | 7 |
+| ---: | --- | ---: | ---: | --- |
+| 0 | Rl4i_0004 | 14.76% | 1476 | A |
+| 1 | Rl4i_0001 | 14.24% | 1424 | B |
+| 2 | Rl4i_0005 | 14.04% | 1404 | C |
+| 3 | Rl4i_0002 | 13.62% | 1362 | D |
+| 4 | Rl4i_0012 | 10.4% | 1040 | E |
+| 5 | Rl4i_0014 | 10.37% | 1037 | F |
+| 6 | Rl4i_0008 | 10.27% | 1027 | G |
+| 7 | Rl4i_0007 | 9.81% | 981 | H |
 
 8 individual poses in 8 groups. Candidate group reachability: **56/56**; Cartesian-only: **56/56**.
 
@@ -22,3 +22,5 @@ Every outgoing action applies to all displayed members of its source group; any 
 Commands, witnesses, competing landing outcomes, previews and finished routes are in consumer-export version 3. Poses are numbered by individual frequency; stable group identities are separate. Previews use actual witnesses and invent no internal movement. Contact feasibility and settling reliability remain unverified; assigned pressure profiles and explicit source-group calibration are required.
 
 Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. See `manifest.json` and `files.sha256.json`.
+
+The roadmap uses alphabetic group labels in row order (A–Z, then AA onward), numeric pose labels, and straight arrows.

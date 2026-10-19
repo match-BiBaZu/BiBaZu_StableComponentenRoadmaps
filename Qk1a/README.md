@@ -5,17 +5,17 @@
 Cutoff: **1%**, applied separately to original group totals and individual observation frequencies. Exactly the cutoff qualifies; the source trial denominator is unchanged. Below-cutoff members are not displayed or used as witnesses. Groups without qualifying members are omitted.
 
 | Pose | Original observation | Individual frequency | Count | Group |
-|---:|---|---:|---:|---:|
-| 0 | Qk1a_0007 | 22.79% | 2279 | 0 |
-| 1 | Qk1a_0008 | 21.87% | 2187 | 1 |
-| 2 | Qk1a_0009 | 13.72% | 1372 | 3 |
-| 3 | Qk1a_0006 | 12.8% | 1280 | 5 |
-| 4 | Qk1a_0012 | 9.96% | 996 | 2 |
-| 5 | Qk1a_0004 | 4.69% | 469 | 4 |
-| 6 | Qk1a_0003 | 4.4% | 440 | 4 |
-| 7 | Qk1a_0001 | 4.36% | 436 | 4 |
-| 8 | Qk1a_0010 | 2.42% | 242 | 2 |
-| 9 | Qk1a_0011 | 1.9% | 190 | 2 |
+| ---: | --- | ---: | ---: | --- |
+| 0 | Qk1a_0007 | 22.79% | 2279 | A |
+| 1 | Qk1a_0008 | 21.87% | 2187 | B |
+| 2 | Qk1a_0009 | 13.72% | 1372 | C |
+| 3 | Qk1a_0006 | 12.8% | 1280 | D |
+| 4 | Qk1a_0012 | 9.96% | 996 | E |
+| 5 | Qk1a_0004 | 4.69% | 469 | F |
+| 6 | Qk1a_0003 | 4.4% | 440 | F |
+| 7 | Qk1a_0001 | 4.36% | 436 | F |
+| 8 | Qk1a_0010 | 2.42% | 242 | E |
+| 9 | Qk1a_0011 | 1.9% | 190 | E |
 
 10 individual poses in 6 groups. Candidate group reachability: **30/30**; Cartesian-only: **30/30**.
 
@@ -24,3 +24,5 @@ Every outgoing action applies to all displayed members of its source group; any 
 Commands, witnesses, competing landing outcomes, previews and finished routes are in consumer-export version 3. Poses are numbered by individual frequency; stable group identities are separate. Previews use actual witnesses and invent no internal movement. Contact feasibility and settling reliability remain unverified; assigned pressure profiles and explicit source-group calibration are required.
 
 Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. See `manifest.json` and `files.sha256.json`.
+
+The roadmap uses alphabetic group labels in row order (A–Z, then AA onward), numeric pose labels, and straight arrows.
