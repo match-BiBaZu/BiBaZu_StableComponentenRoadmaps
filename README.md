@@ -82,3 +82,5 @@ Source inputs require matching mesh geometry, original member observations and g
 | [Rl2i](Rl2i/README.md) | 6 | 6 | 30/30 | complete |
 | [Rl3a](Rl3a/README.md) | 10 | 9 | 72/72 | complete |
 | [Rl4i](Rl4i/README.md) | 8 | 8 | 56/56 | complete |
+
+Dk1i was regenerated on 2026-10-19 from a fresh **1,000-drop** grouped run with the latest main profile (500 mm, belt 100 ± 3 mm/s, damping ratio 0.19) and latest stable main pose anchors. Pose 0 is **Dk1i_0002** at 18.8%. Exact-source pose-to-group reachability is **40/40**. Changed exports require explicit reimport and calibration review.

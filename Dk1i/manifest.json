@@ -2,7 +2,7 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Dk1i",
-  "generated_utc": "2026-10-18T16:12:05.314491+00:00",
+  "generated_utc": "2026-10-19T13:23:56.062180+00:00",
   "pose_count": 8,
   "transition_count": 28,
   "minimum_frequency_percent": 1.0,
@@ -31,15 +31,15 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "c0cb083e18bc6b28a388290d799041080c99abebd980914fa0eaffce460c83d2",
-    "generated_utc": "2026-10-18T16:12:05.314491+00:00",
+    "source_sha256": "f204ab2d4d2fc910ed320210deff00fc2e7483ac24bea488870f3c1e408c05c9",
+    "generated_utc": "2026-10-19T13:23:56.062180+00:00",
     "pose_id_mapping": {
-      "Dk1i_0007": 0,
-      "Dk1i_0002": 1,
-      "Dk1i_0005": 2,
-      "Dk1i_0006": 3,
-      "Dk1i_0003": 4,
-      "Dk1i_0004": 5,
+      "Dk1i_0002": 0,
+      "Dk1i_0004": 1,
+      "Dk1i_0003": 2,
+      "Dk1i_0005": 3,
+      "Dk1i_0007": 4,
+      "Dk1i_0006": 5,
       "Dk1i_0001": 6,
       "Dk1i_0008": 7
     },
@@ -47,13 +47,15 @@
     "provenance": {
       "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_StableComponentenPoses",
       "pose_branch": "grouped",
-      "pose_revision": "0a4d04a528277c30e036bde72b78c7063ba0dc33",
-      "roadmap_revision": "75942e10f009b2e68f2072231a4d94ad136525f2",
-      "reused": false,
-      "simulation_main_revision": "82f8bd43c70a0eb160d27dc0f7232849842efe9c",
-      "protocol": "main_gui_defaults_20261018",
-      "completed_trials": 10000,
-      "simulation_provenance": "source/simulation_provenance.json"
+      "pose_revision": "632b830bd890498e1b07b14d44d97b25f5bba7bb",
+      "roadmap_revision": "740645dcf5cfe022c489cf4aa1049529ce77995d",
+      "simulation_main_revision": "2a0c74f5e3eb921cf6e6b5a54102203d01c34ae7",
+      "simulation_execution_revision": "f76ee590edda0b818f6923279440b6877ff1305c",
+      "pose_baseline_revision": "fb055c61c79e789570712f13151aede036c14c51",
+      "protocol": "main_dk1i_1000_profile_20261019",
+      "completed_trials": 1000,
+      "simulation_provenance": "source/simulation_provenance.json",
+      "reused": false
     }
   },
   "analytical_stability_evaluated": false,
@@ -114,27 +116,27 @@
         "total_pair_count": 30,
         "strongly_connected": true
       },
-      "transfer_count": 195,
+      "transfer_count": 92,
       "planning_assumption": "Group projection only; exact source applicability is mandatory. See pose_to_group.",
       "endpoint_tolerance_deg": 1.0
     },
     "poses": {
       "same_group_no_motion_pairs": [
         [
+          0,
+          1
+        ],
+        [
           1,
-          5
+          0
         ],
         [
           2,
-          4
+          3
         ],
         [
-          4,
+          3,
           2
-        ],
-        [
-          5,
-          1
         ]
       ],
       "motion_reachable_pair_count": 52,
@@ -142,7 +144,7 @@
     },
     "pose_to_group": {
       "total_pair_count": 40,
-      "direct_pair_count": 39,
+      "direct_pair_count": 40,
       "reachable_pair_count": 40,
       "unreachable_pairs": [],
       "same_group_target_satisfied": true,
@@ -153,58 +155,30 @@
   "member_transfer_count": 0,
   "consumer_export": {
     "version": 3,
-    "route_policy": "exported_only; no composite bridges",
-    "calibration_choice_count": 196,
-    "execution_route_count": 197,
+    "route_policy": "exported_only",
+    "calibration_choice_count": 92,
+    "execution_route_count": 92,
     "planning_semantics": "pose_to_group"
   },
+  "status": "complete",
+  "group_count": 6,
+  "pose_group_transfer_count": 92,
+  "pose_group_route_count": 40,
   "grouped_export": true,
-  "grouping_minimum_frequency_percent": 1,
   "provenance": {
     "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_StableComponentenPoses",
     "pose_branch": "grouped",
-    "pose_revision": "0a4d04a528277c30e036bde72b78c7063ba0dc33",
-    "roadmap_revision": "75942e10f009b2e68f2072231a4d94ad136525f2",
-    "reused": false,
-    "simulation_main_revision": "82f8bd43c70a0eb160d27dc0f7232849842efe9c",
-    "protocol": "main_gui_defaults_20261018",
-    "completed_trials": 10000,
-    "simulation_provenance": "source/simulation_provenance.json"
+    "pose_revision": "632b830bd890498e1b07b14d44d97b25f5bba7bb",
+    "roadmap_revision": "740645dcf5cfe022c489cf4aa1049529ce77995d",
+    "simulation_main_revision": "2a0c74f5e3eb921cf6e6b5a54102203d01c34ae7",
+    "simulation_execution_revision": "f76ee590edda0b818f6923279440b6877ff1305c",
+    "pose_baseline_revision": "fb055c61c79e789570712f13151aede036c14c51",
+    "protocol": "main_dk1i_1000_profile_20261019",
+    "completed_trials": 1000,
+    "simulation_provenance": "source/simulation_provenance.json",
+    "reused": false
   },
+  "grouping_minimum_frequency_percent": 1,
   "group_transfer_count": 0,
-  "group_route_count": 0,
-  "group_extension": {
-    "planning_assumption": "Group projection only; exact source applicability is mandatory. See pose_to_group.",
-    "implementation_sha256": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4"
-  },
-  "group_count": 6,
-  "status": "complete",
-  "individual_extension": {
-    "consumer_export_version": 3,
-    "minimum_frequency_percent": 1,
-    "composite_fallbacks": false,
-    "implementation_sha256": {
-      "individual_groups.py": "0b2b05abeed269d9bbadb7bc854045d6254428d58cffbc8499842c2dd7777506",
-      "group_transfers.py": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4",
-      "consumer_export.py": "a8be04e665ab468ac560f16b8ddde2af5a1d3b33aafba96bfad4ea705692ffc8",
-      "render.py": "9a4afff155fe44d3f055f2f0a18af8d5422ce58d7c6e71021f70741220648291",
-      "upgrade_individual.py": "5e732f578e80206b91125eaccf1f986b2493f7667e3a8b7261e191e4046b6216"
-    },
-    "capture_interval_policy": "Reuse existing filtered intervals; reevaluate exact Cartesian settling."
-  },
-  "pose_group_transfer_count": 195,
-  "pose_group_route_count": 40,
-  "pose_to_group_extension": {
-    "generated_utc": "2026-10-18T17:27:40.471344+00:00",
-    "prior_roadmap_sha256": "b2a1c78f7e824cfd5f8049513446a2e965652bc7ad6ff52777b4a676c02d8e8b",
-    "source_applicability": "exact individual pose",
-    "target_acceptance": "any qualifying group member",
-    "implementation_sha256": {
-      "pose_to_group.py": "89823f9b7e8b198cb0a142837ee1300a57b3a395937a1d8526b8ba40f082f0bf",
-      "render.py": "9a4afff155fe44d3f055f2f0a18af8d5422ce58d7c6e71021f70741220648291",
-      "generate.py": "fdfdc8b7a4b9e1902d096a64b575df9b41ca4e0c4402bfa48cb1c1b04178c456",
-      "roadmap.py": "773cf704c53262239e949c14f912f4aad316c07e24dd1b1ff82cae9a4456e47d",
-      "consumer_export.py": "a8be04e665ab468ac560f16b8ddde2af5a1d3b33aafba96bfad4ea705692ffc8"
-    }
-  }
+  "group_route_count": 0
 }

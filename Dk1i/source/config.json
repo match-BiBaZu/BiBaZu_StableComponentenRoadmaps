@@ -1,7 +1,7 @@
 {
   "alpha_deg": 45.0,
   "belt_speed_mm_s": 100.0,
-  "belt_speed_variation_mm_s": 0.0,
+  "belt_speed_variation_mm_s": 3.0,
   "belt_stop_enabled": true,
   "belt_stop_observation_s": 2.0,
   "belt_stop_ramp_s": 0.2,
@@ -11,7 +11,7 @@
   "catalog_push": false,
   "catalog_repo": null,
   "compute_stability": true,
-  "contact_damping_ratio": 1.2,
+  "contact_damping_ratio": 0.19,
   "contact_rolling_friction_mm": 0.1,
   "contact_time_constant_s": 0.005,
   "contact_torsional_friction_mm": 5.0,
@@ -33,7 +33,7 @@
   "grouping_minimum_frequency_percent": 1.0,
   "lateral_mm": 0.0,
   "lateral_spread_mm": 0.0,
-  "length_mm": 1300.0,
+  "length_mm": 500.0,
   "mesh_path": "Dk1i.stl",
   "mu_belt": 0.4,
   "mu_wall": 0.2,
@@ -44,8 +44,8 @@
   "roughness_belt_ramp_mm": 3.0,
   "roughness_belt_spacing_mm": 10.0,
   "roughness_enabled": true,
-  "roughness_force_duration_s": 0.05,
-  "roughness_force_fraction": 0.1,
+  "roughness_force_duration_s": 1.0,
+  "roughness_force_fraction": 1.0,
   "roughness_force_interval_s": 0.2,
   "roughness_impulse_delta_v_mm_s": 49.05,
   "roughness_model": "weight_impulse",
@@ -54,6 +54,6 @@
   "roughness_wall_spacing_mm": 10.0,
   "seed": 42,
   "timestep_s": 0.001,
-  "trials": 10000,
-  "workers": 24
+  "trials": 1000,
+  "workers": 16
 }

@@ -1,17 +1,17 @@
 # Grouped drop simulation: all 39 workpieces
 
-Completed and validated: **39/39** workpieces. Each completed workpiece has 10,000 drops; member disturbance tests are additional.
+Completed and validated: **39/39** workpieces. Dk1i has a fresh 1,000-drop run; other completed workpieces retain 10,000 drops. Member disturbance tests are additional.
 
-The original study used identical simulation settings; Dk1i was rerun on 2026-10-18 with the simulator main-branch GUI defaults. All entries retain a 0.5 mm equivalent-lift grouping barrier, a 60° diameter guard, and a 1% cutoff after aggregation. Representatives are selected using complete member group-retention curves.
+The original study used identical simulation settings; Dk1i was rerun on 2026-10-19 with the latest main 1,000-drop profile and observation anchors. All entries retain a 0.5 mm equivalent-lift grouping barrier, a 60° diameter guard, and a 1% cutoff after aggregation. Representatives are selected using complete member group-retention curves.
 
-Qk1a and Dl1a reuse the previously audited grouped runs. Dk1i now uses the fresh 10,000-drop main-parameter run published in the poses grouped branch (commit `0a4d04a`); its roadmap has been regenerated. Compressed Dk1i raw trials are published with those source poses. Other raw study data remains in the simulator results directories.
+Qk1a and Dl1a reuse the previously audited grouped runs. Dk1i now uses the fresh 1,000-drop main-parameter run published in poses grouped commit `632b830bd890498e1b07b14d44d97b25f5bba7bb`; its exact-source pose-to-group roadmap has been regenerated. Compressed raw trials accompany the source poses. Other study data remains unchanged.
 
 | Workpiece | Status | Settled | Source poses | Eligible groups | Disturbance tests | Original representative connections |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | [Df1a](Df1a/README.md) | Complete | 9997 | 7 | 4 | 511 | 6 |
 | [Df2i](Df2i/README.md) | Complete | 9996 | 9 | 6 | 657 | 22 |
 | [Df4a](Df4a/README.md) | Complete | 9999 | 20 | 12 | 1460 | 42 |
-| [Dk1i](Dk1i/README.md) | Complete (main rerun) | 9998 | 8 | 6 | 584 | 16 |
+| [Dk1i](Dk1i/README.md) | Complete (1,000-drop main rerun) | 998 | 8 | 6 | 584 | 28 |
 | [Dk2a](Dk2a/README.md) | Complete | 9845 | 17 | 12 | 1241 | 56 |
 | [Dk4i](Dk4i/README.md) | Complete | 9999 | 24 | 18 | 1752 | 80 |
 | [Dl1a](Dl1a/README.md) | Complete | 9983 | 16 | 5 | 1168 | 2 |

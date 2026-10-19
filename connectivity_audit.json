@@ -145,11 +145,20 @@
       "status": "complete",
       "poses": 8,
       "groups": 6,
-      "choices": 196,
+      "choices": 92,
+      "commands_verified": 92,
+      "max_command_error_deg": 6.361122680615391e-15,
+      "planning_semantics": "pose_to_group",
+      "pose_to_group": {
+        "total_pair_count": 40,
+        "direct_pair_count": 40,
+        "reachable_pair_count": 40,
+        "unreachable_pairs": [],
+        "same_group_target_satisfied": true,
+        "intermediate_policy": "Continue only when the accepted arrival group contains one qualifying pose; otherwise observe the exact pose again."
+      },
       "reachable": 30,
       "total": 30,
-      "commands_verified": 210,
-      "max_command_error_deg": 1.6602982871414738e-14,
       "cartesian": {
         "strongly_connected_components": [
           [
@@ -181,15 +190,6 @@
         "reachable_pair_count": 30,
         "total_pair_count": 30,
         "strongly_connected": true
-      },
-      "planning_semantics": "pose_to_group",
-      "pose_to_group": {
-        "total_pair_count": 40,
-        "direct_pair_count": 39,
-        "reachable_pair_count": 40,
-        "unreachable_pairs": [],
-        "same_group_target_satisfied": true,
-        "intermediate_policy": "Continue only when the accepted arrival group contains one qualifying pose; otherwise observe the exact pose again."
       }
     },
     {
