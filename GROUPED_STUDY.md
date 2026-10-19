@@ -55,3 +55,7 @@ Published comparison baselines: poses `9e00d03389d3b81013700def03fb1b19504144be`
 ## Individual-pose roadmap rollout
 
 The original simulation statistics above retain their original meaning. Roadmaps now apply a 1% cutoff to both groups and individual members, omit groups without a qualifying member, and generate no composite bridges. Current pose counts and connectivity are listed in [the catalogue](README.md#catalogue). Kf4i has no eligible individual poses. Full original group membership remains provenance.
+
+## Exact-source pose-to-group rollout, 2026-10-19
+
+All 37 active roadmaps now start transitions at exact individual poses and accept destination groups. Actions from other source members are not inherited; uncertain multi-member arrivals require another exact observation. The original simulation and grouping statistics above retain their historical meaning. Current pose-to-group reachability is listed in the catalogue and `pose_to_group_audit.json`. Diagram shafts use horizontal, vertical and 45° segments attached to pose and group borders. Previous exports remain available for explicit reimport.

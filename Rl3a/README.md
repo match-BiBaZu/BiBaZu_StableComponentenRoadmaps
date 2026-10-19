@@ -1,4 +1,4 @@
-# Rl3a: individual poses with shared group actions
+# Rl3a: exact source pose to destination group
 
 ![Roadmap](Rl3a_roadmap.png)
 
@@ -17,12 +17,14 @@ Cutoff: **1%**, applied separately to original group totals and individual obser
 | 8 | Rl3a_0010 | 1.13% | 113 | I |
 | 9 | Rl3a_0004 | 1.09% | 109 | H |
 
-10 individual poses in 9 groups. Candidate group reachability: **72/72**; Cartesian-only: **54/72**.
+10 individual poses in 9 groups. Exact-source pose-to-group reachability: **80/80**; **46** pairs have direct candidates.
 
-Every outgoing action applies to all displayed members of its source group; any qualifying destination member satisfies its target group. A target in the current group requires no motion. There are no internal group transitions and no composite fallback bridges. Ordinary multi-step routes use retained single-axis actions. Disconnected components remain disconnected.
+Each transition starts at an exact individual pose and accepts any qualifying member of its destination group. Actions from other source members are not inherited. A target in the current group requires no motion. There are no internal group transitions and no composite fallback bridges. Routes continue automatically only through singleton arrival groups; a multi-member arrival requires another exact pose observation. Disconnected components remain disconnected.
 
 Commands, witnesses, competing landing outcomes, previews and finished routes are in consumer-export version 3. Poses are numbered by individual frequency; stable group identities are separate. Previews use actual witnesses and invent no internal movement. Contact feasibility and settling reliability remain unverified; assigned pressure profiles and explicit source-group calibration are required.
 
 Original observations and memberships remain in `source/`. Historical exports are preserved under `history/` for explicit, hash-checked reimport; numeric group IDs must never be interpreted as new pose IDs. Existing recognition models continue to identify groups. See `manifest.json` and `files.sha256.json`.
 
-The roadmap uses alphabetic group labels in row order (A–Z, then AA onward), numeric pose labels, and straight arrows.
+The roadmap uses alphabetic group labels in row order (A–Z, then AA onward), numeric pose labels, and horizontal, vertical or 45° arrow segments. Arrows attach to pose borders and destination-group borders.
+
+Changed export hashes require explicit reimport. Former group-wide choices need fresh exact-source qualification. The previous export is preserved in `history/before_pose_to_group_74fcb40.json.gz`.

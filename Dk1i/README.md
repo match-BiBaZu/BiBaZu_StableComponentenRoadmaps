@@ -33,4 +33,4 @@ Arrows apply to the exact source pose and accept any qualifying member of the de
 
 Changed export hashes require explicit reimport; numeric pose IDs do not carry calibration between runs. The prior export is preserved in [history](history/previous_roadmap.json.gz). See [simulation provenance](source/simulation_provenance.json), [validation](source/validation.json), [memberships](membership.csv), and [member assessment curves](source/group_stability.csv).
 
-The roadmap uses alphabetic group labels in row order (A–Z, then AA onward), numeric pose labels, and straight arrows.
+The roadmap uses alphabetic group labels in row order (A–Z, then AA onward), numeric pose labels, and horizontal, vertical or 45° arrow segments. Arrows attach to pose borders and destination-group borders.

@@ -165,9 +165,76 @@ def group_label(index: int) -> str:
     return label
 
 
+def transition_path(source_bounds, target_bounds, lane=0.):
+    """Join rectangle borders with horizontal, vertical or 45-degree segments.
+
+    Bounds are in display coordinates so diagonals keep their visual angle.
+    Moving the attachment points avoids a fan of almost-parallel directions.
+    """
+    source = np.asarray(source_bounds, dtype=float)
+    target = np.asarray(target_bounds, dtype=float)
+    sc, tc = (source[:2]+source[2:])/2, (target[:2]+target[2:])/2
+    delta = tc-sc
+    lane = float(np.clip(lane, -.8, .8))
+    for axis in (0, 1):
+        low, high = max(source[axis], target[axis]), min(source[axis+2], target[axis+2])
+        if high-low > 1e-6:
+            along = 1-axis
+            sign = 1 if delta[along] > 0 else -1
+            coordinate = (low+high)/2 + lane*sign*(high-low)*.3
+            start, end = sc.copy(), tc.copy()
+            start[axis] = end[axis] = coordinate
+            start[along] = source[along+2] if sign > 0 else source[along]
+            end[along] = target[along] if sign > 0 else target[along+2]
+            return np.array([start, end])
+    direction = np.sign(delta)/np.sqrt(2)
+    normal = np.array([-direction[1], direction[0]])
+    def projection(rect):
+        corners = np.array([[rect[0],rect[1]], [rect[0],rect[3]],
+                            [rect[2],rect[1]], [rect[2],rect[3]]])
+        values = corners @ normal
+        return values.min(), values.max()
+    smin, smax = projection(source)
+    tmin, tmax = projection(target)
+    low, high = max(smin,tmin), min(smax,tmax)
+    if high-low > 1e-6:
+        base = normal*((low+high)/2 + lane*(high-low)*.3)
+        def interval(rect):
+            ends = np.stack(((rect[:2]-base)/direction, (rect[2:]-base)/direction))
+            return np.min(ends,axis=0).max(), np.max(ends,axis=0).min()
+        _, start_t = interval(source)
+        end_t, _ = interval(target)
+        if end_t > start_t:
+            return np.array([base+direction*start_t, base+direction*end_t])
+    # When one straight diagonal cannot reach both borders, use a short
+    # horizontal/vertical lead-in and lead-out around a 45-degree middle leg.
+    axis = int(abs(delta[1]) > abs(delta[0]))
+    other = 1-axis
+    sign = np.sign(delta[axis])
+    start, end = sc.copy(), tc.copy()
+    start[axis] = source[axis+2] if sign > 0 else source[axis]
+    end[axis] = target[axis] if sign > 0 else target[axis+2]
+    start[other] += lane*(source[other+2]-source[other])*.3
+    end[other] += lane*(target[other+2]-target[other])*.3
+    travel = end-start
+    residual = abs(travel[axis])-abs(travel[other])
+    first, last = start.copy(), end.copy()
+    if residual >= 0:
+        first[axis] += sign*residual/2
+        last[axis] -= sign*residual/2
+    else:
+        first[axis] = last[axis] = (start[axis]+end[axis])/2
+    points = [start]
+    for point in (first,last,end):
+        if np.linalg.norm(point-points[-1]) > 1e-6:
+            points.append(point)
+    return np.asarray(points)
+
+
 def render_individual_groups(built, path, formats, images):
     """Numbered pose tiles in lettered groups on a grid with straight arrows."""
     from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+    from matplotlib.path import Path as PlotPath
     groups = sorted(built.document['pose_groups'], key=lambda g:(min(g['pose_ids']),g['group_key']))
     columns = min(4, max(1, int(np.ceil(np.sqrt(len(groups))))))
     rows = int(np.ceil(len(groups)/columns))
@@ -180,15 +247,17 @@ def render_individual_groups(built, path, formats, images):
     ax.set_xlim(-4.1, (columns-1)*cell_w+4.1)
     ax.set_ylim(-(rows-1)*cell_h-panel_h/2-.4, panel_h/2+.4)
     ax.axis('off')
-    positions = {}; pose_positions = {}; pose_boxes = {}
+    positions = {}; pose_positions = {}; pose_boxes = {}; group_boxes = {}
     nodes={n['node_id']:n for n in built.document['nodes']}
     palette=plt.get_cmap('tab20')
     for index,group in enumerate(groups):
         x,y=(index%columns)*cell_w,-(index//columns)*cell_h
         positions[group['group_id']]=(x,y)
         color=palette(group['group_id']%20)
-        ax.add_patch(FancyBboxPatch((x-3.5,y-panel_h/2+.3),7,panel_h-.6,
-            boxstyle='round,pad=.06',facecolor=(*color[:3],.13),edgecolor=color,lw=1.5,zorder=1))
+        group_box = FancyBboxPatch((x-3.5,y-panel_h/2+.3),7,panel_h-.6,
+            boxstyle='round,pad=.06',facecolor=(*color[:3],.13),edgecolor=color,lw=1.5,zorder=1)
+        ax.add_patch(group_box)
+        group_boxes[group['group_id']] = group_box
         ax.text(x,y+panel_h/2-.7,f"Group {group_label(index)} · total {group['observed_frequency_percent']:g}%",
             ha='center',fontsize=10,weight='bold',zorder=6,
             bbox=dict(facecolor='white',edgecolor='none',alpha=.95,pad=2))
@@ -213,31 +282,34 @@ def render_individual_groups(built, path, formats, images):
     fig.canvas.draw()
     colors={'x':'#c73646','y':'#248738','z':'#237898'}
     labels=[]
-    for (a,b),transfer in preferred.items():
-        start = pose_positions[a] if pose_to_group else np.asarray(positions[a])
-        end = np.asarray(positions[b]); delta=end-start
-        end_clip=min(3.6/max(abs(delta[0]),1e-12),(panel_h/2-.2)/max(abs(delta[1]),1e-12))
-        if pose_to_group:
-            bounds = pose_boxes[a].get_window_extent(fig.canvas.get_renderer()).transformed(ax.transData.inverted())
-            start_clip=min((bounds.width/2+.08)/max(abs(delta[0]),1e-12),
-                           (bounds.height/2+.08)/max(abs(delta[1]),1e-12))
-        else:
-            start_clip=end_clip
-        s=start+delta*start_clip; e=end-delta*end_clip
-        normal=np.array([-delta[1],delta[0]])/np.linalg.norm(delta)
-        # Parallel lanes separate opposing arrows without bending their shafts.
-        s=s+normal*.10; e=e+normal*.10
+    renderer = fig.canvas.get_renderer()
+    for index,((a,b),transfer) in enumerate(preferred.items()):
+        source_box = pose_boxes[a] if pose_to_group else group_boxes[a]
+        source_bounds = (source_box.offsetbox if pose_to_group else source_box).get_window_extent(renderer)
+        target_bounds = group_boxes[b].get_window_extent(renderer)
+        pixels = transition_path(source_bounds.extents, target_bounds.extents,
+                                 lane=(index%9-4)/5)
+        points = ax.transData.inverted().transform(pixels)
         color=colors[transfer['commands'][0]['axis']]
-        ax.add_patch(FancyArrowPatch(s,e,arrowstyle='-|>',mutation_scale=10,lw=1.1,
-            connectionstyle='arc3,rad=0',color=color,zorder=2))
+        arrow = FancyArrowPatch(path=PlotPath(points, [PlotPath.MOVETO]+[PlotPath.LINETO]*(len(points)-1)),
+            arrowstyle='-|>',mutation_scale=10,lw=1.1,shrinkA=0,shrinkB=0,color=color,zorder=2)
+        ax.add_patch(arrow)
+        segments = sorted(zip(points,points[1:]),key=lambda pair:-np.linalg.norm(pair[1]-pair[0]))
+        s,e = segments[0]
+        normal=np.array([-(e-s)[1],(e-s)[0]])/np.linalg.norm(e-s)
         label=(s+e)/2+normal*.25
-        for fraction in (.3,.7,.4,.6,.2,.8,.5):
-            candidate=s*(1-fraction)+e*fraction+normal*.3
-            if any(abs(candidate[0]-p[0])<3.6 and abs(candidate[1]-p[1])<panel_h/2 for p in positions.values()):
-                continue
-            if any(abs(candidate[0]-p[0])<1.1 and abs(candidate[1]-p[1])<.3 for p in labels):
-                continue
-            label=candidate;break
+        placed = False
+        for s,e in segments:
+            normal=np.array([-(e-s)[1],(e-s)[0]])/np.linalg.norm(e-s)
+            for fraction in (.3,.7,.4,.6,.2,.8,.5):
+                candidate=s*(1-fraction)+e*fraction+normal*.3
+                if any(abs(candidate[0]-p[0])<3.6 and abs(candidate[1]-p[1])<panel_h/2 for p in positions.values()):
+                    continue
+                if any(abs(candidate[0]-p[0])<1.1 and abs(candidate[1]-p[1])<.3 for p in labels):
+                    continue
+                label=candidate;placed=True;break
+            if placed:
+                break
         labels.append(label)
         ax.text(*label,transfer['display_name'],ha='center',va='center',fontsize=6,color=color,
             bbox=dict(facecolor='white',edgecolor='none',alpha=.9,pad=.6),zorder=4)

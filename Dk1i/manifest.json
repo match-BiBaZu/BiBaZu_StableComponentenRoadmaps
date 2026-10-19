@@ -155,7 +155,7 @@
   "member_transfer_count": 0,
   "consumer_export": {
     "version": 3,
-    "route_policy": "exported_only",
+    "route_policy": "exported_only; exact source pose",
     "calibration_choice_count": 92,
     "execution_route_count": 92,
     "planning_semantics": "pose_to_group"
@@ -185,7 +185,7 @@
     "layout": "grid",
     "group_labelling": "alphabetical",
     "pose_labelling": "numeric",
-    "arrows": "straight",
+    "arrows": "horizontal_vertical_45_degree_segments",
     "columns": 3,
     "rows": 2,
     "group_labels": {
@@ -196,7 +196,22 @@
       "Dk1i:group:4:10f2ba4a033e3c8f7fab": "E",
       "Dk1i:group:5:6e9654a203fc69fc8cbb": "F"
     },
-    "renderer_sha256": "f6f2cb9c3b996a62d3ea472098425018095c7f3131a289b24c509089a036acf0",
-    "rendered_utc": "2026-10-19T15:25:48.811031+00:00"
+    "renderer_sha256": "80f1bde6586fe4a7bdda2ae8190963df9d8d00d89b0df252bfee3bcd606aa008",
+    "rendered_utc": "2026-10-19T15:44:11.511345+00:00",
+    "source_attachment": "pose border",
+    "target_attachment": "group border"
+  },
+  "pose_to_group_extension": {
+    "generated_utc": "2026-10-19T15:44:11.511345+00:00",
+    "prior_roadmap_sha256": "27fa768750e3aa3506ecd2de28bf2026c4925a0996105655de8ec63243986efb",
+    "source_applicability": "exact individual pose",
+    "target_acceptance": "any qualifying destination group member",
+    "implementation_sha256": {
+      "pose_to_group.py": "89823f9b7e8b198cb0a142837ee1300a57b3a395937a1d8526b8ba40f082f0bf",
+      "render.py": "80f1bde6586fe4a7bdda2ae8190963df9d8d00d89b0df252bfee3bcd606aa008",
+      "generate.py": "b864732c2322aaa7e8fad94fda32c1fc119ebb5420e719e0ea525f4889dbaff3",
+      "roadmap.py": "773cf704c53262239e949c14f912f4aad316c07e24dd1b1ff82cae9a4456e47d",
+      "consumer_export.py": "a8be04e665ab468ac560f16b8ddde2af5a1d3b33aafba96bfad4ea705692ffc8"
+    }
   }
 }

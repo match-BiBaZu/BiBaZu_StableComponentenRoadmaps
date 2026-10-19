@@ -1,4 +1,5 @@
 from copy import deepcopy
+import pytest
 
 from bibazu_stable_roadmaps.pose_to_group import compile_pose_to_group
 from bibazu_stable_roadmaps.member_transfers import command
@@ -61,14 +62,15 @@ def test_cartesian_route_wins_over_shorter_non_cartesian_action():
     assert compile_pose_to_group(source)['pose_group_routes'] == result['pose_group_routes']
 
 
-def test_generation_can_select_pose_to_group_semantics(source_folder, tmp_path):
+@pytest.mark.parametrize('settings', [{}, {'planning_semantics': 'pose_to_group'}])
+def test_generation_defaults_to_pose_to_group_or_accepts_explicit_setting(source_folder, tmp_path, settings):
     from test_individual_groups import grouped
     from bibazu_stable_roadmaps.generate import GenerationConfig, generate_one
     import json
     source = grouped(source_folder)
     root = tmp_path/'output'
     status, _ = generate_one(source.path, GenerationConfig(str(root), minimum_frequency_percent=1,
-        outputs=('json','yaml','graphml'), estimate_capture_intervals=False, planning_semantics='pose_to_group'))
+        outputs=('json','yaml','graphml'), estimate_capture_intervals=False, **settings))
     assert status == 'completed'
     exported = json.loads((root/'Test1/Test1_roadmap.json').read_text(encoding='utf-8'))
     assert exported['consumer_export']['planning_semantics'] == 'pose_to_group'

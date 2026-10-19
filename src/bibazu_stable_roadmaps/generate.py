@@ -40,7 +40,7 @@ class GenerationConfig:
     include_composites: bool = True
     include_members: bool = True
     estimate_capture_intervals: bool = True
-    planning_semantics: str = 'group_union'
+    planning_semantics: str = 'pose_to_group'
 
     def validate(self):
         if self.planning_semantics not in ('group_union', 'pose_to_group'):
@@ -272,9 +272,7 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                               classical_metadata={"observed_pose_generation": metadata})
         from .consumer_export import attach_consumer_export
         attach_consumer_export(built.document)
-        if config.planning_semantics == 'pose_to_group':
-            if not group_mode:
-                raise ValueError('Pose-to-group planning requires grouped member observations')
+        if group_mode and config.planning_semantics == 'pose_to_group':
             from .pose_to_group import compile_pose_to_group
             built.document = compile_pose_to_group(built.document)
         progress(f"Exporting {len(numbered)} poses and {len(built.document['edges'])} direct connections")
@@ -335,7 +333,7 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             lines.extend(f"| {number} | {pose.source_id} | {pose.frequency_percent:g}% | {pose.count if pose.count is not None else 'unknown'} |" for pose, number in numbered)
             lines.append("\nThe legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.")
             lines.append("\nOriginal inputs are in `source/`; generation settings and exclusions are in `manifest.json`.")
-            if config.planning_semantics == 'pose_to_group':
+            if group_mode and config.planning_semantics == 'pose_to_group':
                 stats = built.document['connectivity']['pose_to_group']
                 lines.append(f"\nExact source pose → accepted destination group: {stats['direct_pair_count']} direct connections; "
                     f"{stats['reachable_pair_count']}/{stats['total_pair_count']} reachable pairs. "

@@ -23,12 +23,12 @@
     "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose"
   },
   "format": "bibazu_observed_roadmap_generation",
-  "generated_utc": "2026-10-18T16:02:31.019925+00:00",
+  "generated_utc": "2026-10-19T15:45:53.955379+00:00",
   "grouped_export": true,
   "grouping_minimum_frequency_percent": 1,
   "input": {
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
-    "generated_utc": "2026-10-18T16:02:31.019925+00:00",
+    "generated_utc": "2026-10-19T15:45:53.955379+00:00",
     "minimum_frequency_percent": 1.0,
     "numbering_tie_break": "original source ID",
     "pose_id_mapping": {
@@ -97,7 +97,8 @@
     "renumber_by_frequency": true,
     "include_composites": false,
     "include_members": true,
-    "estimate_capture_intervals": false
+    "estimate_capture_intervals": false,
+    "planning_semantics": "pose_to_group"
   },
   "status": "complete",
   "transition_count": 66,
@@ -105,9 +106,10 @@
   "workpiece": "Rf1a",
   "consumer_export": {
     "version": 3,
-    "route_policy": "exported_only; no composite bridges",
-    "calibration_choice_count": 332,
-    "execution_route_count": 447
+    "route_policy": "exported_only; exact source pose",
+    "calibration_choice_count": 336,
+    "execution_route_count": 450,
+    "planning_semantics": "pose_to_group"
   },
   "connectivity": {
     "groups": {
@@ -279,8 +281,8 @@
         "total_pair_count": 210,
         "strongly_connected": false
       },
-      "transfer_count": 217,
-      "planning_assumption": "group_union: arrival and departure may use different group members",
+      "transfer_count": 222,
+      "planning_assumption": "Group projection only; exact source applicability is mandatory. See pose_to_group.",
       "endpoint_tolerance_deg": 1.0
     },
     "poses": {
@@ -357,12 +359,81 @@
           15
         ]
       ]
+    },
+    "pose_to_group": {
+      "total_pair_count": 224,
+      "direct_pair_count": 96,
+      "reachable_pair_count": 209,
+      "unreachable_pairs": [
+        [
+          0,
+          11
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          14,
+          11
+        ]
+      ],
+      "same_group_target_satisfied": true,
+      "intermediate_policy": "Continue only when the accepted arrival group contains one qualifying pose; otherwise observe the exact pose again."
     }
   },
-  "group_transfer_count": 217,
-  "group_route_count": 196,
+  "group_transfer_count": 0,
+  "group_route_count": 0,
   "group_extension": {
-    "planning_assumption": "group_union: arrival and departure may use different group members",
+    "planning_assumption": "Group projection only; exact source applicability is mandatory. See pose_to_group.",
     "implementation_sha256": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4"
   },
   "group_count": 15,
@@ -375,8 +446,8 @@
     "implementation_sha256": {
       "individual_groups.py": "0b2b05abeed269d9bbadb7bc854045d6254428d58cffbc8499842c2dd7777506",
       "group_transfers.py": "88ac52434652224c7938f9427bc454ef7305f2e50acba76f6a1679fb926d36f4",
-      "consumer_export.py": "9b10b66ddfe9b079830c0890dca6b8366de916cd2b1b54fdb2121c7a833e6828",
-      "render.py": "f6f2cb9c3b996a62d3ea472098425018095c7f3131a289b24c509089a036acf0",
+      "consumer_export.py": "a8be04e665ab468ac560f16b8ddde2af5a1d3b33aafba96bfad4ea705692ffc8",
+      "render.py": "80f1bde6586fe4a7bdda2ae8190963df9d8d00d89b0df252bfee3bcd606aa008",
       "upgrade_individual.py": "5e732f578e80206b91125eaccf1f986b2493f7667e3a8b7261e191e4046b6216"
     },
     "capture_interval_policy": "Reuse existing filtered intervals; reevaluate exact Cartesian settling."
@@ -385,7 +456,7 @@
     "layout": "grid",
     "group_labelling": "alphabetical",
     "pose_labelling": "numeric",
-    "arrows": "straight",
+    "arrows": "horizontal_vertical_45_degree_segments",
     "columns": 4,
     "rows": 4,
     "group_labels": {
@@ -405,7 +476,24 @@
       "Rf1a:group:14:a16b1fa0a90dc88d271f": "N",
       "Rf1a:group:11:d849a8210d9c2623259f": "O"
     },
-    "renderer_sha256": "f6f2cb9c3b996a62d3ea472098425018095c7f3131a289b24c509089a036acf0",
-    "rendered_utc": "2026-10-19T15:26:40.951163+00:00"
+    "renderer_sha256": "80f1bde6586fe4a7bdda2ae8190963df9d8d00d89b0df252bfee3bcd606aa008",
+    "rendered_utc": "2026-10-19T15:45:53.955379+00:00",
+    "source_attachment": "pose border",
+    "target_attachment": "group border"
+  },
+  "pose_group_transfer_count": 222,
+  "pose_group_route_count": 209,
+  "pose_to_group_extension": {
+    "generated_utc": "2026-10-19T15:45:53.955379+00:00",
+    "prior_roadmap_sha256": "9e58827a86eab7a6b275c3343ceba09b0b183ed6d3ce90ba1d47c2bc38c4fbce",
+    "source_applicability": "exact individual pose",
+    "target_acceptance": "any qualifying destination group member",
+    "implementation_sha256": {
+      "pose_to_group.py": "89823f9b7e8b198cb0a142837ee1300a57b3a395937a1d8526b8ba40f082f0bf",
+      "render.py": "80f1bde6586fe4a7bdda2ae8190963df9d8d00d89b0df252bfee3bcd606aa008",
+      "generate.py": "b864732c2322aaa7e8fad94fda32c1fc119ebb5420e719e0ea525f4889dbaff3",
+      "roadmap.py": "773cf704c53262239e949c14f912f4aad316c07e24dd1b1ff82cae9a4456e47d",
+      "consumer_export.py": "a8be04e665ab468ac560f16b8ddde2af5a1d3b33aafba96bfad4ea705692ffc8"
+    }
   }
 }
