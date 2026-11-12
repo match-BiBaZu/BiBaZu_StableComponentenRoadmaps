@@ -2,9 +2,9 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Dl2i",
-  "generated_utc": "2026-10-09T16:39:39.874331+00:00",
-  "pose_count": 9,
-  "transition_count": 34,
+  "generated_utc": "2026-11-12T07:49:17.416463+00:00",
+  "pose_count": 6,
+  "transition_count": 16,
   "minimum_frequency_percent": 1.0,
   "renumber_by_frequency": true,
   "settings": {
@@ -16,7 +16,9 @@
       "json",
       "graphml",
       "roadmap_svg",
-      "roadmap_png"
+      "roadmap_png",
+      "poses_svg",
+      "poses_png"
     ]
   },
   "input": {
@@ -25,61 +27,60 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "41ef53e8f6d37f9902bd9f11016f0ca57de3a536575e33652c5d28065e055d08",
-    "generated_utc": "2026-10-09T16:39:39.874331+00:00",
+    "source_sha256": "b0c36e0d91093f3fe9c942f3b976819c914ffb06f4733ad71aef2c3e5facdab8",
+    "generated_utc": "2026-11-12T07:49:17.416463+00:00",
     "pose_id_mapping": {
-      "Dl2i_0003": 0,
-      "Dl2i_0008": 1,
-      "Dl2i_0006": 2,
-      "Dl2i_0013": 3,
-      "Dl2i_0012": 4,
-      "Dl2i_0009": 5,
-      "Dl2i_0007": 6,
-      "Dl2i_0005": 7,
-      "Dl2i_0010": 8
+      "Dl2i_20261110_10000_transport_0007": 0,
+      "Dl2i_20261110_10000_transport_0012": 1,
+      "Dl2i_20261110_10000_transport_0003": 2,
+      "Dl2i_20261110_10000_transport_0004": 3,
+      "Dl2i_20261110_10000_transport_0011": 4,
+      "Dl2i_20261110_10000_transport_0008": 5
     },
     "removed_poses": [
       {
-        "source_pose_id": "Dl2i_0001",
-        "frequency_percent": 0.95
+        "source_pose_id": "Dl2i_20261110_10000_transport_0002",
+        "frequency_percent": 0.87
       },
       {
-        "source_pose_id": "Dl2i_0002",
-        "frequency_percent": 0.46
+        "source_pose_id": "Dl2i_20261110_10000_transport_0001",
+        "frequency_percent": 0.85
       },
       {
-        "source_pose_id": "Dl2i_0011",
-        "frequency_percent": 0.46
+        "source_pose_id": "Dl2i_20261110_10000_transport_0005",
+        "frequency_percent": 0.67
       },
       {
-        "source_pose_id": "Dl2i_0015",
-        "frequency_percent": 0.03
+        "source_pose_id": "Dl2i_20261110_10000_transport_0006",
+        "frequency_percent": 0.65
       },
       {
-        "source_pose_id": "Dl2i_0016",
-        "frequency_percent": 0.03
+        "source_pose_id": "Dl2i_20261110_10000_transport_0009",
+        "frequency_percent": 0.5
       },
       {
-        "source_pose_id": "Dl2i_0019",
-        "frequency_percent": 0.03
-      },
-      {
-        "source_pose_id": "Dl2i_0018",
-        "frequency_percent": 0.02
-      },
-      {
-        "source_pose_id": "Dl2i_0020",
-        "frequency_percent": 0.02
-      },
-      {
-        "source_pose_id": "Dl2i_0014",
-        "frequency_percent": 0.01
-      },
-      {
-        "source_pose_id": "Dl2i_0017",
-        "frequency_percent": 0.01
+        "source_pose_id": "Dl2i_20261110_10000_transport_0010",
+        "frequency_percent": 0.4
       }
-    ]
+    ],
+    "evaluation_phase": "transport",
+    "source_provenance": {
+      "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
+      "pose_revision": "e614de3891cdea20a644e196b59a505b6438d311",
+      "run_directory": "Dl2i/simulations/20261110_10000/100mm_s",
+      "condition": "100mm_s",
+      "source_archive_sha256": "828a98dd91aca7cb96e8a698c04c4392bef13d6f68095de45c792dcfde7c3e03",
+      "source_signature": "0ec0239af09edcc04e12a868a6c617c2453bad32838fc6a726e2b4274136bfd4",
+      "simulator_commit": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd",
+      "symmetry_source": "Dl2i/poses.json",
+      "symmetry_source_sha256": "41ef53e8f6d37f9902bd9f11016f0ca57de3a536575e33652c5d28065e055d08",
+      "evaluation_phase": "transport",
+      "classification_method": "symmetry_aware_complete_link",
+      "classification_tolerance_deg": 5.0,
+      "representative_policy": "first recorded trial in each complete-link class",
+      "simulation_grouping_enabled": false,
+      "derivation_version": 1
+    }
   },
   "analytical_stability_evaluated": false,
   "engine_provenance": {

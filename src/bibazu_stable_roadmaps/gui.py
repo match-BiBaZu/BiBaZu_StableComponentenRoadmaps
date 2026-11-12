@@ -48,7 +48,9 @@ class ObservedRoadmapGUI(QMainWindow):
         self.controls = QWidget()
         body = QVBoxLayout(self.controls)
         body.setContentsMargins(0, 0, 0, 0)
-        self.source_path = QLineEdit(str(ROOT.parent / "BiBaZu_StableComponentenPoses"))
+        derived_catalogues = ROOT / "pose_catalogues"
+        default_source = derived_catalogues if derived_catalogues.is_dir() else ROOT.parent / "BiBaZu_StableComponentenPoses"
+        self.source_path = QLineEdit(str(default_source))
         self.source_path.setPlaceholderText("poses.json, pose_registry.json, or a poses repository folder")
         row = QHBoxLayout()
         row.addWidget(QLabel("Pose input"))

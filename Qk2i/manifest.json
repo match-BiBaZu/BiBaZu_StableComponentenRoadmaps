@@ -2,9 +2,9 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Qk2i",
-  "generated_utc": "2026-10-09T20:41:50.807433+00:00",
-  "pose_count": 13,
-  "transition_count": 63,
+  "generated_utc": "2026-11-12T07:51:34.950468+00:00",
+  "pose_count": 12,
+  "transition_count": 62,
   "minimum_frequency_percent": 1.0,
   "renumber_by_frequency": true,
   "settings": {
@@ -16,7 +16,9 @@
       "json",
       "graphml",
       "roadmap_svg",
-      "roadmap_png"
+      "roadmap_png",
+      "poses_svg",
+      "poses_png"
     ]
   },
   "input": {
@@ -25,33 +27,70 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "baaa2781cf92c77df0a9a80ed6c7ff9c0d22517dde840708ec970ef784286abc",
-    "generated_utc": "2026-10-09T20:41:50.807433+00:00",
+    "source_sha256": "d5b33e126dedcaec1b2b50c8669ffcba4df3bce412b9ca7b22b6761834efe055",
+    "generated_utc": "2026-11-12T07:51:34.950468+00:00",
     "pose_id_mapping": {
-      "Qk2i_0004": 0,
-      "Qk2i_0012": 1,
-      "Qk2i_0011": 2,
-      "Qk2i_0006": 3,
-      "Qk2i_0003": 4,
-      "Qk2i_0015": 5,
-      "Qk2i_0005": 6,
-      "Qk2i_0009": 7,
-      "Qk2i_0002": 8,
-      "Qk2i_0001": 9,
-      "Qk2i_0010": 10,
-      "Qk2i_0014": 11,
-      "Qk2i_0013": 12
+      "Qk2i_20261110_10000_transport_0004": 0,
+      "Qk2i_20261110_10000_transport_0011": 1,
+      "Qk2i_20261110_10000_transport_0012": 2,
+      "Qk2i_20261110_10000_transport_0007": 3,
+      "Qk2i_20261110_10000_transport_0005": 4,
+      "Qk2i_20261110_10000_transport_0013": 5,
+      "Qk2i_20261110_10000_transport_0018": 6,
+      "Qk2i_20261110_10000_transport_0001": 7,
+      "Qk2i_20261110_10000_transport_0003": 8,
+      "Qk2i_20261110_10000_transport_0014": 9,
+      "Qk2i_20261110_10000_transport_0006": 10,
+      "Qk2i_20261110_10000_transport_0019": 11
     },
     "removed_poses": [
       {
-        "source_pose_id": "Qk2i_0007",
-        "frequency_percent": 0.27
+        "source_pose_id": "Qk2i_20261110_10000_transport_0017",
+        "frequency_percent": 0.6
       },
       {
-        "source_pose_id": "Qk2i_0008",
-        "frequency_percent": 0.15
+        "source_pose_id": "Qk2i_20261110_10000_transport_0016",
+        "frequency_percent": 0.57
+      },
+      {
+        "source_pose_id": "Qk2i_20261110_10000_transport_0002",
+        "frequency_percent": 0.54
+      },
+      {
+        "source_pose_id": "Qk2i_20261110_10000_transport_0009",
+        "frequency_percent": 0.42
+      },
+      {
+        "source_pose_id": "Qk2i_20261110_10000_transport_0015",
+        "frequency_percent": 0.39
+      },
+      {
+        "source_pose_id": "Qk2i_20261110_10000_transport_0008",
+        "frequency_percent": 0.07
+      },
+      {
+        "source_pose_id": "Qk2i_20261110_10000_transport_0010",
+        "frequency_percent": 0.02
       }
-    ]
+    ],
+    "evaluation_phase": "transport",
+    "source_provenance": {
+      "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
+      "pose_revision": "e614de3891cdea20a644e196b59a505b6438d311",
+      "run_directory": "Qk2i/simulations/20261110_10000/100mm_s",
+      "condition": "100mm_s",
+      "source_archive_sha256": "e881d2ac2095abdc5b13d900d3f570bc39a1aa411a2fac54371194fd77cf22f1",
+      "source_signature": "526bfd0f69c8ecd5ef011da88f170eece36fde1bc14c0b06cffc8275aa270129",
+      "simulator_commit": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd",
+      "symmetry_source": "Qk2i/poses.json",
+      "symmetry_source_sha256": "baaa2781cf92c77df0a9a80ed6c7ff9c0d22517dde840708ec970ef784286abc",
+      "evaluation_phase": "transport",
+      "classification_method": "symmetry_aware_complete_link",
+      "classification_tolerance_deg": 5.0,
+      "representative_policy": "first recorded trial in each complete-link class",
+      "simulation_grouping_enabled": false,
+      "derivation_version": 1
+    }
   },
   "analytical_stability_evaluated": false,
   "engine_provenance": {

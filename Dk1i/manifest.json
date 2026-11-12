@@ -2,7 +2,7 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Dk1i",
-  "generated_utc": "2026-10-10T02:34:50.173711+00:00",
+  "generated_utc": "2026-11-12T07:48:46.496588+00:00",
   "pose_count": 8,
   "transition_count": 32,
   "minimum_frequency_percent": 1.0,
@@ -16,7 +16,9 @@
       "json",
       "graphml",
       "roadmap_svg",
-      "roadmap_png"
+      "roadmap_png",
+      "poses_svg",
+      "poses_png"
     ]
   },
   "input": {
@@ -25,19 +27,37 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "c24da7418bcc50d82d3dd55a8fa76b97aef115e001e726fd6c2285dc7c4a6a75",
-    "generated_utc": "2026-10-10T02:34:50.173711+00:00",
+    "source_sha256": "39d88209c84ff91c1309c8f03be9e37ac8fe622f9997a8ad8d3637297623d084",
+    "generated_utc": "2026-11-12T07:48:46.496588+00:00",
     "pose_id_mapping": {
-      "Dk1i_0007": 0,
-      "Dk1i_0002": 1,
-      "Dk1i_0005": 2,
-      "Dk1i_0006": 3,
-      "Dk1i_0003": 4,
-      "Dk1i_0004": 5,
-      "Dk1i_0001": 6,
-      "Dk1i_0008": 7
+      "Dk1i_20261107_10000_transport_0003": 0,
+      "Dk1i_20261107_10000_transport_0005": 1,
+      "Dk1i_20261107_10000_transport_0002": 2,
+      "Dk1i_20261107_10000_transport_0004": 3,
+      "Dk1i_20261107_10000_transport_0007": 4,
+      "Dk1i_20261107_10000_transport_0006": 5,
+      "Dk1i_20261107_10000_transport_0001": 6,
+      "Dk1i_20261107_10000_transport_0008": 7
     },
-    "removed_poses": []
+    "removed_poses": [],
+    "evaluation_phase": "transport",
+    "source_provenance": {
+      "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
+      "pose_revision": "e614de3891cdea20a644e196b59a505b6438d311",
+      "run_directory": "Dk1i/simulations/20261107_10000/100mm_s",
+      "condition": "100mm_s",
+      "source_archive_sha256": "d9f974e43d45480363ae2718835d53efa7b66cde8e3e37029c1d902538df27aa",
+      "source_signature": "3e16f680a9c380ef4096e12b306ebd7be50bf014047c00cc61bd492b32b42fef",
+      "simulator_commit": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd",
+      "symmetry_source": "Dk1i/poses.json",
+      "symmetry_source_sha256": "c7c0436d8570cc5daaf6e08188acb900801360c50dce7d89c2a9f66ed2ca18db",
+      "evaluation_phase": "transport",
+      "classification_method": "symmetry_aware_complete_link",
+      "classification_tolerance_deg": 5.0,
+      "representative_policy": "first recorded trial in each complete-link class",
+      "simulation_grouping_enabled": false,
+      "derivation_version": 1
+    }
   },
   "analytical_stability_evaluated": false,
   "engine_provenance": {

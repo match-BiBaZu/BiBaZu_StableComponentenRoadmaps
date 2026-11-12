@@ -1,5 +1,6 @@
 {
   "alpha_deg": 45.0,
+  "belt_mode": "running",
   "belt_speed_mm_s": 100.0,
   "belt_speed_variation_mm_s": 3.0,
   "belt_stop_enabled": true,
@@ -7,6 +8,9 @@
   "belt_stop_ramp_s": 0.2,
   "belt_variation_interval_s": 0.2,
   "beta_deg": 0.0,
+  "catalog_cad_dir": null,
+  "catalog_push": false,
+  "catalog_repo": null,
   "compute_stability": false,
   "contact_damping_ratio": 0.19,
   "contact_rolling_friction_mm": 0.1,
@@ -23,12 +27,14 @@
   ],
   "drop_height_mm": 100.0,
   "drop_height_spread_mm": 0.0,
+  "friction_cone": "elliptic",
+  "group_poses": false,
   "lateral_mm": 0.0,
   "lateral_spread_mm": 0.0,
   "length_mm": 500.0,
   "mesh_path": "Kf1i.stl",
-  "mu_belt": 0.4,
-  "mu_wall": 0.2,
+  "mu_belt": 0.1,
+  "mu_wall": 0.05,
   "output_dir": "./local_results",
   "roadmap_path": null,
   "roughness_active_duration_s": 1.0,
@@ -47,5 +53,5 @@
   "seed": 42,
   "timestep_s": 0.001,
   "trials": 10000,
-  "workers": 16
+  "workers": 24
 }

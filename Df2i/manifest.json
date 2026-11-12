@@ -2,7 +2,7 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Df2i",
-  "generated_utc": "2026-10-09T15:12:23.021398+00:00",
+  "generated_utc": "2026-11-12T07:48:36.566978+00:00",
   "pose_count": 6,
   "transition_count": 22,
   "minimum_frequency_percent": 1.0,
@@ -16,7 +16,9 @@
       "json",
       "graphml",
       "roadmap_svg",
-      "roadmap_png"
+      "roadmap_png",
+      "poses_svg",
+      "poses_png"
     ]
   },
   "input": {
@@ -25,30 +27,56 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "9c33a49a2d897068940530bb2a7bc5f30381e3b40a9a9928c621aadce6793d94",
-    "generated_utc": "2026-10-09T15:12:23.021398+00:00",
+    "source_sha256": "8bd5e66ea913b2e9f8f374233b5a30e4e84f9c47bac5b9a31252eb5e164f518f",
+    "generated_utc": "2026-11-12T07:48:36.566978+00:00",
     "pose_id_mapping": {
-      "Df2i_0001": 0,
-      "Df2i_0004": 1,
-      "Df2i_0005": 2,
-      "Df2i_0002": 3,
-      "Df2i_0007": 4,
-      "Df2i_0006": 5
+      "Df2i_20261110_10000_transport_0004": 0,
+      "Df2i_20261110_10000_transport_0005": 1,
+      "Df2i_20261110_10000_transport_0002": 2,
+      "Df2i_20261110_10000_transport_0001": 3,
+      "Df2i_20261110_10000_transport_0008": 4,
+      "Df2i_20261110_10000_transport_0007": 5
     },
     "removed_poses": [
       {
-        "source_pose_id": "Df2i_0003",
-        "frequency_percent": 0.13
+        "source_pose_id": "Df2i_20261110_10000_transport_0003",
+        "frequency_percent": 0.03
       },
       {
-        "source_pose_id": "Df2i_0008",
-        "frequency_percent": 0.08
+        "source_pose_id": "Df2i_20261110_10000_transport_0006",
+        "frequency_percent": 0.03
       },
       {
-        "source_pose_id": "Df2i_0009",
+        "source_pose_id": "Df2i_20261110_10000_transport_0011",
+        "frequency_percent": 0.03
+      },
+      {
+        "source_pose_id": "Df2i_20261110_10000_transport_0009",
+        "frequency_percent": 0.02
+      },
+      {
+        "source_pose_id": "Df2i_20261110_10000_transport_0010",
         "frequency_percent": 0.01
       }
-    ]
+    ],
+    "evaluation_phase": "transport",
+    "source_provenance": {
+      "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
+      "pose_revision": "e614de3891cdea20a644e196b59a505b6438d311",
+      "run_directory": "Df2i/simulations/20261110_10000/100mm_s",
+      "condition": "100mm_s",
+      "source_archive_sha256": "d21628df8a6d62116a50cc44e695081479345fe29f5257b07122ac55253f5e75",
+      "source_signature": "2d04d6d148ae0c4d28c162ed6416b7ab21b3ccd2ab9610bd69bd07d79981f219",
+      "simulator_commit": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd",
+      "symmetry_source": "Df2i/poses.json",
+      "symmetry_source_sha256": "9c33a49a2d897068940530bb2a7bc5f30381e3b40a9a9928c621aadce6793d94",
+      "evaluation_phase": "transport",
+      "classification_method": "symmetry_aware_complete_link",
+      "classification_tolerance_deg": 5.0,
+      "representative_policy": "first recorded trial in each complete-link class",
+      "simulation_grouping_enabled": false,
+      "derivation_version": 1
+    }
   },
   "analytical_stability_evaluated": false,
   "engine_provenance": {

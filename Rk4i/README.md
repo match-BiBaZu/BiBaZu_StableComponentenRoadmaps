@@ -2,34 +2,32 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
+Observation phase: **transport**.
+
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Rk4i_0006 | 6.23% | 623 |
-| 1 | Rk4i_0020 | 6.23% | 623 |
-| 2 | Rk4i_0011 | 6.21% | 621 |
-| 3 | Rk4i_0019 | 6.21% | 621 |
-| 4 | Rk4i_0012 | 6.16% | 616 |
-| 5 | Rk4i_0008 | 6.1% | 610 |
-| 6 | Rk4i_0005 | 6.02% | 602 |
-| 7 | Rk4i_0021 | 6.01% | 601 |
-| 8 | Rk4i_0010 | 5.9% | 590 |
-| 9 | Rk4i_0009 | 5.6% | 560 |
-| 10 | Rk4i_0007 | 5.44% | 544 |
-| 11 | Rk4i_0013 | 5.33% | 533 |
-| 12 | Rk4i_0016 | 3.79% | 379 |
-| 13 | Rk4i_0002 | 3.56% | 356 |
-| 14 | Rk4i_0017 | 3.49% | 349 |
-| 15 | Rk4i_0014 | 3.47% | 347 |
-| 16 | Rk4i_0023 | 2.36% | 236 |
-| 17 | Rk4i_0022 | 2.3% | 230 |
-| 18 | Rk4i_0004 | 2.28% | 228 |
-| 19 | Rk4i_0003 | 1.96% | 196 |
-| 20 | Rk4i_0024 | 1.43% | 143 |
-| 21 | Rk4i_0015 | 1.35% | 135 |
-| 22 | Rk4i_0018 | 1.33% | 133 |
-| 23 | Rk4i_0001 | 1.23% | 123 |
+| 0 | Rk4i_20261110_10000_transport_0021 | 8.13% | 813 |
+| 1 | Rk4i_20261110_10000_transport_0010 | 7.99% | 799 |
+| 2 | Rk4i_20261110_10000_transport_0013 | 7.78% | 778 |
+| 3 | Rk4i_20261110_10000_transport_0008 | 7.67% | 767 |
+| 4 | Rk4i_20261110_10000_transport_0015 | 7.54% | 754 |
+| 5 | Rk4i_20261110_10000_transport_0023 | 7.39% | 739 |
+| 6 | Rk4i_20261110_10000_transport_0003 | 7.34% | 734 |
+| 7 | Rk4i_20261110_10000_transport_0005 | 7.24% | 724 |
+| 8 | Rk4i_20261110_10000_transport_0012 | 5.31% | 531 |
+| 9 | Rk4i_20261110_10000_transport_0017 | 5.05% | 505 |
+| 10 | Rk4i_20261110_10000_transport_0009 | 4.88% | 488 |
+| 11 | Rk4i_20261110_10000_transport_0007 | 4.8% | 480 |
+| 12 | Rk4i_20261110_10000_transport_0014 | 2.17% | 217 |
+| 13 | Rk4i_20261110_10000_transport_0004 | 2.14% | 214 |
+| 14 | Rk4i_20261110_10000_transport_0016 | 2.12% | 212 |
+| 15 | Rk4i_20261110_10000_transport_0019 | 2.05% | 205 |
+| 16 | Rk4i_20261110_10000_transport_0006 | 1.95% | 195 |
+| 17 | Rk4i_20261110_10000_transport_0020 | 1.94% | 194 |
+| 18 | Rk4i_20261110_10000_transport_0002 | 1.78% | 178 |
+| 19 | Rk4i_20261110_10000_transport_0022 | 1.7% | 170 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

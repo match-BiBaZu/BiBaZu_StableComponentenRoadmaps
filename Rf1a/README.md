@@ -2,26 +2,27 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
+Observation phase: **transport**.
+
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Rf1a_0007 | 15.29% | 1529 |
-| 1 | Rf1a_0012 | 14.09% | 1409 |
-| 2 | Rf1a_0005 | 10.33% | 1033 |
-| 3 | Rf1a_0013 | 9.84% | 984 |
-| 4 | Rf1a_0017 | 8.52% | 852 |
-| 5 | Rf1a_0018 | 6.1% | 610 |
-| 6 | Rf1a_0004 | 6.01% | 601 |
-| 7 | Rf1a_0016 | 5.36% | 536 |
-| 8 | Rf1a_0011 | 4.18% | 418 |
-| 9 | Rf1a_0001 | 3.8% | 380 |
-| 10 | Rf1a_0003 | 3.65% | 365 |
-| 11 | Rf1a_0008 | 3.62% | 362 |
-| 12 | Rf1a_0006 | 2.12% | 212 |
-| 13 | Rf1a_0015 | 1.92% | 192 |
-| 14 | Rf1a_0009 | 1.68% | 168 |
-| 15 | Rf1a_0014 | 1.44% | 144 |
+| 0 | Rf1a_20261107_10000_transport_0009 | 21.18% | 2118 |
+| 1 | Rf1a_20261107_10000_transport_0017 | 20.17% | 2017 |
+| 2 | Rf1a_20261107_10000_transport_0004 | 9.87% | 987 |
+| 3 | Rf1a_20261107_10000_transport_0016 | 9.29% | 929 |
+| 4 | Rf1a_20261107_10000_transport_0022 | 7.42% | 742 |
+| 5 | Rf1a_20261107_10000_transport_0023 | 5.54% | 554 |
+| 6 | Rf1a_20261107_10000_transport_0018 | 4.13% | 413 |
+| 7 | Rf1a_20261107_10000_transport_0021 | 4.06% | 406 |
+| 8 | Rf1a_20261107_10000_transport_0001 | 3.42% | 342 |
+| 9 | Rf1a_20261107_10000_transport_0020 | 2.86% | 286 |
+| 10 | Rf1a_20261107_10000_transport_0005 | 2.81% | 281 |
+| 11 | Rf1a_20261107_10000_transport_0008 | 2.64% | 264 |
+| 12 | Rf1a_20261107_10000_transport_0003 | 1.83% | 183 |
+| 13 | Rf1a_20261107_10000_transport_0012 | 1.5% | 150 |
+| 14 | Rf1a_20261107_10000_transport_0013 | 1.45% | 145 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

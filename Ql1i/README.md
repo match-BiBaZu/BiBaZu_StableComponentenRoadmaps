@@ -2,15 +2,17 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
+Observation phase: **transport**.
+
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Ql1i_0002 | 45.44% | 4544 |
-| 1 | Ql1i_0003 | 43.76% | 4376 |
-| 2 | Ql1i_0004 | 5.32% | 532 |
-| 3 | Ql1i_0005 | 2.66% | 266 |
-| 4 | Ql1i_0006 | 2.28% | 228 |
+| 0 | Ql1i_20261107_10000_transport_0003 | 47.19% | 4719 |
+| 1 | Ql1i_20261107_10000_transport_0002 | 46.54% | 4654 |
+| 2 | Ql1i_20261107_10000_transport_0005 | 2.34% | 234 |
+| 3 | Ql1i_20261107_10000_transport_0004 | 1.81% | 181 |
+| 4 | Ql1i_20261107_10000_transport_0001 | 1.23% | 123 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

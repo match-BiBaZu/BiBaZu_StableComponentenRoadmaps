@@ -220,6 +220,12 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                     "source_sha256": sha256(source.path), "generated_utc": generated_utc,
                     "pose_id_mapping": {pose.source_id: number for pose, number in numbered},
                     "removed_poses": [{"source_pose_id": pose.source_id, "frequency_percent": pose.frequency_percent} for pose in removed]}
+        observed = read_json(source.path)
+        if "poses" not in observed:
+            observed = read_json(source.path.with_name("poses.json"))
+        for key in ("evaluation_phase", "source_provenance"):
+            if key in observed:
+                metadata[key] = observed[key]
         built.document.update(part_name=source.workpiece, generation=metadata,
                               pose_ranking_method="observed_frequency" if config.renumber_by_frequency else "source_id",
                               classical_metadata={"observed_pose_generation": metadata})
@@ -259,6 +265,9 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             lines = [f"# {source.workpiece}\n", "Observed simulation poses; geometry supplies untested direct connection candidates.",
                      f"\nMinimum frequency: **{config.minimum_frequency_percent:g}%**. Percentages retain the source denominator.",
                      "\n| Roadmap pose | Source pose | Frequency | Count |", "| ---: | --- | ---: | ---: |"]
+            if metadata.get("evaluation_phase"):
+                phase = metadata["evaluation_phase"].replace("_", " ")
+                lines.insert(2, f"\nObservation phase: **{phase}**.")
             lines.extend(f"| {number} | {pose.source_id} | {pose.frequency_percent:g}% | {pose.count if pose.count is not None else 'unknown'} |" for pose, number in numbered)
             lines.append("\nThe legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.")
             lines.append("\nOriginal inputs are in `source/`; generation settings and exclusions are in `manifest.json`.")

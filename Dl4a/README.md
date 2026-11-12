@@ -2,18 +2,20 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
+Observation phase: **transport**.
+
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Dl4a_0004 | 16.11% | 1611 |
-| 1 | Dl4a_0011 | 15.41% | 1541 |
-| 2 | Dl4a_0002 | 15.03% | 1503 |
-| 3 | Dl4a_0021 | 14.7% | 1470 |
-| 4 | Dl4a_0022 | 8.16% | 816 |
-| 5 | Dl4a_0009 | 7.97% | 797 |
-| 6 | Dl4a_0010 | 7.3% | 730 |
-| 7 | Dl4a_0024 | 7.17% | 717 |
+| 0 | Dl4a_20261110_10000_transport_0006 | 15.79% | 1579 |
+| 1 | Dl4a_20261110_10000_transport_0021 | 15.74% | 1574 |
+| 2 | Dl4a_20261110_10000_transport_0011 | 15.53% | 1553 |
+| 3 | Dl4a_20261110_10000_transport_0003 | 15.52% | 1552 |
+| 4 | Dl4a_20261110_10000_transport_0023 | 8.26% | 826 |
+| 5 | Dl4a_20261110_10000_transport_0012 | 8.16% | 816 |
+| 6 | Dl4a_20261110_10000_transport_0009 | 8.14% | 814 |
+| 7 | Dl4a_20261110_10000_transport_0020 | 7.8% | 780 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

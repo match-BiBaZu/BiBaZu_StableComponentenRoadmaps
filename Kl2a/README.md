@@ -2,27 +2,27 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
+Observation phase: **transport**.
+
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Kl2a_0007 | 17.8% | 1780 |
-| 1 | Kl2a_0008 | 11.95% | 1195 |
-| 2 | Kl2a_0018 | 8.67% | 867 |
-| 3 | Kl2a_0009 | 6.28% | 628 |
-| 4 | Kl2a_0015 | 6.07% | 607 |
-| 5 | Kl2a_0006 | 5.18% | 518 |
-| 6 | Kl2a_0011 | 4.82% | 482 |
-| 7 | Kl2a_0019 | 4.25% | 425 |
-| 8 | Kl2a_0017 | 4.08% | 408 |
-| 9 | Kl2a_0003 | 3.95% | 395 |
-| 10 | Kl2a_0014 | 3.87% | 387 |
-| 11 | Kl2a_0013 | 3.8% | 380 |
-| 12 | Kl2a_0020 | 3.74% | 374 |
-| 13 | Kl2a_0022 | 3.64% | 364 |
-| 14 | Kl2a_0002 | 3.54% | 354 |
-| 15 | Kl2a_0012 | 3.38% | 338 |
-| 16 | Kl2a_0001 | 1.87% | 187 |
+| 0 | Kl2a_20261110_10000_transport_0019 | 24.03% | 2403 |
+| 1 | Kl2a_20261110_10000_transport_0022 | 20.39% | 2039 |
+| 2 | Kl2a_20261110_10000_transport_0043 | 7.5% | 750 |
+| 3 | Kl2a_20261110_10000_transport_0038 | 6.59% | 659 |
+| 4 | Kl2a_20261110_10000_transport_0045 | 3.55% | 355 |
+| 5 | Kl2a_20261110_10000_transport_0035 | 3.51% | 351 |
+| 6 | Kl2a_20261110_10000_transport_0050 | 3.42% | 342 |
+| 7 | Kl2a_20261110_10000_transport_0033 | 3.27% | 327 |
+| 8 | Kl2a_20261110_10000_transport_0025 | 3.14% | 314 |
+| 9 | Kl2a_20261110_10000_transport_0016 | 3.12% | 312 |
+| 10 | Kl2a_20261110_10000_transport_0040 | 3.05% | 305 |
+| 11 | Kl2a_20261110_10000_transport_0028 | 2.8% | 280 |
+| 12 | Kl2a_20261110_10000_transport_0012 | 2.49% | 249 |
+| 13 | Kl2a_20261110_10000_transport_0009 | 2.46% | 246 |
+| 14 | Kl2a_20261110_10000_transport_0029 | 1.88% | 188 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

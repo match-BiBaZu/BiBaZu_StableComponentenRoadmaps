@@ -2,19 +2,20 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
+Observation phase: **transport**.
+
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Rf3a_0001 | 18.43% | 1843 |
-| 1 | Rf3a_0009 | 15.69% | 1569 |
-| 2 | Rf3a_0012 | 15.19% | 1519 |
-| 3 | Rf3a_0002 | 13.72% | 1372 |
-| 4 | Rf3a_0003 | 13.63% | 1363 |
-| 5 | Rf3a_0006 | 11.91% | 1191 |
-| 6 | Rf3a_0011 | 4.35% | 435 |
-| 7 | Rf3a_0007 | 4.27% | 427 |
-| 8 | Rf3a_0013 | 1.18% | 118 |
+| 0 | Rf3a_20261110_10000_transport_0014 | 17.63% | 1763 |
+| 1 | Rf3a_20261110_10000_transport_0001 | 16.88% | 1688 |
+| 2 | Rf3a_20261110_10000_transport_0004 | 15.78% | 1578 |
+| 3 | Rf3a_20261110_10000_transport_0016 | 15.49% | 1549 |
+| 4 | Rf3a_20261110_10000_transport_0005 | 14.01% | 1401 |
+| 5 | Rf3a_20261110_10000_transport_0008 | 11.93% | 1193 |
+| 6 | Rf3a_20261110_10000_transport_0015 | 4.18% | 418 |
+| 7 | Rf3a_20261110_10000_transport_0011 | 3.05% | 305 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

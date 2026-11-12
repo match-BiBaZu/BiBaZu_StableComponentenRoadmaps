@@ -162,10 +162,11 @@ def test_refuse_output_in_source_catalogue(source_folder):
         generate_one(source_folder / "poses.json", config)
 
 
-def test_existing_reorientation_consumer_loads_both_formats(source_folder, tmp_path):
+def test_existing_reorientation_consumer_loads_both_formats(source_folder, tmp_path, monkeypatch):
     consumer_path = Path(__file__).resolve().parents[2] / "BiBaZu_Big_Boi/ReorientationControlGUI/src/bibazu_reorientation/roadmap.py"
     if not consumer_path.is_file():
         pytest.skip("Optional workspace integration: existing reorientation consumer is not installed")
+    monkeypatch.syspath_prepend(str(consumer_path.parents[1]))
     spec = importlib.util.spec_from_file_location("_existing_roadmap_consumer", consumer_path)
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
@@ -224,3 +225,22 @@ def test_pressure_consumer_loads_export_selects_transition_and_restores_profile(
 def test_config_rejects_bad_cutoffs(cutoff):
     with pytest.raises(ValueError):
         GenerationConfig(minimum_frequency_percent=cutoff).validate()
+
+
+@pytest.mark.parametrize("filename", ["poses.json", "pose_registry.json"])
+def test_derived_phase_and_provenance_survive_export(source_folder, tmp_path, filename):
+    path = source_folder / "poses.json"
+    data = json.loads(path.read_text())
+    data["evaluation_phase"] = "after_belt_stop"
+    data["source_provenance"] = {"source_archive_sha256": "a" * 64,
+                                 "classification_method": "symmetry_aware_complete_link",
+                                 "classification_tolerance_deg": 5.0}
+    path.write_text(json.dumps(data))
+    _, result = generate_one(source_folder / filename, GenerationConfig(str(tmp_path / "outputs"), outputs=("json",)))
+    folder = Path(result["folder"])
+    document = json.loads((folder / "Test1_roadmap.json").read_text())
+    manifest = json.loads((folder / "manifest.json").read_text())
+    for metadata in (document["generation"], manifest["input"]):
+        assert metadata["evaluation_phase"] == "after_belt_stop"
+        assert metadata["source_provenance"] == data["source_provenance"]
+    assert "Observation phase: **after belt stop**" in (folder / "README.md").read_text()

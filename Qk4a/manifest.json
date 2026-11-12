@@ -2,9 +2,9 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Qk4a",
-  "generated_utc": "2026-10-09T20:57:15.989059+00:00",
+  "generated_utc": "2026-11-12T07:51:42.092531+00:00",
   "pose_count": 24,
-  "transition_count": 157,
+  "transition_count": 160,
   "minimum_frequency_percent": 1.0,
   "renumber_by_frequency": true,
   "settings": {
@@ -16,7 +16,9 @@
       "json",
       "graphml",
       "roadmap_svg",
-      "roadmap_png"
+      "roadmap_png",
+      "poses_svg",
+      "poses_png"
     ]
   },
   "input": {
@@ -25,44 +27,66 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "5097b0fd251dfe16d3910f46484db1e0daa650324a8150d4be251dc3e2149b42",
-    "generated_utc": "2026-10-09T20:57:15.989059+00:00",
+    "source_sha256": "63d46f796e66ef47ec9e247012102a47bb1eca1fded9531eb677b9de741f0521",
+    "generated_utc": "2026-11-12T07:51:42.092531+00:00",
     "pose_id_mapping": {
-      "Qk4a_0021": 0,
-      "Qk4a_0019": 1,
-      "Qk4a_0004": 2,
-      "Qk4a_0014": 3,
-      "Qk4a_0010": 4,
-      "Qk4a_0006": 5,
-      "Qk4a_0024": 6,
-      "Qk4a_0007": 7,
-      "Qk4a_0001": 8,
-      "Qk4a_0017": 9,
-      "Qk4a_0016": 10,
-      "Qk4a_0002": 11,
-      "Qk4a_0018": 12,
-      "Qk4a_0020": 13,
-      "Qk4a_0003": 14,
-      "Qk4a_0013": 15,
-      "Qk4a_0025": 16,
-      "Qk4a_0022": 17,
-      "Qk4a_0015": 18,
-      "Qk4a_0009": 19,
-      "Qk4a_0005": 20,
-      "Qk4a_0023": 21,
-      "Qk4a_0011": 22,
-      "Qk4a_0012": 23
+      "Qk4a_20261110_10000_transport_0006": 0,
+      "Qk4a_20261110_10000_transport_0013": 1,
+      "Qk4a_20261110_10000_transport_0009": 2,
+      "Qk4a_20261110_10000_transport_0023": 3,
+      "Qk4a_20261110_10000_transport_0015": 4,
+      "Qk4a_20261110_10000_transport_0022": 5,
+      "Qk4a_20261110_10000_transport_0008": 6,
+      "Qk4a_20261110_10000_transport_0007": 7,
+      "Qk4a_20261110_10000_transport_0001": 8,
+      "Qk4a_20261110_10000_transport_0021": 9,
+      "Qk4a_20261110_10000_transport_0027": 10,
+      "Qk4a_20261110_10000_transport_0005": 11,
+      "Qk4a_20261110_10000_transport_0019": 12,
+      "Qk4a_20261110_10000_transport_0020": 13,
+      "Qk4a_20261110_10000_transport_0014": 14,
+      "Qk4a_20261110_10000_transport_0016": 15,
+      "Qk4a_20261110_10000_transport_0004": 16,
+      "Qk4a_20261110_10000_transport_0017": 17,
+      "Qk4a_20261110_10000_transport_0010": 18,
+      "Qk4a_20261110_10000_transport_0025": 19,
+      "Qk4a_20261110_10000_transport_0003": 20,
+      "Qk4a_20261110_10000_transport_0024": 21,
+      "Qk4a_20261110_10000_transport_0018": 22,
+      "Qk4a_20261110_10000_transport_0011": 23
     },
     "removed_poses": [
       {
-        "source_pose_id": "Qk4a_0008",
-        "frequency_percent": 0.47
+        "source_pose_id": "Qk4a_20261110_10000_transport_0002",
+        "frequency_percent": 0.43
       },
       {
-        "source_pose_id": "Qk4a_0026",
-        "frequency_percent": 0.02
+        "source_pose_id": "Qk4a_20261110_10000_transport_0012",
+        "frequency_percent": 0.15
+      },
+      {
+        "source_pose_id": "Qk4a_20261110_10000_transport_0026",
+        "frequency_percent": 0.05
       }
-    ]
+    ],
+    "evaluation_phase": "transport",
+    "source_provenance": {
+      "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
+      "pose_revision": "e614de3891cdea20a644e196b59a505b6438d311",
+      "run_directory": "Qk4a/simulations/20261110_10000/100mm_s",
+      "condition": "100mm_s",
+      "source_archive_sha256": "a62f05c41fbcff92a4c11e451889c238d4ea279f43fd97c8860e047d70577f5c",
+      "source_signature": "37678027c643942f4dba111f451dce8678b7110ce5219efc9c1277fd8fface93",
+      "simulator_commit": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd",
+      "symmetry_source": "Qk4a/poses.json",
+      "symmetry_source_sha256": "5097b0fd251dfe16d3910f46484db1e0daa650324a8150d4be251dc3e2149b42",
+      "evaluation_phase": "transport",
+      "classification_method": "symmetry_aware_complete_link",
+      "classification_tolerance_deg": 5.0,
+      "representative_policy": "first recorded trial in each complete-link class",
+      "simulation_grouping_enabled": false,
+      "derivation_version": 1
+    }
   },
   "analytical_stability_evaluated": false,
   "engine_provenance": {

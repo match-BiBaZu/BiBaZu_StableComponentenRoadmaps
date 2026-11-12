@@ -2,20 +2,22 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
+Observation phase: **transport**.
+
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Qf2a_0006 | 14.83% | 1483 |
-| 1 | Qf2a_0013 | 13.7% | 1370 |
-| 2 | Qf2a_0012 | 12.92% | 1292 |
-| 3 | Qf2a_0009 | 12.47% | 1247 |
-| 4 | Qf2a_0001 | 11.91% | 1191 |
-| 5 | Qf2a_0005 | 11.14% | 1114 |
-| 6 | Qf2a_0007 | 7.45% | 745 |
-| 7 | Qf2a_0008 | 5.3% | 530 |
-| 8 | Qf2a_0011 | 4.09% | 409 |
-| 9 | Qf2a_0002 | 3.62% | 362 |
+| 0 | Qf2a_20261110_10000_transport_0003 | 16.07% | 1607 |
+| 1 | Qf2a_20261110_10000_transport_0011 | 14.99% | 1499 |
+| 2 | Qf2a_20261110_10000_transport_0012 | 14.68% | 1468 |
+| 3 | Qf2a_20261110_10000_transport_0001 | 13.61% | 1361 |
+| 4 | Qf2a_20261110_10000_transport_0008 | 11.9% | 1190 |
+| 5 | Qf2a_20261110_10000_transport_0004 | 10.8% | 1080 |
+| 6 | Qf2a_20261110_10000_transport_0006 | 4.94% | 494 |
+| 7 | Qf2a_20261110_10000_transport_0010 | 4.37% | 437 |
+| 8 | Qf2a_20261110_10000_transport_0007 | 4.34% | 434 |
+| 9 | Qf2a_20261110_10000_transport_0002 | 4.24% | 424 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

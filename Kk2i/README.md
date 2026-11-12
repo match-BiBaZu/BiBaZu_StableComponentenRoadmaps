@@ -2,30 +2,36 @@
 
 Observed simulation poses; geometry supplies untested direct connection candidates.
 
+Observation phase: **transport**.
+
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
 | Roadmap pose | Source pose | Frequency | Count |
 | ---: | --- | ---: | ---: |
-| 0 | Kk2i_0018 | 20.23% | 2023 |
-| 1 | Kk2i_0017 | 8.33% | 833 |
-| 2 | Kk2i_0003 | 7.73% | 773 |
-| 3 | Kk2i_0004 | 6.61% | 661 |
-| 4 | Kk2i_0024 | 3.21% | 321 |
-| 5 | Kk2i_0026 | 3.15% | 315 |
-| 6 | Kk2i_0015 | 2.53% | 253 |
-| 7 | Kk2i_0021 | 2.53% | 253 |
-| 8 | Kk2i_0016 | 2.46% | 246 |
-| 9 | Kk2i_0029 | 2.42% | 242 |
-| 10 | Kk2i_0030 | 2.42% | 242 |
-| 11 | Kk2i_0020 | 2.36% | 236 |
-| 12 | Kk2i_0028 | 2.36% | 236 |
-| 13 | Kk2i_0022 | 2.33% | 233 |
-| 14 | Kk2i_0019 | 2.23% | 223 |
-| 15 | Kk2i_0005 | 2.1% | 210 |
-| 16 | Kk2i_0006 | 2.09% | 209 |
-| 17 | Kk2i_0008 | 1.84% | 184 |
-| 18 | Kk2i_0010 | 1.65% | 165 |
-| 19 | Kk2i_0027 | 1.23% | 123 |
+| 0 | Kk2i_20261110_10000_transport_0047 | 10.03% | 1003 |
+| 1 | Kk2i_20261110_10000_transport_0053 | 9.78% | 978 |
+| 2 | Kk2i_20261110_10000_transport_0050 | 9.2% | 920 |
+| 3 | Kk2i_20261110_10000_transport_0044 | 7.51% | 751 |
+| 4 | Kk2i_20261110_10000_transport_0057 | 7.07% | 707 |
+| 5 | Kk2i_20261110_10000_transport_0035 | 4.97% | 497 |
+| 6 | Kk2i_20261110_10000_transport_0015 | 4.95% | 495 |
+| 7 | Kk2i_20261110_10000_transport_0030 | 2.65% | 265 |
+| 8 | Kk2i_20261110_10000_transport_0032 | 2.12% | 212 |
+| 9 | Kk2i_20261110_10000_transport_0025 | 1.94% | 194 |
+| 10 | Kk2i_20261110_10000_transport_0014 | 1.85% | 185 |
+| 11 | Kk2i_20261110_10000_transport_0017 | 1.81% | 181 |
+| 12 | Kk2i_20261110_10000_transport_0037 | 1.75% | 175 |
+| 13 | Kk2i_20261110_10000_transport_0016 | 1.73% | 173 |
+| 14 | Kk2i_20261110_10000_transport_0041 | 1.72% | 172 |
+| 15 | Kk2i_20261110_10000_transport_0036 | 1.71% | 171 |
+| 16 | Kk2i_20261110_10000_transport_0040 | 1.61% | 161 |
+| 17 | Kk2i_20261110_10000_transport_0013 | 1.44% | 144 |
+| 18 | Kk2i_20261110_10000_transport_0042 | 1.42% | 142 |
+| 19 | Kk2i_20261110_10000_transport_0033 | 1.26% | 126 |
+| 20 | Kk2i_20261110_10000_transport_0046 | 1.26% | 126 |
+| 21 | Kk2i_20261110_10000_transport_0060 | 1.16% | 116 |
+| 22 | Kk2i_20261110_10000_transport_0011 | 1.15% | 115 |
+| 23 | Kk2i_20261110_10000_transport_0009 | 1.05% | 105 |
 
 The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 

@@ -2,9 +2,9 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Rf2i",
-  "generated_utc": "2026-10-09T22:52:00.551065+00:00",
+  "generated_utc": "2026-11-12T07:52:15.857329+00:00",
   "pose_count": 8,
-  "transition_count": 45,
+  "transition_count": 48,
   "minimum_frequency_percent": 1.0,
   "renumber_by_frequency": true,
   "settings": {
@@ -16,7 +16,9 @@
       "json",
       "graphml",
       "roadmap_svg",
-      "roadmap_png"
+      "roadmap_png",
+      "poses_svg",
+      "poses_png"
     ]
   },
   "input": {
@@ -25,64 +27,62 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "04a869061aabe282a8c850e69f82f1e1281124d4c088369bbb8825630bcc1243",
-    "generated_utc": "2026-10-09T22:52:00.551065+00:00",
+    "source_sha256": "607895200fe00c63d761cb0810325b6ae1582d7cfbfbbfcc952adeb91686e4ef",
+    "generated_utc": "2026-11-12T07:52:15.857329+00:00",
     "pose_id_mapping": {
-      "Rf2i_0006": 0,
-      "Rf2i_0005": 1,
-      "Rf2i_0003": 2,
-      "Rf2i_0004": 3,
-      "Rf2i_0009": 4,
-      "Rf2i_0001": 5,
-      "Rf2i_0010": 6,
-      "Rf2i_0002": 7
+      "Rf2i_20261110_10000_transport_0008": 0,
+      "Rf2i_20261110_10000_transport_0009": 1,
+      "Rf2i_20261110_10000_transport_0002": 2,
+      "Rf2i_20261110_10000_transport_0003": 3,
+      "Rf2i_20261110_10000_transport_0013": 4,
+      "Rf2i_20261110_10000_transport_0004": 5,
+      "Rf2i_20261110_10000_transport_0014": 6,
+      "Rf2i_20261110_10000_transport_0001": 7
     },
     "removed_poses": [
       {
-        "source_pose_id": "Rf2i_0017",
-        "frequency_percent": 0.09
+        "source_pose_id": "Rf2i_20261110_10000_transport_0012",
+        "frequency_percent": 0.37
       },
       {
-        "source_pose_id": "Rf2i_0021",
-        "frequency_percent": 0.08
+        "source_pose_id": "Rf2i_20261110_10000_transport_0007",
+        "frequency_percent": 0.33
       },
       {
-        "source_pose_id": "Rf2i_0011",
-        "frequency_percent": 0.07
-      },
-      {
-        "source_pose_id": "Rf2i_0014",
-        "frequency_percent": 0.06
-      },
-      {
-        "source_pose_id": "Rf2i_0016",
+        "source_pose_id": "Rf2i_20261110_10000_transport_0005",
         "frequency_percent": 0.05
       },
       {
-        "source_pose_id": "Rf2i_0020",
-        "frequency_percent": 0.04
+        "source_pose_id": "Rf2i_20261110_10000_transport_0006",
+        "frequency_percent": 0.05
       },
       {
-        "source_pose_id": "Rf2i_0018",
+        "source_pose_id": "Rf2i_20261110_10000_transport_0011",
+        "frequency_percent": 0.05
+      },
+      {
+        "source_pose_id": "Rf2i_20261110_10000_transport_0010",
         "frequency_percent": 0.03
-      },
-      {
-        "source_pose_id": "Rf2i_0012",
-        "frequency_percent": 0.02
-      },
-      {
-        "source_pose_id": "Rf2i_0013",
-        "frequency_percent": 0.02
-      },
-      {
-        "source_pose_id": "Rf2i_0015",
-        "frequency_percent": 0.02
-      },
-      {
-        "source_pose_id": "Rf2i_0019",
-        "frequency_percent": 0.01
       }
-    ]
+    ],
+    "evaluation_phase": "transport",
+    "source_provenance": {
+      "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
+      "pose_revision": "e614de3891cdea20a644e196b59a505b6438d311",
+      "run_directory": "Rf2i/simulations/20261110_10000/100mm_s",
+      "condition": "100mm_s",
+      "source_archive_sha256": "8554ff16a2e09fb98d7ca982edc113f04e745501ca46a57fdb232225d3b308b8",
+      "source_signature": "ec0235260bd1f363c70fad07ff757fad046e71c364bf9f7fcc35a567eb765f5a",
+      "simulator_commit": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd",
+      "symmetry_source": "Rf2i/poses.json",
+      "symmetry_source_sha256": "04a869061aabe282a8c850e69f82f1e1281124d4c088369bbb8825630bcc1243",
+      "evaluation_phase": "transport",
+      "classification_method": "symmetry_aware_complete_link",
+      "classification_tolerance_deg": 5.0,
+      "representative_policy": "first recorded trial in each complete-link class",
+      "simulation_grouping_enabled": false,
+      "derivation_version": 1
+    }
   },
   "analytical_stability_evaluated": false,
   "engine_provenance": {
