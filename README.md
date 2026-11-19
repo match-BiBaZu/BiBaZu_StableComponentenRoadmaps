@@ -1,43 +1,47 @@
-# BiBaZu Stable Components Roadmaps
+# Stable Component Roadmaps
 
 A focused GUI that turns observed simulator pose catalogues into frequency-filtered
 reorientation roadmaps. Observations determine the nodes; geometry calculates
 direct connection candidates and renders the saved orientations.
 
-The current catalogue contains **39 workpieces, 443 retained poses,
-and 2,392 directed connections**, regenerated from the latest completed
-10,000-drop moving-belt runs in [BiBaZu Stable Component Poses](https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses/tree/e614de3891cdea20a644e196b59a505b6438d311).
-The source repository contains 780,000 drops across stationary and moving conditions.
-These roadmaps use its 39 moving-belt runs, with **10,000 completed drops per workpiece**.
-The exports retain the existing **1%** frequency cutoff and frequency numbering.
-The GUI default for new requests remains 5%.
+The current roadmaps use the newest published [BiBaZu Stable Component Poses
+release](https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses/tree/b045887db591ff969b182d4a4ab1e9e14f11ab30),
+covering **39 workpieces**. These exports use only its 39 moving-belt runs,
+with **10,000 completed trials per workpiece** (390,000 moving-belt drops).
+The current roadmaps are in [moving/](moving/README.md). The exports retain the
+existing **1%** frequency cutoff and frequency numbering; the GUI default for new
+requests remains 5%.
+
+The current set contains **38 roadmaps, 439 retained poses and 2,376 directed connections**.
+
+**Kf1i has no moving-belt export at this cutoff:** its two observed poses have
+incidences of 0.06% and 0.03%. The current inputs retain both observations, but
+neither qualifies for a roadmap node. Historical and post-braking roadmaps have
+been removed from this checkout. Git commit history is preserved.
 
 ## Pose derivation and provenance
 
-Fresh frequency-counted catalogues are included in `pose_catalogues/<workpiece>/`.
-Settled orientations are classified with the simulator's deterministic, symmetry-aware
-**complete-link method at 5°**: every pair within a class meets that angular limit
-under the recorded part symmetry. Continuous symmetry axes use the simulator's
-directed-axis comparison. Each representative is an actual recorded trial,
-and the catalogue preserves all member trial IDs and reference orientations.
-Frequencies use all 10,000 completed drops, including unsettled outcomes.
+Current frequency-counted catalogues are included in
+`pose_catalogues/moving/<workpiece>/`. The importer reads the pinned Git
+revision and verifies the published catalogue, mesh, configuration and grouping
+evidence checksums. `catalogue.json` is the original published file; `poses.json`
+adapts its field names for the generator. Original pose IDs, counts, orientations,
+group membership and member trial IDs are preserved. No observations are
+reclassified during import. The source's grouping model is
+`observed-seated-geodesic-basins-v1`.
 
-Transport outcomes at the moving virtual exit supply 38 workpieces. **Kf1i uses
-the separate post-braking observations from its latest moving run**, preserving
-its existing observation phase. Its poses and plots are labelled `after_belt_stop`;
-transport and post-braking counts have separate meanings. Stationary-run outcomes
-remain available in the source dataset as a separate condition.
+Moving outcomes use the virtual exit with the belt running. Post-braking
+observations are not substituted for transport outcomes. Frequencies use all
+10,000 completed drops, including
+unsettled outcomes. Each individual retained pose remains a separate roadmap node;
+source groups do not merge roadmap nodes.
 
-Each source catalogue and exported roadmap records the source repository revision,
-run directory, archive SHA-256, simulation signature, observation phase, and
-classification method. New source IDs are scoped to their run and phase. Numeric
+Each export records its condition, observation phase, source revision, catalogue
+path and checksum, original run provenance and source pose mapping. Numeric
 roadmap IDs are assigned in descending frequency; consumers retain their explicit
-re-import and roadmap-hash checks when an export changes.
-
-The raw simulation archives and historical pose catalogues remain in the source
-repository. Derived catalogues, standalone PNG/SVG pose images, portable source
-snapshots, JSON/YAML/GraphML exports, and roadmap diagrams are included here.
-[Classifier provenance](DERIVATION_PROVENANCE.json) · [Classifier license](DERIVATION_LICENSE)
+re-import and roadmap-hash checks when an export changes. Current PNG/SVG pose
+images, portable source snapshots, JSON/YAML/GraphML exports and roadmap diagrams
+are included. Superseded roadmap and derived-catalogue files are removed.
 
 ## Setup and Windows launching
 
@@ -53,27 +57,33 @@ For Desktop and Start Menu shortcuts with the supplied icon, double-click
 `WindowsLaunchers/Verknuepfungen-installieren.cmd`. See
 [Windows launcher instructions](WindowsLaunchers/README.md).
 
-## Rebuild from the recorded trial archives
+## Rebuild from the current published pose catalogues
 
-From this repository's root, derive the frequency-counted inputs and regenerate
-the roadmap formats and pose images:
+The bundled inputs are sufficient to regenerate the moving-belt roadmaps from this
+repository's root:
 
 ```powershell
-uv run python -m bibazu_stable_roadmaps.derive --poses-repo ..\BiBaZu_StableComponentenPoses --output-root .\pose_catalogues
 uv run python -m bibazu_stable_roadmaps.generate --config generation_request.json
 ```
 
-The poses checkout must contain the completed run archives and their checksums.
-Derivation verifies every archive member and reuses matching derived catalogues
-after checking their file inventories. For changed source inputs, choose a fresh
-catalogue output folder and update the request's sources. Manual catalogue changes
-block reuse. Classification is a separate post-processing step; the roadmap
-generator preserves the selected catalogue's representatives.
+To import a newer published release, fetch the poses repository and import the
+moving-belt catalogues to a fresh directory. For example:
+
+```powershell
+git -C ..\BiBaZu_StableComponentenPoses fetch origin
+uv run python -m bibazu_stable_roadmaps.import_catalogues --poses-repo ..\BiBaZu_StableComponentenPoses --revision origin/main --condition moving --output-root .\new_catalogues\moving
+```
+
+Select the new inputs in the GUI or update the request's source paths.
+The legacy `derive` command
+is retained for reproducibility of the earlier complete-link classifier; it is
+not used for the current published catalogues.
+[Legacy classifier provenance](DERIVATION_PROVENANCE.json) · [License](DERIVATION_LICENSE)
 
 ## Using the GUI
 
 1. Choose a `poses.json`, a `pose_registry.json`, or a pose catalogue folder.
-   The default input is this repository's fresh `pose_catalogues` folder.
+   The default input is `pose_catalogues/moving` and the default output is `moving`.
    Folder mode lists each component once, preferring `poses.json` when both files
    are present. Selecting a registry requires the neighboring `poses.json` for
    frequencies; historical registry IDs absent from observations have 0%.
@@ -109,7 +119,7 @@ untested. Rocking barriers, capture widths and reliability scores are unknown.
 
 ## Repository and export format
 
-Generation creates one folder per component, such as `Dl1a/`, containing:
+Generation creates one folder per component, such as `moving/Dl1a/`, containing:
 
 - `<component>_roadmap.yaml`, `.json`, `.graphml`, `.svg`, `.png`, as selected.
 - Optional `pose_sheets/` with images named by the **output roadmap IDs**.
@@ -148,47 +158,46 @@ null (omitted in GraphML, which cannot represent null values). The GUI and
 images display observed frequencies rather than analytical ranks.
 
 <!-- GENERATED ROADMAP INDEX START -->
-| Component | Poses | Connections | Minimum frequency | Numbering |
-| --- | ---: | ---: | ---: | --- |
-| [Df1a](Df1a/README.md) | 4 | 6 | 1% | Frequency |
-| [Df2i](Df2i/README.md) | 6 | 22 | 1% | Frequency |
-| [Df4a](Df4a/README.md) | 12 | 42 | 1% | Frequency |
-| [Dk1i](Dk1i/README.md) | 8 | 32 | 1% | Frequency |
-| [Dk2a](Dk2a/README.md) | 14 | 74 | 1% | Frequency |
-| [Dk4i](Dk4i/README.md) | 24 | 132 | 1% | Frequency |
-| [Dl1a](Dl1a/README.md) | 6 | 16 | 1% | Frequency |
-| [Dl2i](Dl2i/README.md) | 6 | 16 | 1% | Frequency |
-| [Dl4a](Dl4a/README.md) | 8 | 20 | 1% | Frequency |
-| [Kf1i](Kf1i/README.md) | 4 | 16 | 1% | Frequency |
-| [Kf2a](Kf2a/README.md) | 29 | 422 | 1% | Frequency |
-| [Kf4i](Kf4i/README.md) | 19 | 84 | 1% | Frequency |
-| [Kk1a](Kk1a/README.md) | 5 | 10 | 1% | Frequency |
-| [Kk2i](Kk2i/README.md) | 24 | 138 | 1% | Frequency |
-| [Kk4a](Kk4a/README.md) | 2 | 0 | 1% | Frequency |
-| [Kl1i](Kl1i/README.md) | 4 | 14 | 1% | Frequency |
-| [Kl2a](Kl2a/README.md) | 15 | 26 | 1% | Frequency |
-| [Kl4i](Kl4i/README.md) | 8 | 0 | 1% | Frequency |
-| [Qf1i](Qf1i/README.md) | 4 | 16 | 1% | Frequency |
-| [Qf2a](Qf2a/README.md) | 10 | 62 | 1% | Frequency |
-| [Qf4i](Qf4i/README.md) | 16 | 112 | 1% | Frequency |
-| [Qk1a](Qk1a/README.md) | 15 | 59 | 1% | Frequency |
-| [Qk2i](Qk2i/README.md) | 12 | 62 | 1% | Frequency |
-| [Qk4a](Qk4a/README.md) | 24 | 160 | 1% | Frequency |
-| [Ql1i](Ql1i/README.md) | 5 | 21 | 1% | Frequency |
-| [Ql2a](Ql2a/README.md) | 5 | 17 | 1% | Frequency |
-| [Ql4i](Ql4i/README.md) | 8 | 40 | 1% | Frequency |
-| [Rf1a](Rf1a/README.md) | 15 | 68 | 1% | Frequency |
-| [Rf2i](Rf2i/README.md) | 8 | 48 | 1% | Frequency |
-| [Rf3a](Rf3a/README.md) | 8 | 44 | 1% | Frequency |
-| [Rf4i](Rf4i/README.md) | 16 | 112 | 1% | Frequency |
-| [Rk1a](Rk1a/README.md) | 24 | 124 | 1% | Frequency |
-| [Rk2i](Rk2i/README.md) | 12 | 68 | 1% | Frequency |
-| [Rk3a](Rk3a/README.md) | 14 | 90 | 1% | Frequency |
-| [Rk4i](Rk4i/README.md) | 20 | 124 | 1% | Frequency |
-| [Rl1a](Rl1a/README.md) | 7 | 20 | 1% | Frequency |
-| [Rl2i](Rl2i/README.md) | 6 | 17 | 1% | Frequency |
-| [Rl3a](Rl3a/README.md) | 8 | 30 | 1% | Frequency |
-| [Rl4i](Rl4i/README.md) | 8 | 28 | 1% | Frequency |
+| Component | Poses | Connections |
+| --- | ---: | ---: |
+| [Df1a](moving/Df1a/README.md) | 4 | 6 |
+| [Df2i](moving/Df2i/README.md) | 6 | 22 |
+| [Df4a](moving/Df4a/README.md) | 12 | 42 |
+| [Dk1i](moving/Dk1i/README.md) | 8 | 32 |
+| [Dk2a](moving/Dk2a/README.md) | 14 | 74 |
+| [Dk4i](moving/Dk4i/README.md) | 24 | 132 |
+| [Dl1a](moving/Dl1a/README.md) | 6 | 16 |
+| [Dl2i](moving/Dl2i/README.md) | 6 | 16 |
+| [Dl4a](moving/Dl4a/README.md) | 8 | 20 |
+| [Kf2a](moving/Kf2a/README.md) | 29 | 422 |
+| [Kf4i](moving/Kf4i/README.md) | 19 | 84 |
+| [Kk1a](moving/Kk1a/README.md) | 5 | 10 |
+| [Kk2i](moving/Kk2i/README.md) | 24 | 138 |
+| [Kk4a](moving/Kk4a/README.md) | 2 | 0 |
+| [Kl1i](moving/Kl1i/README.md) | 4 | 14 |
+| [Kl2a](moving/Kl2a/README.md) | 15 | 26 |
+| [Kl4i](moving/Kl4i/README.md) | 8 | 0 |
+| [Qf1i](moving/Qf1i/README.md) | 4 | 16 |
+| [Qf2a](moving/Qf2a/README.md) | 10 | 62 |
+| [Qf4i](moving/Qf4i/README.md) | 16 | 112 |
+| [Qk1a](moving/Qk1a/README.md) | 15 | 59 |
+| [Qk2i](moving/Qk2i/README.md) | 12 | 62 |
+| [Qk4a](moving/Qk4a/README.md) | 24 | 160 |
+| [Ql1i](moving/Ql1i/README.md) | 5 | 21 |
+| [Ql2a](moving/Ql2a/README.md) | 5 | 17 |
+| [Ql4i](moving/Ql4i/README.md) | 8 | 40 |
+| [Rf1a](moving/Rf1a/README.md) | 15 | 68 |
+| [Rf2i](moving/Rf2i/README.md) | 8 | 48 |
+| [Rf3a](moving/Rf3a/README.md) | 8 | 44 |
+| [Rf4i](moving/Rf4i/README.md) | 16 | 112 |
+| [Rk1a](moving/Rk1a/README.md) | 24 | 124 |
+| [Rk2i](moving/Rk2i/README.md) | 12 | 68 |
+| [Rk3a](moving/Rk3a/README.md) | 14 | 90 |
+| [Rk4i](moving/Rk4i/README.md) | 20 | 124 |
+| [Rl1a](moving/Rl1a/README.md) | 7 | 20 |
+| [Rl2i](moving/Rl2i/README.md) | 6 | 17 |
+| [Rl3a](moving/Rl3a/README.md) | 8 | 30 |
+| [Rl4i](moving/Rl4i/README.md) | 8 | 28 |
 <!-- GENERATED ROADMAP INDEX END -->
 
 ## Batch worker and development

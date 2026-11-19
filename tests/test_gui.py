@@ -1,10 +1,37 @@
 import time
+import json
 
 from PyQt6.QtCore import QSettings, Qt
 from PyQt6.QtTest import QTest
 from PyQt6.QtWidgets import QApplication
 
 from bibazu_stable_roadmaps.gui import ObservedRoadmapGUI
+
+
+def test_condition_defaults_and_saved_catalogue_root_migrate(tmp_path, monkeypatch):
+    import bibazu_stable_roadmaps.gui as gui
+    app = QApplication.instance() or QApplication([])
+    monkeypatch.setattr(gui, "ROOT", tmp_path)
+    (tmp_path / "pose_catalogues" / "moving").mkdir(parents=True)
+    settings = QSettings(str(tmp_path / "condition.ini"), QSettings.Format.IniFormat)
+    window = ObservedRoadmapGUI(settings=settings)
+    assert window.source_path.text() == str(tmp_path / "pose_catalogues" / "moving")
+    assert window.output_root.text() == str(tmp_path / "moving")
+    (tmp_path / "pose_catalogues" / "stationary").mkdir()
+    window.source_path.setText(str(tmp_path / "pose_catalogues" / "stationary"))
+    window.scan()
+    assert window.output_root.text() == str(tmp_path / "stationary")
+    window.output_root.setText(str(tmp_path / "custom_output"))
+    window.source_path.setText(str(tmp_path / "pose_catalogues" / "moving"))
+    window.scan()
+    assert window.output_root.text() == str(tmp_path / "custom_output")
+    window.close()
+    settings.setValue("source", str(tmp_path / "pose_catalogues"))
+    settings.setValue("config", json.dumps({"output_root": str(tmp_path)}))
+    window = ObservedRoadmapGUI(settings=settings)
+    assert window.source_path.text() == str(tmp_path / "pose_catalogues" / "moving")
+    assert window.output_root.text() == str(tmp_path / "moving")
+    window.close()
 
 
 def wait_for_worker(window, timeout=45):

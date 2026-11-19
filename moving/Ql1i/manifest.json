@@ -1,0 +1,93 @@
+{
+  "format": "bibazu_observed_roadmap_generation",
+  "schema_version": 1,
+  "workpiece": "Ql1i",
+  "generated_utc": "2026-11-19T09:25:07.481027+00:00",
+  "pose_count": 5,
+  "transition_count": 21,
+  "minimum_frequency_percent": 1.0,
+  "renumber_by_frequency": true,
+  "settings": {
+    "output_root": ".",
+    "minimum_frequency_percent": 1.0,
+    "renumber_by_frequency": true,
+    "outputs": [
+      "yaml",
+      "json",
+      "graphml",
+      "roadmap_svg",
+      "roadmap_png",
+      "poses_svg",
+      "poses_png"
+    ]
+  },
+  "input": {
+    "minimum_frequency_percent": 1.0,
+    "renumber_by_frequency": true,
+    "frequency_denominator": "all completed drop trials, including unsettled outcomes",
+    "numbering_tie_break": "original source ID",
+    "source_file": "poses.json",
+    "source_sha256": "ee1f150e0d03e20ca5f65b1818face1231ecc23210c6fd0fb8f8343e8975f351",
+    "generated_utc": "2026-11-19T09:25:07.481027+00:00",
+    "pose_id_mapping": {
+      "Ql1i_0003": 0,
+      "Ql1i_0002": 1,
+      "Ql1i_0005": 2,
+      "Ql1i_0004": 3,
+      "Ql1i_0001": 4
+    },
+    "removed_poses": [
+      {
+        "source_pose_id": "Ql1i_0006",
+        "frequency_percent": 0.81
+      }
+    ],
+    "evaluation_phase": "transport",
+    "source_provenance": {
+      "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
+      "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30",
+      "catalogue_path": "Ql1i/catalogue/grouped_10000/moving/catalogue.json",
+      "catalogue_sha256": "5f1e41b258547d57bd731e1fdbce53b7ec38ec861ac0eb646e12f94337b8da35",
+      "condition": "moving",
+      "classification_method": "observed-seated-geodesic-basins-v1",
+      "representative_policy": "unchanged published catalogue quaternion",
+      "catalogue_revision": "0cc7a4a95c9fd472c379700ffded127e32022233",
+      "simulator_revision": "e890ae90998c17bac7e3a67b6dfaf2deea8047b9",
+      "raw_simulator_revision": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd",
+      "builder_sha256": "855796addf0107445fe6fa3897f30b61c0b718537412d2fae5ff0f9763a5756e",
+      "run_dir": "Ql1i/simulations/20261107_10000/100mm_s",
+      "archive_path": "Ql1i/simulations/20261107_10000/100mm_s/simulation_results.tar.xz",
+      "archive_sha256": "ff5d0642d29f865be8a8746e3ddfe98664e85b30cb9c08ad63e4e1d28dc26ff3",
+      "raw_trials_sha256": "3f55bef7ae5ddd132202236ddaa0e537bc335f1d2f243058f10d8976025a857c",
+      "mesh_path": "Ql1i/Ql1i.stl",
+      "mesh_sha256": "987c1187181172a4bd0b02265dd90c29c95f9ec8839a0515d2fbd5cc2245544c",
+      "manifest_sha256": "174f8aeebbe6c42c7585a8db029145ae4c242d2da3f0f7f8e6fbc6846e1bf166",
+      "config_sha256": "26a16f9c7d8b1e13901bc0ee4e0803d7ba70c142e17ea06a7615591dbf3cac7a",
+      "archive_checksums_sha256": "7c67d67f4f68a554b5d2caf1e14c4fd3f6f0409fb8a928dfdc475e3d00cc5b62"
+    }
+  },
+  "analytical_stability_evaluated": false,
+  "engine_provenance": {
+    "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose",
+    "base_revision": "e9199499a2982b0e3d02b09620eb452531b1a7d6",
+    "snapshot_note": "Source hashes identify the local snapshot, including uncommitted export extensions. Only geometric action rules are extracted from roadmap.py. Bundled Python files normalize line endings to LF.",
+    "source_sha256": {
+      "src/chute_pose/geometry.py": "fc4ba197effa2a48fdde6813f4ac666a2ca1585d2dd5f25bf2ce4d6178ac494c",
+      "src/chute_pose/contacts.py": "7a2263fc4590d21845a34d7c1082de0fd0fd6fbf8389cc7d272e56487d08dc53",
+      "src/chute_pose/symmetry.py": "34f815bdf3b6b97222111aaa69fb99932c57bcdca2c7cf9cfea63028eb6bdbfc",
+      "src/chute_pose/plot_view.py": "e45eb05c049f4c9b73d49287eb66759552144e81faf01f566b76915723b7a6a5",
+      "src/chute_pose/visualization.py": "ce3be31f1de91aa3e42be089b97139e3ede8d908a8cd66bc09dd2f686d371395",
+      "src/chute_pose/roadmap.py": "87fe98d479018a188ad282a7b6d8102721bc729d9628dbf04b80f1dedbd40968"
+    },
+    "bundled_files_sha256": {
+      "__init__.py": "3ca58e22fe66549fbcf9c0f23cdf3bbc8060217d14a250c489ee9781a4a3280e",
+      "contacts.py": "498fe5d3b66148a3446738db16fd3ca9990e2e0391bee719d98e2618ca8aa5c2",
+      "geometry.py": "061bd41d340009a4064675e915722270c680a06299aca0aa0a1369713af228ff",
+      "plot_view.py": "e45eb05c049f4c9b73d49287eb66759552144e81faf01f566b76915723b7a6a5",
+      "symmetry.py": "fcd294c6f9463037063426c2717a5bfcac8f205fe72bc64d67e4799d2d7b043f",
+      "transitions.py": "700f8975a81f3b40586d8c676eecfe4efe409e9ee707bd45402423d220418979",
+      "visualization.py": "1e4ea35ea5a85035ede2cd5e401df7ab7aa1b12161d2fde1bbeafa03feb8eaeb"
+    }
+  },
+  "warnings": []
+}

@@ -49,6 +49,8 @@ class ObservedRoadmapGUI(QMainWindow):
         body = QVBoxLayout(self.controls)
         body.setContentsMargins(0, 0, 0, 0)
         derived_catalogues = ROOT / "pose_catalogues"
+        if (derived_catalogues / "moving").is_dir():
+            derived_catalogues = derived_catalogues / "moving"
         default_source = derived_catalogues if derived_catalogues.is_dir() else ROOT.parent / "BiBaZu_StableComponentenPoses"
         self.source_path = QLineEdit(str(default_source))
         self.source_path.setPlaceholderText("poses.json, pose_registry.json, or a poses repository folder")
@@ -60,7 +62,7 @@ class ObservedRoadmapGUI(QMainWindow):
             button.clicked.connect(action)
             row.addWidget(button)
         body.addLayout(row)
-        self.output_root = QLineEdit(str(ROOT))
+        self.output_root = QLineEdit(str(ROOT / "moving" if derived_catalogues.name == "moving" else ROOT))
         row = QHBoxLayout()
         row.addWidget(QLabel("Output repository"))
         row.addWidget(self.output_root, 1)
@@ -177,6 +179,12 @@ class ObservedRoadmapGUI(QMainWindow):
         return item
 
     def scan(self):
+        selected_source = Path(self.source_path.text()).resolve()
+        for condition in ("moving", "stationary"):
+            if selected_source == (ROOT / "pose_catalogues" / condition).resolve():
+                standard_outputs = {ROOT.resolve(), (ROOT / "moving").resolve(), (ROOT / "stationary").resolve()}
+                if Path(self.output_root.text()).resolve() in standard_outputs:
+                    self.output_root.setText(str(ROOT / condition))
         old = {str(path): self.component_table.item(row, 0).checkState() == Qt.CheckState.Checked
                for row, path in enumerate(self.sources)}
         try:
@@ -261,6 +269,10 @@ class ObservedRoadmapGUI(QMainWindow):
         try:
             self.source_path.setText(self.settings.value("source", self.source_path.text()))
             data = json.loads(self.settings.value("config", "{}"))
+            if (ROOT / "pose_catalogues" / "moving").is_dir() and Path(self.source_path.text()) == ROOT / "pose_catalogues":
+                self.source_path.setText(str(ROOT / "pose_catalogues" / "moving"))
+                if Path(data.get("output_root", str(ROOT))) == ROOT:
+                    data["output_root"] = str(ROOT / "moving")
             self.output_root.setText(data.get("output_root", self.output_root.text()))
             self.minimum_frequency.setValue(data.get("minimum_frequency_percent", 5))
             self.renumber.setChecked(data.get("renumber_by_frequency", True))
