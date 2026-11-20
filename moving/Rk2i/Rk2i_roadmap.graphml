@@ -1,18 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
-  <key id="d31" for="edge" attr.name="experimental_status" attr.type="string" />
-  <key id="d30" for="edge" attr.name="actuation_count" attr.type="long" />
-  <key id="d29" for="edge" attr.name="settling_pose_ids" attr.type="string" />
-  <key id="d28" for="edge" attr.name="axis_error_deg" attr.type="double" />
-  <key id="d27" for="edge" attr.name="signed_angle_deg" attr.type="double" />
-  <key id="d26" for="edge" attr.name="axis_chute" attr.type="string" />
-  <key id="d25" for="edge" attr.name="directed" attr.type="boolean" />
-  <key id="d24" for="edge" attr.name="actuation" attr.type="string" />
-  <key id="d23" for="edge" attr.name="transition_kind" attr.type="string" />
-  <key id="d22" for="edge" attr.name="edge_id" attr.type="string" />
-  <key id="d21" for="node" attr.name="pose_quality_escape_within_group" attr.type="boolean" />
-  <key id="d20" for="node" attr.name="pose_quality_escape_target_source_id" attr.type="string" />
-  <key id="d19" for="node" attr.name="pose_quality_escape_lift_mm" attr.type="double" />
+  <key id="d32" for="edge" attr.name="experimental_status" attr.type="string" />
+  <key id="d31" for="edge" attr.name="actuation_count" attr.type="long" />
+  <key id="d30" for="edge" attr.name="settling_pose_ids" attr.type="string" />
+  <key id="d29" for="edge" attr.name="axis_error_deg" attr.type="double" />
+  <key id="d28" for="edge" attr.name="signed_angle_deg" attr.type="double" />
+  <key id="d27" for="edge" attr.name="axis_chute" attr.type="string" />
+  <key id="d26" for="edge" attr.name="directed" attr.type="boolean" />
+  <key id="d25" for="edge" attr.name="actuation" attr.type="string" />
+  <key id="d24" for="edge" attr.name="transition_kind" attr.type="string" />
+  <key id="d23" for="edge" attr.name="edge_id" attr.type="string" />
+  <key id="d22" for="node" attr.name="pose_quality_escape_within_group" attr.type="boolean" />
+  <key id="d21" for="node" attr.name="pose_quality_escape_target_source_id" attr.type="string" />
+  <key id="d20" for="node" attr.name="pose_quality_escape_lift_mm" attr.type="double" />
+  <key id="d19" for="node" attr.name="pose_quality_stability" attr.type="string" />
   <key id="d18" for="node" attr.name="pose_quality_label" attr.type="string" />
   <key id="d17" for="node" attr.name="pose_quality" attr.type="string" />
   <key id="d16" for="node" attr.name="classical_metrics" attr.type="string" />
@@ -48,11 +49,12 @@
       <data key="d14">1733</data>
       <data key="d15">17.33</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 5.064586785787894, "escape_target_source_id": "Rk2i_0004", "escape_within_group": false, "source_group_id": "G0", "path_angle_deg": 89.97985872091691, "peak_angle_deg": 44.989929360458454, "path_origin": "calculated_path", "observed_count": 1733, "observed_frequency_percent": 17.33, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 5.064586785787894, "escape_target_source_id": "Rk2i_0004", "escape_within_group": false, "source_group_id": "G0", "path_angle_deg": 89.97985872091691, "peak_angle_deg": 44.989929360458454, "path_origin": "calculated_path", "observed_count": 1733, "observed_frequency_percent": 17.33, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">5.064586785787894</data>
-      <data key="d20">Rk2i_0004</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">5.064586785787894</data>
+      <data key="d21">Rk2i_0004</data>
+      <data key="d22">False</data>
     </node>
     <node id="1">
       <data key="d3">[1]</data>
@@ -69,11 +71,12 @@
       <data key="d14">1625</data>
       <data key="d15">16.25</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 5.062714636449003, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G1", "path_angle_deg": 89.97985872091691, "peak_angle_deg": 44.989929360458454, "path_origin": "calculated_path", "observed_count": 1625, "observed_frequency_percent": 16.25, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 5.062714636449003, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G1", "path_angle_deg": 89.97985872091691, "peak_angle_deg": 44.989929360458454, "path_origin": "calculated_path", "observed_count": 1625, "observed_frequency_percent": 16.25, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">5.062714636449003</data>
-      <data key="d20">Rk2i_0008</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">5.062714636449003</data>
+      <data key="d21">Rk2i_0008</data>
+      <data key="d22">False</data>
     </node>
     <node id="2">
       <data key="d3">[2]</data>
@@ -90,11 +93,12 @@
       <data key="d14">1608</data>
       <data key="d15">16.08</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 4.986994385271972, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G2", "path_angle_deg": 179.98141265628752, "peak_angle_deg": 44.395415121884255, "path_origin": "calculated_path", "observed_count": 1608, "observed_frequency_percent": 16.08, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 4.986994385271972, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G2", "path_angle_deg": 179.98141265628752, "peak_angle_deg": 44.395415121884255, "path_origin": "calculated_path", "observed_count": 1608, "observed_frequency_percent": 16.08, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">4.986994385271972</data>
-      <data key="d20">Rk2i_0008</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">4.986994385271972</data>
+      <data key="d21">Rk2i_0008</data>
+      <data key="d22">False</data>
     </node>
     <node id="3">
       <data key="d3">[3]</data>
@@ -111,11 +115,12 @@
       <data key="d14">1520</data>
       <data key="d15">15.2</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 4.985622238151368, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G3", "path_angle_deg": 90.0188174522461, "peak_angle_deg": 44.359994393781655, "path_origin": "calculated_path", "observed_count": 1520, "observed_frequency_percent": 15.2, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 4.985622238151368, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G3", "path_angle_deg": 90.0188174522461, "peak_angle_deg": 44.359994393781655, "path_origin": "calculated_path", "observed_count": 1520, "observed_frequency_percent": 15.2, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">4.985622238151368</data>
-      <data key="d20">Rk2i_0008</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">4.985622238151368</data>
+      <data key="d21">Rk2i_0008</data>
+      <data key="d22">False</data>
     </node>
     <node id="4">
       <data key="d3">[4]</data>
@@ -132,11 +137,12 @@
       <data key="d14">637</data>
       <data key="d15">6.37</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 2.1421102153980804, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G4", "path_angle_deg": 89.99044382691395, "peak_angle_deg": 33.69642174407778, "path_origin": "calculated_path", "observed_count": 637, "observed_frequency_percent": 6.37, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 2.1421102153980804, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G4", "path_angle_deg": 89.99044382691395, "peak_angle_deg": 33.69642174407778, "path_origin": "calculated_path", "observed_count": 637, "observed_frequency_percent": 6.37, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">2.1421102153980804</data>
-      <data key="d20">Rk2i_0008</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">2.1421102153980804</data>
+      <data key="d21">Rk2i_0008</data>
+      <data key="d22">False</data>
     </node>
     <node id="5">
       <data key="d3">[5]</data>
@@ -153,11 +159,12 @@
       <data key="d14">616</data>
       <data key="d15">6.16</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 2.14008908513388, "escape_target_source_id": "Rk2i_0007", "escape_within_group": false, "source_group_id": "G5", "path_angle_deg": 89.98269548473526, "peak_angle_deg": 33.693520420395316, "path_origin": "calculated_path", "observed_count": 616, "observed_frequency_percent": 6.16, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 2.14008908513388, "escape_target_source_id": "Rk2i_0007", "escape_within_group": false, "source_group_id": "G5", "path_angle_deg": 89.98269548473526, "peak_angle_deg": 33.693520420395316, "path_origin": "calculated_path", "observed_count": 616, "observed_frequency_percent": 6.16, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">2.14008908513388</data>
-      <data key="d20">Rk2i_0007</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">2.14008908513388</data>
+      <data key="d21">Rk2i_0007</data>
+      <data key="d22">False</data>
     </node>
     <node id="6">
       <data key="d3">[6]</data>
@@ -174,11 +181,12 @@
       <data key="d14">598</data>
       <data key="d15">5.98</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 2.140112137942065, "escape_target_source_id": "Rk2i_0004", "escape_within_group": false, "source_group_id": "G6", "path_angle_deg": 89.97630822389974, "peak_angle_deg": 33.69112874606024, "path_origin": "calculated_path", "observed_count": 598, "observed_frequency_percent": 5.98, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 2.140112137942065, "escape_target_source_id": "Rk2i_0004", "escape_within_group": false, "source_group_id": "G6", "path_angle_deg": 89.97630822389974, "peak_angle_deg": 33.69112874606024, "path_origin": "calculated_path", "observed_count": 598, "observed_frequency_percent": 5.98, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">2.140112137942065</data>
-      <data key="d20">Rk2i_0004</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">2.140112137942065</data>
+      <data key="d21">Rk2i_0004</data>
+      <data key="d22">False</data>
     </node>
     <node id="7">
       <data key="d3">[7]</data>
@@ -195,11 +203,12 @@
       <data key="d14">596</data>
       <data key="d15">5.96</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 2.1417944226372256, "escape_target_source_id": "Rk2i_0002", "escape_within_group": false, "source_group_id": "G7", "path_angle_deg": 89.992412181779, "peak_angle_deg": 33.697158783621695, "path_origin": "calculated_path", "observed_count": 596, "observed_frequency_percent": 5.96, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 2.1417944226372256, "escape_target_source_id": "Rk2i_0002", "escape_within_group": false, "source_group_id": "G7", "path_angle_deg": 89.992412181779, "peak_angle_deg": 33.697158783621695, "path_origin": "calculated_path", "observed_count": 596, "observed_frequency_percent": 5.96, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">2.1417944226372256</data>
-      <data key="d20">Rk2i_0002</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">2.1417944226372256</data>
+      <data key="d21">Rk2i_0002</data>
+      <data key="d22">False</data>
     </node>
     <node id="8">
       <data key="d3">[8]</data>
@@ -216,11 +225,12 @@
       <data key="d14">285</data>
       <data key="d15">2.85</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 1.1905486945259511, "escape_target_source_id": "Rk2i_0004", "escape_within_group": false, "source_group_id": "G8", "path_angle_deg": 89.97039894232343, "peak_angle_deg": 25.991448583337878, "path_origin": "calculated_path", "observed_count": 285, "observed_frequency_percent": 2.85, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 1.1905486945259511, "escape_target_source_id": "Rk2i_0004", "escape_within_group": false, "source_group_id": "G8", "path_angle_deg": 89.97039894232343, "peak_angle_deg": 25.991448583337878, "path_origin": "calculated_path", "observed_count": 285, "observed_frequency_percent": 2.85, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">1.1905486945259511</data>
-      <data key="d20">Rk2i_0004</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">1.1905486945259511</data>
+      <data key="d21">Rk2i_0004</data>
+      <data key="d22">False</data>
     </node>
     <node id="9">
       <data key="d3">[9]</data>
@@ -237,11 +247,12 @@
       <data key="d14">275</data>
       <data key="d15">2.75</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 1.19160029481532, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G9", "path_angle_deg": 90.0045904013693, "peak_angle_deg": 25.972467818375158, "path_origin": "calculated_path", "observed_count": 275, "observed_frequency_percent": 2.75, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 1.19160029481532, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G9", "path_angle_deg": 90.0045904013693, "peak_angle_deg": 25.972467818375158, "path_origin": "calculated_path", "observed_count": 275, "observed_frequency_percent": 2.75, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">1.19160029481532</data>
-      <data key="d20">Rk2i_0008</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">1.19160029481532</data>
+      <data key="d21">Rk2i_0008</data>
+      <data key="d22">False</data>
     </node>
     <node id="10">
       <data key="d3">[10]</data>
@@ -258,11 +269,12 @@
       <data key="d14">255</data>
       <data key="d15">2.55</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 1.190606194079983, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G10", "path_angle_deg": 89.99914332062997, "peak_angle_deg": 25.999752514848655, "path_origin": "calculated_path", "observed_count": 255, "observed_frequency_percent": 2.55, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 1.190606194079983, "escape_target_source_id": "Rk2i_0008", "escape_within_group": false, "source_group_id": "G10", "path_angle_deg": 89.99914332062997, "peak_angle_deg": 25.999752514848655, "path_origin": "calculated_path", "observed_count": 255, "observed_frequency_percent": 2.55, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">1.190606194079983</data>
-      <data key="d20">Rk2i_0008</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">1.190606194079983</data>
+      <data key="d21">Rk2i_0008</data>
+      <data key="d22">False</data>
     </node>
     <node id="11">
       <data key="d3">[11]</data>
@@ -279,830 +291,831 @@
       <data key="d14">249</data>
       <data key="d15">2.49</data>
       <data key="d16">{}</data>
-      <data key="d17">{"label": "resistant", "escape_lift_mm": 1.1877405112331658, "escape_target_source_id": "Rk2i_0011", "escape_within_group": false, "source_group_id": "G11", "path_angle_deg": 179.95186911499408, "peak_angle_deg": 25.89307450043526, "path_origin": "calculated_path", "observed_count": 249, "observed_frequency_percent": 2.49, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
+      <data key="d17">{"label": "resistant", "stability": "high", "escape_lift_mm": 1.1877405112331658, "escape_target_source_id": "Rk2i_0011", "escape_within_group": false, "source_group_id": "G11", "path_angle_deg": 179.95186911499408, "peak_angle_deg": 25.89307450043526, "path_origin": "calculated_path", "observed_count": 249, "observed_frequency_percent": 2.49, "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."}</data>
       <data key="d18">resistant</data>
-      <data key="d19">1.1877405112331658</data>
-      <data key="d20">Rk2i_0011</data>
-      <data key="d21">False</data>
+      <data key="d19">high</data>
+      <data key="d20">1.1877405112331658</data>
+      <data key="d21">Rk2i_0011</data>
+      <data key="d22">False</data>
     </node>
     <edge source="0" target="1" id="a0:0-&gt;1:wall_main_pos_x">
-      <data key="d22">a0:0-&gt;1:wall_main_pos_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">wall_main_pos_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">89.97985872091691</data>
-      <data key="d28">0.025787678886913495</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a0:0-&gt;1:wall_main_pos_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">wall_main_pos_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">89.97985872091691</data>
+      <data key="d29">0.025787678886913495</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="0" target="2" id="a1:0-&gt;2:wall_main_pos_x">
-      <data key="d22">a1:0-&gt;2:wall_main_pos_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">wall_main_pos_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">179.98141265628752</data>
-      <data key="d28">0.012161526633940186</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a1:0-&gt;2:wall_main_pos_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">wall_main_pos_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">179.98141265628752</data>
+      <data key="d29">0.012161526633940186</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="0" target="2" id="a2:0-&gt;2:free_z">
-      <data key="d22">a2:0-&gt;2:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-179.99943682163635</data>
-      <data key="d28">0.014947521124639566</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a2:0-&gt;2:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-179.99943682163635</data>
+      <data key="d29">0.014947521124639566</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="0" target="4" id="a3:0-&gt;4:free_y">
-      <data key="d22">a3:0-&gt;4:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-90.00955662437121</data>
-      <data key="d28">0.014650786880749769</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a3:0-&gt;4:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-90.00955662437121</data>
+      <data key="d29">0.014650786880749769</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="0" target="9" id="a4:0-&gt;9:free_z">
-      <data key="d22">a4:0-&gt;9:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-90.0045904013693</data>
-      <data key="d28">0.013035522249125023</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a4:0-&gt;9:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-90.0045904013693</data>
+      <data key="d29">0.013035522249125023</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="0" target="10" id="a5:0-&gt;10:free_z">
-      <data key="d22">a5:0-&gt;10:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">89.99914332062997</data>
-      <data key="d28">0.016537618218881223</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a5:0-&gt;10:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">89.99914332062997</data>
+      <data key="d29">0.016537618218881223</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="1" target="0" id="a6:1-&gt;0:floor_main_neg_x">
-      <data key="d22">a6:1-&gt;0:floor_main_neg_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">floor_main_neg_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">-89.97985872091691</data>
-      <data key="d28">0.025787678886913495</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a6:1-&gt;0:floor_main_neg_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">floor_main_neg_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">-89.97985872091691</data>
+      <data key="d29">0.025787678886913495</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="1" target="3" id="a7:1-&gt;3:floor_main_neg_x">
-      <data key="d22">a7:1-&gt;3:floor_main_neg_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">floor_main_neg_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">-179.99867338158492</data>
-      <data key="d28">0.014884240443445801</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a7:1-&gt;3:floor_main_neg_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">floor_main_neg_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">-179.99867338158492</data>
+      <data key="d29">0.014884240443445801</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="1" target="3" id="a8:1-&gt;3:free_y">
-      <data key="d22">a8:1-&gt;3:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-179.96888530160425</data>
-      <data key="d28">0.01495846253077919</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a8:1-&gt;3:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-179.96888530160425</data>
+      <data key="d29">0.01495846253077919</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="1" target="6" id="a9:1-&gt;6:free_z">
-      <data key="d22">a9:1-&gt;6:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">90.02369415852272</data>
-      <data key="d28">0.007046908038508448</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a9:1-&gt;6:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">90.02369415852272</data>
+      <data key="d29">0.007046908038508448</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="1" target="8" id="a10:1-&gt;8:free_y">
-      <data key="d22">a10:1-&gt;8:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-89.97039894232343</data>
-      <data key="d28">0.015400267715748197</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a10:1-&gt;8:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-89.97039894232343</data>
+      <data key="d29">0.015400267715748197</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="1" target="11" id="a11:1-&gt;11:free_y">
-      <data key="d22">a11:1-&gt;11:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">89.98147314651806</data>
-      <data key="d28">0.02172178494393782</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a11:1-&gt;11:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">89.98147314651806</data>
+      <data key="d29">0.02172178494393782</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="2" target="0" id="a12:2-&gt;0:free_z">
-      <data key="d22">a12:2-&gt;0:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">179.99943682163635</data>
-      <data key="d28">0.014947521124639566</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a12:2-&gt;0:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">179.99943682163635</data>
+      <data key="d29">0.014947521124639566</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="2" target="3" id="a13:2-&gt;3:wall_main_pos_x">
-      <data key="d22">a13:2-&gt;3:wall_main_pos_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">wall_main_pos_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">89.99977070290457</data>
-      <data key="d28">0.01867430526320219</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a13:2-&gt;3:wall_main_pos_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">wall_main_pos_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">89.99977070290457</data>
+      <data key="d29">0.01867430526320219</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="2" target="5" id="a14:2-&gt;5:free_y">
-      <data key="d22">a14:2-&gt;5:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">89.98269548473526</data>
-      <data key="d28">0.003185178435551257</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a14:2-&gt;5:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">89.98269548473526</data>
+      <data key="d29">0.003185178435551257</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="2" target="9" id="a15:2-&gt;9:free_z">
-      <data key="d22">a15:2-&gt;9:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">89.99484695681168</data>
-      <data key="d28">0.010555542573094484</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a15:2-&gt;9:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">89.99484695681168</data>
+      <data key="d29">0.010555542573094484</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="2" target="10" id="a16:2-&gt;10:free_z">
-      <data key="d22">a16:2-&gt;10:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-90.00142424899119</data>
-      <data key="d28">0.00676715507270411</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a16:2-&gt;10:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-90.00142424899119</data>
+      <data key="d29">0.00676715507270411</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="3" target="1" id="a17:3-&gt;1:free_y">
-      <data key="d22">a17:3-&gt;1:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">179.96888530160425</data>
-      <data key="d28">0.01495846253077919</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a17:3-&gt;1:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">179.96888530160425</data>
+      <data key="d29">0.01495846253077919</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="3" target="2" id="a18:3-&gt;2:floor_main_neg_x">
-      <data key="d22">a18:3-&gt;2:floor_main_neg_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">floor_main_neg_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">-89.99977070290458</data>
-      <data key="d28">0.01867430526320219</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a18:3-&gt;2:floor_main_neg_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">floor_main_neg_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">-89.99977070290458</data>
+      <data key="d29">0.01867430526320219</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="3" target="7" id="a19:3-&gt;7:free_z">
-      <data key="d22">a19:3-&gt;7:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-89.992412181779</data>
-      <data key="d28">0.007229217781453421</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a19:3-&gt;7:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-89.992412181779</data>
+      <data key="d29">0.007229217781453421</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="3" target="8" id="a20:3-&gt;8:free_y">
-      <data key="d22">a20:3-&gt;8:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">89.99848866848399</data>
-      <data key="d28">0.005760346447113103</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a20:3-&gt;8:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">89.99848866848399</data>
+      <data key="d29">0.005760346447113103</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="3" target="11" id="a21:3-&gt;11:free_y">
-      <data key="d22">a21:3-&gt;11:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-90.04964260226622</data>
-      <data key="d28">0.012150496639573018</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a21:3-&gt;11:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-90.04964260226622</data>
+      <data key="d29">0.012150496639573018</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="4" target="0" id="a22:4-&gt;0:free_y">
-      <data key="d22">a22:4-&gt;0:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">90.00955662437121</data>
-      <data key="d28">0.014650786880749769</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a22:4-&gt;0:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">90.00955662437121</data>
+      <data key="d29">0.014650786880749769</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="4" target="5" id="a23:4-&gt;5:wall_main_pos_x">
-      <data key="d22">a23:4-&gt;5:wall_main_pos_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">wall_main_pos_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">179.9936122303837</data>
-      <data key="d28">0.0013077925686295815</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a23:4-&gt;5:wall_main_pos_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">wall_main_pos_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">179.9936122303837</data>
+      <data key="d29">0.0013077925686295815</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="4" target="5" id="a24:4-&gt;5:free_z">
-      <data key="d22">a24:4-&gt;5:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-179.99930936450727</data>
-      <data key="d28">0.007735458843986603</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a24:4-&gt;5:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-179.99930936450727</data>
+      <data key="d29">0.007735458843986603</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="4" target="6" id="a25:4-&gt;6:wall_main_pos_x">
-      <data key="d22">a25:4-&gt;6:wall_main_pos_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">wall_main_pos_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">89.99491003383616</data>
-      <data key="d28">0.0009462928377507953</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a25:4-&gt;6:wall_main_pos_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">wall_main_pos_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">89.99491003383616</data>
+      <data key="d29">0.0009462928377507953</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="4" target="8" id="a26:4-&gt;8:free_z">
-      <data key="d22">a26:4-&gt;8:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">89.99987577374363</data>
-      <data key="d28">0.0024207528861420052</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a26:4-&gt;8:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">89.99987577374363</data>
+      <data key="d29">0.0024207528861420052</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="4" target="11" id="a27:4-&gt;11:free_z">
-      <data key="d22">a27:4-&gt;11:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-90.01696907118873</data>
-      <data key="d28">0.016523457295757847</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a27:4-&gt;11:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-90.01696907118873</data>
+      <data key="d29">0.016523457295757847</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="5" target="2" id="a28:5-&gt;2:free_y">
-      <data key="d22">a28:5-&gt;2:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-89.98269548473526</data>
-      <data key="d28">0.003185178435551257</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a28:5-&gt;2:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-89.98269548473526</data>
+      <data key="d29">0.003185178435551257</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="5" target="4" id="a29:5-&gt;4:free_z">
-      <data key="d22">a29:5-&gt;4:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">179.9993093645073</data>
-      <data key="d28">0.007735458843986603</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a29:5-&gt;4:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">179.9993093645073</data>
+      <data key="d29">0.007735458843986603</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="5" target="7" id="a30:5-&gt;7:wall_main_pos_x">
-      <data key="d22">a30:5-&gt;7:wall_main_pos_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">wall_main_pos_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">90.0008626040774</data>
-      <data key="d28">0.002447148066004877</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a30:5-&gt;7:wall_main_pos_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">wall_main_pos_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">90.0008626040774</data>
+      <data key="d29">0.002447148066004877</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="5" target="8" id="a31:5-&gt;8:free_z">
-      <data key="d22">a31:5-&gt;8:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-90.0008163411909</data>
-      <data key="d28">0.013297906282411287</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a31:5-&gt;8:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-90.0008163411909</data>
+      <data key="d29">0.013297906282411287</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="5" target="11" id="a32:5-&gt;11:free_z">
-      <data key="d22">a32:5-&gt;11:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">89.98234855096985</data>
-      <data key="d28">0.027330979366367067</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a32:5-&gt;11:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">89.98234855096985</data>
+      <data key="d29">0.027330979366367067</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="6" target="1" id="a33:6-&gt;1:free_z">
-      <data key="d22">a33:6-&gt;1:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-90.02369415852272</data>
-      <data key="d28">0.007046908038508448</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a33:6-&gt;1:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-90.02369415852272</data>
+      <data key="d29">0.007046908038508448</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="6" target="4" id="a34:6-&gt;4:floor_main_neg_x">
-      <data key="d22">a34:6-&gt;4:floor_main_neg_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">floor_main_neg_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">-89.99491003383616</data>
-      <data key="d28">0.0009462928377507953</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a34:6-&gt;4:floor_main_neg_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">floor_main_neg_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">-89.99491003383616</data>
+      <data key="d29">0.0009462928377507953</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="6" target="7" id="a35:6-&gt;7:free_y">
-      <data key="d22">a35:6-&gt;7:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-179.99910399143096</data>
-      <data key="d28">0.005567846068360246</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a35:6-&gt;7:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-179.99910399143096</data>
+      <data key="d29">0.005567846068360246</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="6" target="9" id="a36:6-&gt;9:free_y">
-      <data key="d22">a36:6-&gt;9:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">89.99895997911257</data>
-      <data key="d28">0.00052526372372792</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a36:6-&gt;9:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">89.99895997911257</data>
+      <data key="d29">0.00052526372372792</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="6" target="10" id="a37:6-&gt;10:free_y">
-      <data key="d22">a37:6-&gt;10:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-89.99900836903747</data>
-      <data key="d28">0.006569167740069358</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a37:6-&gt;10:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-89.99900836903747</data>
+      <data key="d29">0.006569167740069358</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="7" target="3" id="a38:7-&gt;3:free_z">
-      <data key="d22">a38:7-&gt;3:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">89.992412181779</data>
-      <data key="d28">0.007229217781453421</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a38:7-&gt;3:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">89.992412181779</data>
+      <data key="d29">0.007229217781453421</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="7" target="5" id="a39:7-&gt;5:floor_main_neg_x">
-      <data key="d22">a39:7-&gt;5:floor_main_neg_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">floor_main_neg_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">-90.0008626040774</data>
-      <data key="d28">0.002447148066004877</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a39:7-&gt;5:floor_main_neg_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">floor_main_neg_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">-90.0008626040774</data>
+      <data key="d29">0.002447148066004877</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="7" target="6" id="a40:7-&gt;6:floor_main_neg_x">
-      <data key="d22">a40:7-&gt;6:floor_main_neg_x</data>
-      <data key="d23">actuated</data>
-      <data key="d24">floor_main_neg_x</data>
-      <data key="d25">True</data>
-      <data key="d26">[1.0, 0.0, 0.0]</data>
-      <data key="d27">-179.9995647730825</data>
-      <data key="d28">0.001021202509227359</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a40:7-&gt;6:floor_main_neg_x</data>
+      <data key="d24">actuated</data>
+      <data key="d25">floor_main_neg_x</data>
+      <data key="d26">True</data>
+      <data key="d27">[1.0, 0.0, 0.0]</data>
+      <data key="d28">-179.9995647730825</data>
+      <data key="d29">0.001021202509227359</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="7" target="6" id="a41:7-&gt;6:free_y">
-      <data key="d22">a41:7-&gt;6:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">179.99910399143096</data>
-      <data key="d28">0.005567846068360246</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a41:7-&gt;6:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">179.99910399143096</data>
+      <data key="d29">0.005567846068360246</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="7" target="9" id="a42:7-&gt;9:free_y">
-      <data key="d22">a42:7-&gt;9:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-90.00193656399875</data>
-      <data key="d28">0.0074708594481016</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a42:7-&gt;9:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-90.00193656399875</data>
+      <data key="d29">0.0074708594481016</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="7" target="10" id="a43:7-&gt;10:free_y">
-      <data key="d22">a43:7-&gt;10:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">90.00009567711076</data>
-      <data key="d28">0.004074564130770037</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a43:7-&gt;10:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">90.00009567711076</data>
+      <data key="d29">0.004074564130770037</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="8" target="1" id="a44:8-&gt;1:free_y">
-      <data key="d22">a44:8-&gt;1:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">89.97039894232343</data>
-      <data key="d28">0.015400267715748197</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a44:8-&gt;1:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">89.97039894232343</data>
+      <data key="d29">0.015400267715748197</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="8" target="3" id="a45:8-&gt;3:free_y">
-      <data key="d22">a45:8-&gt;3:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-89.99848866848399</data>
-      <data key="d28">0.005760346447113103</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a45:8-&gt;3:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-89.99848866848399</data>
+      <data key="d29">0.005760346447113103</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="8" target="4" id="a46:8-&gt;4:free_z">
-      <data key="d22">a46:8-&gt;4:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-89.99987577374364</data>
-      <data key="d28">0.0024207528861420052</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a46:8-&gt;4:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-89.99987577374364</data>
+      <data key="d29">0.0024207528861420052</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="8" target="5" id="a47:8-&gt;5:free_z">
-      <data key="d22">a47:8-&gt;5:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">90.0008163411909</data>
-      <data key="d28">0.013297906282411287</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a47:8-&gt;5:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">90.0008163411909</data>
+      <data key="d29">0.013297906282411287</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="8" target="11" id="a48:8-&gt;11:free_y">
-      <data key="d22">a48:8-&gt;11:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">179.95186911499408</data>
-      <data key="d28">0.008672655904502165</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a48:8-&gt;11:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">179.95186911499408</data>
+      <data key="d29">0.008672655904502165</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="8" target="11" id="a49:8-&gt;11:free_z">
-      <data key="d22">a49:8-&gt;11:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">179.98315789689266</data>
-      <data key="d28">0.010177207637158282</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a49:8-&gt;11:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">179.98315789689266</data>
+      <data key="d29">0.010177207637158282</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="9" target="0" id="a50:9-&gt;0:free_z">
-      <data key="d22">a50:9-&gt;0:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">90.0045904013693</data>
-      <data key="d28">0.013035522249125023</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a50:9-&gt;0:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">90.0045904013693</data>
+      <data key="d29">0.013035522249125023</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="9" target="2" id="a51:9-&gt;2:free_z">
-      <data key="d22">a51:9-&gt;2:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-89.99484695681168</data>
-      <data key="d28">0.010555542573094484</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a51:9-&gt;2:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-89.99484695681168</data>
+      <data key="d29">0.010555542573094484</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="9" target="6" id="a52:9-&gt;6:free_y">
-      <data key="d22">a52:9-&gt;6:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-89.99895997911257</data>
-      <data key="d28">0.00052526372372792</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a52:9-&gt;6:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-89.99895997911257</data>
+      <data key="d29">0.00052526372372792</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="9" target="7" id="a53:9-&gt;7:free_y">
-      <data key="d22">a53:9-&gt;7:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">90.00193656399875</data>
-      <data key="d28">0.0074708594481016</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a53:9-&gt;7:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">90.00193656399875</data>
+      <data key="d29">0.0074708594481016</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="9" target="10" id="a54:9-&gt;10:free_y">
-      <data key="d22">a54:9-&gt;10:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-179.99796796130124</data>
-      <data key="d28">0.004277097934495287</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a54:9-&gt;10:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-179.99796796130124</data>
+      <data key="d29">0.004277097934495287</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="9" target="10" id="a55:9-&gt;10:free_z">
-      <data key="d22">a55:9-&gt;10:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-179.99626960699982</data>
-      <data key="d28">0.0028924756180369886</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a55:9-&gt;10:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-179.99626960699982</data>
+      <data key="d29">0.0028924756180369886</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="10" target="0" id="a56:10-&gt;0:free_z">
-      <data key="d22">a56:10-&gt;0:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-89.99914332062997</data>
-      <data key="d28">0.016537618218881223</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a56:10-&gt;0:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-89.99914332062997</data>
+      <data key="d29">0.016537618218881223</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="10" target="2" id="a57:10-&gt;2:free_z">
-      <data key="d22">a57:10-&gt;2:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">90.00142424899119</data>
-      <data key="d28">0.00676715507270411</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a57:10-&gt;2:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">90.00142424899119</data>
+      <data key="d29">0.00676715507270411</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="10" target="6" id="a58:10-&gt;6:free_y">
-      <data key="d22">a58:10-&gt;6:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">89.99900836903747</data>
-      <data key="d28">0.006569167740069358</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a58:10-&gt;6:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">89.99900836903747</data>
+      <data key="d29">0.006569167740069358</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="10" target="7" id="a59:10-&gt;7:free_y">
-      <data key="d22">a59:10-&gt;7:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-90.00009567711076</data>
-      <data key="d28">0.004074564130770037</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a59:10-&gt;7:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-90.00009567711076</data>
+      <data key="d29">0.004074564130770037</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="10" target="9" id="a60:10-&gt;9:free_y">
-      <data key="d22">a60:10-&gt;9:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">179.99796796130124</data>
-      <data key="d28">0.004277097934495287</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a60:10-&gt;9:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">179.99796796130124</data>
+      <data key="d29">0.004277097934495287</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="10" target="9" id="a61:10-&gt;9:free_z">
-      <data key="d22">a61:10-&gt;9:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">179.99626960699982</data>
-      <data key="d28">0.0028924756180369886</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a61:10-&gt;9:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">179.99626960699982</data>
+      <data key="d29">0.0028924756180369886</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="11" target="1" id="a62:11-&gt;1:free_y">
-      <data key="d22">a62:11-&gt;1:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-89.98147314651806</data>
-      <data key="d28">0.02172178494393782</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a62:11-&gt;1:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-89.98147314651806</data>
+      <data key="d29">0.02172178494393782</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="11" target="3" id="a63:11-&gt;3:free_y">
-      <data key="d22">a63:11-&gt;3:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">90.04964260226622</data>
-      <data key="d28">0.012150496639573018</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a63:11-&gt;3:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">90.04964260226622</data>
+      <data key="d29">0.012150496639573018</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="11" target="4" id="a64:11-&gt;4:free_z">
-      <data key="d22">a64:11-&gt;4:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">90.01696907118873</data>
-      <data key="d28">0.016523457295757847</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a64:11-&gt;4:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">90.01696907118873</data>
+      <data key="d29">0.016523457295757847</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="11" target="5" id="a65:11-&gt;5:free_z">
-      <data key="d22">a65:11-&gt;5:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-89.98234855096982</data>
-      <data key="d28">0.027330979366367067</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a65:11-&gt;5:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-89.98234855096982</data>
+      <data key="d29">0.027330979366367067</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="11" target="8" id="a66:11-&gt;8:free_y">
-      <data key="d22">a66:11-&gt;8:free_y</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_y</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 1.0, 0.0]</data>
-      <data key="d27">-179.95186911499408</data>
-      <data key="d28">0.008672655904502165</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a66:11-&gt;8:free_y</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_y</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 1.0, 0.0]</data>
+      <data key="d28">-179.95186911499408</data>
+      <data key="d29">0.008672655904502165</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
     <edge source="11" target="8" id="a67:11-&gt;8:free_z">
-      <data key="d22">a67:11-&gt;8:free_z</data>
-      <data key="d23">actuated</data>
-      <data key="d24">free_z</data>
-      <data key="d25">True</data>
-      <data key="d26">[0.0, 0.0, 1.0]</data>
-      <data key="d27">-179.98315789689266</data>
-      <data key="d28">0.010177207637158282</data>
-      <data key="d29">[]</data>
-      <data key="d30">1</data>
-      <data key="d31">untested</data>
+      <data key="d23">a67:11-&gt;8:free_z</data>
+      <data key="d24">actuated</data>
+      <data key="d25">free_z</data>
+      <data key="d26">True</data>
+      <data key="d27">[0.0, 0.0, 1.0]</data>
+      <data key="d28">-179.98315789689266</data>
+      <data key="d29">0.010177207637158282</data>
+      <data key="d30">[]</data>
+      <data key="d31">1</data>
+      <data key="d32">untested</data>
     </edge>
-    <data key="d0">{"minimum_frequency_percent": 1.0, "renumber_by_frequency": true, "frequency_denominator": "all completed drop trials, including unsettled outcomes", "numbering_tie_break": "original source ID", "source_file": "poses.json", "source_sha256": "001f3d184e347fc3591ccd3b5e1d280d139c314c8409650a10b3821ec0d79796", "generated_utc": "2026-11-20T07:20:41.759415+00:00", "pose_id_mapping": {"Rk2i_0008": 0, "Rk2i_0004": 1, "Rk2i_0007": 2, "Rk2i_0002": 3, "Rk2i_0005": 4, "Rk2i_0006": 5, "Rk2i_0010": 6, "Rk2i_0009": 7, "Rk2i_0011": 8, "Rk2i_0003": 9, "Rk2i_0012": 10, "Rk2i_0001": 11}, "removed_poses": [], "evaluation_phase": "transport", "source_provenance": {"pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses", "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30", "catalogue_path": "Rk2i/catalogue/grouped_10000/moving/catalogue.json", "catalogue_sha256": "ec37ed9dc95c6ebf8f70524d96c059044c068da1da7fa4898e7c9fda7c90fe3e", "condition": "moving", "classification_method": "observed-seated-geodesic-basins-v1", "representative_policy": "unchanged published catalogue quaternion", "catalogue_revision": "0cc7a4a95c9fd472c379700ffded127e32022233", "simulator_revision": "e890ae90998c17bac7e3a67b6dfaf2deea8047b9", "raw_simulator_revision": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd", "builder_sha256": "855796addf0107445fe6fa3897f30b61c0b718537412d2fae5ff0f9763a5756e", "run_dir": "Rk2i/simulations/20261110_10000/100mm_s", "archive_path": "Rk2i/simulations/20261110_10000/100mm_s/simulation_results.tar.xz", "archive_sha256": "b9551e3e1991720812cedd089d75eaa8b1e31d6c2761b449bba92e48cd9d9f09", "raw_trials_sha256": "d8c72155e5a5e40a1f7c906ac44477d003062db6c9b75babb56251778ee1a0de", "mesh_path": "Rk2i/Rk2i.stl", "mesh_sha256": "a345b49394e9deaf218011ad521dcef7df5f00a42d9e35f938aa4789c6a7e9e4", "manifest_sha256": "360b3b2b52c89f97f79495775d67ac20169b7ea6a4e6f7f2748c6f7e9a1a4daa", "config_sha256": "372ab52a47baa8fc79e3a0ed09b53f8f2db15438fa8eb6301e4a3a1d3c322d89", "archive_checksums_sha256": "1c41bec0fec0439e02534249fd6b45df30ec6dae35f7b08735f5dd9f35dccca4"}}</data>
+    <data key="d0">{"minimum_frequency_percent": 1.0, "renumber_by_frequency": true, "frequency_denominator": "all completed drop trials, including unsettled outcomes", "numbering_tie_break": "original source ID", "source_file": "poses.json", "source_sha256": "187b3c0fec05f0758e3c055a5393d09022019e972036633c284d97949b372df3", "generated_utc": "2026-11-20T08:47:37.773781+00:00", "pose_id_mapping": {"Rk2i_0008": 0, "Rk2i_0004": 1, "Rk2i_0007": 2, "Rk2i_0002": 3, "Rk2i_0005": 4, "Rk2i_0006": 5, "Rk2i_0010": 6, "Rk2i_0009": 7, "Rk2i_0011": 8, "Rk2i_0003": 9, "Rk2i_0012": 10, "Rk2i_0001": 11}, "removed_poses": [], "evaluation_phase": "transport", "source_provenance": {"pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses", "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1", "catalogue_path": "Rk2i/catalogue/grouped_10000/moving/catalogue.json", "catalogue_sha256": "04f9b9db53887baa0819c4545d69ab9372d267a1acf5516d9882de5c391a203a", "condition": "moving", "classification_method": "observed-seated-geodesic-basins-v1", "representative_policy": "unchanged published catalogue quaternion", "catalogue_revision": "0cc7a4a95c9fd472c379700ffded127e32022233", "simulator_revision": "e890ae90998c17bac7e3a67b6dfaf2deea8047b9", "raw_simulator_revision": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd", "builder_sha256": "855796addf0107445fe6fa3897f30b61c0b718537412d2fae5ff0f9763a5756e", "run_dir": "Rk2i/simulations/20261110_10000/100mm_s", "archive_path": "Rk2i/simulations/20261110_10000/100mm_s/simulation_results.tar.xz", "archive_sha256": "b9551e3e1991720812cedd089d75eaa8b1e31d6c2761b449bba92e48cd9d9f09", "raw_trials_sha256": "d8c72155e5a5e40a1f7c906ac44477d003062db6c9b75babb56251778ee1a0de", "mesh_path": "Rk2i/Rk2i.stl", "mesh_sha256": "a345b49394e9deaf218011ad521dcef7df5f00a42d9e35f938aa4789c6a7e9e4", "manifest_sha256": "360b3b2b52c89f97f79495775d67ac20169b7ea6a4e6f7f2748c6f7e9a1a4daa", "config_sha256": "372ab52a47baa8fc79e3a0ed09b53f8f2db15438fa8eb6301e4a3a1d3c322d89", "archive_checksums_sha256": "1c41bec0fec0439e02534249fd6b45df30ec6dae35f7b08735f5dd9f35dccca4"}}</data>
     <data key="d1">observed_simulation</data>
-    <data key="d2">{"schema_version": 1, "method": "sampled_seated_escape_lift", "method_version": 1, "workpiece": "Rk2i", "source_sha256": "001f3d184e347fc3591ccd3b5e1d280d139c314c8409650a10b3821ec0d79796", "observations_sha256": "001f3d184e347fc3591ccd3b5e1d280d139c314c8409650a10b3821ec0d79796", "mesh_sha256": "a345b49394e9deaf218011ad521dcef7df5f00a42d9e35f938aa4789c6a7e9e4", "config_sha256": "372ab52a47baa8fc79e3a0ed09b53f8f2db15438fa8eb6301e4a3a1d3c322d89", "angular_step_deg": 0.1, "thresholds_mm": {"fragile": 0.1, "resistant": 0.5}, "alpha_deg": 45.0, "beta_deg": 0.0, "frequency_independent": true, "automatic_filtering": false, "uniform_density_assumed": true, "interpretation": "Smallest sampled COM lift along symmetry-aware, two-plane-seated shortest rotations to recorded poses. This is an evaluated-path estimate, not a proven minimum escape energy or dynamic transport assessment. Frequency and pose-group incidence are unchanged; within-group rocking does not classify the whole group.", "path_counts": {"reused": 0, "calculated": 66, "symmetry_equivalent": 0}, "saved_path_reuse": "Checksum-verified ordinary seated paths; missing paths are calculated.", "label_counts": {"fragile": 0, "marginal": 0, "resistant": 12, "unknown": 0}}</data>
+    <data key="d2">{"schema_version": 1, "method": "sampled_seated_escape_lift", "method_version": 1, "producer": "dashas_drop_sim", "engine_sha256": "820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420", "input_signature": "94ca9a57bbb0767c9b37026208ac089be71ef0f33e51a8ba4bd4824f72f22add", "mesh_sha256": "a345b49394e9deaf218011ad521dcef7df5f00a42d9e35f938aa4789c6a7e9e4", "angular_step_deg": 0.1, "thresholds_mm": {"fragile": 0.1, "resistant": 0.5}, "alpha_deg": 45.0, "beta_deg": 0.0, "symmetry_source": "saved_recognition", "symmetry_symbol": "C2", "frequency_independent": true, "automatic_filtering": false, "uniform_density_assumed": true, "interpretation": "Sampled geometric tipping resistance, not dynamic survival or a proven minimum-energy path. Group membership and observations are unchanged.", "path_counts": {"reused": 0, "calculated": 66, "symmetry_equivalent": 0}, "label_counts": {"resistant": 12, "marginal": 0, "fragile": 0, "unknown": 0}, "stability_counts": {"high": 12, "medium": 0, "low": 0, "unknown": 0}, "workpiece": "Rk2i", "condition": "moving", "config_sha256": "372ab52a47baa8fc79e3a0ed09b53f8f2db15438fa8eb6301e4a3a1d3c322d89", "source_sha256": "187b3c0fec05f0758e3c055a5393d09022019e972036633c284d97949b372df3", "observations_sha256": "187b3c0fec05f0758e3c055a5393d09022019e972036633c284d97949b372df3", "upstream_provenance": {"pose_revision": "b12285c22de088ce1d96011a31d85945655388f1", "catalogue_path": "Rk2i/catalogue/grouped_10000/moving/catalogue.json", "catalogue_sha256": "04f9b9db53887baa0819c4545d69ab9372d267a1acf5516d9882de5c391a203a", "report_sha256": "1f163e078d1575c2e5122904f653b963e0a3dd25372a97a43352f385b0dc4fd7"}, "published": true}</data>
   </graph>
 </graphml>

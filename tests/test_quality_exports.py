@@ -37,6 +37,19 @@ def thin_box_catalogue(folder, *, one_pose=False):
                     for pose in data["poses"]],
     }), encoding="utf-8")
     (folder / "config.json").write_text(json.dumps({"alpha_deg": 0., "beta_deg": 0.}), encoding="utf-8")
+    # Fixture models a published DropSim report; consumers must not recompute it.
+    entries={}
+    for row in data["poses"]:
+        upright=row["id"]=="Test1_0007"
+        lift=None if one_pose else math.hypot(20,1)-(20 if upright else 1)
+        entries[row["id"]]={"label":"unknown" if one_pose else "fragile" if upright else "resistant",
+            "stability":"unknown" if one_pose else "low" if upright else "high",
+            "escape_lift_mm":lift,"escape_target_source_id":None if one_pose else "Test1_0009" if upright else "Test1_0007",
+            "escape_within_group":None if one_pose else True}
+    report={"schema_version":1,"producer":"dashas_drop_sim","method":"sampled_seated_escape_lift","method_version":1,
+        "source_sha256":sha256(path),"observations_sha256":sha256(path),"mesh_sha256":sha256(mesh),
+        "config_sha256":sha256(folder/"config.json"),"thresholds_mm":{"fragile":.1,"resistant":.5},"poses":entries}
+    (folder/"pose_quality.json").write_text(json.dumps(report),encoding="utf-8")
     return path, data
 
 

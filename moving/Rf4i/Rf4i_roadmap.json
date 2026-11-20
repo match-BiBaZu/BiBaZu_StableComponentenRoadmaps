@@ -61,6 +61,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 10.731630746449447,
         "escape_target_source_id": "Rf4i_0017",
         "escape_within_group": false,
@@ -107,6 +108,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 10.73147405245816,
         "escape_target_source_id": "Rf4i_0003",
         "escape_within_group": false,
@@ -153,6 +155,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 7.99975898475995,
         "escape_target_source_id": "Rf4i_0011",
         "escape_within_group": false,
@@ -199,6 +202,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 8.00057754698927,
         "escape_target_source_id": "Rf4i_0005",
         "escape_within_group": false,
@@ -245,6 +249,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 7.567317651630283,
         "escape_target_source_id": "Rf4i_0017",
         "escape_within_group": false,
@@ -291,6 +296,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 7.568468939151828,
         "escape_target_source_id": "Rf4i_0003",
         "escape_within_group": false,
@@ -337,6 +343,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 8.682976373610622,
         "escape_target_source_id": "Rf4i_0003",
         "escape_within_group": false,
@@ -383,6 +390,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 8.682311304497162,
         "escape_target_source_id": "Rf4i_0017",
         "escape_within_group": false,
@@ -429,6 +437,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.756062123397683,
         "escape_target_source_id": "Rf4i_0005",
         "escape_within_group": false,
@@ -475,6 +484,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.756304376571364,
         "escape_target_source_id": "Rf4i_0005",
         "escape_within_group": false,
@@ -521,6 +531,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.755144990968194,
         "escape_target_source_id": "Rf4i_0011",
         "escape_within_group": false,
@@ -567,6 +578,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.756118112221774,
         "escape_target_source_id": "Rf4i_0011",
         "escape_within_group": false,
@@ -613,6 +625,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.754561890039852,
         "escape_target_source_id": "Rf4i_0017",
         "escape_within_group": false,
@@ -659,6 +672,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.756533109851318,
         "escape_target_source_id": "Rf4i_0017",
         "escape_within_group": false,
@@ -705,6 +719,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.753867098653423,
         "escape_target_source_id": "Rf4i_0003",
         "escape_within_group": false,
@@ -751,6 +766,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.755359633554328,
         "escape_target_source_id": "Rf4i_0003",
         "escape_within_group": false,
@@ -3579,11 +3595,10 @@
     "schema_version": 1,
     "method": "sampled_seated_escape_lift",
     "method_version": 1,
-    "workpiece": "Rf4i",
-    "source_sha256": "8d2ca59738274f507e6a630213b7d5c78ae346863fe2c8f6c7079d2fa625fbe2",
-    "observations_sha256": "8d2ca59738274f507e6a630213b7d5c78ae346863fe2c8f6c7079d2fa625fbe2",
+    "producer": "dashas_drop_sim",
+    "engine_sha256": "820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420",
+    "input_signature": "d759fc6352ec3968297aa4da0ece2daf603afaf20ba713d633f8a29eddb62463",
     "mesh_sha256": "32931a56610683b5008af43f249285b7020566283292fd1cde2bc0dda0fbab3d",
-    "config_sha256": "705891e787ce407279fe81cb07723986e8c8bdc6361eb2c5e1352b1f09110d6e",
     "angular_step_deg": 0.1,
     "thresholds_mm": {
       "fragile": 0.1,
@@ -3591,22 +3606,41 @@
     },
     "alpha_deg": 45.0,
     "beta_deg": 0.0,
+    "symmetry_source": "saved_recognition",
+    "symmetry_symbol": "C1",
     "frequency_independent": true,
     "automatic_filtering": false,
     "uniform_density_assumed": true,
-    "interpretation": "Smallest sampled COM lift along symmetry-aware, two-plane-seated shortest rotations to recorded poses. This is an evaluated-path estimate, not a proven minimum escape energy or dynamic transport assessment. Frequency and pose-group incidence are unchanged; within-group rocking does not classify the whole group.",
+    "interpretation": "Sampled geometric tipping resistance, not dynamic survival or a proven minimum-energy path. Group membership and observations are unchanged.",
     "path_counts": {
       "reused": 0,
       "calculated": 190,
       "symmetry_equivalent": 0
     },
-    "saved_path_reuse": "Checksum-verified ordinary seated paths; missing paths are calculated.",
     "label_counts": {
-      "fragile": 4,
-      "marginal": 0,
       "resistant": 16,
+      "marginal": 0,
+      "fragile": 4,
       "unknown": 0
-    }
+    },
+    "stability_counts": {
+      "high": 16,
+      "medium": 0,
+      "low": 4,
+      "unknown": 0
+    },
+    "workpiece": "Rf4i",
+    "condition": "moving",
+    "config_sha256": "705891e787ce407279fe81cb07723986e8c8bdc6361eb2c5e1352b1f09110d6e",
+    "source_sha256": "e66929b2d1f9b9aa5b14577a6d37e7dc9ec125991990a7e82526fc86ed3c4729",
+    "observations_sha256": "e66929b2d1f9b9aa5b14577a6d37e7dc9ec125991990a7e82526fc86ed3c4729",
+    "upstream_provenance": {
+      "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
+      "catalogue_path": "Rf4i/catalogue/grouped_10000/moving/catalogue.json",
+      "catalogue_sha256": "4f9056c6043a7e08f5750a23d46635fd04c0fe2382d99d7635405466a035646c",
+      "report_sha256": "1440f363f373dd134f98e0c89ea6e0597d1b9322d25c2634c6eb421bf5c35d45"
+    },
+    "published": true
   },
   "geometric_pose_quality_evaluated": true,
   "part_name": "Rf4i",
@@ -3616,8 +3650,8 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "8d2ca59738274f507e6a630213b7d5c78ae346863fe2c8f6c7079d2fa625fbe2",
-    "generated_utc": "2026-11-20T07:20:13.185668+00:00",
+    "source_sha256": "e66929b2d1f9b9aa5b14577a6d37e7dc9ec125991990a7e82526fc86ed3c4729",
+    "generated_utc": "2026-11-20T08:47:11.995513+00:00",
     "pose_id_mapping": {
       "Rf4i_0011": 0,
       "Rf4i_0005": 1,
@@ -3657,9 +3691,9 @@
     "evaluation_phase": "transport",
     "source_provenance": {
       "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
-      "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30",
+      "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
       "catalogue_path": "Rf4i/catalogue/grouped_10000/moving/catalogue.json",
-      "catalogue_sha256": "7c7b75078f9aa0cbeb83d2ba031e4cc7dfc60e59e7c408e53e6898761d4dc13f",
+      "catalogue_sha256": "4f9056c6043a7e08f5750a23d46635fd04c0fe2382d99d7635405466a035646c",
       "condition": "moving",
       "classification_method": "observed-seated-geodesic-basins-v1",
       "representative_policy": "unchanged published catalogue quaternion",
@@ -3685,8 +3719,8 @@
       "frequency_denominator": "all completed drop trials, including unsettled outcomes",
       "numbering_tie_break": "original source ID",
       "source_file": "poses.json",
-      "source_sha256": "8d2ca59738274f507e6a630213b7d5c78ae346863fe2c8f6c7079d2fa625fbe2",
-      "generated_utc": "2026-11-20T07:20:13.185668+00:00",
+      "source_sha256": "e66929b2d1f9b9aa5b14577a6d37e7dc9ec125991990a7e82526fc86ed3c4729",
+      "generated_utc": "2026-11-20T08:47:11.995513+00:00",
       "pose_id_mapping": {
         "Rf4i_0011": 0,
         "Rf4i_0005": 1,
@@ -3726,9 +3760,9 @@
       "evaluation_phase": "transport",
       "source_provenance": {
         "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
-        "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30",
+        "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
         "catalogue_path": "Rf4i/catalogue/grouped_10000/moving/catalogue.json",
-        "catalogue_sha256": "7c7b75078f9aa0cbeb83d2ba031e4cc7dfc60e59e7c408e53e6898761d4dc13f",
+        "catalogue_sha256": "4f9056c6043a7e08f5750a23d46635fd04c0fe2382d99d7635405466a035646c",
         "condition": "moving",
         "classification_method": "observed-seated-geodesic-basins-v1",
         "representative_policy": "unchanged published catalogue quaternion",

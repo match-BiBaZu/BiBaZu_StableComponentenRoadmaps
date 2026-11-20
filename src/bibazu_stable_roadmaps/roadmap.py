@@ -227,5 +227,5 @@ def handover_dict(document: dict) -> dict:
             "poses": poses, "transitions": transitions, "generation": document.get("generation", {})}
     if "pose_quality_assessment" in document:
         result["pose_quality_assessment"] = document["pose_quality_assessment"]
-        result["classification"]["geometric_pose_quality_evaluated"] = True
+        result["classification"]["geometric_pose_quality_evaluated"] = document.get("geometric_pose_quality_evaluated", False)
     return result

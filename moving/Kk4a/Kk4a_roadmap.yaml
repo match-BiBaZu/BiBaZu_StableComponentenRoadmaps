@@ -41,8 +41,8 @@ classification:
       frequency_denominator: all completed drop trials, including unsettled outcomes
       numbering_tie_break: original source ID
       source_file: poses.json
-      source_sha256: 9026f55ac5aaed424d73e9d9c735fb20096a74f2b7d4c0e92a861fc5f9890eaf
-      generated_utc: '2026-11-20T07:18:09.558114+00:00'
+      source_sha256: de34bdd20cb7ad3670a76d679841b45f7ba0ebda45fb6ffcb678e55d4481a8f6
+      generated_utc: '2026-11-20T08:45:25.003677+00:00'
       pose_id_mapping:
         Kk4a_0143: 0
         Kk4a_0023: 1
@@ -426,9 +426,9 @@ classification:
       evaluation_phase: transport
       source_provenance:
         pose_repository: https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses
-        pose_revision: b045887db591ff969b182d4a4ab1e9e14f11ab30
+        pose_revision: b12285c22de088ce1d96011a31d85945655388f1
         catalogue_path: Kk4a/catalogue/grouped_10000/moving/catalogue.json
-        catalogue_sha256: e677c86a963965a40a7df1f07f9d0810874b1aaab0e10d6fba50e0656ef13f56
+        catalogue_sha256: 362cd10f787f1f3549b2990aeda43d9aeef1b7323a86e194ccf1b2cf3f7a5d4f
         condition: moving
         classification_method: scoped-rounded-support-families-v3
         representative_policy: unchanged published catalogue quaternion
@@ -477,6 +477,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: fragile
+    stability: low
     escape_lift_mm: 0.009540758666643612
     escape_target_source_id: Kk4a_0147
     escape_within_group: true
@@ -518,6 +519,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: fragile
+    stability: low
     escape_lift_mm: 0.00951668601084954
     escape_target_source_id: Kk4a_0189
     escape_within_group: true
@@ -535,32 +537,45 @@ pose_quality_assessment:
   schema_version: 1
   method: sampled_seated_escape_lift
   method_version: 1
-  workpiece: Kk4a
-  source_sha256: 9026f55ac5aaed424d73e9d9c735fb20096a74f2b7d4c0e92a861fc5f9890eaf
-  observations_sha256: 9026f55ac5aaed424d73e9d9c735fb20096a74f2b7d4c0e92a861fc5f9890eaf
+  producer: dashas_drop_sim
+  engine_sha256: 820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420
+  input_signature: 84a72f22319122d2dc1522ca4df40b9431beca12f38605045e4d546f7fa61f97
   mesh_sha256: 8b9e742443c8153aca1f5afd3e68562d5cecd7ac9af010f2ede3b0162fa200c1
-  config_sha256: 5a8fb5a109376e251a4def3a93952ba21ffaf419b86d159998b8f01e68ad4242
   angular_step_deg: 0.1
   thresholds_mm:
     fragile: 0.1
     resistant: 0.5
   alpha_deg: 45.0
   beta_deg: 0.0
+  symmetry_source: saved_recognition
+  symmetry_symbol: C1
   frequency_independent: true
   automatic_filtering: false
   uniform_density_assumed: true
-  interpretation: Smallest sampled COM lift along symmetry-aware, two-plane-seated
-    shortest rotations to recorded poses. This is an evaluated-path estimate, not
-    a proven minimum escape energy or dynamic transport assessment. Frequency and
-    pose-group incidence are unchanged; within-group rocking does not classify the
-    whole group.
+  interpretation: Sampled geometric tipping resistance, not dynamic survival or a
+    proven minimum-energy path. Group membership and observations are unchanged.
   path_counts:
     reused: 0
     calculated: 17955
     symmetry_equivalent: 0
-  saved_path_reuse: Saved evidence uses a scoped model; ordinary paths are recalculated.
   label_counts:
-    fragile: 190
-    marginal: 0
     resistant: 0
+    marginal: 0
+    fragile: 190
     unknown: 0
+  stability_counts:
+    high: 0
+    medium: 0
+    low: 190
+    unknown: 0
+  workpiece: Kk4a
+  condition: moving
+  config_sha256: 5a8fb5a109376e251a4def3a93952ba21ffaf419b86d159998b8f01e68ad4242
+  source_sha256: de34bdd20cb7ad3670a76d679841b45f7ba0ebda45fb6ffcb678e55d4481a8f6
+  observations_sha256: de34bdd20cb7ad3670a76d679841b45f7ba0ebda45fb6ffcb678e55d4481a8f6
+  upstream_provenance:
+    pose_revision: b12285c22de088ce1d96011a31d85945655388f1
+    catalogue_path: Kk4a/catalogue/grouped_10000/moving/catalogue.json
+    catalogue_sha256: 362cd10f787f1f3549b2990aeda43d9aeef1b7323a86e194ccf1b2cf3f7a5d4f
+    report_sha256: de5b1116c26e578a8f2e88b354b971617a8f78dc729628e2f31bf9f46334e693
+  published: true

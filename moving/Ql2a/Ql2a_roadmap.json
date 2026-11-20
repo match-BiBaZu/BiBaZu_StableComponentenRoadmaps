@@ -62,6 +62,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.630804005252358,
         "escape_target_source_id": "Ql2a_0002",
         "escape_within_group": false,
@@ -108,6 +109,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 5.634512818018777,
         "escape_target_source_id": "Ql2a_0009",
         "escape_within_group": false,
@@ -154,6 +156,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 4.349232882245115,
         "escape_target_source_id": "Ql2a_0002",
         "escape_within_group": false,
@@ -200,6 +203,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 4.350496854478401,
         "escape_target_source_id": "Ql2a_0009",
         "escape_within_group": false,
@@ -246,6 +250,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 0.9261040094876236,
         "escape_target_source_id": "Ql2a_0003",
         "escape_within_group": false,
@@ -699,11 +704,10 @@
     "schema_version": 1,
     "method": "sampled_seated_escape_lift",
     "method_version": 1,
-    "workpiece": "Ql2a",
-    "source_sha256": "2a0ee18d32b3a696acd111b4603075985b892c8d015f196a0c5e93fefbd4a669",
-    "observations_sha256": "2a0ee18d32b3a696acd111b4603075985b892c8d015f196a0c5e93fefbd4a669",
+    "producer": "dashas_drop_sim",
+    "engine_sha256": "820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420",
+    "input_signature": "ae4e0c3ceb1207057dc7f04a139996e1beae9165ab6460419beaf4d1aa4274d4",
     "mesh_sha256": "3b0433b3546a7c2f504684c37e04f9d5001fa445558a74228864cf17ec4725c4",
-    "config_sha256": "643490d63dbf843610d37a09bfe033e7760a9e24c6f537b259de04fc477de207",
     "angular_step_deg": 0.1,
     "thresholds_mm": {
       "fragile": 0.1,
@@ -711,22 +715,41 @@
     },
     "alpha_deg": 45.0,
     "beta_deg": 0.0,
+    "symmetry_source": "saved_recognition",
+    "symmetry_symbol": "C2",
     "frequency_independent": true,
     "automatic_filtering": false,
     "uniform_density_assumed": true,
-    "interpretation": "Smallest sampled COM lift along symmetry-aware, two-plane-seated shortest rotations to recorded poses. This is an evaluated-path estimate, not a proven minimum escape energy or dynamic transport assessment. Frequency and pose-group incidence are unchanged; within-group rocking does not classify the whole group.",
+    "interpretation": "Sampled geometric tipping resistance, not dynamic survival or a proven minimum-energy path. Group membership and observations are unchanged.",
     "path_counts": {
       "reused": 4,
       "calculated": 87,
       "symmetry_equivalent": 0
     },
-    "saved_path_reuse": "Checksum-verified ordinary seated paths; missing paths are calculated.",
     "label_counts": {
-      "fragile": 2,
-      "marginal": 0,
       "resistant": 12,
+      "marginal": 0,
+      "fragile": 2,
       "unknown": 0
-    }
+    },
+    "stability_counts": {
+      "high": 12,
+      "medium": 0,
+      "low": 2,
+      "unknown": 0
+    },
+    "workpiece": "Ql2a",
+    "condition": "moving",
+    "config_sha256": "643490d63dbf843610d37a09bfe033e7760a9e24c6f537b259de04fc477de207",
+    "source_sha256": "764ff3788820522476f988b9da56ab412f54f9eddfa7578aeb3fde8cb183986f",
+    "observations_sha256": "764ff3788820522476f988b9da56ab412f54f9eddfa7578aeb3fde8cb183986f",
+    "upstream_provenance": {
+      "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
+      "catalogue_path": "Ql2a/catalogue/grouped_10000/moving/catalogue.json",
+      "catalogue_sha256": "02ba811b3bdad6bd8f99a35228393372ea2540e32de1b969977a3c16d2e9899f",
+      "report_sha256": "cd01ff9d187fd40fefa502c01c816e5bc9bc9a0151853156ffc1a11bfb30c76f"
+    },
+    "published": true
   },
   "geometric_pose_quality_evaluated": true,
   "part_name": "Ql2a",
@@ -736,8 +759,8 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "2a0ee18d32b3a696acd111b4603075985b892c8d015f196a0c5e93fefbd4a669",
-    "generated_utc": "2026-11-20T07:19:40.756244+00:00",
+    "source_sha256": "764ff3788820522476f988b9da56ab412f54f9eddfa7578aeb3fde8cb183986f",
+    "generated_utc": "2026-11-20T08:46:41.940354+00:00",
     "pose_id_mapping": {
       "Ql2a_0008": 0,
       "Ql2a_0003": 1,
@@ -786,9 +809,9 @@
     "evaluation_phase": "transport",
     "source_provenance": {
       "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
-      "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30",
+      "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
       "catalogue_path": "Ql2a/catalogue/grouped_10000/moving/catalogue.json",
-      "catalogue_sha256": "33acb5530ea8a0cae143d6eb956a81d6360766d15a575e14528260fdea14efc2",
+      "catalogue_sha256": "02ba811b3bdad6bd8f99a35228393372ea2540e32de1b969977a3c16d2e9899f",
       "condition": "moving",
       "classification_method": "observed-seated-geodesic-basins-v1",
       "representative_policy": "unchanged published catalogue quaternion",
@@ -814,8 +837,8 @@
       "frequency_denominator": "all completed drop trials, including unsettled outcomes",
       "numbering_tie_break": "original source ID",
       "source_file": "poses.json",
-      "source_sha256": "2a0ee18d32b3a696acd111b4603075985b892c8d015f196a0c5e93fefbd4a669",
-      "generated_utc": "2026-11-20T07:19:40.756244+00:00",
+      "source_sha256": "764ff3788820522476f988b9da56ab412f54f9eddfa7578aeb3fde8cb183986f",
+      "generated_utc": "2026-11-20T08:46:41.940354+00:00",
       "pose_id_mapping": {
         "Ql2a_0008": 0,
         "Ql2a_0003": 1,
@@ -864,9 +887,9 @@
       "evaluation_phase": "transport",
       "source_provenance": {
         "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
-        "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30",
+        "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
         "catalogue_path": "Ql2a/catalogue/grouped_10000/moving/catalogue.json",
-        "catalogue_sha256": "33acb5530ea8a0cae143d6eb956a81d6360766d15a575e14528260fdea14efc2",
+        "catalogue_sha256": "02ba811b3bdad6bd8f99a35228393372ea2540e32de1b969977a3c16d2e9899f",
         "condition": "moving",
         "classification_method": "observed-seated-geodesic-basins-v1",
         "representative_policy": "unchanged published catalogue quaternion",

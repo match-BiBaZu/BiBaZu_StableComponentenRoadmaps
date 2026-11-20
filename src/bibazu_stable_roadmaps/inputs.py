@@ -174,6 +174,9 @@ def load_source(path: str | Path) -> PoseSource:
     config_path = path.with_name("config.json")
     config = read_json(config_path) if config_path.is_file() else {}
     files = {path, observed_path, mesh}
+    for name in ("pose_quality.json", "upstream_pose_quality.json", "catalogue.json", "grouping-evidence.json"):
+        if path.with_name(name).is_file():
+            files.add(path.with_name(name))
     other_registry = path.with_name("pose_registry.json")
     if other_registry.is_file():
         files.add(other_registry)

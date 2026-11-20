@@ -61,6 +61,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 9.628393209595181,
         "escape_target_source_id": "Qf2a_0006",
         "escape_within_group": false,
@@ -107,6 +108,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 9.628532866170438,
         "escape_target_source_id": "Qf2a_0010",
         "escape_within_group": false,
@@ -153,6 +155,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 9.628991388890825,
         "escape_target_source_id": "Qf2a_0007",
         "escape_within_group": false,
@@ -199,6 +202,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 9.627987635302453,
         "escape_target_source_id": "Qf2a_0002",
         "escape_within_group": false,
@@ -245,6 +249,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 10.878566183190266,
         "escape_target_source_id": "Qf2a_0006",
         "escape_within_group": false,
@@ -291,6 +296,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 10.880345409846448,
         "escape_target_source_id": "Qf2a_0001",
         "escape_within_group": false,
@@ -337,6 +343,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 1.9282057110752149,
         "escape_target_source_id": "Qf2a_0003",
         "escape_within_group": false,
@@ -383,6 +390,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 1.9298449843746397,
         "escape_target_source_id": "Qf2a_0011",
         "escape_within_group": false,
@@ -429,6 +437,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 1.9278896243995902,
         "escape_target_source_id": "Qf2a_0012",
         "escape_within_group": false,
@@ -475,6 +484,7 @@
       "classical_metrics": {},
       "pose_quality": {
         "label": "resistant",
+        "stability": "high",
         "escape_lift_mm": 1.9257354676760414,
         "escape_target_source_id": "Qf2a_0001",
         "escape_within_group": false,
@@ -2053,11 +2063,10 @@
     "schema_version": 1,
     "method": "sampled_seated_escape_lift",
     "method_version": 1,
-    "workpiece": "Qf2a",
-    "source_sha256": "8f5bb3e1f5fba36133a9cdeac28674d914d7513d85b25f03cf394db6ec32259e",
-    "observations_sha256": "8f5bb3e1f5fba36133a9cdeac28674d914d7513d85b25f03cf394db6ec32259e",
+    "producer": "dashas_drop_sim",
+    "engine_sha256": "820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420",
+    "input_signature": "eac00ceb030ddb966284a60b9af7247fcb35fe40a34131f925c61b6171d8a28b",
     "mesh_sha256": "b1f4448b82583ddeead119df5c4df5764268f553885e474d160a26f577c30219",
-    "config_sha256": "1bc6912c2bb65b025a69fe629e9aed9c7a145fb94526317af7b9e99dade6e8a8",
     "angular_step_deg": 0.1,
     "thresholds_mm": {
       "fragile": 0.1,
@@ -2065,22 +2074,41 @@
     },
     "alpha_deg": 45.0,
     "beta_deg": 0.0,
+    "symmetry_source": "saved_recognition",
+    "symmetry_symbol": "C2",
     "frequency_independent": true,
     "automatic_filtering": false,
     "uniform_density_assumed": true,
-    "interpretation": "Smallest sampled COM lift along symmetry-aware, two-plane-seated shortest rotations to recorded poses. This is an evaluated-path estimate, not a proven minimum escape energy or dynamic transport assessment. Frequency and pose-group incidence are unchanged; within-group rocking does not classify the whole group.",
+    "interpretation": "Sampled geometric tipping resistance, not dynamic survival or a proven minimum-energy path. Group membership and observations are unchanged.",
     "path_counts": {
       "reused": 2,
       "calculated": 64,
       "symmetry_equivalent": 0
     },
-    "saved_path_reuse": "Checksum-verified ordinary seated paths; missing paths are calculated.",
     "label_counts": {
-      "fragile": 0,
-      "marginal": 2,
       "resistant": 10,
+      "marginal": 2,
+      "fragile": 0,
       "unknown": 0
-    }
+    },
+    "stability_counts": {
+      "high": 10,
+      "medium": 2,
+      "low": 0,
+      "unknown": 0
+    },
+    "workpiece": "Qf2a",
+    "condition": "moving",
+    "config_sha256": "1bc6912c2bb65b025a69fe629e9aed9c7a145fb94526317af7b9e99dade6e8a8",
+    "source_sha256": "1a2721231daef1c5422766d8b58049e53201d9d8b96b9a439f6b2defe07f40ae",
+    "observations_sha256": "1a2721231daef1c5422766d8b58049e53201d9d8b96b9a439f6b2defe07f40ae",
+    "upstream_provenance": {
+      "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
+      "catalogue_path": "Qf2a/catalogue/grouped_10000/moving/catalogue.json",
+      "catalogue_sha256": "3ae565a01f8811a1211018abf5f54f3a5572ddc238295e107df42682b1254901",
+      "report_sha256": "afce21adb25ca473f7c375140092b3dd487b7dbd5140e95384b5285e92ed2f82"
+    },
+    "published": true
   },
   "geometric_pose_quality_evaluated": true,
   "part_name": "Qf2a",
@@ -2090,8 +2118,8 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "8f5bb3e1f5fba36133a9cdeac28674d914d7513d85b25f03cf394db6ec32259e",
-    "generated_utc": "2026-11-20T07:18:40.078157+00:00",
+    "source_sha256": "1a2721231daef1c5422766d8b58049e53201d9d8b96b9a439f6b2defe07f40ae",
+    "generated_utc": "2026-11-20T08:45:43.999589+00:00",
     "pose_id_mapping": {
       "Qf2a_0003": 0,
       "Qf2a_0011": 1,
@@ -2117,9 +2145,9 @@
     "evaluation_phase": "transport",
     "source_provenance": {
       "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
-      "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30",
+      "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
       "catalogue_path": "Qf2a/catalogue/grouped_10000/moving/catalogue.json",
-      "catalogue_sha256": "387359330c581d4eb25af0b5350ff080e3527c66d77a72fae08c449979020443",
+      "catalogue_sha256": "3ae565a01f8811a1211018abf5f54f3a5572ddc238295e107df42682b1254901",
       "condition": "moving",
       "classification_method": "observed-seated-geodesic-basins-v1",
       "representative_policy": "unchanged published catalogue quaternion",
@@ -2145,8 +2173,8 @@
       "frequency_denominator": "all completed drop trials, including unsettled outcomes",
       "numbering_tie_break": "original source ID",
       "source_file": "poses.json",
-      "source_sha256": "8f5bb3e1f5fba36133a9cdeac28674d914d7513d85b25f03cf394db6ec32259e",
-      "generated_utc": "2026-11-20T07:18:40.078157+00:00",
+      "source_sha256": "1a2721231daef1c5422766d8b58049e53201d9d8b96b9a439f6b2defe07f40ae",
+      "generated_utc": "2026-11-20T08:45:43.999589+00:00",
       "pose_id_mapping": {
         "Qf2a_0003": 0,
         "Qf2a_0011": 1,
@@ -2172,9 +2200,9 @@
       "evaluation_phase": "transport",
       "source_provenance": {
         "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
-        "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30",
+        "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
         "catalogue_path": "Qf2a/catalogue/grouped_10000/moving/catalogue.json",
-        "catalogue_sha256": "387359330c581d4eb25af0b5350ff080e3527c66d77a72fae08c449979020443",
+        "catalogue_sha256": "3ae565a01f8811a1211018abf5f54f3a5572ddc238295e107df42682b1254901",
         "condition": "moving",
         "classification_method": "observed-seated-geodesic-basins-v1",
         "representative_policy": "unchanged published catalogue quaternion",

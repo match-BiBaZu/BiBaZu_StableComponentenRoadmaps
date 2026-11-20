@@ -71,6 +71,14 @@ def import_catalogues(repo: Path, output: Path, revision: str, condition: str) -
         inventory = json.loads(blob(f"{folder}/files.sha256.json"))
         raw = verified(path, inventory["catalogue.json"])
         catalogue = json.loads(raw)
+        quality_raw = verified(f"{folder}/pose_quality.json", inventory["pose_quality.json"]) if "pose_quality.json" in inventory else None
+        quality = json.loads(quality_raw) if quality_raw else None
+        if quality is not None:
+            if (quality.get("producer") != "dashas_drop_sim" or quality.get("source_sha256") != hashlib.sha256(raw).hexdigest()
+                    or quality.get("input_signature") != catalogue.get("pose_quality_assessment", {}).get("input_signature")
+                    or set(quality.get("poses", {})) != {p["id"] for p in catalogue["poses"]}
+                    or any(p.get("pose_quality") != quality["poses"][p["id"]] for p in catalogue["poses"])):
+                raise ValueError("Published DropSim stability differs from the catalogue.")
         if catalogue["workpiece"] != part or catalogue["condition"] != condition:
             raise ValueError("Catalogue identity disagrees with the source index.")
         normalized = normalize_catalogue(catalogue, commit, path, hashlib.sha256(raw).hexdigest())
@@ -84,10 +92,18 @@ def import_catalogues(repo: Path, output: Path, revision: str, condition: str) -
             raise ValueError(f"Choose a fresh import folder: {destination}")
         destination.mkdir(parents=True)
         (destination / "catalogue.json").write_bytes(raw)
+        if quality_raw is not None:
+            (destination / "upstream_pose_quality.json").write_bytes(quality_raw)
         (destination / normalized["geometry"]["stl"]).write_bytes(mesh)
         (destination / "config.json").write_bytes(config)
         (destination / "grouping-evidence.json").write_bytes(evidence)
         write_json(destination / "poses.json", normalized)
+        if quality is not None:
+            quality["upstream_provenance"] = {"pose_revision": commit, "catalogue_path": path,
+                "catalogue_sha256": hashlib.sha256(raw).hexdigest(), "report_sha256": hashlib.sha256(quality_raw).hexdigest()}
+            digest = hashlib.sha256((destination / "poses.json").read_bytes()).hexdigest()
+            quality.update(source_sha256=digest, observations_sha256=digest, published=True)
+            write_json(destination / "pose_quality.json", quality)
         (destination / "README.md").write_text(
             f"# {part}: {condition}\n\nImported from pose revision `{commit}`.\n\n"
             f"Source: `{path}`. Original IDs, counts, groups and orientations are preserved.\n"

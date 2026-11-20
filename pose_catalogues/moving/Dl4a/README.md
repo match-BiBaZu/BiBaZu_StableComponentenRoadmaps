@@ -1,6 +1,6 @@
 # Dl4a: moving
 
-Imported from pose revision `b045887db591ff969b182d4a4ab1e9e14f11ab30`.
+Imported from pose revision `b12285c22de088ce1d96011a31d85945655388f1`.
 
 Source: `Dl4a/catalogue/grouped_10000/moving/catalogue.json`. Original IDs, counts, groups and orientations are preserved.
 `catalogue.json` is the original published file; `poses.json` adapts field names for the roadmap generator.

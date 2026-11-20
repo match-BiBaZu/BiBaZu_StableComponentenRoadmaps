@@ -2,11 +2,10 @@
   "schema_version": 1,
   "method": "sampled_seated_escape_lift",
   "method_version": 1,
-  "workpiece": "Kk1a",
-  "source_sha256": "33dbbbc3cdd5694f378714da00c81af82b1560ce6611feb4c10ec31c59cf09b2",
-  "observations_sha256": "33dbbbc3cdd5694f378714da00c81af82b1560ce6611feb4c10ec31c59cf09b2",
+  "producer": "dashas_drop_sim",
+  "engine_sha256": "820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420",
+  "input_signature": "8d9b645c776659ac5f4d88f42e3e93868b14c7a82a532705a1ed08e8d02c091a",
   "mesh_sha256": "b8417afd1da3e03481f282abec1b30b43f3d1e7e8f4d93d07a58f8c92ef2669b",
-  "config_sha256": "1687cdc6e8fbc8cca362e54ee08f88fae56a7541a9c04a6b76eb58ffa8c7586c",
   "angular_step_deg": 0.1,
   "thresholds_mm": {
     "fragile": 0.1,
@@ -14,25 +13,33 @@
   },
   "alpha_deg": 45.0,
   "beta_deg": 0.0,
+  "symmetry_source": "saved_recognition",
+  "symmetry_symbol": "Cinf",
   "frequency_independent": true,
   "automatic_filtering": false,
   "uniform_density_assumed": true,
-  "interpretation": "Smallest sampled COM lift along symmetry-aware, two-plane-seated shortest rotations to recorded poses. This is an evaluated-path estimate, not a proven minimum escape energy or dynamic transport assessment. Frequency and pose-group incidence are unchanged; within-group rocking does not classify the whole group.",
+  "interpretation": "Sampled geometric tipping resistance, not dynamic survival or a proven minimum-energy path. Group membership and observations are unchanged.",
   "path_counts": {
     "reused": 2,
     "calculated": 13,
     "symmetry_equivalent": 0
   },
-  "saved_path_reuse": "Checksum-verified ordinary seated paths; missing paths are calculated.",
   "label_counts": {
-    "fragile": 1,
-    "marginal": 0,
     "resistant": 5,
+    "marginal": 0,
+    "fragile": 1,
+    "unknown": 0
+  },
+  "stability_counts": {
+    "high": 5,
+    "medium": 0,
+    "low": 1,
     "unknown": 0
   },
   "poses": {
     "Kk1a_0001": {
       "label": "resistant",
+      "stability": "high",
       "escape_lift_mm": 5.206349230812654,
       "escape_target_source_id": "Kk1a_0002",
       "escape_within_group": false,
@@ -44,47 +51,23 @@
       "observed_frequency_percent": 25.21,
       "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
     },
-    "Kk1a_0002": {
-      "label": "fragile",
-      "escape_lift_mm": 0.0,
+    "Kk1a_0006": {
+      "label": "resistant",
+      "stability": "high",
+      "escape_lift_mm": 5.366199388626693,
       "escape_target_source_id": "Kk1a_0004",
       "escape_within_group": false,
-      "source_group_id": "G5",
-      "path_angle_deg": 37.48546417111285,
-      "peak_angle_deg": null,
-      "path_origin": "verified_saved_path",
-      "observed_count": 1,
-      "observed_frequency_percent": 0.01,
-      "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
-    },
-    "Kk1a_0003": {
-      "label": "resistant",
-      "escape_lift_mm": 1.7715500759575207,
-      "escape_target_source_id": "Kk1a_0001",
-      "escape_within_group": false,
-      "source_group_id": "G4",
-      "path_angle_deg": 84.3454414195744,
-      "peak_angle_deg": 31.979314282303083,
+      "source_group_id": "G1",
+      "path_angle_deg": 94.58004902413091,
+      "peak_angle_deg": 56.088168607333444,
       "path_origin": "calculated_path",
-      "observed_count": 278,
-      "observed_frequency_percent": 2.78,
-      "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
-    },
-    "Kk1a_0004": {
-      "label": "resistant",
-      "escape_lift_mm": 2.5499314098974892,
-      "escape_target_source_id": "Kk1a_0002",
-      "escape_within_group": false,
-      "source_group_id": "G3",
-      "path_angle_deg": 37.48546417111285,
-      "peak_angle_deg": null,
-      "path_origin": "verified_saved_path",
-      "observed_count": 1383,
-      "observed_frequency_percent": 13.83,
+      "observed_count": 2445,
+      "observed_frequency_percent": 24.45,
       "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
     },
     "Kk1a_0005": {
       "label": "resistant",
+      "stability": "high",
       "escape_lift_mm": 2.759316380789759,
       "escape_target_source_id": "Kk1a_0001",
       "escape_within_group": false,
@@ -96,18 +79,59 @@
       "observed_frequency_percent": 15.73,
       "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
     },
-    "Kk1a_0006": {
+    "Kk1a_0004": {
       "label": "resistant",
-      "escape_lift_mm": 5.366199388626693,
+      "stability": "high",
+      "escape_lift_mm": 2.5499314098974892,
+      "escape_target_source_id": "Kk1a_0002",
+      "escape_within_group": false,
+      "source_group_id": "G3",
+      "path_angle_deg": 37.48546417111285,
+      "peak_angle_deg": null,
+      "path_origin": "verified_saved_path",
+      "observed_count": 1383,
+      "observed_frequency_percent": 13.83,
+      "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
+    },
+    "Kk1a_0003": {
+      "label": "resistant",
+      "stability": "high",
+      "escape_lift_mm": 1.7715500759575207,
+      "escape_target_source_id": "Kk1a_0001",
+      "escape_within_group": false,
+      "source_group_id": "G4",
+      "path_angle_deg": 84.3454414195744,
+      "peak_angle_deg": 31.979314282303083,
+      "path_origin": "calculated_path",
+      "observed_count": 278,
+      "observed_frequency_percent": 2.78,
+      "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
+    },
+    "Kk1a_0002": {
+      "label": "fragile",
+      "stability": "low",
+      "escape_lift_mm": 0.0,
       "escape_target_source_id": "Kk1a_0004",
       "escape_within_group": false,
-      "source_group_id": "G1",
-      "path_angle_deg": 94.58004902413091,
-      "peak_angle_deg": 56.088168607333444,
-      "path_origin": "calculated_path",
-      "observed_count": 2445,
-      "observed_frequency_percent": 24.45,
+      "source_group_id": "G5",
+      "path_angle_deg": 37.48546417111285,
+      "peak_angle_deg": null,
+      "path_origin": "verified_saved_path",
+      "observed_count": 1,
+      "observed_frequency_percent": 0.01,
       "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
     }
-  }
+  },
+  "workpiece": "Kk1a",
+  "condition": "moving",
+  "config_sha256": "1687cdc6e8fbc8cca362e54ee08f88fae56a7541a9c04a6b76eb58ffa8c7586c",
+  "source_sha256": "1c6d71d811593e51ac199639505dad33c8d82ae7804ad37f6abca1fadf0dfb01",
+  "observations_sha256": "1c6d71d811593e51ac199639505dad33c8d82ae7804ad37f6abca1fadf0dfb01",
+  "upstream_provenance": {
+    "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
+    "catalogue_path": "Kk1a/catalogue/grouped_10000/moving/catalogue.json",
+    "catalogue_sha256": "88c50a01e8d7995846149f96e6fad5d39b07177cbba59a9e28891eaa5547d3cb",
+    "report_sha256": "90ebf9f87531c71c79445762dd4de22b4e2ac83a58a5a90b5c894bf6b0d593d5"
+  },
+  "published": true
 }

@@ -50,8 +50,8 @@ classification:
       frequency_denominator: all completed drop trials, including unsettled outcomes
       numbering_tie_break: original source ID
       source_file: poses.json
-      source_sha256: a40a441476a42333bf69e4b2585bb77d817e84b7ad4a1e1535e50deb68b54c8b
-      generated_utc: '2026-11-20T07:19:44.236468+00:00'
+      source_sha256: 2b06b85a97468933f75a1e0588e6d7f981841fe846f8be6bd8e3fd734824c6ab
+      generated_utc: '2026-11-20T08:46:44.955222+00:00'
       pose_id_mapping:
         Ql4i_0013: 0
         Ql4i_0012: 1
@@ -97,9 +97,9 @@ classification:
       evaluation_phase: transport
       source_provenance:
         pose_repository: https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses
-        pose_revision: b045887db591ff969b182d4a4ab1e9e14f11ab30
+        pose_revision: b12285c22de088ce1d96011a31d85945655388f1
         catalogue_path: Ql4i/catalogue/grouped_10000/moving/catalogue.json
-        catalogue_sha256: 990cc1de96a4e20f823f527e63aaf80ee512bf2d6d8b47e356d516990e42e4a0
+        catalogue_sha256: 73a002ce66572f5b798395c0a979c6710979062390528825404a480df61b1b74
         condition: moving
         classification_method: observed-seated-geodesic-basins-v1
         representative_policy: unchanged published catalogue quaternion
@@ -148,6 +148,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 5.65244496849709
     escape_target_source_id: Ql4i_0020
     escape_within_group: false
@@ -189,6 +190,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 5.649861890340123
     escape_target_source_id: Ql4i_0021
     escape_within_group: false
@@ -230,6 +232,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 5.6480467152755605
     escape_target_source_id: Ql4i_0012
     escape_within_group: false
@@ -271,6 +274,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 5.645954236079968
     escape_target_source_id: Ql4i_0013
     escape_within_group: false
@@ -312,6 +316,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 5.363598353121926
     escape_target_source_id: Ql4i_0012
     escape_within_group: false
@@ -353,6 +358,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 5.364760318606567
     escape_target_source_id: Ql4i_0013
     escape_within_group: false
@@ -394,6 +400,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 5.36857851402179
     escape_target_source_id: Ql4i_0020
     escape_within_group: false
@@ -435,6 +442,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 5.3655285882708625
     escape_target_source_id: Ql4i_0012
     escape_within_group: false
@@ -1852,32 +1860,45 @@ pose_quality_assessment:
   schema_version: 1
   method: sampled_seated_escape_lift
   method_version: 1
-  workpiece: Ql4i
-  source_sha256: a40a441476a42333bf69e4b2585bb77d817e84b7ad4a1e1535e50deb68b54c8b
-  observations_sha256: a40a441476a42333bf69e4b2585bb77d817e84b7ad4a1e1535e50deb68b54c8b
+  producer: dashas_drop_sim
+  engine_sha256: 820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420
+  input_signature: 97bf5a889da0997f8b7424c7882ba95bdc59cdad99840d748a400f8874804a89
   mesh_sha256: 56d6ffc478806601b41f53c949e98b922b4b0e8bcadb1e8b6b62deeeea417ae5
-  config_sha256: 2e016bf0f6de7d463bb47c546eb248752370fe1072973d84649ce7247f8650a3
   angular_step_deg: 0.1
   thresholds_mm:
     fragile: 0.1
     resistant: 0.5
   alpha_deg: 45.0
   beta_deg: 0.0
+  symmetry_source: saved_recognition
+  symmetry_symbol: C1
   frequency_independent: true
   automatic_filtering: false
   uniform_density_assumed: true
-  interpretation: Smallest sampled COM lift along symmetry-aware, two-plane-seated
-    shortest rotations to recorded poses. This is an evaluated-path estimate, not
-    a proven minimum escape energy or dynamic transport assessment. Frequency and
-    pose-group incidence are unchanged; within-group rocking does not classify the
-    whole group.
+  interpretation: Sampled geometric tipping resistance, not dynamic survival or a
+    proven minimum-energy path. Group membership and observations are unchanged.
   path_counts:
     reused: 0
     calculated: 276
     symmetry_equivalent: 0
-  saved_path_reuse: Checksum-verified ordinary seated paths; missing paths are calculated.
   label_counts:
-    fragile: 0
-    marginal: 0
     resistant: 24
+    marginal: 0
+    fragile: 0
     unknown: 0
+  stability_counts:
+    high: 24
+    medium: 0
+    low: 0
+    unknown: 0
+  workpiece: Ql4i
+  condition: moving
+  config_sha256: 2e016bf0f6de7d463bb47c546eb248752370fe1072973d84649ce7247f8650a3
+  source_sha256: 2b06b85a97468933f75a1e0588e6d7f981841fe846f8be6bd8e3fd734824c6ab
+  observations_sha256: 2b06b85a97468933f75a1e0588e6d7f981841fe846f8be6bd8e3fd734824c6ab
+  upstream_provenance:
+    pose_revision: b12285c22de088ce1d96011a31d85945655388f1
+    catalogue_path: Ql4i/catalogue/grouped_10000/moving/catalogue.json
+    catalogue_sha256: 73a002ce66572f5b798395c0a979c6710979062390528825404a480df61b1b74
+    report_sha256: 97d68ffd312127b39275712d3cc05b57d5712a5089141a6205e30f030874951e
+  published: true

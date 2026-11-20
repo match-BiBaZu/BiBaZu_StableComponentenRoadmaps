@@ -2,7 +2,7 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Df1a",
-  "generated_utc": "2026-11-20T07:14:53.486916+00:00",
+  "generated_utc": "2026-11-20T08:43:19.839598+00:00",
   "pose_count": 4,
   "transition_count": 6,
   "minimum_frequency_percent": 1.0,
@@ -27,8 +27,8 @@
     "frequency_denominator": "all completed drop trials, including unsettled outcomes",
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
-    "source_sha256": "26af624ca03caa372ebc967544ff303e256b449ca8884acb6ae088bef86f27d6",
-    "generated_utc": "2026-11-20T07:14:53.486916+00:00",
+    "source_sha256": "651052173cfa88ff03096c78467839bd4cfa4ac4b0fa2c6ccf3dc1d00f3a4e6f",
+    "generated_utc": "2026-11-20T08:43:19.839598+00:00",
     "pose_id_mapping": {
       "Df1a_0004": 0,
       "Df1a_0007": 1,
@@ -64,9 +64,9 @@
     "evaluation_phase": "transport",
     "source_provenance": {
       "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
-      "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30",
+      "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
       "catalogue_path": "Df1a/catalogue/grouped_10000/moving/catalogue.json",
-      "catalogue_sha256": "213dea79a5d045f2f2a92a91ebb6617444c310565e4a7ab8e257282f3f19cfef",
+      "catalogue_sha256": "059a728c7888707e5859e3626f0c9c163a37546dfb05e93032ad3813a593594e",
       "condition": "moving",
       "classification_method": "observed-seated-geodesic-basins-v1",
       "representative_policy": "unchanged published catalogue quaternion",
@@ -91,11 +91,10 @@
     "schema_version": 1,
     "method": "sampled_seated_escape_lift",
     "method_version": 1,
-    "workpiece": "Df1a",
-    "source_sha256": "26af624ca03caa372ebc967544ff303e256b449ca8884acb6ae088bef86f27d6",
-    "observations_sha256": "26af624ca03caa372ebc967544ff303e256b449ca8884acb6ae088bef86f27d6",
+    "producer": "dashas_drop_sim",
+    "engine_sha256": "820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420",
+    "input_signature": "c70f6f514604ecd96e814a5b8386ea671f39a3e34cc55d0e575c6105a9f23f06",
     "mesh_sha256": "8ef45da56ee7d22fa2aba4ae3cffa0bf39a673d27172a994cdbfe9cb05ad6099",
-    "config_sha256": "80f20881ead14a0517c9c8894230efa7eab21fdaa3e96d251d331959772d3b6e",
     "angular_step_deg": 0.1,
     "thresholds_mm": {
       "fragile": 0.1,
@@ -103,22 +102,41 @@
     },
     "alpha_deg": 45.0,
     "beta_deg": 0.0,
+    "symmetry_source": "saved_recognition",
+    "symmetry_symbol": "C3",
     "frequency_independent": true,
     "automatic_filtering": false,
     "uniform_density_assumed": true,
-    "interpretation": "Smallest sampled COM lift along symmetry-aware, two-plane-seated shortest rotations to recorded poses. This is an evaluated-path estimate, not a proven minimum escape energy or dynamic transport assessment. Frequency and pose-group incidence are unchanged; within-group rocking does not classify the whole group.",
+    "interpretation": "Sampled geometric tipping resistance, not dynamic survival or a proven minimum-energy path. Group membership and observations are unchanged.",
     "path_counts": {
       "reused": 8,
       "calculated": 37,
       "symmetry_equivalent": 0
     },
-    "saved_path_reuse": "Checksum-verified ordinary seated paths; missing paths are calculated.",
     "label_counts": {
-      "fragile": 0,
-      "marginal": 4,
       "resistant": 6,
+      "marginal": 4,
+      "fragile": 0,
       "unknown": 0
-    }
+    },
+    "stability_counts": {
+      "high": 6,
+      "medium": 4,
+      "low": 0,
+      "unknown": 0
+    },
+    "workpiece": "Df1a",
+    "condition": "moving",
+    "config_sha256": "80f20881ead14a0517c9c8894230efa7eab21fdaa3e96d251d331959772d3b6e",
+    "source_sha256": "651052173cfa88ff03096c78467839bd4cfa4ac4b0fa2c6ccf3dc1d00f3a4e6f",
+    "observations_sha256": "651052173cfa88ff03096c78467839bd4cfa4ac4b0fa2c6ccf3dc1d00f3a4e6f",
+    "upstream_provenance": {
+      "pose_revision": "b12285c22de088ce1d96011a31d85945655388f1",
+      "catalogue_path": "Df1a/catalogue/grouped_10000/moving/catalogue.json",
+      "catalogue_sha256": "059a728c7888707e5859e3626f0c9c163a37546dfb05e93032ad3813a593594e",
+      "report_sha256": "83bb476ef8ca753ca8b9c263be74766204f5f7f735111b771fe3acaf00ced327"
+    },
+    "published": true
   },
   "engine_provenance": {
     "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose",

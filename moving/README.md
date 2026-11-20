@@ -5,6 +5,8 @@ Kf1i has two observed poses at 0.06% and 0.03%; neither meets the 1% cutoff. No 
 
 Geometric quality is recorded independently of frequency in each component's `pose_quality.json` and pose table. Labels never remove poses.
 
+Stability is published by DropSim and displayed High, Medium, then Low.
+
 <!-- GENERATED ROADMAP INDEX START -->
 | Component | Poses | Connections | Minimum frequency | Numbering |
 | --- | ---: | ---: | ---: | --- |

@@ -51,8 +51,8 @@ classification:
       frequency_denominator: all completed drop trials, including unsettled outcomes
       numbering_tie_break: original source ID
       source_file: poses.json
-      source_sha256: d07f643869bca8ac5bdcb82ca9cad3814193fd64e929303a2a5f6621e92e214a
-      generated_utc: '2026-11-20T07:14:59.926487+00:00'
+      source_sha256: 0d4ff587a9c8c002d9448855ec667ab0d53b616d2cb3c14eb0803c57a40154bc
+      generated_utc: '2026-11-20T08:43:25.779271+00:00'
       pose_id_mapping:
         Df4a_0006: 0
         Df4a_0005: 1
@@ -82,9 +82,9 @@ classification:
       evaluation_phase: transport
       source_provenance:
         pose_repository: https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses
-        pose_revision: b045887db591ff969b182d4a4ab1e9e14f11ab30
+        pose_revision: b12285c22de088ce1d96011a31d85945655388f1
         catalogue_path: Df4a/catalogue/grouped_10000/moving/catalogue.json
-        catalogue_sha256: 8f72cb6e890d6fb9261bd94c7b95de132ce108f34917f5c82c5d553c06474b53
+        catalogue_sha256: 9387c26e4a272c0cf274136094e0b52693aebb3a7dcd2468f74d33e4ee99519e
         condition: moving
         classification_method: observed-seated-geodesic-basins-v1
         representative_policy: unchanged published catalogue quaternion
@@ -133,6 +133,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 9.622588755152591
     escape_target_source_id: Df4a_0001
     escape_within_group: false
@@ -174,6 +175,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 9.624551483211821
     escape_target_source_id: Df4a_0002
     escape_within_group: false
@@ -215,6 +217,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 9.629362612935719
     escape_target_source_id: Df4a_0014
     escape_within_group: false
@@ -256,6 +259,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 7.669082925565057
     escape_target_source_id: Df4a_0010
     escape_within_group: false
@@ -297,6 +301,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 7.66946049354733
     escape_target_source_id: Df4a_0009
     escape_within_group: false
@@ -338,6 +343,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 9.625905040750634
     escape_target_source_id: Df4a_0015
     escape_within_group: false
@@ -379,6 +385,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 7.67189341846408
     escape_target_source_id: Df4a_0005
     escape_within_group: false
@@ -420,6 +427,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 7.67502430056437
     escape_target_source_id: Df4a_0006
     escape_within_group: false
@@ -461,6 +469,7 @@ poses:
     main_face_on_wall: true
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 8.133954458213225
     escape_target_source_id: Df4a_0012
     escape_within_group: false
@@ -502,6 +511,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 8.138133006796117
     escape_target_source_id: Df4a_0018
     escape_within_group: false
@@ -543,6 +553,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 6.184472684720845
     escape_target_source_id: Df4a_0011
     escape_within_group: false
@@ -584,6 +595,7 @@ poses:
     main_face_on_wall: false
   pose_quality:
     label: resistant
+    stability: high
     escape_lift_mm: 6.182915554561564
     escape_target_source_id: Df4a_0013
     escape_within_group: false
@@ -2071,32 +2083,45 @@ pose_quality_assessment:
   schema_version: 1
   method: sampled_seated_escape_lift
   method_version: 1
-  workpiece: Df4a
-  source_sha256: d07f643869bca8ac5bdcb82ca9cad3814193fd64e929303a2a5f6621e92e214a
-  observations_sha256: d07f643869bca8ac5bdcb82ca9cad3814193fd64e929303a2a5f6621e92e214a
+  producer: dashas_drop_sim
+  engine_sha256: 820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420
+  input_signature: abaa8c7174a4fd785aed18d91af3f376051d106d06ef9137b3dcdb4573d8e404
   mesh_sha256: 63441ecf57824628fdda55716ecbd09f4328256e13419d76b622c545dfa5f702
-  config_sha256: f08137896d913ecc4096c182e039542b41b0090c1164466cafec89f70a06d7d6
   angular_step_deg: 0.1
   thresholds_mm:
     fragile: 0.1
     resistant: 0.5
   alpha_deg: 45.0
   beta_deg: 0.0
+  symmetry_source: saved_recognition
+  symmetry_symbol: C1
   frequency_independent: true
   automatic_filtering: false
   uniform_density_assumed: true
-  interpretation: Smallest sampled COM lift along symmetry-aware, two-plane-seated
-    shortest rotations to recorded poses. This is an evaluated-path estimate, not
-    a proven minimum escape energy or dynamic transport assessment. Frequency and
-    pose-group incidence are unchanged; within-group rocking does not classify the
-    whole group.
+  interpretation: Sampled geometric tipping resistance, not dynamic survival or a
+    proven minimum-energy path. Group membership and observations are unchanged.
   path_counts:
     reused: 1
     calculated: 152
     symmetry_equivalent: 0
-  saved_path_reuse: Checksum-verified ordinary seated paths; missing paths are calculated.
   label_counts:
-    fragile: 0
-    marginal: 6
     resistant: 12
+    marginal: 6
+    fragile: 0
     unknown: 0
+  stability_counts:
+    high: 12
+    medium: 6
+    low: 0
+    unknown: 0
+  workpiece: Df4a
+  condition: moving
+  config_sha256: f08137896d913ecc4096c182e039542b41b0090c1164466cafec89f70a06d7d6
+  source_sha256: 0d4ff587a9c8c002d9448855ec667ab0d53b616d2cb3c14eb0803c57a40154bc
+  observations_sha256: 0d4ff587a9c8c002d9448855ec667ab0d53b616d2cb3c14eb0803c57a40154bc
+  upstream_provenance:
+    pose_revision: b12285c22de088ce1d96011a31d85945655388f1
+    catalogue_path: Df4a/catalogue/grouped_10000/moving/catalogue.json
+    catalogue_sha256: 9387c26e4a272c0cf274136094e0b52693aebb3a7dcd2468f74d33e4ee99519e
+    report_sha256: 8dae10fa4b8d1ab7c90a190684cfbe92fa5918710f1086200dad5c2a42da1b6c
+  published: true

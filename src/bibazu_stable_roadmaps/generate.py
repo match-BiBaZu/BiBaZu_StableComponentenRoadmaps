@@ -21,7 +21,7 @@ import yaml
 from .inputs import EmptyPoseList, load_source, select_poses, sha256, read_json
 from .roadmap import build_roadmap, handover_dict
 from .render import thumbnails, embed_thumbnails, render_roadmap, render_pose_sheets
-from .quality import analyze_pose_quality
+from .published_quality import analyze_pose_quality
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUTS = {"yaml": "YAML", "json": "JSON", "graphml": "GraphML", "roadmap_svg": "Roadmap SVG",
@@ -145,7 +145,7 @@ def _write_graphml(document: dict, destination: Path):
     for node in document["nodes"]:
         attributes = {key: json.dumps(value) if isinstance(value, (list, dict)) else value
                       for key, value in node.items() if value is not None and key not in {"node_id", "thumbnail_png_base64"}}
-        for key in ("label", "escape_lift_mm", "escape_target_source_id", "escape_within_group"):
+        for key in ("label", "stability", "escape_lift_mm", "escape_target_source_id", "escape_within_group"):
             value = node.get("pose_quality", {}).get(key)
             if value is not None:
                 attributes[f"pose_quality_{key}"] = value
@@ -219,11 +219,11 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             progress(message)
         check_cancel()
         built = build_roadmap(source, numbered, report)
-        report("Assessing geometric tipping resistance independently of frequency")
+        report("Loading published DropSim stability independently of frequency")
         quality = analyze_pose_quality(source, mesh=built.mesh, progress=report, check_cancel=check_cancel)
         quality_metadata = {key: value for key, value in quality.items() if key != "poses"}
         built.document["pose_quality_assessment"] = quality_metadata
-        built.document["geometric_pose_quality_evaluated"] = True
+        built.document["geometric_pose_quality_evaluated"] = quality.get("published", False)
         for node in built.document["nodes"]:
             node["pose_quality"] = quality["poses"][node["source_pose_ids"][0]]
         for warning in built.warnings:
@@ -276,26 +276,26 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                         "renumber_by_frequency": config.renumber_by_frequency,
                         "settings": {**asdict(config), "output_root": "."}, "input": metadata,
                         "analytical_stability_evaluated": False,
-                        "geometric_pose_quality_evaluated": True, "pose_quality_assessment": quality_metadata,
+                        "geometric_pose_quality_evaluated": quality.get("published", False), "pose_quality_assessment": quality_metadata,
                         "engine_provenance": read_json(ROOT / "ENGINE_PROVENANCE.json"), "warnings": built.warnings}
             write_json(staging / "manifest.json", manifest)
             lines = [f"# {source.workpiece}\n", "Observed simulation poses; geometry supplies untested direct connection candidates.",
                      f"\nMinimum frequency: **{config.minimum_frequency_percent:g}%**. Percentages retain the source denominator.",
-                     "\n| Roadmap pose | Source pose | Frequency | Count | Geometric quality | Lift to tip (mm) | Easiest target |",
+                     "\n| Roadmap pose | Source pose | Frequency | Count | Stability | Lift to tip (mm) | Easiest target |",
                      "| ---: | --- | ---: | ---: | --- | ---: | --- |"]
             if metadata.get("evaluation_phase"):
                 phase = metadata["evaluation_phase"].replace("_", " ")
                 lines.insert(2, f"\nObservation phase: **{phase}**.")
-            for pose, number in numbered:
+            for pose, number in sorted(numbered, key=lambda item: ({"high": 0, "medium": 1, "low": 2, "unknown": 3}[quality["poses"][item[0].source_id]["stability"]], item[1])):
                 entry = quality["poses"][pose.source_id]
                 lift = entry["escape_lift_mm"]
                 value = f"{lift:.4f}" if lift is not None else "unknown"
                 target = entry["escape_target_source_id"] or "unknown"
                 if entry.get("escape_within_group"):
                     target += " (within group)"
-                lines.append(f"| {number} | {pose.source_id} | {pose.frequency_percent:g}% | {pose.count if pose.count is not None else 'unknown'} | {entry['label'].capitalize()} | {value} | {target} |")
+                lines.append(f"| {number} | {pose.source_id} | {pose.frequency_percent:g}% | {pose.count if pose.count is not None else 'unknown'} | {entry['stability'].title()} | {value} | {target} |")
             lines.append("\n[Pose quality report](pose_quality.json) includes every input pose, including those below the frequency cutoff. "
-                         "Fragile: below 0.1 mm; marginal: 0.1–below 0.5 mm; resistant: at least 0.5 mm. "
+                         "High: at least 0.5 mm; Medium: 0.1–below 0.5 mm; Low: below 0.1 mm. Ratings are published by DropSim after grouping. "
                          "These are sampled geometric lift estimates, not measured survival probabilities. "
                          "Within-group movement describes rocking in that group and does not classify the whole group as unstable. "
                          "Quality does not filter or renumber poses.")

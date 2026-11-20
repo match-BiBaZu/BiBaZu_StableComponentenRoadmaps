@@ -5,7 +5,7 @@ reorientation roadmaps. Observations determine the nodes; geometry calculates
 direct connection candidates and renders the saved orientations.
 
 The current roadmaps use the newest published [BiBaZu Stable Component Poses
-release](https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses/tree/b045887db591ff969b182d4a4ab1e9e14f11ab30),
+release](https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses/tree/b12285c22de088ce1d96011a31d85945655388f1),
 covering **39 workpieces**. These exports use only its 39 moving-belt runs,
 with **10,000 completed trials per workpiece** (390,000 moving-belt drops).
 The current roadmaps are in [moving/](moving/README.md). The exports retain the
@@ -101,61 +101,48 @@ not used for the current published catalogues.
    are logged as skipped, preserving any previous result. Cancel stops at a safe
    boundary and retains completed results.
 
-## Geometric pose quality
+## Stability
 
-Quality answers: **How far must the centre of mass rise before the part can tip
-into another recorded pose?** It is separate from how frequently the pose occurs.
+DropSim assesses geometric stability immediately after grouping. This application
+reads the published results; it does not calculate a second stability model.
+The Stability column displays **High**, **Medium**, then **Low**, followed by
+Unknown or Not assessed. This display order never changes saved pose IDs,
+frequency-based numbering, groups or counts.
 
-| Minimum sampled lift | Quality |
+| Stability | Minimum sampled lift needed to tip |
 | --- | --- |
-| Below 0.1 mm | Fragile |
-| 0.1 mm to below 0.5 mm | Marginal |
-| At least 0.5 mm | Resistant |
-| No distinct recorded destination or insufficient geometry | Unknown |
+| High | At least 0.5 mm |
+| Medium | 0.1 mm to below 0.5 mm |
+| Low | Below 0.1 mm |
+| Unknown | No distinct destination could be assessed |
 
-The current 439 roadmap poses comprise **96 fragile, 50 marginal and 293 resistant**
-poses. All remain in the roadmaps. The [catalogue quality summary](moving/pose_quality_summary.json)
-also counts all 1,104 source poses assessed for the 38 exported components.
+The thresholds remain geometric heuristics, independent of occurrence frequency
+and not fitted to physical-test results. Within-group rocking is marked separately;
+it does not mean the whole group is unstable. These are not dynamic survival
+probabilities. Stability does not remove poses or change connections.
 
-The calculation rotates the saved mesh along symmetry-aware shortest paths to
-other observed poses, seats it against both belt and wall at every step, and
-measures centre-of-mass height in the gravity direction of the inclined chute.
-Sampling is at most 0.1° and paths beyond the old 60° grouping limit are included.
-Compatible checksum-verified saved path evidence can be reused; other paths are
-calculated from geometry. No new drop or disturbance simulations are run.
+The importer verifies the upstream catalogue and detached `pose_quality.json`
+report, preserving its producer, method, input signature and source revision.
+Local report hashes are adapted to the normalized input files while original
+upstream hashes remain in provenance. Source snapshots and observations are
+preserved. Missing reports show **Not assessed**; mismatched or stale reports
+are rejected rather than recalculated.
 
-Every input pose participates, including destinations below the frequency cutoff.
-The minimum directed lift across evaluated paths determines the label. The
-easiest destination stays a **source pose ID**, even if that pose is excluded from
-the exported roadmap. Within-group movement is identified as rocking inside
-that group; it does not declare the whole group unstable. Source orientations,
-IDs, groups, frequencies and observation counts are preserved. Quality does not
-remove nodes or change connections or numbering.
+Use **Reload stability** to reload the selected inputs' published ratings. Both
+belt conditions are assessed in the upstream pose repository; these roadmaps
+continue to use moving-belt inputs only, with the existing 1% frequency cutoff.
+Every source pose participates upstream, including destinations below that cutoff.
 
-The GUI's **Assess pose quality** action evaluates the selected component in a
-background worker and displays quality, lift and easiest destination alongside
-frequency. Saved reports are reused only when they match the input files. The
-same assessment is included automatically when generating exports. Each
-component's `pose_quality.json` contains the complete assessment, including poses
-below the frequency cutoff; JSON/YAML nodes and GraphML attributes carry the
-corresponding retained-pose results. Pose sheets and roadmap diagrams display
-the quality separately from frequency.
-
-For an assessment without regenerating roadmaps:
+To backfill existing catalogues, run from the DropSim repository:
 
 ```powershell
-uv run python -m bibazu_stable_roadmaps.quality --source pose_catalogues/moving/Dk1i/poses.json --output Dk1i_quality.json
+uv run python -m dashas_drop_sim.catalogue_quality --repo ..\BiBaZu_StableComponentenPoses --condition both
 ```
 
-These are heuristic **geometric tipping-resistance estimates**, not survival
-probabilities, experimental validation or a proof of the globally easiest escape.
-Friction, impulses, rolling dynamics and downstream transport failures are not
-evaluated. A rare pose can be resistant, and a common pose can be fragile. The
-thresholds are not fitted to the physical drop-test counts.
-The path-height calculation follows the geometric approach in
-[REST Assured, Section 4.2](https://match-bibazu.github.io/assets/papers/rest-assured-cirp-cms-2027.pdf).
-Its 0.5 mm grouping scale and the additional 0.1 mm quality boundary are used
-as explanatory heuristics, not calibrated physical limits.
+The command uses saved geometry and poses; it runs no new drop or disturbance
+simulations. Import the resulting committed pose revision and regenerate roadmaps
+using the existing importer and generation commands above. JSON/YAML/GraphML,
+pose sheets and diagrams carry the same published Stability rating.
 
 The STL is resolved beside the JSON and checked against its stored hash. Angles
 are taken from the neighboring simulation `config.json`, defaulting to X=45°,
@@ -163,7 +150,7 @@ Y=0° if it is absent. Each retained entry remains a separate node, including
 symmetry-equivalent observations. Original quaternions are normalized without
 changing their physical orientation. No theoretical enumeration, snapping,
 quality-based selection, clustering, or rocking-based ordering occurs during
-roadmap generation. Geometric quality is assessed and reported separately.
+roadmap generation. Published stability is verified and reported separately.
 
 Connections use the bundled engine's directed action domains, contact/main-face
 requirements, 25 mm opposite-X support rule, and 1° axis tolerance. Part symmetry

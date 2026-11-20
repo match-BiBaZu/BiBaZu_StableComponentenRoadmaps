@@ -112,7 +112,21 @@
         9540
       ],
       "image": "poses/P000.png",
-      "image_sha256": "91675d9af24e1d81883aada48f92f0dab2813bdbb590e50eb30002e19d7a15f5"
+      "image_sha256": "91675d9af24e1d81883aada48f92f0dab2813bdbb590e50eb30002e19d7a15f5",
+      "pose_quality": {
+        "label": "marginal",
+        "stability": "medium",
+        "escape_lift_mm": 0.16478683273712136,
+        "escape_target_source_id": "Kf1i_0002",
+        "escape_within_group": false,
+        "source_group_id": "G0",
+        "path_angle_deg": 179.98605460170788,
+        "peak_angle_deg": 174.18650395343062,
+        "path_origin": "calculated_path",
+        "observed_count": 6,
+        "observed_frequency_percent": 0.06,
+        "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
+      }
     },
     {
       "id": "Kf1i_0002",
@@ -139,9 +153,66 @@
         9913
       ],
       "image": "poses/P001.png",
-      "image_sha256": "58f27c9ecf32e720fb62cd1dbb904bb3f0ccc616d4d549cd7c48ef3b8adf7f06"
+      "image_sha256": "58f27c9ecf32e720fb62cd1dbb904bb3f0ccc616d4d549cd7c48ef3b8adf7f06",
+      "pose_quality": {
+        "label": "marginal",
+        "stability": "medium",
+        "escape_lift_mm": 0.14442931202083287,
+        "escape_target_source_id": "Kf1i_0001",
+        "escape_within_group": false,
+        "source_group_id": "G1",
+        "path_angle_deg": 179.98605460170788,
+        "peak_angle_deg": 5.799550648277261,
+        "path_origin": "calculated_path",
+        "observed_count": 3,
+        "observed_frequency_percent": 0.03,
+        "reason": "Sampled geometric escape to another recorded pose; not a dynamic stability guarantee."
+      }
     }
   ],
   "grouping_evidence": "grouping-evidence.json",
-  "grouping_evidence_sha256": "12b4c2dc0735f48a6294cc19c8aca3c76845605f469a9bc8a48653b393615d23"
+  "grouping_evidence_sha256": "12b4c2dc0735f48a6294cc19c8aca3c76845605f469a9bc8a48653b393615d23",
+  "pose_quality_assessment": {
+    "schema_version": 1,
+    "method": "sampled_seated_escape_lift",
+    "method_version": 1,
+    "producer": "dashas_drop_sim",
+    "engine_sha256": "820aefcafd3cba97df6969aac763c6062db93196d5cbe81322e3bdb20a184420",
+    "input_signature": "b0c8f3076dc7e092e955eaff3a7cb1d528fe7922c3584594f50b42e5cb962914",
+    "mesh_sha256": "e87f5f88d802f8a85a2dee6c85f5306b1dd690860ddf9bb587ec1561e0e4097a",
+    "angular_step_deg": 0.1,
+    "thresholds_mm": {
+      "fragile": 0.1,
+      "resistant": 0.5
+    },
+    "alpha_deg": 45.0,
+    "beta_deg": 0.0,
+    "symmetry_source": "saved_recognition",
+    "symmetry_symbol": "Cinf",
+    "frequency_independent": true,
+    "automatic_filtering": false,
+    "uniform_density_assumed": true,
+    "interpretation": "Sampled geometric tipping resistance, not dynamic survival or a proven minimum-energy path. Group membership and observations are unchanged.",
+    "path_counts": {
+      "reused": 0,
+      "calculated": 1,
+      "symmetry_equivalent": 0
+    },
+    "label_counts": {
+      "resistant": 0,
+      "marginal": 2,
+      "fragile": 0,
+      "unknown": 0
+    },
+    "stability_counts": {
+      "high": 0,
+      "medium": 2,
+      "low": 0,
+      "unknown": 0
+    },
+    "workpiece": "Kf1i",
+    "condition": "moving",
+    "config_sha256": "f9564bc62b7a2e628a77de6f776af3ae9e5af3597d24a7004e43bba12e812e51"
+  },
+  "pose_quality_report": "pose_quality.json"
 }
