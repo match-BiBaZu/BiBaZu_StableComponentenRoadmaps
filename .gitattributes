@@ -4,8 +4,11 @@
 *.ps1 text eol=crlf
 
 # Inventories record exact export/snapshot bytes across Git checkouts.
-*/*_roadmap.* -text -whitespace
-*/manifest.json -text -whitespace
-*/files.sha256.json -text -whitespace
-*/README.md -text -whitespace
-*/source/** -text -whitespace
+moving/** -text -whitespace
+**/*_roadmap.* -text -whitespace
+**/manifest.json -text -whitespace
+**/files.sha256.json -text -whitespace
+**/README.md -text -whitespace
+**/source/** -text -whitespace
+**/pose_sheets/** -text -whitespace
+pose_catalogues/** -text -whitespace

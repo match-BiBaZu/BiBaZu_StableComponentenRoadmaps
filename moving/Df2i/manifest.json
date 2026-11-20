@@ -1,0 +1,144 @@
+{
+  "format": "bibazu_observed_roadmap_generation",
+  "schema_version": 1,
+  "workpiece": "Df2i",
+  "generated_utc": "2026-11-20T07:14:56.092830+00:00",
+  "pose_count": 6,
+  "transition_count": 22,
+  "minimum_frequency_percent": 1.0,
+  "renumber_by_frequency": true,
+  "settings": {
+    "output_root": ".",
+    "minimum_frequency_percent": 1.0,
+    "renumber_by_frequency": true,
+    "outputs": [
+      "yaml",
+      "json",
+      "graphml",
+      "roadmap_svg",
+      "roadmap_png",
+      "poses_svg",
+      "poses_png"
+    ]
+  },
+  "input": {
+    "minimum_frequency_percent": 1.0,
+    "renumber_by_frequency": true,
+    "frequency_denominator": "all completed drop trials, including unsettled outcomes",
+    "numbering_tie_break": "original source ID",
+    "source_file": "poses.json",
+    "source_sha256": "09d377d79122ca5bb761c0690bb18209da26f499b951b13ff3c6bbd837e6909d",
+    "generated_utc": "2026-11-20T07:14:56.092830+00:00",
+    "pose_id_mapping": {
+      "Df2i_0004": 0,
+      "Df2i_0005": 1,
+      "Df2i_0002": 2,
+      "Df2i_0001": 3,
+      "Df2i_0008": 4,
+      "Df2i_0007": 5
+    },
+    "removed_poses": [
+      {
+        "source_pose_id": "Df2i_0003",
+        "frequency_percent": 0.03
+      },
+      {
+        "source_pose_id": "Df2i_0006",
+        "frequency_percent": 0.03
+      },
+      {
+        "source_pose_id": "Df2i_0011",
+        "frequency_percent": 0.03
+      },
+      {
+        "source_pose_id": "Df2i_0009",
+        "frequency_percent": 0.02
+      },
+      {
+        "source_pose_id": "Df2i_0010",
+        "frequency_percent": 0.01
+      }
+    ],
+    "evaluation_phase": "transport",
+    "source_provenance": {
+      "pose_repository": "https://github.com/match-BiBaZu/BiBaZu_Stable_ComponentPoses",
+      "pose_revision": "b045887db591ff969b182d4a4ab1e9e14f11ab30",
+      "catalogue_path": "Df2i/catalogue/grouped_10000/moving/catalogue.json",
+      "catalogue_sha256": "9b586674c9d8a5df6fcf54565dd35cce82f4c62d121f5b8015ceb9600e86342f",
+      "condition": "moving",
+      "classification_method": "observed-seated-geodesic-basins-v1",
+      "representative_policy": "unchanged published catalogue quaternion",
+      "catalogue_revision": "0cc7a4a95c9fd472c379700ffded127e32022233",
+      "simulator_revision": "e890ae90998c17bac7e3a67b6dfaf2deea8047b9",
+      "raw_simulator_revision": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd",
+      "builder_sha256": "855796addf0107445fe6fa3897f30b61c0b718537412d2fae5ff0f9763a5756e",
+      "run_dir": "Df2i/simulations/20261110_10000/100mm_s",
+      "archive_path": "Df2i/simulations/20261110_10000/100mm_s/simulation_results.tar.xz",
+      "archive_sha256": "d21628df8a6d62116a50cc44e695081479345fe29f5257b07122ac55253f5e75",
+      "raw_trials_sha256": "46a8ea92294119dfe1bdffd574966041570b628d8a0c86db8d16ceaf30a5a093",
+      "mesh_path": "Df2i/Df2i.stl",
+      "mesh_sha256": "3aa35f1bb2b117bf8205d9c424b9058933d67212a3bbd8bd73249bc82122142d",
+      "manifest_sha256": "a4191ad061f1561a53019259263177d93634540bf04f6d02090239de27b7d626",
+      "config_sha256": "b7cb18c75febee469cebd169d1fc977b5e6fe05ff26800eaad085e8717d42bf7",
+      "archive_checksums_sha256": "c74e48bec434f067c91d3b59a0520a2ecec561c1ca2b1bb3b2c5c0925a499412"
+    }
+  },
+  "analytical_stability_evaluated": false,
+  "geometric_pose_quality_evaluated": true,
+  "pose_quality_assessment": {
+    "schema_version": 1,
+    "method": "sampled_seated_escape_lift",
+    "method_version": 1,
+    "workpiece": "Df2i",
+    "source_sha256": "09d377d79122ca5bb761c0690bb18209da26f499b951b13ff3c6bbd837e6909d",
+    "observations_sha256": "09d377d79122ca5bb761c0690bb18209da26f499b951b13ff3c6bbd837e6909d",
+    "mesh_sha256": "3aa35f1bb2b117bf8205d9c424b9058933d67212a3bbd8bd73249bc82122142d",
+    "config_sha256": "b7cb18c75febee469cebd169d1fc977b5e6fe05ff26800eaad085e8717d42bf7",
+    "angular_step_deg": 0.1,
+    "thresholds_mm": {
+      "fragile": 0.1,
+      "resistant": 0.5
+    },
+    "alpha_deg": 45.0,
+    "beta_deg": 0.0,
+    "frequency_independent": true,
+    "automatic_filtering": false,
+    "uniform_density_assumed": true,
+    "interpretation": "Smallest sampled COM lift along symmetry-aware, two-plane-seated shortest rotations to recorded poses. This is an evaluated-path estimate, not a proven minimum escape energy or dynamic transport assessment. Frequency and pose-group incidence are unchanged; within-group rocking does not classify the whole group.",
+    "path_counts": {
+      "reused": 2,
+      "calculated": 53,
+      "symmetry_equivalent": 0
+    },
+    "saved_path_reuse": "Checksum-verified ordinary seated paths; missing paths are calculated.",
+    "label_counts": {
+      "fragile": 0,
+      "marginal": 5,
+      "resistant": 6,
+      "unknown": 0
+    }
+  },
+  "engine_provenance": {
+    "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose",
+    "base_revision": "e9199499a2982b0e3d02b09620eb452531b1a7d6",
+    "snapshot_note": "Source hashes identify the local snapshot, including uncommitted export extensions. Only geometric action rules are extracted from roadmap.py. Bundled Python files normalize line endings to LF.",
+    "source_sha256": {
+      "src/chute_pose/geometry.py": "fc4ba197effa2a48fdde6813f4ac666a2ca1585d2dd5f25bf2ce4d6178ac494c",
+      "src/chute_pose/contacts.py": "7a2263fc4590d21845a34d7c1082de0fd0fd6fbf8389cc7d272e56487d08dc53",
+      "src/chute_pose/symmetry.py": "34f815bdf3b6b97222111aaa69fb99932c57bcdca2c7cf9cfea63028eb6bdbfc",
+      "src/chute_pose/plot_view.py": "e45eb05c049f4c9b73d49287eb66759552144e81faf01f566b76915723b7a6a5",
+      "src/chute_pose/visualization.py": "ce3be31f1de91aa3e42be089b97139e3ede8d908a8cd66bc09dd2f686d371395",
+      "src/chute_pose/roadmap.py": "87fe98d479018a188ad282a7b6d8102721bc729d9628dbf04b80f1dedbd40968"
+    },
+    "bundled_files_sha256": {
+      "__init__.py": "3ca58e22fe66549fbcf9c0f23cdf3bbc8060217d14a250c489ee9781a4a3280e",
+      "contacts.py": "498fe5d3b66148a3446738db16fd3ca9990e2e0391bee719d98e2618ca8aa5c2",
+      "geometry.py": "061bd41d340009a4064675e915722270c680a06299aca0aa0a1369713af228ff",
+      "plot_view.py": "e45eb05c049f4c9b73d49287eb66759552144e81faf01f566b76915723b7a6a5",
+      "symmetry.py": "fcd294c6f9463037063426c2717a5bfcac8f205fe72bc64d67e4799d2d7b043f",
+      "transitions.py": "700f8975a81f3b40586d8c676eecfe4efe409e9ee707bd45402423d220418979",
+      "visualization.py": "1e4ea35ea5a85035ede2cd5e401df7ab7aa1b12161d2fde1bbeafa03feb8eaeb"
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "workpiece": "Kf1i",
+  "condition": "moving",
+  "total_trials": 10000,
+  "settled_trials": 9,
+  "unsettled_trials": 9991,
+  "status_counts": {
+    "settled": 9,
+    "unsettled": 9991
+  },
+  "source": {
+    "catalogue_revision": "0cc7a4a95c9fd472c379700ffded127e32022233",
+    "simulator_revision": "e890ae90998c17bac7e3a67b6dfaf2deea8047b9",
+    "raw_simulator_revision": "72b1ba08aa9b317804cd60e1e2ae6e636910f3fd",
+    "builder_sha256": "855796addf0107445fe6fa3897f30b61c0b718537412d2fae5ff0f9763a5756e",
+    "run_dir": "Kf1i/simulations/20261107_10000/100mm_s",
+    "archive_path": "Kf1i/simulations/20261107_10000/100mm_s/simulation_results.tar.xz",
+    "archive_sha256": "19efc7337c7b9be9905bdbf863c3d3bfe76004cf38aae9f56be85457e161859f",
+    "raw_trials_sha256": "9052217bb955c5dbba91bddf7e42b1eff712908f0a9d523b2f698fbfe2d39e36",
+    "mesh_path": "Kf1i/Kf1i.stl",
+    "mesh_sha256": "e87f5f88d802f8a85a2dee6c85f5306b1dd690860ddf9bb587ec1561e0e4097a",
+    "manifest_sha256": "84c066b3f278a078525781dd60c50a2deeb1499ba278530047baf7a54df5a68e",
+    "config_sha256": "f9564bc62b7a2e628a77de6f776af3ae9e5af3597d24a7004e43bba12e812e51",
+    "archive_checksums_sha256": "505c129416ff71331af3023793f6e30015e1143d9edba2a21333a430d38a3c51"
+  },
+  "model": "observed-seated-geodesic-basins-v1",
+  "settings": {
+    "recognition": {
+      "ambiguity_margin_deg": 1.0,
+      "continuous_axis_part": [
+        -1.6066156482937966e-06,
+        6.935608753977363e-10,
+        0.9999999999987095
+      ],
+      "quaternion_order": "xyzw",
+      "rotation": "part_to_chute",
+      "symmetry_available": true,
+      "symmetry_composition": "q_part_to_chute * q_symmetry_part",
+      "symmetry_quaternions_xyzw": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "symmetry_symbol": "Cinf",
+      "tolerance_deg": 5.0
+    },
+    "grouping": {
+      "barrier_mm": 0.5,
+      "max_angle_deg": 60,
+      "step_deg": 0.1
+    },
+    "transverse_angle_deg": 45.0,
+    "longitudinal_angle_deg": 0.0,
+    "frequency_cutoff_applied": false,
+    "disturbance_assessment_performed": false,
+    "observation": "transport_exit",
+    "render_size_px": [
+      420,
+      320
+    ]
+  },
+  "groups": [
+    {
+      "id": "G0",
+      "rank": 1,
+      "count": 6,
+      "incidence_percent": 0.06,
+      "members": [
+        "Kf1i_0001"
+      ]
+    },
+    {
+      "id": "G1",
+      "rank": 2,
+      "count": 3,
+      "incidence_percent": 0.03,
+      "members": [
+        "Kf1i_0002"
+      ]
+    }
+  ],
+  "poses": [
+    {
+      "id": "Kf1i_0001",
+      "label": "P000",
+      "rank": 1,
+      "group_id": "G0",
+      "count": 6,
+      "incidence_percent": 0.06,
+      "quaternion_xyzw": [
+        -0.20763601179736538,
+        -0.675941139346904,
+        0.20761838199678964,
+        0.6759330367723779
+      ],
+      "position_com_chute_mm": [
+        460.3971770097413,
+        39.97272922549668,
+        39.98951795273593
+      ],
+      "source_trial": 1431,
+      "trial_ids": [
+        1431,
+        6764,
+        6880,
+        7358,
+        7705,
+        9540
+      ],
+      "image": "poses/P000.png",
+      "image_sha256": "91675d9af24e1d81883aada48f92f0dab2813bdbb590e50eb30002e19d7a15f5"
+    },
+    {
+      "id": "Kf1i_0002",
+      "label": "P001",
+      "rank": 2,
+      "group_id": "G1",
+      "count": 3,
+      "incidence_percent": 0.03,
+      "quaternion_xyzw": [
+        0.43325238203989086,
+        0.5587139640276028,
+        0.43336406158183777,
+        0.5588619417947658
+      ],
+      "position_com_chute_mm": [
+        459.7709171124255,
+        39.97722349732833,
+        39.994472209600644
+      ],
+      "source_trial": 6810,
+      "trial_ids": [
+        6810,
+        7423,
+        9913
+      ],
+      "image": "poses/P001.png",
+      "image_sha256": "58f27c9ecf32e720fb62cd1dbb904bb3f0ccc616d4d549cd7c48ef3b8adf7f06"
+    }
+  ],
+  "grouping_evidence": "grouping-evidence.json",
+  "grouping_evidence_sha256": "12b4c2dc0735f48a6294cc19c8aca3c76845605f469a9bc8a48653b393615d23"
+}
