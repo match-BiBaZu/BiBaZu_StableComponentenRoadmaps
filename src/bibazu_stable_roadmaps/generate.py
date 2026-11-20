@@ -21,6 +21,7 @@ import yaml
 from .inputs import EmptyPoseList, load_source, select_poses, sha256, read_json
 from .roadmap import build_roadmap, handover_dict
 from .render import thumbnails, embed_thumbnails, render_roadmap, render_pose_sheets
+from .quality import analyze_pose_quality
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUTS = {"yaml": "YAML", "json": "JSON", "graphml": "GraphML", "roadmap_svg": "Roadmap SVG",
@@ -139,9 +140,16 @@ def _write_graphml(document: dict, destination: Path):
     graph = nx.MultiDiGraph()
     graph.graph["generation"] = json.dumps(document["generation"])
     graph.graph["classification_basis"] = "observed_simulation"
+    if "pose_quality_assessment" in document:
+        graph.graph["pose_quality_assessment"] = json.dumps(document["pose_quality_assessment"])
     for node in document["nodes"]:
-        graph.add_node(node["node_id"], **{key: json.dumps(value) if isinstance(value, (list, dict)) else value
-                                          for key, value in node.items() if value is not None and key not in {"node_id", "thumbnail_png_base64"}})
+        attributes = {key: json.dumps(value) if isinstance(value, (list, dict)) else value
+                      for key, value in node.items() if value is not None and key not in {"node_id", "thumbnail_png_base64"}}
+        for key in ("label", "escape_lift_mm", "escape_target_source_id", "escape_within_group"):
+            value = node.get("pose_quality", {}).get(key)
+            if value is not None:
+                attributes[f"pose_quality_{key}"] = value
+        graph.add_node(node["node_id"], **attributes)
     for edge in document["edges"]:
         graph.add_edge(edge["source"], edge["target"], key=edge["edge_id"],
                        **{key: json.dumps(value) if isinstance(value, (list, dict)) else value
@@ -211,6 +219,13 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             progress(message)
         check_cancel()
         built = build_roadmap(source, numbered, report)
+        report("Assessing geometric tipping resistance independently of frequency")
+        quality = analyze_pose_quality(source, mesh=built.mesh, progress=report, check_cancel=check_cancel)
+        quality_metadata = {key: value for key, value in quality.items() if key != "poses"}
+        built.document["pose_quality_assessment"] = quality_metadata
+        built.document["geometric_pose_quality_evaluated"] = True
+        for node in built.document["nodes"]:
+            node["pose_quality"] = quality["poses"][node["source_pose_ids"][0]]
         for warning in built.warnings:
             progress(warning)
         generated_utc = datetime.now(timezone.utc).isoformat()
@@ -238,6 +253,7 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
             for path in source.snapshot_files:
                 shutil.copyfile(path, snapshots / path.name)
             stem = staging / f"{source.workpiece}_roadmap"
+            write_json(staging / "pose_quality.json", quality)
             need_images = "json" in config.outputs or any(fmt.startswith("roadmap_") for fmt in config.outputs)
             images = thumbnails(built, check_cancel) if need_images else {}
             if "json" in config.outputs:
@@ -260,16 +276,31 @@ def generate_one(source_path: str | Path, config: GenerationConfig, progress=lam
                         "renumber_by_frequency": config.renumber_by_frequency,
                         "settings": {**asdict(config), "output_root": "."}, "input": metadata,
                         "analytical_stability_evaluated": False,
+                        "geometric_pose_quality_evaluated": True, "pose_quality_assessment": quality_metadata,
                         "engine_provenance": read_json(ROOT / "ENGINE_PROVENANCE.json"), "warnings": built.warnings}
             write_json(staging / "manifest.json", manifest)
             lines = [f"# {source.workpiece}\n", "Observed simulation poses; geometry supplies untested direct connection candidates.",
                      f"\nMinimum frequency: **{config.minimum_frequency_percent:g}%**. Percentages retain the source denominator.",
-                     "\n| Roadmap pose | Source pose | Frequency | Count |", "| ---: | --- | ---: | ---: |"]
+                     "\n| Roadmap pose | Source pose | Frequency | Count | Geometric quality | Lift to tip (mm) | Easiest target |",
+                     "| ---: | --- | ---: | ---: | --- | ---: | --- |"]
             if metadata.get("evaluation_phase"):
                 phase = metadata["evaluation_phase"].replace("_", " ")
                 lines.insert(2, f"\nObservation phase: **{phase}**.")
-            lines.extend(f"| {number} | {pose.source_id} | {pose.frequency_percent:g}% | {pose.count if pose.count is not None else 'unknown'} |" for pose, number in numbered)
-            lines.append("\nThe legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.")
+            for pose, number in numbered:
+                entry = quality["poses"][pose.source_id]
+                lift = entry["escape_lift_mm"]
+                value = f"{lift:.4f}" if lift is not None else "unknown"
+                target = entry["escape_target_source_id"] or "unknown"
+                if entry.get("escape_within_group"):
+                    target += " (within group)"
+                lines.append(f"| {number} | {pose.source_id} | {pose.frequency_percent:g}% | {pose.count if pose.count is not None else 'unknown'} | {entry['label'].capitalize()} | {value} | {target} |")
+            lines.append("\n[Pose quality report](pose_quality.json) includes every input pose, including those below the frequency cutoff. "
+                         "Fragile: below 0.1 mm; marginal: 0.1–below 0.5 mm; resistant: at least 0.5 mm. "
+                         "These are sampled geometric lift estimates, not measured survival probabilities. "
+                         "Within-group movement describes rocking in that group and does not classify the whole group as unstable. "
+                         "Quality does not filter or renumber poses.")
+            lines.append("\nThe legacy `robust` tag is used for stable-target compatibility. "
+                         "It does not assert analytical robustness; dynamic and experimental reliability remain untested.")
             lines.append("\nOriginal inputs are in `source/`; generation settings and exclusions are in `manifest.json`.")
             lines.append("\nFiles: " + ", ".join(f"[{p.name}]({p.name})" for p in sorted(staging.glob(f"{source.workpiece}_roadmap.*"))))
             (staging / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

@@ -70,7 +70,7 @@ classification:
       numbering_tie_break: original source ID
       source_file: poses.json
       source_sha256: 6e82ed7b511d91ff88f0b992c037f0e3fa9924902e068af6dfb5694990907559
-      generated_utc: '2026-11-19T09:22:50.507056+00:00'
+      generated_utc: '2026-11-20T07:15:53.203543+00:00'
       pose_id_mapping:
         Kf2a_0045: 0
         Kf2a_0001: 1
@@ -170,6 +170,7 @@ classification:
         manifest_sha256: 4ddd59af3f01a12cb25fd3899c0d5ca10936dd944fd6e009a411e6edd3ac971a
         config_sha256: b330aeda12846ca587eb00f7d98465fd1c3a41d88475c6fae391e9d3980c3e06
         archive_checksums_sha256: f8a4c9e506d6f5e3e019b8e81c47ba90e3adce3a66c689c18633afc746013169
+  geometric_pose_quality_evaluated: true
 poses:
 - id: 0
   original_catalog_pose_id: 0
@@ -199,6 +200,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: resistant
+    escape_lift_mm: 1.808131832770659
+    escape_target_source_id: Kf2a_0040
+    escape_within_group: false
+    source_group_id: G2
+    path_angle_deg: 92.29732977627785
+    peak_angle_deg: 89.39741367279782
+    path_origin: calculated_path
+    observed_count: 2412
+    observed_frequency_percent: 24.12
+    reason: Sampled geometric escape to another recorded pose; not a dynamic stability
+      guarantee.
 - id: 1
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
@@ -227,6 +241,19 @@ poses:
     wall: 2-edge
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: resistant
+    escape_lift_mm: 1.6576913670035722
+    escape_target_source_id: Kf2a_0052
+    escape_within_group: false
+    source_group_id: G3
+    path_angle_deg: 82.02172009788131
+    peak_angle_deg: 80.22343634421277
+    path_origin: calculated_path
+    observed_count: 821
+    observed_frequency_percent: 8.21
+    reason: Sampled geometric escape to another recorded pose; not a dynamic stability
+      guarantee.
 - id: 2
   original_catalog_pose_id: 2
   equivalent_catalog_pose_ids:
@@ -255,6 +282,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.024213603242962733
+    escape_target_source_id: Kf2a_0018
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 16.78030209980637
+    peak_angle_deg: 2.3971860142580526
+    path_origin: calculated_path
+    observed_count: 342
+    observed_frequency_percent: 3.42
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 3
   original_catalog_pose_id: 3
   equivalent_catalog_pose_ids:
@@ -283,6 +323,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.028505368473606296
+    escape_target_source_id: Kf2a_0038
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 7.310175892956949
+    peak_angle_deg: 2.66722633932213
+    path_origin: calculated_path
+    observed_count: 330
+    observed_frequency_percent: 3.3
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 4
   original_catalog_pose_id: 4
   equivalent_catalog_pose_ids:
@@ -311,6 +364,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.024064971268561663
+    escape_target_source_id: Kf2a_0043
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 9.462344815041613
+    peak_angle_deg: 2.3904871111684076
+    path_origin: calculated_path
+    observed_count: 311
+    observed_frequency_percent: 3.11
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 5
   original_catalog_pose_id: 5
   equivalent_catalog_pose_ids:
@@ -339,6 +405,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.028330819505963944
+    escape_target_source_id: Kf2a_0018
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 7.307828300776651
+    peak_angle_deg: 2.5676153489215263
+    path_origin: calculated_path
+    observed_count: 280
+    observed_frequency_percent: 2.8
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 6
   original_catalog_pose_id: 6
   equivalent_catalog_pose_ids:
@@ -367,6 +446,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.02109409786939409
+    escape_target_source_id: Kf2a_0013
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 9.454127664943647
+    peak_angle_deg: 2.189376932934318
+    path_origin: calculated_path
+    observed_count: 248
+    observed_frequency_percent: 2.48
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 7
   original_catalog_pose_id: 7
   equivalent_catalog_pose_ids:
@@ -395,6 +487,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.01958335331501715
+    escape_target_source_id: Kf2a_0015
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 37.83911666614799
+    peak_angle_deg: 2.0966265171216563
+    path_origin: calculated_path
+    observed_count: 207
+    observed_frequency_percent: 2.07
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 8
   original_catalog_pose_id: 8
   equivalent_catalog_pose_ids:
@@ -423,6 +528,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.02132958888210723
+    escape_target_source_id: Kf2a_0043
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 18.912043881258274
+    peak_angle_deg: 2.2893526803628443
+    path_origin: calculated_path
+    observed_count: 207
+    observed_frequency_percent: 2.07
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 9
   original_catalog_pose_id: 9
   equivalent_catalog_pose_ids:
@@ -451,6 +569,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.019646702242720693
+    escape_target_source_id: Kf2a_0013
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 18.914946780540618
+    peak_angle_deg: 2.1901517324836504
+    path_origin: calculated_path
+    observed_count: 189
+    observed_frequency_percent: 1.89
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 10
   original_catalog_pose_id: 10
   equivalent_catalog_pose_ids:
@@ -479,6 +610,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.01987539717232778
+    escape_target_source_id: Kf2a_0049
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 9.463366580532886
+    peak_angle_deg: 2.1915164712813007
+    path_origin: calculated_path
+    observed_count: 167
+    observed_frequency_percent: 1.67
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 11
   original_catalog_pose_id: 11
   equivalent_catalog_pose_ids:
@@ -507,6 +651,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.020627344157382765
+    escape_target_source_id: Kf2a_0011
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 28.359711755513047
+    peak_angle_deg: 2.1968790796524194
+    path_origin: calculated_path
+    observed_count: 160
+    observed_frequency_percent: 1.6
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 12
   original_catalog_pose_id: 12
   equivalent_catalog_pose_ids:
@@ -535,6 +692,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.03263884956435703
+    escape_target_source_id: Kf2a_0017
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 9.441543919445484
+    peak_angle_deg: 2.683386166579243
+    path_origin: calculated_path
+    observed_count: 159
+    observed_frequency_percent: 1.59
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 13
   original_catalog_pose_id: 13
   equivalent_catalog_pose_ids:
@@ -563,6 +733,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.019732417019906023
+    escape_target_source_id: Kf2a_0049
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 18.9167023650935
+    peak_angle_deg: 2.090793419299808
+    path_origin: calculated_path
+    observed_count: 156
+    observed_frequency_percent: 1.56
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 14
   original_catalog_pose_id: 14
   equivalent_catalog_pose_ids:
@@ -591,6 +774,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.023363591127434802
+    escape_target_source_id: Kf2a_0012
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 9.477444685985178
+    peak_angle_deg: 2.2945392397648323
+    path_origin: calculated_path
+    observed_count: 153
+    observed_frequency_percent: 1.53
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 15
   original_catalog_pose_id: 15
   equivalent_catalog_pose_ids:
@@ -619,6 +815,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.019922430228128007
+    escape_target_source_id: Kf2a_0050
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 9.44609573222823
+    peak_angle_deg: 2.187516906410748
+    path_origin: calculated_path
+    observed_count: 144
+    observed_frequency_percent: 1.44
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 16
   original_catalog_pose_id: 16
   equivalent_catalog_pose_ids:
@@ -647,6 +856,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.02656991313278212
+    escape_target_source_id: Kf2a_0014
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 9.4698122598786
+    peak_angle_deg: 2.49205585786279
+    path_origin: calculated_path
+    observed_count: 143
+    observed_frequency_percent: 1.43
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 17
   original_catalog_pose_id: 17
   equivalent_catalog_pose_ids:
@@ -675,6 +897,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.026177627804017334
+    escape_target_source_id: Kf2a_0048
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 18.946931426580893
+    peak_angle_deg: 2.49301729297117
+    path_origin: calculated_path
+    observed_count: 142
+    observed_frequency_percent: 1.42
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 18
   original_catalog_pose_id: 18
   equivalent_catalog_pose_ids:
@@ -703,6 +938,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.022441941223959816
+    escape_target_source_id: Kf2a_0048
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 9.480496252357353
+    peak_angle_deg: 2.295278040044412
+    path_origin: calculated_path
+    observed_count: 135
+    observed_frequency_percent: 1.35
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 19
   original_catalog_pose_id: 19
   equivalent_catalog_pose_ids:
@@ -731,6 +979,19 @@ poses:
     wall: 2-edge
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.09122244069745733
+    escape_target_source_id: Kf2a_0043
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 7.310175892956949
+    peak_angle_deg: 4.6429495536348195
+    path_origin: calculated_path
+    observed_count: 132
+    observed_frequency_percent: 1.32
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 20
   original_catalog_pose_id: 20
   equivalent_catalog_pose_ids:
@@ -759,6 +1020,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: resistant
+    escape_lift_mm: 0.7254729294980109
+    escape_target_source_id: Kf2a_0040
+    escape_within_group: false
+    source_group_id: G4
+    path_angle_deg: 142.01229382120505
+    peak_angle_deg: 11.69277859048627
+    path_origin: calculated_path
+    observed_count: 127
+    observed_frequency_percent: 1.27
+    reason: Sampled geometric escape to another recorded pose; not a dynamic stability
+      guarantee.
 - id: 21
   original_catalog_pose_id: 21
   equivalent_catalog_pose_ids:
@@ -787,6 +1061,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.03296997620605424
+    escape_target_source_id: Kf2a_0046
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 18.908394487690313
+    peak_angle_deg: 2.6869823745665182
+    path_origin: calculated_path
+    observed_count: 126
+    observed_frequency_percent: 1.26
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 22
   original_catalog_pose_id: 22
   equivalent_catalog_pose_ids:
@@ -815,6 +1102,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.0609234614083789
+    escape_target_source_id: Kf2a_0023
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 9.454027939085268
+    peak_angle_deg: 3.6820950920647886
+    path_origin: calculated_path
+    observed_count: 124
+    observed_frequency_percent: 1.24
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 23
   original_catalog_pose_id: 23
   equivalent_catalog_pose_ids:
@@ -843,6 +1143,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.09178156952471284
+    escape_target_source_id: Kf2a_0015
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 7.307828300776651
+    peak_angle_deg: 4.740212951855125
+    path_origin: calculated_path
+    observed_count: 122
+    observed_frequency_percent: 1.22
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 24
   original_catalog_pose_id: 24
   equivalent_catalog_pose_ids:
@@ -871,6 +1184,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.07349170304078712
+    escape_target_source_id: Kf2a_0001
+    escape_within_group: false
+    source_group_id: G1
+    path_angle_deg: 120.7416848900668
+    peak_angle_deg: 3.9980690360949205
+    path_origin: calculated_path
+    observed_count: 121
+    observed_frequency_percent: 1.21
+    reason: Sampled geometric escape to another recorded pose; not a dynamic stability
+      guarantee.
 - id: 25
   original_catalog_pose_id: 25
   equivalent_catalog_pose_ids:
@@ -899,6 +1225,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.05012492308727445
+    escape_target_source_id: Kf2a_0017
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 28.368472991587165
+    peak_angle_deg: 3.3962256398378985
+    path_origin: calculated_path
+    observed_count: 121
+    observed_frequency_percent: 1.21
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 26
   original_catalog_pose_id: 26
   equivalent_catalog_pose_ids:
@@ -927,6 +1266,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.039272045119304266
+    escape_target_source_id: Kf2a_0020
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 9.450372551164273
+    peak_angle_deg: 2.9843281740518757
+    path_origin: calculated_path
+    observed_count: 119
+    observed_frequency_percent: 1.19
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 27
   original_catalog_pose_id: 27
   equivalent_catalog_pose_ids:
@@ -955,6 +1307,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.07609747906109021
+    escape_target_source_id: Kf2a_0018
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 120.82586187075322
+    peak_angle_deg: 4.097485803722813
+    path_origin: calculated_path
+    observed_count: 115
+    observed_frequency_percent: 1.15
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 28
   original_catalog_pose_id: 28
   equivalent_catalog_pose_ids:
@@ -983,6 +1348,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: fragile
+    escape_lift_mm: 0.04097839673158177
+    escape_target_source_id: Kf2a_0038
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 92.43426953061808
+    peak_angle_deg: 2.997868200993019
+    path_origin: calculated_path
+    observed_count: 109
+    observed_frequency_percent: 1.09
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 transitions:
 - id: a0:0->2:free_y
   from_pose: 0
@@ -15755,3 +16133,36 @@ transitions:
     difficulty_rating: null
     notes: ''
 generation: *id001
+pose_quality_assessment:
+  schema_version: 1
+  method: sampled_seated_escape_lift
+  method_version: 1
+  workpiece: Kf2a
+  source_sha256: 6e82ed7b511d91ff88f0b992c037f0e3fa9924902e068af6dfb5694990907559
+  observations_sha256: 6e82ed7b511d91ff88f0b992c037f0e3fa9924902e068af6dfb5694990907559
+  mesh_sha256: cd1bb04dda24ff3aa100827f1042e6abb2459c6bd1301fba1be041b49d1ab30c
+  config_sha256: b330aeda12846ca587eb00f7d98465fd1c3a41d88475c6fae391e9d3980c3e06
+  angular_step_deg: 0.1
+  thresholds_mm:
+    fragile: 0.1
+    resistant: 0.5
+  alpha_deg: 45.0
+  beta_deg: 0.0
+  frequency_independent: true
+  automatic_filtering: false
+  uniform_density_assumed: true
+  interpretation: Smallest sampled COM lift along symmetry-aware, two-plane-seated
+    shortest rotations to recorded poses. This is an evaluated-path estimate, not
+    a proven minimum escape energy or dynamic transport assessment. Frequency and
+    pose-group incidence are unchanged; within-group rocking does not classify the
+    whole group.
+  path_counts:
+    reused: 0
+    calculated: 1326
+    symmetry_equivalent: 0
+  saved_path_reuse: Saved evidence uses a scoped model; ordinary paths are recalculated.
+  label_counts:
+    fragile: 42
+    marginal: 6
+    resistant: 4
+    unknown: 0

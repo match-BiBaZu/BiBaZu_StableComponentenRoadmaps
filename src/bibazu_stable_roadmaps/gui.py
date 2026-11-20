@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from dataclasses import asdict
 import json
+import math
 import os
 from pathlib import Path
 import sys
@@ -17,7 +18,7 @@ from PyQt6.QtWidgets import (QApplication, QCheckBox, QDoubleSpinBox, QFileDialo
                              QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 from .generate import ROOT, OUTPUTS, GenerationConfig
-from .inputs import EmptyPoseList, discover_sources, load_source, select_poses
+from .inputs import EmptyPoseList, discover_sources, load_source, select_poses, sha256
 
 
 class ObservedRoadmapGUI(QMainWindow):
@@ -31,7 +32,7 @@ class ObservedRoadmapGUI(QMainWindow):
                 QApplication.instance().setFont(QFont(families[0], 9))
         self.setWindowTitle("BiBaZu Observed Pose Roadmaps")
         self.setWindowIcon(QIcon(str(ROOT / "WindowsLaunchers/icons/stable-roadmaps.ico")))
-        self.resize(1160, 790)
+        self.resize(1440, 790)
         self.settings = settings if settings is not None else QSettings(
             QSettings.Format.IniFormat, QSettings.Scope.UserScope, "BiBaZu", "StableComponentRoadmaps")
         self.sources = []
@@ -42,6 +43,11 @@ class ObservedRoadmapGUI(QMainWindow):
         self.cancel_file = None
         self.cancel_requested = False
         self.active_sources = []
+        self.worker_mode = "generation"
+        self.quality_reports = {}
+        self.quality_signatures = {}
+        self.quality_source = None
+        self.quality_report_file = None
         central = QWidget()
         self.setCentralWidget(central)
         layout = QVBoxLayout(central)
@@ -118,28 +124,38 @@ class ObservedRoadmapGUI(QMainWindow):
         left_layout.addWidget(self.component_table)
         splitter.addWidget(left)
         right = QWidget()
-        right.setMinimumWidth(480)
+        right.setMinimumWidth(620)
         right_layout = QVBoxLayout(right)
         right_layout.setContentsMargins(0, 0, 0, 0)
         self.preview_label = QLabel("Pose preview")
         right_layout.addWidget(self.preview_label)
-        self.preview_table = QTableWidget(0, 4)
-        self.preview_table.setHorizontalHeaderLabels(["Original pose ID", "Frequency", "Selection", "Roadmap ID"])
-        self.preview_table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+        self.preview_table = QTableWidget(0, 7)
+        self.preview_table.setHorizontalHeaderLabels(["Original pose ID", "Frequency", "Selection", "Roadmap ID",
+                                                     "Pose quality", "Lift (mm)", "Easiest tipping target"])
+        for column in range(6):
+            self.preview_table.horizontalHeader().setSectionResizeMode(column, QHeaderView.ResizeMode.ResizeToContents)
+        self.preview_table.horizontalHeader().setSectionResizeMode(6, QHeaderView.ResizeMode.Stretch)
         right_layout.addWidget(self.preview_table)
+        quality_note = QLabel("Tipping resistance: Fragile < 0.1 mm · Marginal 0.1–<0.5 mm · Resistant ≥ 0.5 mm. "
+                             "Quality ratings never remove poses.")
+        quality_note.setWordWrap(True)
+        right_layout.addWidget(quality_note)
         splitter.addWidget(right)
-        splitter.setSizes([480, 620])
+        splitter.setSizes([460, 900])
         body.addWidget(splitter, 1)
         layout.addWidget(self.controls, 1)
         row = QHBoxLayout()
         self.generate_button = QPushButton("Generate selected components")
         self.generate_button.clicked.connect(self.start)
+        self.assess_button = QPushButton("Assess pose quality")
+        self.assess_button.setToolTip("Assess every recorded pose of the previewed component without changing selection or saved roadmaps.")
+        self.assess_button.clicked.connect(self.assess_quality)
         self.cancel_button = QPushButton("Cancel")
         self.cancel_button.setEnabled(False)
         self.cancel_button.clicked.connect(self.cancel)
         open_button = QPushButton("Open output folder")
         open_button.clicked.connect(lambda: QDesktopServices.openUrl(QUrl.fromLocalFile(self.output_root.text())))
-        for button in (self.generate_button, self.cancel_button, open_button):
+        for button in (self.generate_button, self.assess_button, self.cancel_button, open_button):
             row.addWidget(button)
         layout.addLayout(row)
         self.progress = QProgressBar()
@@ -149,6 +165,7 @@ class ObservedRoadmapGUI(QMainWindow):
         self.log.setMaximumHeight(150)
         layout.addWidget(self.log)
         self.source_path.editingFinished.connect(self.scan)
+        self.output_root.editingFinished.connect(self.refresh_preview)
         self.minimum_frequency.valueChanged.connect(self.refresh_preview)
         self.renumber.toggled.connect(self.refresh_preview)
         self.component_table.currentCellChanged.connect(lambda *args: self.refresh_preview())
@@ -249,11 +266,131 @@ class ObservedRoadmapGUI(QMainWindow):
         if not data:
             return
         mapping = selections.get(path, {})
+        report = self.quality_report(data)
+        quality_poses = report.get("poses", {}) if report else {}
         for row, pose in enumerate(data.poses):
             retained = pose.source_id in mapping
-            texts = (pose.source_id, f"{pose.frequency_percent:g}%", "Retained" if retained else "Removed", mapping.get(pose.source_id, "—"))
+            quality = quality_poses.get(pose.source_id)
+            label = quality["label"].capitalize() if quality else "Not assessed"
+            lift = quality.get("escape_lift_mm") if quality else None
+            target = quality.get("escape_target_source_id") if quality else None
+            target_text = target or "—"
+            if target and quality.get("escape_within_group"):
+                target_text += " (rocking)"
+            texts = (pose.source_id, f"{pose.frequency_percent:g}%", "Retained" if retained else "Removed",
+                     mapping.get(pose.source_id, "—"), label, f"{lift:.3f}" if lift is not None else "—", target_text)
             for column, text in enumerate(texts):
                 self.preview_table.setItem(row, column, self.item(text))
+            explanation = "Geometric tipping resistance, separate from occurrence frequency. Friction, vibration and transport are not tested."
+            if quality and quality.get("reason"):
+                explanation += "\n" + str(quality["reason"])
+            self.preview_table.item(row, 4).setToolTip(explanation)
+            if lift is not None:
+                self.preview_table.item(row, 5).setToolTip(f"Sampled lift before tipping: {lift:.12g} mm")
+            if quality and quality.get("escape_within_group"):
+                self.preview_table.item(row, 6).setToolTip(
+                    "Rocking within the recorded pose group. This does not classify the whole group as unstable.")
+
+    def quality_signature(self, data):
+        config_path = data.path.with_name("config.json")
+        observed_path = data.path.with_name("poses.json")
+        files = (data.path, data.mesh, config_path, observed_path)
+        stamps = tuple((str(path), path.stat().st_size, path.stat().st_mtime_ns) if path.is_file()
+                       else (str(path), None, None) for path in files)
+        cached = self.quality_signatures.get(data.path)
+        if cached and cached[0] == stamps:
+            return cached[1]
+        raw = json.loads(data.path.read_text(encoding="utf-8-sig"))
+        observations = observed_path if "entries" in raw and "poses" not in raw else data.path
+        source_hash = sha256(data.path)
+        signature = {"source_sha256": source_hash,
+                     "observations_sha256": sha256(observations) if observations != data.path else source_hash,
+                     "mesh_sha256": sha256(data.mesh),
+                     "config_sha256": sha256(config_path) if config_path.is_file() else None}
+        self.quality_signatures[data.path] = (stamps, signature)
+        return signature
+
+    def valid_quality_report(self, report, data):
+        if not isinstance(report, dict) or report.get("schema_version") != 1:
+            return False
+        if report.get("method") != "sampled_seated_escape_lift" or report.get("method_version") != 1:
+            return False
+        if report.get("thresholds_mm") != {"fragile": .1, "resistant": .5}:
+            return False
+        if any(report.get(key) != value for key, value in self.quality_signature(data).items()):
+            return False
+        entries = report.get("poses")
+        if not isinstance(entries, dict) or set(entries) != {pose.source_id for pose in data.poses}:
+            return False
+        for entry in entries.values():
+            if not isinstance(entry, dict) or entry.get("label") not in {"fragile", "marginal", "resistant", "unknown"}:
+                return False
+            lift = entry.get("escape_lift_mm")
+            if lift is not None and (isinstance(lift, bool) or not isinstance(lift, (int, float)) or not math.isfinite(lift) or lift < 0):
+                return False
+            if (entry["label"] == "unknown") != (lift is None):
+                return False
+            if entry.get("escape_target_source_id") is not None and entry["escape_target_source_id"] not in entries:
+                return False
+        return True
+
+    def quality_report(self, data):
+        try:
+            cached = self.quality_reports.get(data.path)
+            if cached and self.valid_quality_report(cached, data):
+                return cached
+            self.quality_reports.pop(data.path, None)
+            candidates = (Path(self.output_root.text()).expanduser() / data.workpiece / "pose_quality.json",
+                          data.path.with_name("pose_quality.json"), data.path.parent.parent / "pose_quality.json")
+            for candidate in candidates:
+                if candidate.is_file():
+                    report = json.loads(candidate.read_text(encoding="utf-8-sig"))
+                    if self.valid_quality_report(report, data):
+                        self.quality_reports[data.path] = report
+                        return report
+        except (ValueError, OSError, TypeError):
+            return None
+        return None
+
+    def assess_quality(self):
+        if self.process is not None:
+            return
+        row = self.component_table.currentRow()
+        path = self.sources[row] if 0 <= row < len(self.sources) else None
+        try:
+            if path is None:
+                raise ValueError("Select a component to assess.")
+            data = load_source(path)
+        except (ValueError, OSError, TypeError) as error:
+            QMessageBox.warning(self, "Check inputs", str(error))
+            return
+        self.source_data[path] = data
+        self.worker_mode = "quality"
+        self.quality_source = path
+        self.quality_report_file = Path(tempfile.gettempdir()) / ("bibazu-pose-quality-" + uuid4().hex + ".json")
+        self.active_sources = [path]
+        self.cancel_requested = False
+        self.cancel_file = Path(tempfile.gettempdir()) / ("bibazu-roadmap-cancel-" + uuid4().hex)
+        self.pending = b""
+        self.controls.setEnabled(False)
+        self.generate_button.setEnabled(False)
+        self.assess_button.setEnabled(False)
+        self.cancel_button.setEnabled(True)
+        self.progress.setRange(0, 0)
+        self.component_table.item(row, 3).setText("assessing quality")
+        process = QProcess(self)
+        self.process = process
+        process.setWorkingDirectory(str(ROOT))
+        environment = QProcessEnvironment.systemEnvironment()
+        environment.insert("PYTHONPATH", str(ROOT / "src"))
+        process.setProcessEnvironment(environment)
+        process.setProcessChannelMode(QProcess.ProcessChannelMode.MergedChannels)
+        process.readyReadStandardOutput.connect(self.read_output)
+        process.finished.connect(self.finished)
+        process.errorOccurred.connect(self.process_error)
+        python = str(Path(sys.executable).with_name("python.exe")) if sys.platform == "win32" else sys.executable
+        process.start(python, ["-X", "utf8", "-u", "-m", "bibazu_stable_roadmaps.quality", "--source", str(path),
+                              "--output", str(self.quality_report_file), "--cancel-file", str(self.cancel_file)])
 
     def config(self):
         return GenerationConfig(output_root=self.output_root.text(), minimum_frequency_percent=self.minimum_frequency.value(),
@@ -303,6 +440,7 @@ class ObservedRoadmapGUI(QMainWindow):
             QMessageBox.warning(self, "Check inputs", str(error))
             return
         self.persist()
+        self.worker_mode = "generation"
         self.active_sources = selected
         self.cancel_requested = False
         self.cancel_file = Path(tempfile.gettempdir()) / ("bibazu-roadmap-cancel-" + uuid4().hex)
@@ -312,6 +450,7 @@ class ObservedRoadmapGUI(QMainWindow):
                 self.component_table.item(row, 3).setText("queued")
         self.controls.setEnabled(False)
         self.generate_button.setEnabled(False)
+        self.assess_button.setEnabled(False)
         self.cancel_button.setEnabled(True)
         self.progress.setRange(0, len(selected))
         self.progress.setValue(0)
@@ -369,14 +508,54 @@ class ObservedRoadmapGUI(QMainWindow):
             self.cancel_file.unlink(missing_ok=True)
         self.controls.setEnabled(True)
         self.generate_button.setEnabled(True)
+        self.assess_button.setEnabled(True)
         self.cancel_button.setEnabled(False)
+        if self.worker_mode == "quality":
+            self.finish_quality(exit_code)
+            return
         for row, path in enumerate(self.sources):
             if path in self.active_sources and self.component_table.item(row, 3).text() in {"running", "queued"}:
                 self.component_table.item(row, 3).setText("cancelled" if self.cancel_requested else "failed")
         self.log.appendPlainText("Cancelled; previously completed results are retained." if self.cancel_requested else f"Generation finished (exit code {exit_code}).")
+        for path in self.active_sources:
+            self.quality_reports.pop(path, None)
+        statuses = {path: self.component_table.item(row, 3).text()
+                    for row, path in enumerate(self.sources) if path in self.active_sources}
+        self.refresh_preview()
+        for row, path in enumerate(self.sources):
+            if path in statuses:
+                self.component_table.item(row, 3).setText(statuses[path])
+
+    def finish_quality(self, exit_code):
+        status = "cancelled" if self.cancel_requested else "failed"
+        try:
+            if not self.cancel_requested and exit_code == 0 and self.quality_report_file and self.quality_report_file.is_file():
+                report = json.loads(self.quality_report_file.read_text(encoding="utf-8-sig"))
+                data = self.source_data[self.quality_source]
+                if not self.valid_quality_report(report, data):
+                    raise ValueError("Assessment does not match the current source, mesh or configuration.")
+                self.quality_reports[self.quality_source] = report
+                status = "quality assessed"
+                self.log.appendPlainText("Pose quality assessed for all recorded poses; selection and saved roadmaps are unchanged.")
+            elif self.cancel_requested:
+                self.log.appendPlainText("Cancelled; previous pose-quality results are retained.")
+            else:
+                self.log.appendPlainText(f"Pose-quality assessment failed (exit code {exit_code}).")
+        except (ValueError, OSError, TypeError, KeyError) as error:
+            self.log.appendPlainText(str(error))
+        finally:
+            if self.quality_report_file:
+                self.quality_report_file.unlink(missing_ok=True)
+            self.quality_report_file = None
+        self.progress.setRange(0, 1)
+        self.progress.setValue(1 if status == "quality assessed" else 0)
+        self.refresh_preview()
+        for row, path in enumerate(self.sources):
+            if path == self.quality_source:
+                self.component_table.item(row, 3).setText(status)
 
     def process_error(self, error):
-        if error == QProcess.ProcessError.FailedToStart:
+        if self.process is not None and error == QProcess.ProcessError.FailedToStart:
             self.log.appendPlainText("Could not start worker: " + self.process.errorString())
             self.finished(1)
 

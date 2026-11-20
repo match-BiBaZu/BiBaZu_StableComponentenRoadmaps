@@ -2,7 +2,7 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Kf4i",
-  "generated_utc": "2026-11-19T09:23:17.103062+00:00",
+  "generated_utc": "2026-11-20T07:16:34.679242+00:00",
   "pose_count": 19,
   "transition_count": 84,
   "minimum_frequency_percent": 1.0,
@@ -28,7 +28,7 @@
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
     "source_sha256": "045b4fbd5cc7d039a8fd45fecab5b3d467fd26fd63a9df16c80a807892e201ad",
-    "generated_utc": "2026-11-19T09:23:17.103062+00:00",
+    "generated_utc": "2026-11-20T07:16:34.679242+00:00",
     "pose_id_mapping": {
       "Kf4i_0026": 0,
       "Kf4i_0077": 1,
@@ -393,6 +393,40 @@
     }
   },
   "analytical_stability_evaluated": false,
+  "geometric_pose_quality_evaluated": true,
+  "pose_quality_assessment": {
+    "schema_version": 1,
+    "method": "sampled_seated_escape_lift",
+    "method_version": 1,
+    "workpiece": "Kf4i",
+    "source_sha256": "045b4fbd5cc7d039a8fd45fecab5b3d467fd26fd63a9df16c80a807892e201ad",
+    "observations_sha256": "045b4fbd5cc7d039a8fd45fecab5b3d467fd26fd63a9df16c80a807892e201ad",
+    "mesh_sha256": "56720a15e28abcf47d6705716e1033a8146c4970e212b7d3f3cd2f33ab3e64ca",
+    "config_sha256": "4ec06bbf098fcbd86aed0c9cb9139835b52b6cf4f3c4ae6432e549003e48cb14",
+    "angular_step_deg": 0.1,
+    "thresholds_mm": {
+      "fragile": 0.1,
+      "resistant": 0.5
+    },
+    "alpha_deg": 45.0,
+    "beta_deg": 0.0,
+    "frequency_independent": true,
+    "automatic_filtering": false,
+    "uniform_density_assumed": true,
+    "interpretation": "Smallest sampled COM lift along symmetry-aware, two-plane-seated shortest rotations to recorded poses. This is an evaluated-path estimate, not a proven minimum escape energy or dynamic transport assessment. Frequency and pose-group incidence are unchanged; within-group rocking does not classify the whole group.",
+    "path_counts": {
+      "reused": 0,
+      "calculated": 4753,
+      "symmetry_equivalent": 0
+    },
+    "saved_path_reuse": "Saved evidence uses a scoped model; ordinary paths are recalculated.",
+    "label_counts": {
+      "fragile": 96,
+      "marginal": 2,
+      "resistant": 0,
+      "unknown": 0
+    }
+  },
   "engine_provenance": {
     "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose",
     "base_revision": "e9199499a2982b0e3d02b09620eb452531b1a7d6",

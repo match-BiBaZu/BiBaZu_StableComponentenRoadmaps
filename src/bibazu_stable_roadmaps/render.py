@@ -26,6 +26,11 @@ def pose_figure(built: BuiltRoadmap, number: int, *, thumbnail=False):
     pose = next(pose for pose, node_id in built.numbered if node_id == number)
     pose_label = f"Pose {number} · {pose.source_id}" if len(pose.source_id) <= 24 else f"Pose {number}"
     title = f"{pose_label}\nObserved frequency: {pose.frequency_percent:g}%"
+    quality = next(node.get("pose_quality") for node in built.document["nodes"] if node["node_id"] == number)
+    if quality and not thumbnail:
+        lift = quality["escape_lift_mm"]
+        detail = f" · lift {lift:.3f} mm" if lift is not None else ""
+        title += f"\nGeometric quality: {quality['label'].capitalize()}{detail}"
     _draw_pose(axis, built.contacts[number], vertices, np.asarray(mesh.faces),
                pose_label=title, show_title=not thumbnail)
     if thumbnail:
@@ -101,6 +106,10 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
                              bboxprops={"edgecolor": "#084081", "lw": 1.8, "facecolor": "white"}, zorder=5)
         axis.add_artist(box)
         detail = f"{pose.source_id} · {pose.frequency_percent:g}%" if len(pose.source_id) <= 24 else f"{pose.frequency_percent:g}%"
+        quality = next(node.get("pose_quality") for node in built.document["nodes"] if node["node_id"] == number)
+        if quality:
+            lift = quality["escape_lift_mm"]
+            detail += f"\n{quality['label'].capitalize()}" + (f" · {lift:.3f} mm lift" if lift is not None else "")
         axis.annotate(f"Pose {number}\n{detail}", position,
                       xytext=(0, 56 * image_scale), textcoords="offset points", ha="center", va="bottom", fontsize=9 * image_scale, weight="bold", zorder=6)
     cutoff = built.document["generation"]["minimum_frequency_percent"]
@@ -109,7 +118,7 @@ def render_roadmap(built: BuiltRoadmap, path: Path, formats: tuple[str, ...], im
     axis.set_title(f"{built.source.workpiece}: observed {phase} roadmap\n{count} poses · {len(built.document['edges'])} direct connections · minimum {cutoff:g}% · {mode}", fontsize=14, pad=20)
     figure.legend(handles=[Line2D([0], [0], color=color, label=f"{name.upper()} rotation") for name, color in colors.items()],
                   loc="lower center", bbox_to_anchor=(.5, .045), ncol=3, fontsize=8)
-    figure.text(.5, .015, "Observed simulation poses; connections are geometric candidates and remain untested. No analytical stability classification.", ha="center", fontsize=8)
+    figure.text(.5, .015, "Quality = sampled geometric tipping resistance; frequency is separate. Connections and dynamic reliability remain untested.", ha="center", fontsize=8)
     for fmt in formats:
         figure.savefig(path.with_suffix("." + fmt), bbox_inches="tight")
     plt.close(figure)

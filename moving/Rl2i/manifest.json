@@ -2,7 +2,7 @@
   "format": "bibazu_observed_roadmap_generation",
   "schema_version": 1,
   "workpiece": "Rl2i",
-  "generated_utc": "2026-11-19T09:26:34.878398+00:00",
+  "generated_utc": "2026-11-20T07:21:16.912178+00:00",
   "pose_count": 6,
   "transition_count": 17,
   "minimum_frequency_percent": 1.0,
@@ -28,7 +28,7 @@
     "numbering_tie_break": "original source ID",
     "source_file": "poses.json",
     "source_sha256": "aa866397401af7fcd670ec685d828f47983206fa71575b426c5d2753ce5136f2",
-    "generated_utc": "2026-11-19T09:26:34.878398+00:00",
+    "generated_utc": "2026-11-20T07:21:16.912178+00:00",
     "pose_id_mapping": {
       "Rl2i_0004": 0,
       "Rl2i_0007": 1,
@@ -88,6 +88,40 @@
     }
   },
   "analytical_stability_evaluated": false,
+  "geometric_pose_quality_evaluated": true,
+  "pose_quality_assessment": {
+    "schema_version": 1,
+    "method": "sampled_seated_escape_lift",
+    "method_version": 1,
+    "workpiece": "Rl2i",
+    "source_sha256": "aa866397401af7fcd670ec685d828f47983206fa71575b426c5d2753ce5136f2",
+    "observations_sha256": "aa866397401af7fcd670ec685d828f47983206fa71575b426c5d2753ce5136f2",
+    "mesh_sha256": "3d54a53a22845fa6f361763dbe039032f99677e0cd3ee3213c42473f04eb0027",
+    "config_sha256": "97a638a74515111bec813f55119da4e5a7a85974721f7577c99475b9f7c047c4",
+    "angular_step_deg": 0.1,
+    "thresholds_mm": {
+      "fragile": 0.1,
+      "resistant": 0.5
+    },
+    "alpha_deg": 45.0,
+    "beta_deg": 0.0,
+    "frequency_independent": true,
+    "automatic_filtering": false,
+    "uniform_density_assumed": true,
+    "interpretation": "Smallest sampled COM lift along symmetry-aware, two-plane-seated shortest rotations to recorded poses. This is an evaluated-path estimate, not a proven minimum escape energy or dynamic transport assessment. Frequency and pose-group incidence are unchanged; within-group rocking does not classify the whole group.",
+    "path_counts": {
+      "reused": 0,
+      "calculated": 66,
+      "symmetry_equivalent": 0
+    },
+    "saved_path_reuse": "Checksum-verified ordinary seated paths; missing paths are calculated.",
+    "label_counts": {
+      "fragile": 0,
+      "marginal": 4,
+      "resistant": 8,
+      "unknown": 0
+    }
+  },
   "engine_provenance": {
     "upstream": "https://github.com/match-BiBaZu/bibazu_geometry_to_pose",
     "base_revision": "e9199499a2982b0e3d02b09620eb452531b1a7d6",

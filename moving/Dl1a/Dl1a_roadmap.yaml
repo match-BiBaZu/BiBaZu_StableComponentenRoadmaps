@@ -48,7 +48,7 @@ classification:
       numbering_tie_break: original source ID
       source_file: poses.json
       source_sha256: c2edf0d5c3354c88f33127ee3e87d1fbfbe398e906bbe0e9061c9dde64a189ae
-      generated_utc: '2026-11-19T09:22:39.243560+00:00'
+      generated_utc: '2026-11-20T07:15:37.620668+00:00'
       pose_id_mapping:
         Dl1a_0006: 0
         Dl1a_0007: 1
@@ -99,6 +99,7 @@ classification:
         manifest_sha256: be6c50f5e2e30b6cc3c2648ad412b5f455ebcff10c1294276f85fd2118e5f01e
         config_sha256: 2d0f76627ca684f922ebb7695f8b9e95a29e8180dafcdf0e3e5652091c5a63f4
         archive_checksums_sha256: f0ddfdf6f8a4009b743a64266ad4375863faaefa6547fb98282a52b9765ce8a0
+  geometric_pose_quality_evaluated: true
 poses:
 - id: 0
   original_catalog_pose_id: 0
@@ -128,6 +129,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: marginal
+    escape_lift_mm: 0.4726146442558221
+    escape_target_source_id: Dl1a_0005
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 30.044691755005065
+    peak_angle_deg: null
+    path_origin: verified_saved_path
+    observed_count: 2504
+    observed_frequency_percent: 25.04
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 1
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
@@ -156,6 +170,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: marginal
+    escape_lift_mm: 0.4756456378102243
+    escape_target_source_id: Dl1a_0004
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 29.988665333306983
+    peak_angle_deg: null
+    path_origin: verified_saved_path
+    observed_count: 2475
+    observed_frequency_percent: 24.75
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 2
   original_catalog_pose_id: 2
   equivalent_catalog_pose_ids:
@@ -184,6 +211,19 @@ poses:
     wall: edge
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: marginal
+    escape_lift_mm: 0.4751603392077932
+    escape_target_source_id: Dl1a_0006
+    escape_within_group: true
+    source_group_id: G0
+    path_angle_deg: 30.044691755005065
+    peak_angle_deg: null
+    path_origin: verified_saved_path
+    observed_count: 2277
+    observed_frequency_percent: 22.77
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 3
   original_catalog_pose_id: 3
   equivalent_catalog_pose_ids:
@@ -212,6 +252,19 @@ poses:
     wall: edge
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: marginal
+    escape_lift_mm: 0.47380389611305596
+    escape_target_source_id: Dl1a_0007
+    escape_within_group: true
+    source_group_id: G1
+    path_angle_deg: 29.988665333306983
+    peak_angle_deg: null
+    path_origin: verified_saved_path
+    observed_count: 2237
+    observed_frequency_percent: 22.37
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 4
   original_catalog_pose_id: 4
   equivalent_catalog_pose_ids:
@@ -240,6 +293,19 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
+  pose_quality:
+    label: resistant
+    escape_lift_mm: 0.9259473515420069
+    escape_target_source_id: Dl1a_0001
+    escape_within_group: true
+    source_group_id: G2
+    path_angle_deg: 31.888171161751195
+    peak_angle_deg: null
+    path_origin: verified_saved_path
+    observed_count: 171
+    observed_frequency_percent: 1.71
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 - id: 5
   original_catalog_pose_id: 5
   equivalent_catalog_pose_ids:
@@ -268,6 +334,19 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
+  pose_quality:
+    label: resistant
+    escape_lift_mm: 0.9276986425536009
+    escape_target_source_id: Dl1a_0015
+    escape_within_group: true
+    source_group_id: G3
+    path_angle_deg: 31.91055466580503
+    peak_angle_deg: null
+    path_origin: verified_saved_path
+    observed_count: 124
+    observed_frequency_percent: 1.24
+    reason: Movement stays within the existing pose group (rocking); this does not
+      classify the whole group.
 transitions:
 - id: a0:0->1:free_y
   from_pose: 0
@@ -830,3 +909,36 @@ transitions:
     difficulty_rating: null
     notes: ''
 generation: *id001
+pose_quality_assessment:
+  schema_version: 1
+  method: sampled_seated_escape_lift
+  method_version: 1
+  workpiece: Dl1a
+  source_sha256: c2edf0d5c3354c88f33127ee3e87d1fbfbe398e906bbe0e9061c9dde64a189ae
+  observations_sha256: c2edf0d5c3354c88f33127ee3e87d1fbfbe398e906bbe0e9061c9dde64a189ae
+  mesh_sha256: 17a85e9638816fb25c36ddd65da6c4c9718db6d924b8d7ed5c3aec96d7a0f030
+  config_sha256: 2d0f76627ca684f922ebb7695f8b9e95a29e8180dafcdf0e3e5652091c5a63f4
+  angular_step_deg: 0.1
+  thresholds_mm:
+    fragile: 0.1
+    resistant: 0.5
+  alpha_deg: 45.0
+  beta_deg: 0.0
+  frequency_independent: true
+  automatic_filtering: false
+  uniform_density_assumed: true
+  interpretation: Smallest sampled COM lift along symmetry-aware, two-plane-seated
+    shortest rotations to recorded poses. This is an evaluated-path estimate, not
+    a proven minimum escape energy or dynamic transport assessment. Frequency and
+    pose-group incidence are unchanged; within-group rocking does not classify the
+    whole group.
+  path_counts:
+    reused: 16
+    calculated: 104
+    symmetry_equivalent: 0
+  saved_path_reuse: Checksum-verified ordinary seated paths; missing paths are calculated.
+  label_counts:
+    fragile: 8
+    marginal: 4
+    resistant: 4
+    unknown: 0
