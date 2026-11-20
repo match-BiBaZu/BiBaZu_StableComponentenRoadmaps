@@ -44,7 +44,7 @@ classification:
       numbering_tie_break: original source ID
       source_file: poses.json
       source_sha256: 26af624ca03caa372ebc967544ff303e256b449ca8884acb6ae088bef86f27d6
-      generated_utc: '2026-11-20T07:14:53.486916+00:00'
+      generated_utc: '2026-11-19T09:21:59.444998+00:00'
       pose_id_mapping:
         Df1a_0004: 0
         Df1a_0007: 1
@@ -85,7 +85,6 @@ classification:
         manifest_sha256: 76c4758c1795f03b7d9c71b12932e467a21c8837605bf4066a78451992e3a1d6
         config_sha256: 80f20881ead14a0517c9c8894230efa7eab21fdaa3e96d251d331959772d3b6e
         archive_checksums_sha256: 787c5c0680f2e76f7cf6c43931a0350fb0abeac82c2a25dd2533ffb65f0b8a9a
-  geometric_pose_quality_evaluated: true
 poses:
 - id: 0
   original_catalog_pose_id: 0
@@ -115,19 +114,6 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: true
-  pose_quality:
-    label: resistant
-    escape_lift_mm: 9.184434447988377
-    escape_target_source_id: Df1a_0001
-    escape_within_group: false
-    source_group_id: G0
-    path_angle_deg: 90.00247438887645
-    peak_angle_deg: 52.143497925630975
-    path_origin: calculated_path
-    observed_count: 2975
-    observed_frequency_percent: 29.75
-    reason: Sampled geometric escape to another recorded pose; not a dynamic stability
-      guarantee.
 - id: 1
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
@@ -156,19 +142,6 @@ poses:
     wall: face
     main_face_on_floor: true
     main_face_on_wall: false
-  pose_quality:
-    label: resistant
-    escape_lift_mm: 9.187583923627756
-    escape_target_source_id: Df1a_0010
-    escape_within_group: false
-    source_group_id: G1
-    path_angle_deg: 90.00213998881779
-    peak_angle_deg: 52.14330418886003
-    path_origin: calculated_path
-    observed_count: 2715
-    observed_frequency_percent: 27.15
-    reason: Sampled geometric escape to another recorded pose; not a dynamic stability
-      guarantee.
 - id: 2
   original_catalog_pose_id: 2
   equivalent_catalog_pose_ids:
@@ -197,19 +170,6 @@ poses:
     wall: 3-face
     main_face_on_floor: false
     main_face_on_wall: false
-  pose_quality:
-    label: resistant
-    escape_lift_mm: 6.181695179653914
-    escape_target_source_id: Df1a_0007
-    escape_within_group: false
-    source_group_id: G2
-    path_angle_deg: 90.00213998881779
-    peak_angle_deg: 37.85883579995776
-    path_origin: calculated_path
-    observed_count: 2240
-    observed_frequency_percent: 22.4
-    reason: Sampled geometric escape to another recorded pose; not a dynamic stability
-      guarantee.
 - id: 3
   original_catalog_pose_id: 3
   equivalent_catalog_pose_ids:
@@ -238,19 +198,6 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
-  pose_quality:
-    label: resistant
-    escape_lift_mm: 6.183256017287704
-    escape_target_source_id: Df1a_0004
-    escape_within_group: false
-    source_group_id: G3
-    path_angle_deg: 90.00247438887645
-    peak_angle_deg: 37.858976463245476
-    path_origin: calculated_path
-    observed_count: 2030
-    observed_frequency_percent: 20.3
-    reason: Sampled geometric escape to another recorded pose; not a dynamic stability
-      guarantee.
 transitions:
 - id: a0:0->2:free_z
   from_pose: 0
@@ -463,36 +410,3 @@ transitions:
     difficulty_rating: null
     notes: ''
 generation: *id001
-pose_quality_assessment:
-  schema_version: 1
-  method: sampled_seated_escape_lift
-  method_version: 1
-  workpiece: Df1a
-  source_sha256: 26af624ca03caa372ebc967544ff303e256b449ca8884acb6ae088bef86f27d6
-  observations_sha256: 26af624ca03caa372ebc967544ff303e256b449ca8884acb6ae088bef86f27d6
-  mesh_sha256: 8ef45da56ee7d22fa2aba4ae3cffa0bf39a673d27172a994cdbfe9cb05ad6099
-  config_sha256: 80f20881ead14a0517c9c8894230efa7eab21fdaa3e96d251d331959772d3b6e
-  angular_step_deg: 0.1
-  thresholds_mm:
-    fragile: 0.1
-    resistant: 0.5
-  alpha_deg: 45.0
-  beta_deg: 0.0
-  frequency_independent: true
-  automatic_filtering: false
-  uniform_density_assumed: true
-  interpretation: Smallest sampled COM lift along symmetry-aware, two-plane-seated
-    shortest rotations to recorded poses. This is an evaluated-path estimate, not
-    a proven minimum escape energy or dynamic transport assessment. Frequency and
-    pose-group incidence are unchanged; within-group rocking does not classify the
-    whole group.
-  path_counts:
-    reused: 8
-    calculated: 37
-    symmetry_equivalent: 0
-  saved_path_reuse: Checksum-verified ordinary seated paths; missing paths are calculated.
-  label_counts:
-    fragile: 0
-    marginal: 4
-    resistant: 6
-    unknown: 0

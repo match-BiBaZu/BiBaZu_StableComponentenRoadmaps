@@ -6,31 +6,29 @@ Observation phase: **transport**.
 
 Minimum frequency: **1%**. Percentages retain the source denominator.
 
-| Roadmap pose | Source pose | Frequency | Count | Geometric quality | Lift to tip (mm) | Easiest target |
-| ---: | --- | ---: | ---: | --- | ---: | --- |
-| 0 | Kf4i_0026 | 16.22% | 1622 | Fragile | 0.0594 | Kf4i_0031 (within group) |
-| 1 | Kf4i_0077 | 13.33% | 1333 | Fragile | 0.0586 | Kf4i_0073 (within group) |
-| 2 | Kf4i_0053 | 7.63% | 763 | Fragile | 0.0581 | Kf4i_0051 (within group) |
-| 3 | Kf4i_0001 | 5.54% | 554 | Fragile | 0.0586 | Kf4i_0008 (within group) |
-| 4 | Kf4i_0051 | 3.71% | 371 | Fragile | 0.0594 | Kf4i_0053 (within group) |
-| 5 | Kf4i_0085 | 3.18% | 318 | Fragile | 0.0004 | Kf4i_0075 (within group) |
-| 6 | Kf4i_0023 | 2.72% | 272 | Fragile | 0.0255 | Kf4i_0026 (within group) |
-| 7 | Kf4i_0017 | 2.53% | 253 | Fragile | 0.0003 | Kf4i_0020 (within group) |
-| 8 | Kf4i_0015 | 2.45% | 245 | Fragile | 0.0575 | Kf4i_0008 (within group) |
-| 9 | Kf4i_0079 | 2.39% | 239 | Fragile | 0.0260 | Kf4i_0077 (within group) |
-| 10 | Kf4i_0020 | 2.28% | 228 | Fragile | 0.0075 | Kf4i_0026 (within group) |
-| 11 | Kf4i_0008 | 2.21% | 221 | Fragile | 0.0326 | Kf4i_0001 (within group) |
-| 12 | Kf4i_0082 | 2.17% | 217 | Fragile | 0.0076 | Kf4i_0075 (within group) |
-| 13 | Kf4i_0052 | 1.88% | 188 | Fragile | 0.0255 | Kf4i_0051 (within group) |
-| 14 | Kf4i_0022 | 1.69% | 169 | Fragile | 0.0266 | Kf4i_0008 (within group) |
-| 15 | Kf4i_0028 | 1.5% | 150 | Fragile | 0.0073 | Kf4i_0022 (within group) |
-| 16 | Kf4i_0055 | 1.37% | 137 | Fragile | 0.0068 | Kf4i_0052 (within group) |
-| 17 | Kf4i_0056 | 1.15% | 115 | Fragile | 0.0003 | Kf4i_0052 (within group) |
-| 18 | Kf4i_0073 | 1.14% | 114 | Fragile | 0.0585 | Kf4i_0077 (within group) |
+| Roadmap pose | Source pose | Frequency | Count |
+| ---: | --- | ---: | ---: |
+| 0 | Kf4i_0026 | 16.22% | 1622 |
+| 1 | Kf4i_0077 | 13.33% | 1333 |
+| 2 | Kf4i_0053 | 7.63% | 763 |
+| 3 | Kf4i_0001 | 5.54% | 554 |
+| 4 | Kf4i_0051 | 3.71% | 371 |
+| 5 | Kf4i_0085 | 3.18% | 318 |
+| 6 | Kf4i_0023 | 2.72% | 272 |
+| 7 | Kf4i_0017 | 2.53% | 253 |
+| 8 | Kf4i_0015 | 2.45% | 245 |
+| 9 | Kf4i_0079 | 2.39% | 239 |
+| 10 | Kf4i_0020 | 2.28% | 228 |
+| 11 | Kf4i_0008 | 2.21% | 221 |
+| 12 | Kf4i_0082 | 2.17% | 217 |
+| 13 | Kf4i_0052 | 1.88% | 188 |
+| 14 | Kf4i_0022 | 1.69% | 169 |
+| 15 | Kf4i_0028 | 1.5% | 150 |
+| 16 | Kf4i_0055 | 1.37% | 137 |
+| 17 | Kf4i_0056 | 1.15% | 115 |
+| 18 | Kf4i_0073 | 1.14% | 114 |
 
-[Pose quality report](pose_quality.json) includes every input pose, including those below the frequency cutoff. Fragile: below 0.1 mm; marginal: 0.1–below 0.5 mm; resistant: at least 0.5 mm. These are sampled geometric lift estimates, not measured survival probabilities. Within-group movement describes rocking in that group and does not classify the whole group as unstable. Quality does not filter or renumber poses.
-
-The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; dynamic and experimental reliability remain untested.
+The legacy `robust` tag is used for stable-target compatibility. It does not assert analytical robustness; rocking and reliability scores are unknown.
 
 Original inputs are in `source/`; generation settings and exclusions are in `manifest.json`.
 

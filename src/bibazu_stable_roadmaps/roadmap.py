@@ -188,8 +188,6 @@ def handover_dict(document: dict) -> dict:
                       "csa_angular_clearance_deg": None, "csa_applicable": None,
                       "contacts": {"floor": node["floor_contact_topology"], "wall": node["wall_contact_topology"],
                                    "main_face_on_floor": node["main_face_on_floor"], "main_face_on_wall": node["main_face_on_wall"]}})
-        if "pose_quality" in node:
-            poses[-1]["pose_quality"] = node["pose_quality"]
     transitions = []
     for edge in document["edges"]:
         action = edge["actuation"]
@@ -208,7 +206,7 @@ def handover_dict(document: dict) -> dict:
                                          "axis_error_deg": edge["axis_error_deg"], "passive_settling_via_catalog_pose_ids": []},
                             "experimental": {"status": "untested", "trials": None, "successes": None,
                                              "empirical_success_rate": None, "difficulty_rating": None, "notes": ""}})
-    result = {"format": "bibazu_pose_roadmap_handover", "schema_version": 1,
+    return {"format": "bibazu_pose_roadmap_handover", "schema_version": 1,
             "part": {"name": document["part_name"], "mesh_source": document["source"], "cad_status": "provisional"},
             "chute": {"coordinate_system": "right_handed", "x": "downhill", "y": "away_from_wall", "z": "away_from_floor",
                       "alpha_deg": document["alpha_deg"], "beta_deg": document["beta_deg"]},
@@ -225,7 +223,3 @@ def handover_dict(document: dict) -> dict:
                                "csa_rocking_fallback_catalog_pose_ids": [],
                                "classical_metadata": document.get("classical_metadata", {})},
             "poses": poses, "transitions": transitions, "generation": document.get("generation", {})}
-    if "pose_quality_assessment" in document:
-        result["pose_quality_assessment"] = document["pose_quality_assessment"]
-        result["classification"]["geometric_pose_quality_evaluated"] = True
-    return result
