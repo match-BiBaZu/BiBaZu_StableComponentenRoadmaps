@@ -42,7 +42,7 @@ classification:
       numbering_tie_break: original source ID
       source_file: poses.json
       source_sha256: 9026f55ac5aaed424d73e9d9c735fb20096a74f2b7d4c0e92a861fc5f9890eaf
-      generated_utc: '2026-11-20T07:18:09.558114+00:00'
+      generated_utc: '2026-11-19T09:23:57.971718+00:00'
       pose_id_mapping:
         Kk4a_0143: 0
         Kk4a_0023: 1
@@ -445,7 +445,6 @@ classification:
         manifest_sha256: c6b2a9be7e3c8f47e68996142289581f9fc16775eefae74bb80e3b1224e0cff1
         config_sha256: 5a8fb5a109376e251a4def3a93952ba21ffaf419b86d159998b8f01e68ad4242
         archive_checksums_sha256: facb0401ab3760c264da0f1ec2e7ac8c9d013b2a6398536bd850b8004adc76bd
-  geometric_pose_quality_evaluated: true
 poses:
 - id: 0
   original_catalog_pose_id: 0
@@ -475,19 +474,6 @@ poses:
     wall: face
     main_face_on_floor: false
     main_face_on_wall: false
-  pose_quality:
-    label: fragile
-    escape_lift_mm: 0.009540758666643612
-    escape_target_source_id: Kk4a_0147
-    escape_within_group: true
-    source_group_id: G0
-    path_angle_deg: 11.971002657136335
-    peak_angle_deg: 2.0949254649988585
-    path_origin: calculated_path
-    observed_count: 104
-    observed_frequency_percent: 1.04
-    reason: Movement stays within the existing pose group (rocking); this does not
-      classify the whole group.
 - id: 1
   original_catalog_pose_id: 1
   equivalent_catalog_pose_ids:
@@ -516,51 +502,5 @@ poses:
     wall: edge
     main_face_on_floor: false
     main_face_on_wall: false
-  pose_quality:
-    label: fragile
-    escape_lift_mm: 0.00951668601084954
-    escape_target_source_id: Kk4a_0189
-    escape_within_group: true
-    source_group_id: G0
-    path_angle_deg: 48.06588062005279
-    peak_angle_deg: 2.1984394462394206
-    path_origin: calculated_path
-    observed_count: 100
-    observed_frequency_percent: 1.0
-    reason: Movement stays within the existing pose group (rocking); this does not
-      classify the whole group.
 transitions: []
 generation: *id001
-pose_quality_assessment:
-  schema_version: 1
-  method: sampled_seated_escape_lift
-  method_version: 1
-  workpiece: Kk4a
-  source_sha256: 9026f55ac5aaed424d73e9d9c735fb20096a74f2b7d4c0e92a861fc5f9890eaf
-  observations_sha256: 9026f55ac5aaed424d73e9d9c735fb20096a74f2b7d4c0e92a861fc5f9890eaf
-  mesh_sha256: 8b9e742443c8153aca1f5afd3e68562d5cecd7ac9af010f2ede3b0162fa200c1
-  config_sha256: 5a8fb5a109376e251a4def3a93952ba21ffaf419b86d159998b8f01e68ad4242
-  angular_step_deg: 0.1
-  thresholds_mm:
-    fragile: 0.1
-    resistant: 0.5
-  alpha_deg: 45.0
-  beta_deg: 0.0
-  frequency_independent: true
-  automatic_filtering: false
-  uniform_density_assumed: true
-  interpretation: Smallest sampled COM lift along symmetry-aware, two-plane-seated
-    shortest rotations to recorded poses. This is an evaluated-path estimate, not
-    a proven minimum escape energy or dynamic transport assessment. Frequency and
-    pose-group incidence are unchanged; within-group rocking does not classify the
-    whole group.
-  path_counts:
-    reused: 0
-    calculated: 17955
-    symmetry_equivalent: 0
-  saved_path_reuse: Saved evidence uses a scoped model; ordinary paths are recalculated.
-  label_counts:
-    fragile: 190
-    marginal: 0
-    resistant: 0
-    unknown: 0

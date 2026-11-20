@@ -3,8 +3,6 @@
 Kf1i has two observed poses at 0.06% and 0.03%; neither meets the 1% cutoff. No moving-belt roadmap is exported for Kf1i.
 
 
-Geometric quality is recorded independently of frequency in each component's `pose_quality.json` and pose table. Labels never remove poses.
-
 <!-- GENERATED ROADMAP INDEX START -->
 | Component | Poses | Connections | Minimum frequency | Numbering |
 | --- | ---: | ---: | ---: | --- |
